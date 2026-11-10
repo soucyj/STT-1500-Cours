@@ -7,54 +7,54 @@ Les diapositives des cours magistraux. Elles suivent le livre, chapitre
 par chapitre : les énoncés y sont, les démonstrations se font au
 tableau et sont détaillées dans le livre.
 
-::: {.cartes}
+::: {.chapitres .column-page-right}
 
-::: {.carte}
+::: {.chapitre}
 Chapitre 1 --- Les transformations du plan
 
 Transformations, groupe affine, coordonnées homogènes, similitudes et
 isométries.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre1.pdf){.bouton}
-[Chapitre du livre]({{< var livre.web >}}01-transformations.html){.bouton}
+[Diapositives (PDF)]({{< var pdf.base >}}chapitre1.pdf){.bouton .plein}
+[Chapitre du livre]({{< var livre.web >}}01-transformations.html){.lien}
 :::
 
-::: {.carte}
+::: {.chapitre}
 Chapitre 2 --- Espaces métriques
 
 Distances, ouverts et compacts, distance de Hausdorff, complétude,
 théorème du point fixe de Banach, méthode de Newton.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre2.pdf){.bouton}
-[Chapitre du livre]({{< var livre.web >}}02-metriques.html){.bouton}
+[Diapositives (PDF)]({{< var pdf.base >}}chapitre2.pdf){.bouton .plein}
+[Chapitre du livre]({{< var livre.web >}}02-metriques.html){.lien}
 :::
 
-::: {.carte}
+::: {.chapitre}
 Chapitre 3 --- Fractales et systèmes itératifs de fonctions
 
 Autosimilarité, dimension, SIF et théorème de Hutchinson, jeu du chaos,
 de Weierstrass à Mandelbrot.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre3.pdf){.bouton}
-[Chapitre du livre]({{< var livre.web >}}03-fractales.html){.bouton}
+[Diapositives (PDF)]({{< var pdf.base >}}chapitre3.pdf){.bouton .plein}
+[Chapitre du livre]({{< var livre.web >}}03-fractales.html){.lien}
 :::
 
-::: {.carte}
+::: {.chapitre}
 Chapitre 4 --- Les chaînes de Markov et PageRank
 
 Probabilités conditionnelles, matrices stochastiques, équilibre,
 PageRank et méthode des puissances.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre4.pdf){.bouton}
-[Chapitre du livre]({{< var livre.web >}}04-markov.html){.bouton}
+[Diapositives (PDF)]({{< var pdf.base >}}chapitre4.pdf){.bouton .plein}
+[Chapitre du livre]({{< var livre.web >}}04-markov.html){.lien}
 :::
 
-::: {.carte}
+::: {.chapitre}
 Chapitre 5 --- L'analyse en composantes principales
 
 Diapositives à venir.
 
-[Chapitre du livre]({{< var livre.web >}}05-acp.html){.bouton}
+[Chapitre du livre]({{< var livre.web >}}05-acp.html){.lien}
 :::
 
 :::
