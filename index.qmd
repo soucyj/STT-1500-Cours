@@ -1,0 +1,63 @@
+---
+title: "MAT-2901 — Mathématiques et technologie"
+subtitle: "Des notions du secondaire aux applications modernes"
+toc: false
+---
+
+Bienvenue sur le site du cours. Vous y trouverez le plan de cours, le
+calendrier, le livre, les présentations des cours magistraux et les
+consignes des laboratoires.
+
+::: {.a-completer}
+À compléter : un court paragraphe de présentation du cours (à qui il
+s'adresse, ce qu'on y fait, l'esprit du cours).
+:::
+
+## Accès rapide
+
+::: {.cartes}
+
+::: {.carte}
+Le livre
+
+Les notes du cours, en ligne et en PDF.
+
+[Lire en ligne]({{< var livre.web >}}){.bouton}
+[PDF]({{< var livre.pdf >}}){.bouton}
+:::
+
+::: {.carte}
+Présentations
+
+Les diapositives des cours magistraux, chapitre par chapitre.
+
+[Voir les présentations](presentations/index.qmd){.bouton}
+:::
+
+::: {.carte .labo}
+Laboratoires
+
+Les activités en laboratoire informatique : consignes, fichiers et
+livrables.
+
+[Voir les laboratoires](laboratoires/index.qmd){.bouton}
+:::
+
+::: {.carte}
+Plan de cours et calendrier
+
+Objectifs, évaluation, et le déroulement de la session semaine par
+semaine.
+
+[Plan de cours](plan.qmd){.bouton}
+[Calendrier](calendrier.qmd){.bouton}
+:::
+
+:::
+
+## Annonces
+
+::: {.a-completer}
+À compléter au fil de la session (ou à retirer si les annonces passent
+uniquement par monPortail).
+:::

@@ -1,0 +1,227 @@
+// ═══════════════════════════════════════════════════════════════════════
+//  cours.scss — thème du site MAT-2901
+//  Mêmes couleurs et mêmes polices que le livre (styles/livrejs.scss du
+//  dépôt LivreMathTechno), sans les boîtes propres au livre.
+// ═══════════════════════════════════════════════════════════════════════
+
+/*-- scss:defaults --*/
+
+$sectioncolor: rgb(28, 63, 110);
+$coveraccent:  rgb(196, 142, 58);
+$thmboxbg:     rgb(226, 232, 240);
+$secboxbg:     rgb(242, 231, 210);
+
+$primary: $sectioncolor;
+$link-color: $sectioncolor;
+$body-color: #1d1d1f;
+$body-bg: rgb(246, 244, 238);
+
+$font-family-sans-serif: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "STIX Two Text", "STIXGeneral", "Times New Roman", serif;
+$font-family-base: $font-family-serif;
+$font-family-monospace: "Fira Mono", Menlo, Consolas, monospace;
+$font-family-menus: $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif;
+$headings-color: $sectioncolor;
+$headings-font-weight: 700;
+$font-size-root: 18px;
+$line-height-base: 1.55;
+$code-color: $sectioncolor;
+
+/*-- scss:rules --*/
+
+body {
+  font-feature-settings: "kern", "liga";
+  hyphens: auto;
+}
+
+// Menus, barre de navigation et métadonnées en sans-serif
+.sidebar, #TOC, .quarto-title-meta, .listing-title,
+.card, .bouton, table {
+  font-family: $font-family-sans-serif;
+}
+
+h2 {
+  border-bottom: 1px solid rgba($sectioncolor, 0.25);
+  padding-bottom: 0.2em;
+}
+
+// Filet doré sous le titre de page, comme sur les diapositives
+.quarto-title h1.title::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 3px;
+  margin-top: 0.35em;
+  background: $coveraccent;
+}
+
+// ── Cartes (présentations, laboratoires, accès rapides) ──────────────────
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.carte {
+  background: #fff;
+  border: 1px solid rgba($sectioncolor, 0.18);
+  border-top: 4px solid $sectioncolor;
+  border-radius: 4px;
+  padding: 0.9rem 1rem 0.8rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.45;
+
+  p { margin-bottom: 0.45rem; }
+  p:first-child {
+    font-weight: 600;
+    font-size: 1rem;
+    color: $sectioncolor;
+  }
+}
+.carte.labo { border-top-color: $coveraccent; }
+
+// Liens en forme de bouton discret : [PDF](...){.bouton}
+a.bouton {
+  display: inline-block;
+  margin: 0.15rem 0.3rem 0.15rem 0;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid $sectioncolor;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  &:hover { background: $sectioncolor; color: #fff; }
+}
+
+// Encadré « à compléter » : les parties de la coquille à remplir
+.a-completer {
+  background: $secboxbg;
+  border-left: 4px solid $coveraccent;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  p:last-child { margin-bottom: 0; }
+}
+
+// Tableaux : allure booktabs, comme dans le livre
+table {
+  font-size: 0.88rem;
+  thead th { border-bottom: 2px solid $sectioncolor !important; }
+}
+
+// Repris tel quel de styles/livrejs.scss (dépôt du livre)
+// ── Barre latérale, table des matières et navigation ────────────────────
+// Sans-serif des titres, élément actif marqué d’un filet doré (couverture).
+.sidebar-title {
+  font-family: $font-family-menus;
+  font-variation-settings: "opsz" 40;
+  color: $sectioncolor;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+.sidebar-navigation .sidebar-item {
+  font-size: 0.98rem;
+  line-height: 1.35;
+
+  .sidebar-item-container { padding: 0.15rem 0; }
+
+  a.sidebar-link,
+  .sidebar-item-text { font-family: $font-family-menus; color: $sectioncolor; }
+
+  a.sidebar-link {
+    border-left: 2px solid transparent;
+    padding-left: 0.6rem;
+    transition: border-color 0.15s;
+
+    &:hover { font-weight: 700; border-left-color: rgba($coveraccent, 0.5); }
+    &:hover .sidebar-item-text, &.active .sidebar-item-text { font-weight: 700; }
+    &.active {
+      font-weight: 700;
+      border-left-color: $coveraccent;
+    }
+  }
+}
+
+// « Dans ce chapitre »
+#TOC, nav[role="doc-toc"] {
+  font-size: 0.92rem;
+
+  h2, #toc-title {
+    font-family: $font-family-menus;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba($body-color, 0.55);
+    border: none;
+    margin-top: 0;
+  }
+
+  ul > li > a {
+    font-family: $font-family-menus;
+    color: $sectioncolor;
+    &:hover, &.active { color: $sectioncolor; font-weight: 700; }
+    &.active { border-left-color: $coveraccent; }
+  }
+
+  // Dans la barre de gauche, sous la liste des chapitres
+  .sidebar & { margin-top: 1.6rem; }
+}
+
+// Grand écran : la barre de gauche part du bord de la fenêtre et prend
+// l'essentiel de l'espace horizontal libre (2 parts sur 3), sur un fond en
+// dégradé radial lime → turquoise pâle. Même grille pour les .page-columns
+// imbriquées (boîtes et portraits avec note en marge).
+$menu-degrade: radial-gradient(ellipse 130% 75% at 50% 45%,
+  rgb(240, 251, 112) 0%, rgb(228, 246, 150) 35%,
+  rgb(206, 235, 190) 70%, rgb(190, 226, 230) 100%);
+
+@media (min-width: 992px) {
+  body.nav-sidebar.floating:not(.docked) .page-columns {
+    grid-template-columns:
+      [screen-start screen-start-inset page-start] 2.5rem
+      [page-start-inset] minmax(240px, 2fr)
+      [body-start-outset] 2.5rem
+      [body-start] 1.5em
+      [body-content-start] minmax(450px, calc(750px - 3em))
+      [body-content-end] 1.5em
+      [body-end] 40px
+      [body-end-outset] minmax(50px, 170px)
+      [page-end-inset] 40px
+      [page-end] 1fr
+      [screen-end-inset] 1.5em [screen-end];
+  }
+
+  body.nav-sidebar.floating #quarto-sidebar {
+    grid-column: screen-start / body-start-outset;
+    top: 0;
+    height: 100vh;
+    max-height: 100vh;
+    padding: 1.5rem 1.5rem 2rem;
+    background: $menu-degrade;
+
+    > * {
+      width: 100%;
+      max-width: 22rem;
+      margin-inline: auto;
+      padding-right: 0;
+    }
+    .sidebar-search .aa-DetachedSearchButton,
+    .sidebar-search input { background: rgba(255, 255, 255, 0.7); }
+    // Filet de l'élément actif : bleu (le doré se perd sur le lime)
+    a.sidebar-link.active, #TOC a.active { border-left-color: $sectioncolor; }
+    a.sidebar-link:hover { border-left-color: rgba($sectioncolor, 0.4); }
+  }
+}
+
+// Chapitre précédent / suivant
+.page-navigation {
+  font-family: $font-family-menus;
+  .nav-page a { color: $sectioncolor; }
+}
+

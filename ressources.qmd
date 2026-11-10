@@ -1,0 +1,34 @@
+---
+title: "Ressources"
+---
+
+## LaTeX
+
+- [Overleaf](https://www.overleaf.com) : écrire et compiler LaTeX dans le
+  navigateur.
+- [Documentation d'Overleaf](https://www.overleaf.com/learn) : un
+  tutoriel d'introduction et des listes de symboles.
+- [Detexify](https://detexify.kirelabs.org) : trouver la commande d'un
+  symbole en le dessinant.
+- [La classe exam](https://ctan.org/pkg/exam) : documentation complète,
+  avec de nombreux exemples.
+- [siunitx](https://ctan.org/pkg/siunitx) : nombres et unités.
+
+## Outils mathématiques
+
+- [Desmos](https://www.desmos.com/calculator?lang=fr) : graphiques,
+  curseurs, régions définies par des inégalités.
+- [GeoGebra](https://www.geogebra.org) : géométrie dynamique, calcul
+  formel.
+- [WolframAlpha](https://www.wolframalpha.com) : calcul symbolique et
+  numérique.
+
+## Python
+
+Le livre utilise Python pour plusieurs calculs (voir son
+[annexe A]({{< var livre.web >}}annexe-a-python.html)).
+
+::: {.a-completer}
+À compléter : environnement recommandé pour les étudiants (Colab,
+Anaconda, Jupyter sur les postes du laboratoire…).
+:::

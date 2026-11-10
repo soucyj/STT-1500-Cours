@@ -1,0 +1,52 @@
+---
+title: "Plan de cours"
+---
+
+::: {.a-completer}
+Cette page est une coquille. Le plan de cours officiel fait foi ; on
+peut le résumer ici, ou simplement y renvoyer.
+:::
+
+## Description du cours
+
+À compléter.
+
+## Objectifs
+
+À l'issue du cours, l'étudiante ou l'étudiant pourra :
+
+- à compléter ;
+- à compléter ;
+- à compléter.
+
+## Contenu
+
+Le cours suit le livre *Mathématiques et technologie*
+([en ligne]({{< var livre.web >}})) :
+
+| Chapitre | Thème |
+|:--|:--|
+| 1 | Les transformations du plan |
+| 2 | Espaces métriques |
+| 3 | Fractales et systèmes itératifs de fonctions |
+| 4 | Les chaînes de Markov et l'algorithme PageRank de Google |
+| 5 | L'analyse en composantes principales |
+
+## Formule pédagogique
+
+À compléter : cours magistraux, laboratoires informatiques, travail
+personnel.
+
+## Évaluation
+
+| Élément | Pondération | Date |
+|:--|:-:|:-:|
+| À compléter | | |
+| À compléter | | |
+| À compléter | | |
+
+## Matériel
+
+- Le livre du cours, gratuit, en ligne et en PDF.
+- Un compte Overleaf (gratuit) pour les laboratoires LaTeX.
+- À compléter.

@@ -1,0 +1,30 @@
+---
+title: "Le livre"
+toc: false
+---
+
+Le cours s'appuie sur le livre *Mathématiques et technologie : des
+notions du secondaire aux applications modernes*, de Jérôme Soucy. Il
+est gratuit, en ligne et en PDF, sous licence CC BY 4.0.
+
+[Lire en ligne]({{< var livre.web >}}){.bouton}
+[Télécharger le PDF]({{< var livre.pdf >}}){.bouton}
+[Sources sur GitHub]({{< var livre.depot >}}){.bouton}
+
+## Chapitres
+
+| | Chapitre | Présentation |
+|:-:|:--|:--|
+| 1 | [Les transformations du plan]({{< var livre.web >}}01-transformations.html) | [PDF]({{< var pdf.base >}}chapitre1.pdf) |
+| 2 | [Espaces métriques]({{< var livre.web >}}02-metriques.html) | [PDF]({{< var pdf.base >}}chapitre2.pdf) |
+| 3 | [Fractales et systèmes itératifs de fonctions]({{< var livre.web >}}03-fractales.html) | [PDF]({{< var pdf.base >}}chapitre3.pdf) |
+| 4 | [Les chaînes de Markov et l'algorithme PageRank de Google]({{< var livre.web >}}04-markov.html) | [PDF]({{< var pdf.base >}}chapitre4.pdf) |
+| 5 | [L'analyse en composantes principales]({{< var livre.web >}}05-acp.html) | à venir |
+
+## Annexes
+
+- [A. Calculer les transformations avec Python]({{< var livre.web >}}annexe-a-python.html)
+- [B. La rédaction du chapitre 2 avec l'assistance d'une intelligence artificielle]({{< var livre.web >}}annexe-b-ia.html)
+- [C. Compléments théoriques sur les SIF]({{< var livre.web >}}annexe-c-theorie.html)
+- [D. Rappels d'algèbre linéaire]({{< var livre.web >}}annexe-d-algebre.html)
+- [Solutions et réponses]({{< var livre.web >}}solutions.html)

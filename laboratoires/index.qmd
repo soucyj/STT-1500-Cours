@@ -1,0 +1,23 @@
+---
+title: "Laboratoires"
+toc: false
+listing:
+  contents: "*.qmd"
+  type: table
+  sort: "numero"
+  fields: [numero, title, description]
+  field-display-names:
+    numero: "No"
+    title: "Laboratoire"
+    description: "En bref"
+  sort-ui: false
+  filter-ui: false
+---
+
+Les activités en laboratoire informatique. Chaque page donne les
+objectifs, les étapes, les fichiers de départ et les livrables.
+
+::: {.a-completer}
+Pour ajouter un laboratoire : copier `latex.qmd`, changer son titre, sa
+description et son numéro ; il apparaît automatiquement dans cette liste.
+:::

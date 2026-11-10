@@ -1,0 +1,27 @@
+---
+title: "Calendrier"
+---
+
+::: {.a-completer}
+Coquille à remplir pour la session : dates, contenu de chaque séance et
+échéances. Les liens renvoient aux chapitres du livre et aux
+présentations.
+:::
+
+| Semaine | Date | Cours | Laboratoire | À remettre |
+|:-:|:-:|:--|:--|:--|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
+| 5 | | | | |
+| 6 | | | | |
+| 7 | | | | |
+| 8 | | | | |
+| 9 | | | | |
+| 10 | | | | |
+| 11 | | | | |
+| 12 | | | | |
+| 13 | | | | |
+| 14 | | | | |
+| 15 | | | | |

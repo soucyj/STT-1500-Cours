@@ -1,0 +1,77 @@
+---
+title: "Écrire des mathématiques avec LaTeX"
+description: "Overleaf, l'IA et ce qu'il faut comprendre : une fiche d'activité et un examen."
+numero: 1
+---
+
+## Objectifs
+
+- Comprendre la structure d'un document LaTeX : classe, préambule, corps.
+- Compiler sur Overleaf, lire un message d'erreur et le corriger.
+- Écrire des mathématiques : formules, démarches alignées, nombres à la
+  française.
+- Utiliser l'IA pour produire le code de départ, puis le vérifier et le
+  modifier à la main.
+- Produire deux documents utiles en enseignement : la présentation d'une
+  activité et un examen avec la classe `exam`.
+
+[Diapositives du laboratoire (PDF)]({{< var pdf.base >}}laboratoire-latex.pdf){.bouton}
+
+## Avant le laboratoire
+
+Créez un compte gratuit sur [Overleaf](https://www.overleaf.com).
+
+## Les étapes
+
+1. Pourquoi LaTeX ?
+2. Overleaf : un premier projet.
+3. L'anatomie d'un document.
+4. Compiler et corriger les erreurs.
+5. Le mode mathématique.
+6. Travailler avec l'IA.
+7. Livrable 1 : une activité d'enseignement.
+8. Livrable 2 : un examen avec la classe `exam`.
+9. Remise.
+
+## Fichiers de départ
+
+Chaque fichier compile tel quel avec pdfLaTeX, le compilateur par défaut
+d'Overleaf. Le bouton « Ouvrir dans Overleaf » crée un nouveau projet à
+partir du fichier.
+
+| Fichier | Contenu | |
+|:--|:--|:--|
+| `01-minimal.tex` | un premier document, commenté ligne par ligne | [Télécharger]({{< var pdf.base >}}labo-latex/01-minimal.tex){.bouton} [Ouvrir dans Overleaf]({{< var overleaf.ouvrir >}}{{< var pdf.base >}}labo-latex/01-minimal.tex){.bouton} |
+| `02-activite.tex` | une fiche d'activité de 2 pages, avec figure et corrigé | [Télécharger]({{< var pdf.base >}}labo-latex/02-activite.tex){.bouton} [Ouvrir dans Overleaf]({{< var overleaf.ouvrir >}}{{< var pdf.base >}}labo-latex/02-activite.tex){.bouton} |
+| `03-examen.tex` | un examen avec la classe `exam`, en français | [Télécharger]({{< var pdf.base >}}labo-latex/03-examen.tex){.bouton} [Ouvrir dans Overleaf]({{< var overleaf.ouvrir >}}{{< var pdf.base >}}labo-latex/03-examen.tex){.bouton} |
+
+## Livrables
+
+### 1. La présentation d'une activité (2 à 3 pages)
+
+Classe `article` :
+titre ; niveau visé, durée, intention, préalables, matériel ; mise en
+situation ; déroulement ; tâche de l'élève ou de l'étudiant ; corrigé et
+pistes d'intervention ; au moins une figure ou un tableau ; un en-tête
+de page.
+
+### 2. Un examen sur le même thème
+
+Classe `exam` réglée en français :
+au moins quatre questions, dont un choix multiple et une question à
+sous-questions ; des points pour chacune ; grille de correction et
+total automatiques ; une solution pour chaque question.
+
+::: {.a-completer}
+À compléter : mode et date de remise (monPortail ?), et les fichiers
+attendus. Les diapositives proposent : `activite.pdf`, `examen.pdf`,
+`examen-corrige.pdf` et les fichiers `.tex`.
+:::
+
+## Liste de vérification
+
+- Les deux documents compilent sans erreur.
+- Tout est en français, y compris les en-têtes et la grille de points ;
+  les nombres décimaux ont une virgule.
+- Les mathématiques ont été vérifiées par vous, pas seulement par l'IA.
+- Vous pouvez expliquer à quoi sert chaque ligne du préambule.
