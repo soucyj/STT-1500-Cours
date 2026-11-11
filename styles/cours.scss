@@ -52,11 +52,18 @@ body {
 }
 
 h2 {
-  border-bottom: 1px solid rgba($sectioncolor, 0.25);
-  padding-bottom: 0.2em;
+  border-bottom: 1px solid rgba($olive, 0.45);
+  padding-bottom: 0.25em;
+  margin-top: 2.2rem;
 }
 
-// Filet doré sous le titre de page, comme sur les diapositives
+// Titres : pas de césure (« technolo-gie »), lignes équilibrées
+h1, h2, h3, .quarto-title .subtitle {
+  hyphens: manual;
+  text-wrap: balance;
+}
+
+// Filet olive sous le titre de page, couleur du menu
 .quarto-title h1.title::after {
   content: "";
   display: block;
@@ -66,43 +73,81 @@ h2 {
   border-radius: 2px;
   background: $olive;
 }
+.quarto-title .subtitle {
+  color: rgba($sectioncolor, 0.8);
+  margin-top: 0.6rem;
+}
 
-// ── Cartes (présentations, laboratoires, accès rapides) ──────────────────
+// ── Cartes (accès rapides de l'accueil) ──────────────────────────────────
 .cartes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
-  margin: 1rem 0 1.5rem;
+  gap: 1.1rem;
+  margin: 1.2rem 0 1.5rem;
 }
 .carte {
-  background: #fff;
-  border: 1px solid rgba($sectioncolor, 0.18);
-  border-top: 4px solid $sectioncolor;
-  border-radius: 4px;
-  padding: 0.9rem 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba($olive, 0.35);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem 1rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   line-height: 1.45;
+  hyphens: manual;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  &:hover {
+    border-color: rgba($olive, 0.8);
+    box-shadow: 0 4px 14px rgba($sectioncolor, 0.07);
+  }
 
-  p { margin-bottom: 0.45rem; }
+  p { margin-bottom: 0.6rem; }
+  // Titre de la carte, avec le petit filet olive du titre de page
   p:first-child {
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
     color: $sectioncolor;
+    &::after {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 3px;
+      margin-top: 0.35rem;
+      border-radius: 2px;
+      background: $olive;
+    }
+  }
+  // Rangée de boutons, collée au bas de la carte
+  p:last-child:not(:first-child) {
+    margin: auto 0 0;
+    padding-top: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
-.carte.labo { border-top-color: $coveraccent; }
+// Premier bouton d'une carte : plein, comme sur la page Présentations
+.carte a.bouton:first-child {
+  background: $sectioncolor;
+  color: #fff;
+  &:hover { background: darken($sectioncolor, 8%); }
+}
 
-// Liens en forme de bouton discret : [PDF](...){.bouton}
+// Liens en forme de bouton : [PDF](...){.bouton}
 a.bouton {
   display: inline-block;
   margin: 0.15rem 0.3rem 0.15rem 0;
-  padding: 0.1rem 0.55rem;
+  padding: 0.3rem 0.85rem;
   border: 1px solid $sectioncolor;
-  border-radius: 3px;
-  font-size: 0.8rem;
+  border-radius: 5px;
+  font-family: $font-family-sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
   text-decoration: none;
+  transition: background 0.15s, color 0.15s;
   &:hover { background: $sectioncolor; color: #fff; }
+  .carte & { margin: 0; }
 }
 
 // ── Liste numérotée des chapitres (page Présentations) ────────────────────
@@ -213,9 +258,10 @@ a.lien {
 
 // Encadré « à compléter » : les parties de la coquille à remplir
 .a-completer {
-  background: $secboxbg;
-  border-left: 4px solid $coveraccent;
-  padding: 0.6rem 1rem;
+  background: rgba($lime, 0.45);
+  border-left: 4px solid $olive;
+  border-radius: 0 6px 6px 0;
+  padding: 0.7rem 1.1rem;
   margin: 1rem 0;
   font-family: $font-family-sans-serif;
   font-size: 0.85rem;
