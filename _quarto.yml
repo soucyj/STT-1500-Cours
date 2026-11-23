@@ -44,6 +44,10 @@ website:
     center: |
       © 2026 Jérôme Soucy — Université Laval, Département de mathématiques et de statistique
 
+# Solutions publiées à une date précise : voir filtres/solutions.lua
+filters:
+  - filtres/solutions.lua
+
 format:
   html:
     theme: [cosmo, styles/cours.scss]

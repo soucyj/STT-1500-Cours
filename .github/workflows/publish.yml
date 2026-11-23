@@ -3,6 +3,10 @@ name: Publier le site du cours
 on:
   push:
     branches: [main]
+  # Régénération chaque heure (à hh:07) : publie les pages et les
+  # solutions dont le moment est arrivé (filtres/solutions.lua).
+  schedule:
+    - cron: "7 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,6 +30,8 @@ jobs:
 
       - name: Générer le site
         run: quarto render
+        env:
+          TZ: America/Toronto   # « aujourd'hui » à l'heure de Québec
 
       - name: Préparer l'artefact Pages
         uses: actions/upload-pages-artifact@v3
