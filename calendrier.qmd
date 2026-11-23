@@ -146,10 +146,10 @@ description.
 <div class="cal-jour " title="mardi 23 mars"><span class="cal-num">23</span></div>
 <div class="cal-jour cours" title="mercredi 24 mars : Cours"><span class="cal-num">24</span></div>
 <div class="cal-jour " title="jeudi 25 mars"><span class="cal-num">25</span></div>
-<div class="cal-jour conge" title="vendredi 26 mars : Vendredi saint"><span class="cal-num">26</span></div>
-<div class="cal-jour  fin-semaine" title="samedi 27 mars"><span class="cal-num">27</span></div>
-<div class="cal-jour  fin-semaine" title="dimanche 28 mars"><span class="cal-num">28</span></div>
-<div class="cal-jour conge" title="lundi 29 mars : Lundi de Pâques"><span class="cal-num">29</span></div>
+<div class="cal-jour conge" title="vendredi 26 mars : Vendredi saint (congé de Pâques)"><span class="cal-num">26</span></div>
+<div class="cal-jour conge fin-semaine" title="samedi 27 mars : Congé de Pâques"><span class="cal-num">27</span></div>
+<div class="cal-jour conge fin-semaine" title="dimanche 28 mars : Pâques (congé)"><span class="cal-num">28</span></div>
+<div class="cal-jour conge" title="lundi 29 mars : Lundi de Pâques (congé de Pâques)"><span class="cal-num">29</span></div>
 <div class="cal-jour " title="mardi 30 mars"><span class="cal-num">30</span></div>
 <div class="cal-jour labo" title="mercredi 31 mars : Laboratoire 5"><span class="cal-num">31</span><span class="cal-etiquette">Labo&nbsp;5</span></div>
 <div class="cal-jour hors"></div>

@@ -1,0 +1,235 @@
+---
+title: "Laboratoire 1 — Compter pour calculer des probabilités"
+description: "Modules 01 et 02 : espace fondamental, complément, union, dénombrement."
+numero: 1
+---
+
+## Déroulement
+
+- **Durée :** 1 h 30.
+- **En équipe de deux.** Discutez de chaque problème avant d'écrire quoi
+  que ce soit : quel est l'espace fondamental $\Omega$ ? Les résultats
+  sont-ils équiprobables ? Faut-il tenir compte de l'ordre ?
+- **Sans pression.** Le laboratoire n'est pas évalué. L'important est
+  d'expliquer votre raisonnement à votre coéquipière ou coéquipier, et
+  de comprendre le sien.
+- Les problèmes vont du plus simple au plus difficile. Les durées sont
+  indicatives : si vous bloquez, passez au suivant et revenez-y.
+- Les solutions sont publiées à la fin de la matinée du laboratoire.
+
+## Problème 1 — Plaques d'immatriculation (10 min)
+
+Une plaque d'immatriculation est formée de trois lettres (parmi les 26
+lettres de l'alphabet) suivies de trois chiffres (de 0 à 9). On suppose
+que toutes les plaques possibles sont équiprobables.
+
+a) Combien y a-t-il de plaques possibles ?
+b) Quelle est la probabilité que les trois lettres soient différentes ?
+c) Quelle est la probabilité que les trois chiffres soient en ordre
+   strictement croissant (par exemple 147) ?
+d) Quelle est la probabilité que la plaque contienne au moins une
+   voyelle (A, E, I, O, U ou Y) ?
+
+*À discuter : pour d), est-il plus simple de compter les plaques avec au
+moins une voyelle, ou celles qui n'en ont aucune ?*
+
+::: {.corrige}
+a) $26^3\cdot10^3=17\,576\,000$ plaques.
+b) Les chiffres sont libres. Pour les lettres : $26\cdot25\cdot24$ choix
+   sur $26^3$, d'où
+   $$\frac{26\cdot25\cdot24}{26^3}=\frac{600}{676}=\frac{150}{169}\approx0{,}888.$$
+c) Une suite strictement croissante de trois chiffres est déterminée par
+   l'ensemble de ses trois chiffres : il y en a $\binom{10}{3}=120$ sur
+   $1\,000$. La probabilité est $0{,}12$.
+d) Par le complément : les lettres sans voyelle sont au nombre de
+   $26-6=20$, donc
+   $$1-\frac{20^3}{26^3}=1-\frac{8\,000}{17\,576}=\frac{1\,197}{2\,197}\approx0{,}545.$$
+:::
+
+## Problème 2 — Deux façons de compter (10 min)
+
+Un tiroir contient 4 chaussettes rouges et 6 chaussettes bleues. On en
+prend deux au hasard.
+
+Pour les questions a) et b), répartissez-vous le travail : une personne
+fait a), l'autre fait b), puis comparez.
+
+a) En tenant compte de l'ordre (première chaussette, deuxième
+   chaussette), calculez la probabilité que les deux chaussettes soient
+   de la même couleur.
+b) Sans tenir compte de l'ordre (on prend les deux chaussettes en même
+   temps), calculez la même probabilité.
+c) Pourquoi obtient-on la même réponse ?
+d) Quelle est la probabilité que les deux chaussettes soient de couleurs
+   différentes ?
+e) Combien de chaussettes faut-il prendre, au minimum, pour être
+   *certain* d'avoir deux chaussettes de la même couleur ?
+
+::: {.corrige}
+a) $|\Omega|=10\cdot9=90$ couples ordonnés. Deux rouges : $4\cdot3=12$ ;
+   deux bleues : $6\cdot5=30$. La probabilité est $42/90=7/15$.
+b) $|\Omega|=\binom{10}{2}=45$ paires. Deux rouges : $\binom42=6$ ; deux
+   bleues : $\binom62=15$. La probabilité est $21/45=7/15$.
+c) Chaque paire non ordonnée correspond à exactement deux couples
+   ordonnés. Le numérateur et le dénominateur sont tous deux multipliés
+   par 2 : le quotient ne change pas. Ce qui compte, c'est d'utiliser le
+   même point de vue au numérateur et au dénominateur.
+d) Par le complément : $1-7/15=8/15$.
+e) Trois. Avec deux chaussettes, on peut tomber sur une rouge et une
+   bleue ; avec trois, deux d'entre elles sont forcément de la même
+   couleur, puisqu'il n'y a que deux couleurs.
+:::
+
+## Problème 3 — Les anagrammes de LAVAL (15 min)
+
+On écrit au hasard un des arrangements des cinq lettres du mot LAVAL
+(tous les arrangements distincts sont équiprobables).
+
+a) Combien y a-t-il d'arrangements distincts ?
+b) Quelle est la probabilité que le mot commence et finisse par un L ?
+c) Quelle est la probabilité que les deux A soient côte à côte ?
+d) Quelle est la probabilité que deux lettres identiques ne soient
+   jamais côte à côte ?
+
+*Indice pour d) : comptez d'abord les arrangements où les deux L sont
+côte à côte, puis ceux où les deux A le sont, et utilisez la formule de
+la probabilité d'une union.*
+
+::: {.corrige}
+a) Cinq lettres, dont deux L et deux A :
+   $\dfrac{5!}{2!\,2!}=30$ arrangements.
+b) Le milieu est un arrangement de A, V, A : il y en a 3. La
+   probabilité est $3/30=1/10$.
+c) On colle les deux A en un bloc « AA » : il reste à arranger AA, L, L
+   et V, soit $\dfrac{4!}{2!}=12$ arrangements. La probabilité est
+   $12/30=2/5$.
+d) Soit $E_L$ l'événement « les deux L sont côte à côte » et $E_A$
+   l'événement « les deux A sont côte à côte ». Comme en c),
+   $|E_L|=|E_A|=12$. Pour $E_L\cap E_A$, on arrange les blocs LL, AA et
+   la lettre V : $3!=6$. Donc
+   $$|E_L\cup E_A|=12+12-6=18,$$
+   et la probabilité cherchée est $1-18/30=2/5$. On peut vérifier en
+   énumérant les 12 arrangements, par exemple ALAVL, LALAV, LAVAL…
+:::
+
+## Problème 4 — Le mois de naissance (15 min)
+
+On réunit $n$ personnes. On suppose que chaque personne est née dans
+l'un des 12 mois, et que les $12^n$ suites possibles de mois de
+naissance sont équiprobables.
+
+a) **Avant tout calcul**, chacun écrit son estimation : avec 5
+   personnes, quelle est la probabilité qu'au moins deux soient nées le
+   même mois ? Comparez vos estimations.
+b) Avec $n=2$, quelle est la probabilité que les deux personnes soient
+   nées le même mois ?
+c) Avec $n=5$, calculez la probabilité qu'au moins deux personnes soient
+   nées le même mois.
+d) Quel est le plus petit $n$ pour lequel cette probabilité dépasse
+   $1/2$ ?
+e) Que vaut cette probabilité pour $n=13$ ?
+
+*Pour le plaisir : avec l'équipe voisine, vérifiez si deux d'entre vous
+quatre sont nés le même mois.*
+
+::: {.corrige}
+a) Les estimations varient beaucoup ; la plupart sont trop basses.
+b) Le deuxième mois doit être égal au premier : $12/12^2=1/12$.
+c) Par le complément, les 5 mois doivent être tous différents :
+   $$1-\frac{12\cdot11\cdot10\cdot9\cdot8}{12^5}=1-\frac{95\,040}{248\,832}\approx1-0{,}382=0{,}618.$$
+d) Pour $n=4$ : $1-\dfrac{12\cdot11\cdot10\cdot9}{12^4}=1-\dfrac{11\,880}{20\,736}\approx0{,}427<\dfrac12$.
+   Pour $n=5$, on a obtenu $0{,}618$. Le plus petit $n$ est donc 5.
+e) Avec 13 personnes et 12 mois, deux personnes au moins partagent
+   forcément un mois : la probabilité vaut 1.
+:::
+
+## Problème 5 — Divisible par 2, 3 ou 5 (15 min)
+
+On choisit au hasard un entier $N$ parmi $1,2,\dots,1\,000$. On note
+$D_k$ l'événement « $N$ est divisible par $k$ ».
+
+a) Calculez $\mathbb{P}(D_2)$.
+b) Calculez $\mathbb{P}(D_3)$.
+c) Calculez $\mathbb{P}(D_2\cap D_3)$.
+d) Calculez $\mathbb{P}(D_2\cup D_3)$.
+e) À partir d'un diagramme de Venn, justifiez la formule
+   $$\mathbb{P}(A\cup B\cup C)=\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)-\mathbb{P}(A\cap B)-\mathbb{P}(A\cap C)-\mathbb{P}(B\cap C)+\mathbb{P}(A\cap B\cap C).$$
+f) Calculez $\mathbb{P}(D_2\cup D_3\cup D_5)$.
+g) Que donne l'inégalité de Boole pour $\mathbb{P}(D_2\cup D_3\cup D_5)$ ?
+
+*À discuter : un entier est divisible par 2 et par 3 si et seulement
+s'il est divisible par quel nombre ?*
+
+::: {.corrige}
+Il y a $\lfloor1\,000/k\rfloor$ multiples de $k$ entre 1 et $1\,000$.
+Un entier est divisible par 2 et par 3 si et seulement s'il est
+divisible par 6 (plus généralement, par le produit de nombres premiers
+distincts).
+
+a) $500/1\,000=0{,}5$.
+b) $333/1\,000=0{,}333$.
+c) $D_2\cap D_3=D_6$ : $166/1\,000=0{,}166$.
+d) $0{,}5+0{,}333-0{,}166=0{,}667$.
+e) Dans la somme $\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)$, une région
+   contenue dans exactement deux des événements est comptée deux fois,
+   et la région centrale $A\cap B\cap C$ trois fois. En soustrayant les
+   trois intersections deux à deux, chaque région « double » n'est plus
+   comptée qu'une fois, mais la région centrale ne l'est plus du tout
+   ($3-3=0$) : on la rajoute une fois.
+f) Avec $D_6$, $D_{10}$, $D_{15}$ et $D_{30}$ :
+   $$\frac{500+333+200-166-100-66+33}{1\,000}=\frac{734}{1\,000}=0{,}734.$$
+g) $\mathbb{P}(D_2\cup D_3\cup D_5)\le0{,}5+0{,}333+0{,}2=1{,}033$.
+   L'inégalité est vraie, mais inutile ici : toute probabilité est déjà
+   au plus 1. La borne de Boole est utile surtout quand les
+   probabilités sont petites.
+:::
+
+## Problème 6 — Monter l'escalier (25 min, plus difficile)
+
+Pour monter un escalier de $n$ marches, on fait des pas d'une marche ou
+des pas de deux marches. Par exemple, pour $n=3$, il y a trois façons :
+1+1+1, 1+2 et 2+1.
+
+a) Énumérez toutes les façons de monter un escalier de 4 marches.
+b) Pour un escalier de 10 marches, combien y a-t-il de façons de monter
+   en faisant exactement 3 pas de deux marches ?
+c) Pour un escalier de 10 marches, combien y a-t-il de façons de monter
+   en faisant exactement $k$ pas de deux marches, pour
+   $k=0,1,\dots,5$ ?
+d) Combien y a-t-il de façons, en tout, de monter un escalier de 10
+   marches ?
+e) On choisit au hasard une de ces façons. Quelle est la probabilité
+   qu'elle comporte exactement 3 pas de deux marches ?
+f) Notons $u_n$ le nombre de façons de monter $n$ marches. En regardant
+   le premier pas, montrez que $u_n=u_{n-1}+u_{n-2}$ pour $n\ge3$.
+g) Vérifiez la réponse de d) à l'aide de la relation de f).
+
+*Pour les équipes qui ont terminé : combien y a-t-il de façons de monter
+10 marches si on permet aussi des pas de trois marches ?*
+
+::: {.corrige}
+a) Cinq façons : 1+1+1+1, 2+1+1, 1+2+1, 1+1+2 et 2+2.
+b) Avec 3 pas de deux marches, il reste $10-6=4$ pas d'une marche : on
+   fait 7 pas en tout, et on choisit lesquels sont doubles :
+   $\binom73=35$ façons.
+c) Avec $k$ pas doubles, on fait $10-k$ pas en tout, dont $k$ doubles :
+   $\binom{10-k}{k}$ façons.
+
+   | $k$ | 0 | 1 | 2 | 3 | 4 | 5 |
+   |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+   | $\binom{10-k}{k}$ | 1 | 9 | 28 | 35 | 15 | 1 |
+
+d) $1+9+28+35+15+1=89$ façons.
+e) $35/89\approx0{,}393$.
+f) Une façon de monter $n$ marches commence soit par un pas d'une
+   marche, suivi d'une façon de monter les $n-1$ marches restantes, soit
+   par un pas de deux marches, suivi d'une façon de monter les $n-2$
+   marches restantes. Ces deux cas ne se chevauchent pas, donc
+   $u_n=u_{n-1}+u_{n-2}$.
+g) Avec $u_1=1$ et $u_2=2$ : $3,5,8,13,21,34,55,89$. On retrouve
+   $u_{10}=89$ (ce sont les nombres de Fibonacci).
+
+*Pas de une, deux ou trois marches :* $t_n=t_{n-1}+t_{n-2}+t_{n-3}$, avec
+$t_1=1$, $t_2=2$, $t_3=4$. On obtient $7,13,24,44,81,149$ et
+$t_{10}=274$.
+:::

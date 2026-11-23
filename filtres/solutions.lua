@@ -21,9 +21,16 @@
 --     Attributs facultatifs : titre="…" (défaut « Solution »),
 --     ouvert="true" (encadré déplié d'emblée).
 --
+--  3. Le calendrier de publication _publication.yml (racine du dépôt, non
+--     publié sur le site) fixe ces moments sans toucher aux pages :
+--     diapositives, exercices et solutions de chaque module ; énoncé et
+--     solution de chaque laboratoire. Une date donnée dans l'en-tête d'une
+--     page l'emporte sur _publication.yml.
+--
 --  Dates : "AAAA-MM-JJ" (minuit) ou "AAAA-MM-JJ HH:MM", heure de Québec.
---  Le site est régénéré chaque heure par GitHub Actions
---  (.github/workflows/publish.yml) : prévoir jusqu'à une heure de délai.
+--  Le site est régénéré deux fois par heure par GitHub Actions
+--  (.github/workflows/publish.yml) : prévoir jusqu'à une demi-heure de
+--  délai, parfois un peu plus.
 --
 --  Pour tester localement :
 --    SOLUTIONS=toutes quarto preview            tout afficher (aperçu)
@@ -66,6 +73,62 @@ local function echapper(s)
   return (s:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;"))
 end
 
+-- ── Calendrier de publication (_publication.yml) ─────────────────────────
+local function charger_publication()
+  local dossier = quarto.project.directory
+  if not dossier then return nil end
+  local f = io.open(dossier .. "/_publication.yml", "r")
+  if not f then return nil end
+  local texte = f:read("a")
+  f:close()
+  return pandoc.read("---\n" .. texte .. "\n---\n", "markdown").meta
+end
+
+-- Les numéros s'écrivent "01" ou "1" : on essaie les deux formes
+local function champ(t, ...)
+  for _, cle in ipairs({ ... }) do
+    if type(t) ~= "table" then return nil end
+    local nombre = tonumber(cle)
+    t = t[cle] or (nombre and (t[tostring(nombre)] or t[string.format("%02d", nombre)]))
+  end
+  if t == nil then return nil end
+  return pandoc.utils.stringify(t)
+end
+
+-- "veille 08:00" / "jour 10:30" (relatifs à la date du labo) ou date fixe
+local function resoudre(regle, date_labo)
+  if not regle then return nil end
+  local quand, heure = regle:match("^%s*(%a+)%s+(%d%d?:%d%d)%s*$")
+  if quand == "veille" or quand == "jour" then
+    local a, m, j = date_labo:match("^%s*(%d%d%d%d)-(%d%d)-(%d%d)")
+    if not a then error("Date de laboratoire invalide : " .. date_labo) end
+    local decalage = (quand == "veille") and -1 or 0
+    local t = os.time({ year = tonumber(a), month = tonumber(m),
+      day = tonumber(j) + decalage, hour = 12 })
+    return os.date("%Y-%m-%d", t) .. " " .. heure
+  end
+  return regle
+end
+
+local function numero_page(meta)
+  if not meta.numero then return nil end
+  local n = tonumber(pandoc.utils.stringify(meta.numero))
+  return n and string.format("%02d", n) or nil
+end
+
+local function section_page()
+  local fichier = (quarto.doc.input_file or ""):gsub("\\", "/")
+  return fichier:match("/(exercices)/[^/]+$")
+      or fichier:match("/(presentations)/[^/]+$")
+      or fichier:match("/(laboratoires)/[^/]+$")
+end
+
+local function lien_pdf_retenu(date_texte)
+  local _, fr = lire_date(date_texte, "_publication.yml")
+  return pandoc.Span({ pandoc.Strong("Diapositives (PDF)"),
+    pandoc.Str(" : disponibles le " .. fr .. ".") }, { class = "corrige-a-venir" })
+end
+
 local function corrige(el, date_page)
   local texte = el.attributes["date"] or date_page
   local titre = el.attributes["titre"] or "Solution"
@@ -104,6 +167,41 @@ local function corrige(el, date_page)
 end
 
 function Pandoc(doc)
+  -- Dates tirées de _publication.yml, sauf si l'en-tête les donne déjà
+  local pub = charger_publication()
+  local section, n = section_page(), numero_page(doc.meta)
+  if pub and section and n then
+    local enonce, solution
+    if section == "exercices" then
+      enonce = champ(pub, "modules", n, "exercices")
+      solution = champ(pub, "modules", n, "solutions")
+    elseif section == "laboratoires" then
+      local date_labo = champ(pub, "laboratoires", n, "date")
+      if date_labo then
+        enonce = resoudre(champ(pub, "laboratoires", n, "enonce")
+          or champ(pub, "defauts", "laboratoires", "enonce"), date_labo)
+        solution = resoudre(champ(pub, "laboratoires", n, "solution")
+          or champ(pub, "defauts", "laboratoires", "solution"), date_labo)
+      end
+    elseif section == "presentations" then
+      local diapos = champ(pub, "modules", n, "diapositives")
+      if diapos and lire_date(diapos, "_publication.yml") > maintenant
+          and not tout_montrer then
+        doc.blocks = doc.blocks:walk({
+          Link = function(el)
+            if el.target:match("%.pdf$") then return lien_pdf_retenu(diapos) end
+          end,
+        })
+      end
+    end
+    if enonce and not doc.meta.disponible then
+      doc.meta.disponible = pandoc.MetaString(enonce)
+    end
+    if solution and not doc.meta.corrige then
+      doc.meta.corrige = pandoc.MetaString(solution)
+    end
+  end
+
   -- Page entière pas encore disponible : on ne garde qu'un avis
   if doc.meta.disponible then
     local cle, fr = lire_date(pandoc.utils.stringify(doc.meta.disponible),

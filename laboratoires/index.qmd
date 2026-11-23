@@ -14,29 +14,6 @@ listing:
   filter-ui: false
 ---
 
-Les activités en laboratoire informatique. Chaque page donne les
-objectifs, les étapes, les fichiers de départ et les livrables.
-
-::: {.a-completer}
-Pour ajouter un laboratoire : copier `latex.qmd`, changer son titre, sa
-description et son numéro ; il apparaît automatiquement dans cette liste.
-
-Publication à heure fixe (le site est régénéré chaque heure) : dans
-l'en-tête du laboratoire,
-
-```yaml
-disponible: "2026-12-05 08:00"   # les questions, le matin
-corrige: "2026-12-05 18:00"      # les solutions, le soir
-```
-
-puis chaque solution dans un bloc :
-
-```markdown
-::: {.corrige titre="Solution du livrable 1"}
-…
-:::
-```
-
-Pour tester : `SOLUTIONS=toutes quarto preview` affiche tout ;
-`MAINTENANT="2026-12-05 19:00" quarto preview` simule un moment.
-:::
+Les laboratoires se font en classe, en équipe de deux. L'énoncé de
+chaque laboratoire est publié la veille, et ses solutions le jour même,
+à la fin de la matinée.

@@ -1,0 +1,64 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  Calendrier de publication — réservé à l'enseignant
+#
+#  Ce fichier commence par un tiret bas : Quarto ne le publie pas sur le
+#  site. Attention : le dépôt GitHub étant public, il reste lisible sur
+#  GitHub, comme les sources des pages.
+#
+#  Il fixe le moment où chaque document devient visible sur le site. Le
+#  filtre filtres/solutions.lua le lit à chaque génération du site.
+#
+#  Formats : "AAAA-MM-JJ" (minuit) ou "AAAA-MM-JJ HH:MM", heure de Québec.
+#  Le site est régénéré deux fois par heure (hh:01 et hh:31) : prévoir
+#  jusqu'à une demi-heure de délai.
+#
+#  Avant la date :
+#    - diapositives : le bouton PDF est remplacé par « disponibles le … » ;
+#    - exercices, laboratoires : la page n'affiche que « Disponible le … » ;
+#    - solutions : chaque solution affiche « Solution : disponible le … ».
+#
+#  Pour tester : SOLUTIONS=toutes quarto preview      (tout afficher)
+#                MAINTENANT="2027-01-25 10:45" quarto preview   (simuler)
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── Règles par défaut des laboratoires ─────────────────────────────────
+#  « veille HH:MM » : la veille du labo ; « jour HH:MM » : le jour même.
+#  Une date fixe ("AAAA-MM-JJ HH:MM") est aussi acceptée.
+defauts:
+  laboratoires:
+    enonce: "veille 08:00"
+    solution: "jour 10:30"
+
+# ── Laboratoires ───────────────────────────────────────────────────────
+#  La clé est le numéro du labo (champ numero: de sa page). Seule la date
+#  du labo est requise ; ajouter enonce: ou solution: pour déroger aux
+#  règles par défaut, par exemple :
+#    "1": { date: "2027-01-25", solution: "2027-01-25 16:00" }
+laboratoires:
+  "1": { date: "2027-01-25" }
+  "2": { date: "2027-02-08" }
+  "3": { date: "2027-02-24" }
+  "4": { date: "2027-03-15" }
+  "5": { date: "2027-03-31" }
+  "6": { date: "2027-04-07" }
+  "7": { date: "2027-04-21" }
+
+# ── Modules ────────────────────────────────────────────────────────────
+#  diapositives : le PDF du Beamer (page « Présentation de la matière ») ;
+#  exercices    : la série d'exercices du module ;
+#  solutions    : les solutions de cette série.
+#  Une date passée signifie « déjà publié ». Pour retenir un document,
+#  mettre une date future.
+modules:
+  "01": { diapositives: "2026-11-23", exercices: "2026-11-23", solutions: "2026-11-23" }
+  "02": { diapositives: "2026-11-23", exercices: "2026-11-23", solutions: "2026-11-23" }
+  "03": { diapositives: "2026-11-23", exercices: "2026-11-23", solutions: "2026-11-23" }
+  "04": { diapositives: "2026-11-23", exercices: "2026-11-23", solutions: "2026-11-23" }
+  "05": { diapositives: "2026-11-23", exercices: "2026-11-23", solutions: "2026-11-23" }
+  "06": { diapositives: "2026-11-23" }
+  "07": { diapositives: "2026-11-23" }
+  "08": { diapositives: "2026-11-23" }
+  "09": { diapositives: "2026-11-23" }
+  "10": { diapositives: "2026-11-23" }
+  "11": { diapositives: "2026-11-23" }
+  "12": { diapositives: "2026-11-23" }

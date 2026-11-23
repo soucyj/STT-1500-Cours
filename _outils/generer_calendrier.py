@@ -29,8 +29,10 @@ EXAMENS = {dt.date(2027, 2, 10): "Examen 1",
 # Journées sans cours, grisées : semaine de lecture et congés de Pâques
 CONGES = {dt.date(2027, 3, 1) + dt.timedelta(days=k): "Semaine de lecture"
           for k in range(5)}
-CONGES |= {dt.date(2027, 3, 26): "Vendredi saint",
-           dt.date(2027, 3, 29): "Lundi de Pâques"}
+CONGES |= {dt.date(2027, 3, 26): "Vendredi saint (congé de Pâques)",
+           dt.date(2027, 3, 27): "Congé de Pâques",
+           dt.date(2027, 3, 28): "Pâques (congé)",
+           dt.date(2027, 3, 29): "Lundi de Pâques (congé de Pâques)"}
 
 # ── Mise en forme ───────────────────────────────────────────────────────
 NOMS_MOIS = ["janvier", "février", "mars", "avril", "mai", "juin",

@@ -30,6 +30,8 @@ exercices/                une série d'exercices par module, avec solutions
 laboratoires/index.qmd    liste automatique des laboratoires
 ressources.qmd            outils et liens
 filtres/solutions.lua     publication à date et heure fixes
+_publication.yml          calendrier de publication (non publié sur le site)
+_outils/                  script du calendrier (ignoré par Quarto)
 styles/                   couleurs et polices
 ```
 
@@ -51,16 +53,33 @@ Une page par module dans `exercices/` (en-tête : `title`, `description`,
 `numero`). Chaque solution est dans un bloc `::: {.corrige}` ; sans date,
 elle est publiée d'emblée, dans un encadré repliable.
 
-## Laboratoires et publication à heure fixe
+## Laboratoires
 
-Une page `.qmd` par laboratoire dans `laboratoires/` (en-tête : `title`,
-`description`, `numero`) : elle apparaît dans la liste. Pour publier à
-heure fixe, dans l'en-tête :
+Une page `NN-sujet.qmd` par laboratoire dans `laboratoires/` (en-tête :
+`title`, `description`, `numero`) : elle apparaît dans la liste. Chaque
+solution va dans un bloc `::: {.corrige}`.
 
-```yaml
-disponible: "2026-12-05 08:00"   # les questions
-corrige: "2026-12-05 18:00"      # les solutions
+## Calendrier de publication
+
+`_publication.yml` (racine, non publié sur le site) fixe le moment où
+chaque document devient visible : diapositives, exercices et solutions
+de chaque module ; énoncé et solutions de chaque laboratoire (par défaut,
+la veille à 8 h et le jour même à 10 h 30). Le filtre
+`filtres/solutions.lua` le lit, et GitHub Actions régénère le site deux
+fois par heure (hh:01 et hh:31).
+
+Attention : le dépôt étant public, ce fichier et les sources des
+solutions restent lisibles sur GitHub.
+
+Pour tester :
+
+```
+SOLUTIONS=toutes quarto preview                  # tout afficher
+MAINTENANT="2027-01-25 10:45" quarto preview     # simuler un moment
 ```
 
-Détails dans `filtres/solutions.lua`. Pour tester :
-`SOLUTIONS=toutes quarto preview` affiche tout.
+## Calendrier
+
+`calendrier.qmd` est généré par `_outils/generer_calendrier.py` :
+modifier les dates en tête du script, puis lancer
+`python3 _outils/generer_calendrier.py`.
