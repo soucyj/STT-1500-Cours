@@ -475,11 +475,10 @@ $cal-conge:  rgb(205, 205, 205);   // gris
   line-height: 1.1;
   overflow: hidden;
   &.hors { background: transparent; border-color: transparent; }
-  &.fin-semaine:not(.conge) { background: rgba(255, 255, 255, 0.3); }
   &.cours  { background: $cal-cours; }
   &.labo   { background: $cal-labo; }
   &.examen { background: $cal-examen; color: #fff; }
-  &.conge  { background: $cal-conge; color: rgba(0, 0, 0, 0.55); }
+  &.conge, &.fin-semaine { background: $cal-conge; color: rgba(0, 0, 0, 0.55); }
 }
 .cal-num { font-size: 0.78rem; font-weight: 600; }
 .cal-etiquette {

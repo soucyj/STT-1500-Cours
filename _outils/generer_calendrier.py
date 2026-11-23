@@ -112,7 +112,7 @@ description.
 <span><i class="cours"></i>Cours</span>
 <span><i class="labo"></i>Laboratoire</span>
 <span><i class="examen"></i>Examen</span>
-<span><i class="conge"></i>Semaine de lecture et congés de Pâques</span>
+<span><i class="conge"></i>Fins de semaine, semaine de lecture et congés de Pâques</span>
 </div>
 <div class="calendrier">
 {grilles}
