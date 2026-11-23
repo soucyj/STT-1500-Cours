@@ -1,0 +1,22 @@
+---
+title: "Exercices"
+toc: false
+listing:
+  contents: "0*.qmd"
+  type: table
+  sort: "numero"
+  fields: [numero, title, description]
+  field-display-names:
+    numero: "Module"
+    title: "Série d'exercices"
+    description: "En bref"
+  sort-ui: false
+  filter-ui: false
+---
+
+Une série d'exercices par module, dans l'ordre des présentations. Chaque
+exercice est suivi de sa solution, dans un encadré à déplier : cherchez
+d'abord, puis vérifiez.
+
+Les exercices marqués **(défi)** demandent un peu plus de recul ; ils ne
+sont pas nécessaires pour suivre la suite du cours.

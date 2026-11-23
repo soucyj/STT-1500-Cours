@@ -1,0 +1,491 @@
+---
+title: "Module 02 — Dénombrement"
+description: "Principe de multiplication, permutations, dérangements, combinaisons, binôme et multinôme, Stirling."
+numero: 2
+---
+
+Dans les problèmes de cette série, les résultats sont équiprobables :
+calculer une probabilité revient à compter, avec
+$\mathbb{P}(A)=|A|/|\Omega|$. Le plus important est de bien choisir
+$\Omega$ (ordonné ou non) et de garder le même choix au numérateur et
+au dénominateur.
+
+**Lien utile :** le [problème des
+rencontres](https://fr.wikipedia.org/wiki/Problème_des_rencontres), qui
+est le même que celui des téléphones vu en classe.
+
+## Principe de multiplication et permutations
+
+### Exercice 1
+
+Trois filles et trois garçons font la file devant un comptoir de crème
+glacée. On ne s'intéresse qu'à l'ordre des sexes : les enfants d'un même
+sexe ne sont pas distingués (par exemple, FGFGGF est un arrangement).
+
+a) Combien y a-t-il d'arrangements en tout ?
+b) Combien d'arrangements ont les trois filles ensemble et les trois
+   garçons ensemble ?
+c) Combien d'arrangements ont les trois filles ensemble ?
+d) Combien d'arrangements ont les trois filles ensemble, sans que les
+   garçons soient tous ensemble ?
+e) Combien d'arrangements n'ont jamais deux enfants du même sexe l'un
+   derrière l'autre ?
+
+::: {.corrige}
+a) Un arrangement est déterminé par les positions des 3 filles parmi les
+   6 : $\binom63=20$.
+b) FFFGGG ou GGGFFF : 2.
+c) Le bloc FFF commence en position 1, 2, 3 ou 4 : 4 arrangements.
+d) On retire de c) les 2 arrangements de b) : $4-2=2$ (GFFFGG et GGFFFG).
+e) FGFGFG ou GFGFGF : 2.
+:::
+
+### Exercice 2
+
+Combien de mots différents (ayant un sens ou non) peut-on former en
+permutant les lettres de
+
+a) HASARD ?
+b) STATISTIQUE ?
+
+::: {.corrige}
+On divise $n!$ par les permutations de chaque lettre répétée, qui ne
+changent pas le mot.
+
+a) 6 lettres, dont deux A : $\dfrac{6!}{2!}=360$.
+b) 11 lettres : S deux fois, T trois fois, I deux fois, A, Q, U, E une
+   fois : $\dfrac{11!}{2!\,3!\,2!}=1\,663\,200$.
+:::
+
+### Exercice 3
+
+Combien de nombres entre 1000 et 9999 n'ont jamais deux chiffres
+identiques côte à côte ? (Par exemple, 1213 convient, mais pas 1223.)
+
+::: {.corrige}
+Premier chiffre : 9 choix (de 1 à 9). Chacun des trois chiffres suivants
+doit seulement différer du précédent : 9 choix chaque fois (le 0 est
+permis). Total : $9^4=6561$.
+:::
+
+### Exercice 4
+
+Combien le nombre $7200$ a-t-il de diviseurs positifs ?
+
+*Indice : décomposez-le en facteurs premiers.*
+
+::: {.corrige}
+$7200=2^5\cdot 3^2\cdot 5^2$. Un diviseur est de la forme
+$2^a3^b5^c$ avec $0\le a\le 5$, $0\le b\le 2$, $0\le c\le 2$ : il y a
+$6\cdot 3\cdot 3=54$ diviseurs.
+:::
+
+### Exercice 5
+
+Le cadenas d'un casier a une combinaison de trois nombres choisis parmi
+0, 1, …, 39. Le premier et le troisième nombre peuvent être égaux, mais
+le deuxième doit être différent des deux autres. En classe, on a compté
+$40\cdot 39\cdot 39=60\,840$ combinaisons.
+
+Un étudiant propose plutôt : « 40 choix pour le premier, 40 pour le
+troisième, puis 38 pour le deuxième, puisqu'il doit différer des deux
+autres, donc $40\cdot 40\cdot 38=60\,800$. » Où est l'erreur ? Corrigez
+son raisonnement en gardant son ordre de choix.
+
+::: {.corrige}
+Le nombre de choix pour le deuxième nombre dépend des choix précédents :
+si le premier et le troisième sont égaux, le deuxième n'a qu'une valeur
+interdite et il reste 39 choix, pas 38. Le principe de multiplication
+exige que le nombre de choix à chaque étape ne dépende pas des choix
+précédents.
+
+On sépare donc les deux cas :
+
+- premier $=$ troisième : $40\cdot 1\cdot 39$ combinaisons ;
+- premier $\neq$ troisième : $40\cdot 39\cdot 38$ combinaisons.
+
+Total : $40\cdot 39\cdot(1+38)=40\cdot 39\cdot 39=60\,840$.
+:::
+
+### Exercice 6
+
+Nous sommes en 1667. Un bateau arrive à Québec avec 20 filles du roi,
+qui doivent épouser 20 anciens soldats déjà choisis. De combien de
+façons peut-on former les 20 couples ?
+
+::: {.corrige}
+On aligne les soldats dans un ordre fixe et on leur attribue les filles
+une à une : $20\cdot 19\cdots 1=20!\approx 2{,}43\times 10^{18}$
+façons.
+:::
+
+### Exercice 7
+
+Deux femmes et huit hommes s'assoient au hasard sur 10 chaises.
+
+a) Les chaises forment une ligne. Quelle est la probabilité que les deux
+   femmes soient côte à côte ? Qu'elles occupent les deux extrémités ?
+b) Les chaises forment un cercle. Quelle est la probabilité que les deux
+   femmes soient côte à côte ? Qu'elles soient diamétralement opposées ?
+c) **(défi)** Sur une ligne de $n$ chaises, $k$ femmes et $n-k$ hommes
+   s'assoient au hasard. Quelle est la probabilité que les $k$ femmes
+   soient toutes côte à côte ?
+
+::: {.corrige}
+Seules comptent les chaises occupées par les femmes : les
+$\binom{10}{2}=45$ paires de chaises sont équiprobables.
+
+a) Ligne : 9 paires de chaises voisines, d'où $9/45=1/5$. Une seule
+   paire d'extrémités : $1/45$.
+b) Cercle : 10 paires de chaises voisines, d'où $10/45=2/9$. Paires
+   opposées : 5, d'où $5/45=1/9$.
+c) Il y a $\binom nk$ ensembles de chaises équiprobables pour les femmes,
+   et $n-k+1$ blocs de $k$ chaises consécutives (le bloc commence en
+   position $1,\dots,n-k+1$). Probabilité $(n-k+1)\big/\binom nk$. Avec
+   $n=10$ et $k=2$, on retrouve $9/45$.
+:::
+
+## Dérangements
+
+### Exercice 8
+
+À l'entrée d'un examen, $n$ étudiants déposent leur téléphone dans un
+panier. À la sortie, chacun reprend un téléphone au hasard.
+
+a) Pour $n=4$, énumérez les façons de redistribuer les téléphones sans
+   que personne ne reprenne le sien, et calculez la probabilité de cet
+   événement.
+b) À l'aide de la formule des dérangements, calculez cette probabilité
+   pour $n=5$ et comparez-la à $1/e$.
+c) Pour $n=4$, quelle est la probabilité qu'exactement une personne
+   reprenne son propre téléphone ?
+
+::: {.corrige}
+a) Numérotons les personnes et leurs téléphones 1, 2, 3, 4. Une
+   redistribution est une permutation de $\{1,2,3,4\}$ ; on veut celles
+   sans point fixe :
+
+   2143, 2341, 2413, 3142, 3412, 3421, 4123, 4312, 4321.
+
+   Il y en a $D_4=9$ sur $4!=24$, d'où $9/24=3/8=0{,}375$.
+b) $D_5=5!\left(1-1+\frac1{2!}-\frac1{3!}+\frac1{4!}-\frac1{5!}\right)=44$,
+   d'où $44/120\approx 0{,}3667$. Comparez à $1/e\approx 0{,}3679$ :
+   la probabilité se stabilise très vite.
+c) On choisit la personne qui reprend son téléphone (4 choix), puis les
+   3 autres doivent former un dérangement ($D_3=2$) : $4\cdot 2/24=1/3$.
+:::
+
+## Combinaisons
+
+### Exercice 9
+
+Vous achetez un billet de la 6/49 (6 numéros parmi 1 à 49). Pour
+$k=0,1,\dots,6$, calculez la probabilité que la combinaison gagnante
+ait exactement $k$ numéros en commun avec la vôtre.
+
+::: {.corrige}
+On choisit $k$ numéros parmi vos 6 et $6-k$ parmi les 43 autres :
+$$p_k=\frac{\binom6k\binom{43}{6-k}}{\binom{49}{6}},\qquad \binom{49}6=13\,983\,816.$$
+
+| $k$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| $p_k$ | $0{,}4360$ | $0{,}4130$ | $0{,}1324$ | $0{,}0177$ | $0{,}00097$ | $1{,}8\times10^{-5}$ | $7{,}2\times10^{-8}$ |
+:::
+
+### Exercice 10
+
+Une main de poker est formée de 5 cartes tirées au hasard dans un jeu de
+52 cartes (13 valeurs, 4 couleurs). Calculez la probabilité d'obtenir
+
+a) un carré (quatre cartes de même valeur) ;
+b) une main pleine (trois cartes d'une valeur et deux d'une autre) ;
+c) deux paires (deux valeurs présentes deux fois, la cinquième carte
+   d'une troisième valeur) ;
+d) une paire seulement (une valeur deux fois, les trois autres cartes de
+   valeurs différentes entre elles et de celle de la paire) ;
+e) cinq cartes de la même couleur.
+
+::: {.corrige}
+$|\Omega|=\binom{52}5=2\,598\,960$. On choisit d'abord les valeurs, puis
+les cartes de chaque valeur.
+
+a) Valeur du carré : 13 ; cinquième carte : 48. $\frac{13\cdot 48}{2\,598\,960}=\frac{624}{2\,598\,960}\approx 0{,}00024$.
+b) $13\binom43\cdot 12\binom42=3744$, d'où $\approx 0{,}0014$.
+c) Les deux valeurs des paires : $\binom{13}2$ (non ordonnées) ; les
+   cartes : $\binom42^2$ ; la cinquième carte : 44.
+   $\binom{13}2\cdot 36\cdot 44=123\,552$, d'où $\approx 0{,}0475$.
+d) $13\binom42\cdot\binom{12}3\cdot 4^3=1\,098\,240$, d'où
+   $\approx 0{,}4226$.
+e) $4\binom{13}5=5148$, d'où $\approx 0{,}0020$.
+
+Remarquez en c) le $\binom{13}{2}$ : écrire $13\cdot 12$ compterait
+deux fois chaque main (« paire de 5 puis paire de valets » et l'inverse).
+:::
+
+### Exercice 11
+
+Le Sénat américain compte deux sénateurs par État ; il y a 50 États. On
+choisit au hasard 10 sénateurs pour former un comité.
+
+a) Quelle est la probabilité que le comité comprenne au moins un
+   sénateur de la Floride ?
+b) Quelle est la probabilité que les 10 membres proviennent de 10 États
+   différents ?
+
+::: {.corrige}
+$|\Omega|=\binom{100}{10}$.
+
+a) Complémentaire : aucun des 2 sénateurs de la Floride, soit
+   $\binom{98}{10}$ comités.
+   $$1-\frac{\binom{98}{10}}{\binom{100}{10}}=1-\frac{90\cdot 89}{100\cdot 99}=\frac{21}{110}\approx 0{,}191.$$
+b) On choisit les 10 États, puis un des deux sénateurs de chacun :
+   $$\frac{\binom{50}{10}\,2^{10}}{\binom{100}{10}}\approx 0{,}608.$$
+:::
+
+### Exercice 12
+
+Un panier contient 15 piles électriques, dont 2 sont défectueuses. On en
+prend 5 au hasard. Quelle est la probabilité d'obtenir au moins une pile
+défectueuse ?
+
+::: {.corrige}
+Par le complémentaire :
+$$1-\frac{\binom{13}5}{\binom{15}5}=1-\frac{10\cdot 9}{15\cdot 14}=1-\frac37=\frac47\approx 0{,}571.$$
+:::
+
+### Exercice 13
+
+On distribue un jeu de 52 cartes à quatre joueurs, 13 cartes chacun.
+
+a) Quelle est la probabilité qu'un même joueur reçoive les quatre rois ?
+b) Quelle est la probabilité que chaque joueur reçoive un roi ?
+
+*Indice : imaginez les 52 cartes distribuées dans 52 places (13 places
+par joueur). Les places des 4 rois forment un ensemble de 4 places choisi
+au hasard parmi 52.*
+
+::: {.corrige}
+Il y a $\binom{52}4=270\,725$ ensembles de places équiprobables pour les
+rois.
+
+a) Les 4 places doivent être dans la main d'un même joueur :
+   $4\binom{13}{4}=2860$, d'où $\approx 0{,}0106$.
+b) Une place dans chacune des 4 mains : $13^4=28\,561$, d'où
+   $\approx 0{,}1055$.
+
+On retrouvera b) au module 03 avec la règle de multiplication.
+:::
+
+### Exercice 14
+
+On choisit au hasard un nombre parmi 0000, 0001, …, 9999.
+
+a) Quelle est la probabilité que la somme des deux premiers chiffres
+   soit égale à la somme des deux derniers ?
+b) **(défi)** Quelle est la probabilité que le nombre contienne au moins
+   un 0, au moins un 1 et au moins un 2 ?
+
+::: {.corrige}
+a) Soit $N(s)$ le nombre de paires de chiffres de somme $s$ :
+   $N(s)=s+1$ pour $0\le s\le 9$ et $N(s)=19-s$ pour $10\le s\le 18$.
+   Le nombre de cas favorables est
+   $$\sum_{s=0}^{18}N(s)^2=2\,(1^2+2^2+\dots+9^2)+10^2=2\cdot 285+100=670,$$
+   d'où une probabilité de $670/10\,000=0{,}067$.
+b) Soit $A_0$, $A_1$, $A_2$ les ensembles de nombres sans 0, sans 1,
+   sans 2. On cherche le complémentaire de $A_0\cup A_1\cup A_2$. Par
+   inclusion-exclusion,
+   $$|A_0\cup A_1\cup A_2|=3\cdot 9^4-3\cdot 8^4+7^4=19\,683-12\,288+2\,401=9\,796,$$
+   donc il reste $10\,000-9\,796=204$ nombres favorables : probabilité
+   $0{,}0204$.
+:::
+
+### Exercice 15
+
+On est dans le plan et on doit aller du point $(0,0)$ au point $(6,4)$
+en faisant des pas d'une unité vers l'est ou vers le nord.
+
+a) Combien y a-t-il de chemins possibles ?
+b) Si on choisit un chemin au hasard, quelle est la probabilité qu'il
+   passe par le point $(3,2)$ ?
+
+::: {.corrige}
+a) Un chemin est une suite de 10 pas, dont 4 vers le nord : $\binom{10}4=210$.
+b) De $(0,0)$ à $(3,2)$ : $\binom52=10$ chemins ; de $(3,2)$ à $(6,4)$ :
+   $\binom52=10$ chemins. Probabilité $100/210=10/21$.
+:::
+
+### Exercice 16
+
+On place au hasard 4 boules distinctes dans 4 boîtes (chaque boule
+choisit sa boîte au hasard, indépendamment des autres).
+
+a) Quelle est la probabilité qu'exactement une boîte reste vide ?
+b) **(défi)** Même question avec $n$ boules et $n$ boîtes.
+
+::: {.corrige}
+b) $|\Omega|=n^n$. Si exactement une boîte est vide, une autre boîte
+   contient exactement 2 boules et toutes les autres en contiennent une.
+   On choisit la boîte vide ($n$), la boîte double ($n-1$), les deux
+   boules qui y vont ($\binom n2$), puis on répartit les $n-2$ boules
+   restantes dans les $n-2$ boîtes restantes, une par boîte ($(n-2)!$) :
+   $$\frac{n(n-1)\binom n2(n-2)!}{n^n}=\frac{\binom n2\,n!}{n^n}.$$
+a) Avec $n=4$ : $6\cdot 24/256=9/16$.
+:::
+
+## Binôme et multinôme
+
+### Exercice 17
+
+À l'aide du binôme de Newton, simplifiez
+
+a) $\displaystyle\sum_{k=0}^{n}\binom nk 2^k$ ;
+b) $\displaystyle\sum_{k=1}^{n}\binom nk x^k$ ;
+c) $\displaystyle\sum_{k=0}^{n}(-1)^k\binom nk$ pour $n\ge 1$.
+
+::: {.corrige}
+Avec $(x+y)^n=\sum_{k=0}^n\binom nk x^ky^{n-k}$ :
+
+a) $x=2$, $y=1$ : $3^n$.
+b) $y=1$, en retirant le terme $k=0$ : $(1+x)^n-1$.
+c) $x=-1$, $y=1$ : $0^n=0$. Autrement dit, un ensemble non vide a autant
+   de sous-ensembles de cardinal pair que de cardinal impair.
+:::
+
+### Exercice 18
+
+a) Quel est le coefficient de $x^6$ dans le développement de $(x+3)^9$ ?
+b) Quel est le coefficient de $x^4y^3$ dans le développement de
+   $(2x-3y)^7$ ?
+c) Quel est le coefficient de $x^2y^2z$ dans le développement de
+   $(x+2y+z)^5$ ?
+
+::: {.corrige}
+a) $\binom96\,3^3=84\cdot 27=2268$.
+b) $\binom74\,2^4\,(-3)^3=35\cdot 16\cdot(-27)=-15\,120$.
+c) $\dfrac{5!}{2!\,2!\,1!}\,1^2\,2^2\,1^1=30\cdot 4=120$.
+:::
+
+### Exercice 19
+
+On considère les mots de 8 lettres formés avec les lettres A, B, C, D.
+
+a) Combien y en a-t-il ?
+b) Combien contiennent exactement deux fois chacune des quatre lettres ?
+c) Combien contiennent trois A, trois B et deux C ?
+
+::: {.corrige}
+a) $4^8=65\,536$.
+b) $\dfrac{8!}{2!\,2!\,2!\,2!}=2520$.
+c) $\dfrac{8!}{3!\,3!\,2!}=560$.
+:::
+
+### Exercice 20
+
+On lance cinq dés. Calculez la probabilité d'obtenir
+
+a) cinq résultats identiques ;
+b) trois 5 et deux 6 ;
+c) deux 4, deux 5 et un 6 ;
+d) un triple et une paire (par exemple 2, 2, 2, 6, 6) ;
+e) deux paires (deux valeurs présentes deux fois, la cinquième valeur
+   différente des deux autres).
+
+::: {.corrige}
+$|\Omega|=6^5=7776$ suites équiprobables.
+
+a) $6/7776=1/1296$.
+b) Choisir les 2 lancers qui donnent 6 : $\binom52=10$, d'où $10/7776$.
+c) Coefficient multinomial : $\dfrac{5!}{2!\,2!\,1!}=30$, d'où $30/7776$.
+d) Valeur du triple (6), valeur de la paire (5), puis comme en b) :
+   $6\cdot 5\cdot 10=300$, d'où $300/7776\approx 0{,}039$.
+e) Valeurs des paires : $\binom62=15$ ; cinquième valeur : 4 ; ordre des
+   lancers comme en c) : 30. $15\cdot 4\cdot 30=1800$, d'où
+   $1800/7776\approx 0{,}231$.
+:::
+
+### Exercice 21 **(défi)**
+
+L'identité suivante, due à Fermat, est valide pour $1\le k\le n$ :
+$$\binom nk=\sum_{i=k}^{n}\binom{i-1}{k-1}.$$
+
+a) Combien y a-t-il de sous-ensembles de $\{1,\dots,n\}$ de cardinal $k$
+   dont le plus grand élément est $i$ ?
+b) Déduisez-en l'identité.
+c) Illustrez-la avec $n=5$, $k=2$ dans le triangle de Pascal.
+
+::: {.corrige}
+a) Le plus grand élément est $i$ ; les $k-1$ autres sont choisis parmi
+   $\{1,\dots,i-1\}$ : $\binom{i-1}{k-1}$ sous-ensembles.
+b) Chaque sous-ensemble de cardinal $k$ a un plus grand élément $i$, avec
+   $k\le i\le n$. En classant les $\binom nk$ sous-ensembles selon $i$,
+   on obtient la somme.
+c) $\binom52=10=\binom11+\binom21+\binom31+\binom41=1+2+3+4$ : on additionne
+   les éléments d'une diagonale du triangle et on trouve l'élément situé
+   juste en dessous de la dernière case, sur la diagonale suivante.
+:::
+
+## Formule de Stirling
+
+La formule de Stirling dit que $n!\sim\sqrt{2\pi n}\,(n/e)^n$, ce qui
+signifie que le quotient des deux membres tend vers 1.
+
+### Exercice 22
+
+a) On lance un dé ordinaire 6 fois. Quelle est la probabilité d'obtenir
+   les 6 faces ?
+b) On lance $n$ fois un dé à $n$ faces. Quelle est la probabilité
+   $p_n$ d'obtenir les $n$ faces ?
+c) Montrez que $p_n\sim C\sqrt n\,e^{-n}$ et déterminez la constante $C$.
+
+::: {.corrige}
+a) Les 6 résultats doivent former une permutation des faces :
+   $6!/6^6=720/46\,656\approx 0{,}0154$.
+b) $p_n=n!/n^n$.
+c) $p_n\sim\dfrac{\sqrt{2\pi n}\,n^ne^{-n}}{n^n}=\sqrt{2\pi}\,\sqrt n\,e^{-n}$,
+   donc $C=\sqrt{2\pi}\approx 2{,}507$.
+:::
+
+### Exercice 23
+
+Pierre et Paul lancent chacun une pièce équilibrée $n$ fois.
+
+a) Montrez que la probabilité qu'ils obtiennent le même nombre de piles
+   est $\binom{2n}{n}\big/4^n$.
+b) À l'aide de la formule de Stirling, montrez que cette probabilité est
+   approximativement $1/\sqrt{\pi n}$.
+c) Comparez la valeur exacte et l'approximation pour $n=10$.
+
+*Indice pour a) : utilisez l'identité $\sum_{k=0}^{n}\binom nk^2=\binom{2n}n$.
+Pour la justifier, comptez de deux façons le nombre de façons de choisir
+$n$ personnes dans un groupe de $n$ femmes et $n$ hommes.*
+
+::: {.corrige}
+a) Il y a $4^n$ résultats équiprobables pour les $2n$ lancers. Les deux
+   obtiennent $k$ piles de $\binom nk\cdot\binom nk$ façons, donc
+   $$\mathbb{P}(\text{même nombre})=\frac{1}{4^n}\sum_{k=0}^n\binom nk^2=\frac{\binom{2n}n}{4^n}.$$
+   (Pour l'identité : choisir $n$ personnes parmi $2n$, c'est choisir
+   $k$ femmes et $n-k$ hommes pour un certain $k$, et
+   $\binom nk\binom n{n-k}=\binom nk^2$.)
+b) $\displaystyle\binom{2n}n=\frac{(2n)!}{(n!)^2}\sim\frac{\sqrt{4\pi n}\,(2n/e)^{2n}}{2\pi n\,(n/e)^{2n}}=\frac{4^n}{\sqrt{\pi n}}$,
+   d'où la probabilité $\sim 1/\sqrt{\pi n}$.
+c) $n=10$ : valeur exacte $\binom{20}{10}/4^{10}=184\,756/1\,048\,576\approx 0{,}1762$ ;
+   approximation $1/\sqrt{10\pi}\approx 0{,}1784$.
+:::
+
+### Exercice 24 **(défi)**
+
+On sépare au hasard un jeu de 52 cartes en deux paquets de 26.
+
+a) Calculez la probabilité que chaque paquet contienne 13 cartes rouges
+   et 13 cartes noires.
+b) Avec la formule obtenue en b) de l'exercice précédent, donnez une
+   approximation de cette probabilité et comparez.
+
+::: {.corrige}
+a) On choisit les 26 cartes du premier paquet ; il faut 13 rouges parmi
+   26 et 13 noires parmi 26 :
+   $$\frac{\binom{26}{13}^2}{\binom{52}{26}}\approx 0{,}2181.$$
+b) Avec $\binom{2n}n\approx 4^n/\sqrt{\pi n}$ pour $n=13$ et $n=26$ :
+   $$\frac{\left(4^{13}/\sqrt{13\pi}\right)^2}{4^{26}/\sqrt{26\pi}}=\frac{\sqrt{26\pi}}{13\pi}=\sqrt{\frac{2}{13\pi}}\approx 0{,}2213,$$
+   une erreur relative d'environ 1,5 %.
+:::

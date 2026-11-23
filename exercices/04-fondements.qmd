@@ -1,0 +1,345 @@
+---
+title: "Module 04 — Fondements"
+description: "Tribus, boréliens, axiomes de Kolmogorov et leurs conséquences, continuité des probabilités."
+numero: 4
+---
+
+Cette série demande surtout de *justifier* : vérifier qu'une famille est
+une tribu, déduire une propriété des axiomes, passer à la limite le long
+d'une suite monotone d'événements. Dans chaque démonstration, indiquez
+quel axiome ou quelle propriété vous utilisez.
+
+Les sommes de séries géométriques sont utiles :
+$\displaystyle\sum_{k=0}^\infty r^k=\frac{1}{1-r}$ pour $|r|<1$.
+
+## Tribus
+
+### Exercice 1
+
+Soit $\Omega=\{1,2,3,4\}$. Lesquelles des familles suivantes sont des
+tribus sur $\Omega$ ? Justifiez.
+
+a) $\{\emptyset,\{1\},\{2,3,4\},\Omega\}$
+b) $\{\emptyset,\{1\},\{2\},\Omega\}$
+c) $\{\emptyset,\{1,2\},\{3,4\},\Omega\}$
+d) $\{\emptyset,\{1\},\{1,2\},\{3,4\},\{2,3,4\},\Omega\}$
+
+::: {.corrige}
+Sur un ensemble fini, il suffit de vérifier que la famille contient
+$\Omega$ et qu'elle est stable par complément et par union de deux
+éléments.
+
+a) Oui : c'est la tribu $\{\emptyset,A,A^c,\Omega\}$ avec $A=\{1\}$.
+b) Non : $\{1\}^c=\{2,3,4\}$ n'est pas dans la famille (et
+   $\{1\}\cup\{2\}=\{1,2\}$ non plus).
+c) Oui : c'est la tribu $\{\emptyset,A,A^c,\Omega\}$ avec $A=\{1,2\}$.
+d) Non : $\{1\}\cup\{3,4\}=\{1,3,4\}$ n'est pas dans la famille.
+:::
+
+### Exercice 2
+
+Soit $\Omega=\{1,2,3,4\}$. Déterminez la plus petite tribu contenant les
+événements $\{1\}$ et $\{2\}$. Combien a-t-elle d'éléments ?
+
+::: {.corrige}
+La tribu doit contenir $\{1\}$, $\{2\}$ et donc $\{1\}^c\cap\{2\}^c=\{3,4\}$.
+Ces trois ensembles forment une partition de $\Omega$. Toute union de
+certains d'entre eux doit être dans la tribu, et la famille de ces
+unions est bien une tribu :
+$$\{\emptyset,\{1\},\{2\},\{3,4\},\{1,2\},\{1,3,4\},\{2,3,4\},\Omega\}.$$
+Elle a $2^3=8$ éléments.
+:::
+
+### Exercice 3
+
+Soit $\{E_1,\dots,E_n\}$ une partition d'un ensemble $\Omega$.
+
+a) Montrez que la famille $\mathcal{T}$ de toutes les unions de certains
+   des $E_i$ (y compris l'union vide, $\emptyset$) est une tribu.
+b) Combien d'éléments contient-elle ?
+
+::: {.corrige}
+a) Pour $I\subseteq\{1,\dots,n\}$, posons $E_I=\bigcup_{i\in I}E_i$.
+   Alors $\Omega=E_{\{1,\dots,n\}}\in\mathcal{T}$. Le complément de
+   $E_I$ est $E_{I^c}$, car les $E_i$ forment une partition. Une union
+   (même dénombrable) d'ensembles $E_{I_1},E_{I_2},\dots$ est $E_I$ avec
+   $I=\bigcup_kI_k$.
+b) Les $E_i$ étant non vides et disjoints, deux sous-ensembles $I\neq J$
+   donnent $E_I\neq E_J$. Il y a donc autant d'éléments que de
+   sous-ensembles de $\{1,\dots,n\}$, soit $2^n$.
+:::
+
+### Exercice 4
+
+Soit $\mathcal{T}$ une tribu sur $\Omega$ et $A,B\in\mathcal{T}$. Montrez,
+en n'utilisant que la définition d'une tribu et les propriétés vues en
+classe, que
+
+a) $A\setminus B\in\mathcal{T}$ ;
+b) $A\,\triangle\,B=(A\setminus B)\cup(B\setminus A)\in\mathcal{T}$ ;
+c) si $A_1,A_2,\ldots\in\mathcal{T}$, l'ensemble des $\omega$ qui
+   appartiennent à *tous les $A_n$ sauf peut-être $A_1$* est dans
+   $\mathcal{T}$.
+
+::: {.corrige}
+a) $A\setminus B=A\cap B^c$. On a $B^c\in\mathcal{T}$ (complément), et
+   une intersection de deux éléments d'une tribu est dans la tribu.
+b) Par a), $A\setminus B$ et $B\setminus A$ sont dans $\mathcal{T}$, et
+   leur union aussi.
+c) Cet ensemble est $\bigcap_{n\ge2}A_n$, une intersection dénombrable
+   d'éléments de $\mathcal{T}$, donc un élément de $\mathcal{T}$.
+:::
+
+### Exercice 5
+
+Soit $\Omega=\mathbb{N}$ et soit $\mathcal{C}$ la famille des
+sous-ensembles $A\subseteq\mathbb{N}$ tels que $A$ est fini ou $A^c$ est
+fini.
+
+a) Montrez que $\mathcal{C}$ contient $\Omega$, est stable par
+   complément et est stable par union de *deux* ensembles.
+b) Montrez que $\mathcal{C}$ n'est pas une tribu.
+
+::: {.corrige}
+a) $\Omega^c=\emptyset$ est fini, donc $\Omega\in\mathcal{C}$. La
+   définition est symétrique en $A$ et $A^c$, donc $\mathcal{C}$ est
+   stable par complément. Pour $A,B\in\mathcal{C}$ : si $A$ et $B$ sont
+   finis, $A\cup B$ l'est. Sinon, l'un d'eux, disons $A$, a un
+   complément fini, et $(A\cup B)^c\subseteq A^c$ est fini.
+b) Chaque singleton $\{2k\}$ est fini, donc dans $\mathcal{C}$. Mais
+   $\bigcup_{k\ge0}\{2k\}$ est l'ensemble des nombres pairs, qui n'est
+   pas fini et dont le complément (les impairs) n'est pas fini. La
+   famille n'est pas stable par union dénombrable.
+
+C'est précisément ce qui distingue une tribu d'une famille stable par
+opérations *finies* seulement.
+:::
+
+### Exercice 6
+
+Montrez que les ensembles suivants sont des boréliens, en les obtenant à
+partir d'intervalles par complément, union dénombrable ou intersection
+dénombrable.
+
+a) $[a,b[$ ;
+b) $]a,+\infty[$ ;
+c) $\mathbb{N}$ ;
+d) $\{1/n : n\in\mathbb{N}^*\}$ ;
+e) $[0{,}3\,;0{,}4[\;\cup\;\bigl([0,1]\setminus\mathbb{Q}\bigr)$, soit
+   les nombres de $[0,1]$ qui commencent par $0{,}3$ ou qui sont
+   irrationnels.
+
+::: {.corrige}
+a) $[a,b[=[a,b]\setminus\{b\}=[a,b]\cap\{b\}^c$, et $\{b\}=[b,b]$ est un
+   intervalle. On peut aussi écrire $[a,b[=\bigcup_{n\ge1}[a,b-\frac1n]$
+   (pour $b-\frac1n\ge a$).
+b) $]a,+\infty[=\bigcup_{n\ge1}]a,a+n[$.
+c) $\mathbb{N}=\bigcup_{k\ge0}\{k\}$, union dénombrable de points.
+d) Même raisonnement : union dénombrable des points $\{1/n\}$.
+e) $[0{,}3\,;0{,}4[$ est un borélien par a). L'ensemble des irrationnels
+   de $[0,1]$ est $[0,1]\setminus\mathbb{Q}$, et $\mathbb{Q}$ est un
+   borélien (union dénombrable de points). L'union de deux boréliens
+   est un borélien.
+:::
+
+## Axiomes de Kolmogorov
+
+### Exercice 7
+
+Soit $\Omega=\{a,b,c\}$ et $\mathcal{T}=\mathcal{P}(\Omega)$. Pour chacune
+des fonctions suivantes, dites si c'est une mesure de probabilité.
+
+a) $Q_1(A)=|A|/3$.
+b) $Q_2(A)=(|A|/3)^2$.
+c) $Q_3(A)=1$ si $a\in A$, et $Q_3(A)=0$ sinon.
+
+::: {.corrige}
+Sur un ensemble fini, la $\sigma$-additivité se ramène à l'additivité
+finie (seul un nombre fini des $A_k$ peuvent être non vides).
+
+a) Oui : c'est la probabilité uniforme, de poids $1/3$.
+b) Non : $Q_2(\Omega)=1$ et $Q_2\ge0$, mais
+   $Q_2(\{a,b\})=4/9\neq Q_2(\{a\})+Q_2(\{b\})=2/9$.
+c) Oui : c'est la probabilité donnée par les poids $p(a)=1$ et
+   $p(b)=p(c)=0$. Elle décrit une expérience dont le résultat est
+   toujours $a$.
+:::
+
+### Exercice 8
+
+Soit $\mathbb{P}_1$ et $\mathbb{P}_2$ deux mesures de probabilité sur
+$(\Omega,\mathcal{T})$ et $\lambda\in[0,1]$. Montrez que
+$Q=\lambda\,\mathbb{P}_1+(1-\lambda)\,\mathbb{P}_2$ est une mesure de
+probabilité.
+
+*Interprétation : on lance une pièce qui donne pile avec probabilité
+$\lambda$ ; selon le résultat, on réalise l'expérience décrite par
+$\mathbb{P}_1$ ou par $\mathbb{P}_2$. L'exemple du feu de circulation
+(module 05) est de ce type.*
+
+::: {.corrige}
+1. $Q(A)=\lambda\,\mathbb{P}_1(A)+(1-\lambda)\,\mathbb{P}_2(A)\ge0$, car
+   les deux termes sont des produits de nombres positifs.
+2. $Q(\Omega)=\lambda+(1-\lambda)=1$.
+3. Si les $A_k$ sont deux à deux incompatibles,
+   $$Q\Bigl(\bigcup_kA_k\Bigr)=\lambda\sum_k\mathbb{P}_1(A_k)+(1-\lambda)\sum_k\mathbb{P}_2(A_k)=\sum_kQ(A_k),$$
+   en utilisant la $\sigma$-additivité de $\mathbb{P}_1$ et de
+   $\mathbb{P}_2$ (on peut additionner deux séries convergentes terme à
+   terme).
+:::
+
+### Exercice 9
+
+Soit $(\Omega,\mathcal{T},\mathbb{P})$ un espace probabilisé et
+$B\in\mathcal{T}$ tel que $\mathbb{P}(B)>0$. Montrez que
+$Q(A)=\mathbb{P}(A\mid B)$ définit une mesure de probabilité sur
+$(\Omega,\mathcal{T})$.
+
+::: {.corrige}
+1. $Q(A)=\mathbb{P}(A\cap B)/\mathbb{P}(B)\ge0$.
+2. $Q(\Omega)=\mathbb{P}(B)/\mathbb{P}(B)=1$.
+3. Si les $A_k$ sont deux à deux incompatibles, les $A_k\cap B$ le sont
+   aussi, et $\bigl(\bigcup_kA_k\bigr)\cap B=\bigcup_k(A_k\cap B)$. Par
+   $\sigma$-additivité de $\mathbb{P}$,
+   $$Q\Bigl(\bigcup_kA_k\Bigr)=\frac{\sum_k\mathbb{P}(A_k\cap B)}{\mathbb{P}(B)}=\sum_kQ(A_k).$$
+
+Conséquence : toutes les propriétés d'une probabilité (complément,
+union, Boole, etc.) valent pour les probabilités conditionnelles.
+:::
+
+### Exercice 10
+
+À partir des axiomes de Kolmogorov et de l'additivité finie, démontrez
+que pour tous $A,B\in\mathcal{T}$ :
+
+a) si $A\subseteq B$, alors $\mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A)$
+   et $\mathbb{P}(A)\le\mathbb{P}(B)$ ;
+b) $\mathbb{P}(A)\le1$ ;
+c) $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$.
+
+::: {.corrige}
+a) $B=A\cup(B\setminus A)$, union de deux événements incompatibles (et
+   $B\setminus A\in\mathcal{T}$ par l'exercice 4). Par additivité,
+   $\mathbb{P}(B)=\mathbb{P}(A)+\mathbb{P}(B\setminus A)$. Comme
+   $\mathbb{P}(B\setminus A)\ge0$ (axiome 1), on obtient
+   $\mathbb{P}(A)\le\mathbb{P}(B)$.
+b) On applique a) avec $B=\Omega$ et l'axiome 2.
+c) $A\cup B=A\cup(B\setminus(A\cap B))$, union incompatible, et
+   $A\cap B\subseteq B$. Par additivité puis par a),
+   $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$.
+:::
+
+### Exercice 11
+
+Soit $\Omega=\mathbb{N}^*=\{1,2,3,\dots\}$, avec les poids
+$p(n)=c\,(2/3)^n$.
+
+a) Déterminez la constante $c$.
+b) Calculez $\mathbb{P}(\{n : n\ge k\})$ pour $k\in\mathbb{N}^*$.
+c) Calculez la probabilité que le résultat soit pair.
+
+::: {.corrige}
+a) $\sum_{n\ge1}(2/3)^n=\dfrac{2/3}{1-2/3}=2$, donc $c=1/2$.
+b) $\displaystyle\sum_{n\ge k}\frac12\Bigl(\frac23\Bigr)^n=\frac12\cdot\frac{(2/3)^k}{1/3}=\Bigl(\frac23\Bigr)^{k-1}$.
+   Pour $k=1$, on retrouve bien 1.
+c) $\displaystyle\sum_{j\ge1}\frac12\Bigl(\frac23\Bigr)^{2j}=\frac12\cdot\frac{4/9}{1-4/9}=\frac12\cdot\frac45=\frac25$.
+:::
+
+### Exercice 12
+
+Peut-on choisir un entier positif « au hasard », de façon que tous les
+entiers aient la même probabilité ? Plus précisément, montrez qu'il
+n'existe aucune mesure de probabilité sur $(\mathbb{N},\mathcal{P}(\mathbb{N}))$
+telle que $\mathbb{P}(\{n\})$ soit la même pour tous les $n$.
+
+::: {.corrige}
+Supposons que $\mathbb{P}(\{n\})=c$ pour tout $n$. Par
+$\sigma$-additivité,
+$$1=\mathbb{P}(\mathbb{N})=\sum_{n=0}^\infty c,$$
+qui vaut $0$ si $c=0$ et $+\infty$ si $c>0$. Aucune valeur ne convient.
+Il n'y a donc pas d'analogue de l'équiprobabilité sur un ensemble infini
+dénombrable.
+:::
+
+## Continuité des probabilités
+
+### Exercice 13
+
+On lance indéfiniment un dé équilibré, et les lancers sont indépendants.
+
+a) À l'aide de la continuité des probabilités, montrez que la
+   probabilité de ne jamais obtenir de 6 vaut 0.
+b) Calculez la probabilité que le premier 6 apparaisse à un lancer de
+   rang pair.
+
+::: {.corrige}
+a) Soit $A_n$ l'événement « aucun 6 lors des $n$ premiers lancers ».
+   Alors $\mathbb{P}(A_n)=(5/6)^n$, la suite est décroissante et
+   $\bigcap_nA_n$ est l'événement « jamais de 6 ». Par continuité,
+   sa probabilité est $\lim_n(5/6)^n=0$.
+b) Le premier 6 apparaît au lancer $m$ avec probabilité
+   $(5/6)^{m-1}(1/6)$. Ces événements sont incompatibles, donc
+   $$\sum_{k\ge1}\Bigl(\frac56\Bigr)^{2k-1}\frac16=\frac16\cdot\frac56\cdot\frac{1}{1-25/36}=\frac{5}{36}\cdot\frac{36}{11}=\frac5{11}.$$
+   Comme la probabilité de ne jamais obtenir de 6 est nulle, le rang est
+   impair avec probabilité $6/11$.
+:::
+
+### Exercice 14
+
+On choisit un nombre au hasard dans $[0,1]$ : $\mathbb{P}$ est une mesure
+de probabilité sur $(\mathbb{R},\mathcal{B})$ telle que
+$\mathbb{P}([a,b])=b-a$ pour $0\le a\le b\le1$.
+
+a) À l'aide d'une suite croissante d'intervalles fermés, montrez que
+   $\mathbb{P}([0,\frac12[)=\frac12$.
+b) Montrez que $\mathbb{P}(\mathbb{Q}\cap[0,1])=0$, en utilisant le fait
+   que $\mathbb{P}(\{x\})=0$ pour tout $x$.
+c) Quelle est la probabilité de choisir un nombre irrationnel ?
+
+::: {.corrige}
+a) $A_n=[0,\frac12-\frac1n]$ (pour $n\ge2$) est une suite croissante dont
+   l'union est $[0,\frac12[$. Par continuité,
+   $\mathbb{P}([0,\frac12[)=\lim_n(\frac12-\frac1n)=\frac12$.
+b) $\mathbb{Q}\cap[0,1]=\{q_1,q_2,\dots\}$ est dénombrable. Par
+   $\sigma$-additivité,
+   $\mathbb{P}(\mathbb{Q}\cap[0,1])=\sum_k\mathbb{P}(\{q_k\})=0$.
+c) Par complément (dans $[0,1]$, de probabilité 1), la probabilité est
+   1. Pourtant, il y a des rationnels partout dans $[0,1]$.
+:::
+
+### Exercice 15
+
+Soit $\mathbb{P}$ une mesure de probabilité quelconque sur
+$(\mathbb{R},\mathcal{B})$.
+
+a) Montrez que $\lim_{n\to\infty}\mathbb{P}([n,+\infty[)=0$.
+b) Montrez que $\lim_{n\to\infty}\mathbb{P}([-n,n])=1$.
+
+::: {.corrige}
+a) La suite $[n,+\infty[$ est décroissante et son intersection est vide
+   (aucun réel n'est plus grand que tous les entiers). Par continuité,
+   la limite vaut $\mathbb{P}(\emptyset)=0$.
+b) La suite $[-n,n]$ est croissante et son union est $\mathbb{R}$. Par
+   continuité, la limite vaut $\mathbb{P}(\mathbb{R})=1$.
+
+Ainsi, quelle que soit la probabilité sur $\mathbb{R}$, presque toute la
+masse se trouve dans un intervalle borné assez grand.
+:::
+
+### Exercice 16 **(défi)**
+
+Démontrez l'inégalité de Boole pour une suite infinie d'événements :
+$$\mathbb{P}\Bigl(\bigcup_{k=1}^\infty A_k\Bigr)\le\sum_{k=1}^\infty\mathbb{P}(A_k).$$
+
+*Indice : posez $B_1=A_1$ et
+$B_k=A_k\setminus(A_1\cup\dots\cup A_{k-1})$ pour $k\ge2$.*
+
+::: {.corrige}
+Les $B_k$ sont des événements (opérations finies sur des éléments de la
+tribu). Ils sont deux à deux incompatibles : $B_k$ ne contient que des
+points qui n'appartiennent à aucun $A_j$ pour $j<k$. Leur union est
+$\bigcup_kA_k$ : un point de cette union appartient au $B_k$ dont
+l'indice $k$ est le plus petit tel que le point soit dans $A_k$. Enfin,
+$B_k\subseteq A_k$. Par $\sigma$-additivité, puis par monotonicité,
+$$\mathbb{P}\Bigl(\bigcup_kA_k\Bigr)=\sum_k\mathbb{P}(B_k)\le\sum_k\mathbb{P}(A_k).$$
+:::

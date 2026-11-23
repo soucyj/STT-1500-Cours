@@ -1,0 +1,520 @@
+---
+title: "Module 03 — Probabilité conditionnelle et indépendance"
+description: "Probabilité conditionnelle, règle de multiplication, probabilités totales, Bayes, indépendance."
+numero: 3
+---
+
+Les outils de cette série sont la définition
+$\mathbb{P}(A\mid B)=\mathbb{P}(A\cap B)/\mathbb{P}(B)$, la règle de
+multiplication, la loi des probabilités totales, le théorème de Bayes et
+la notion d'indépendance. Les techniques de dénombrement du module 02
+restent utiles pour calculer les probabilités de départ.
+
+**Liens utiles.**
+[Le problème de Monty Hall](https://fr.wikipedia.org/wiki/Problème_de_Monty_Hall)
+(exercice 15) et
+[les dérangements](https://fr.wikipedia.org/wiki/Dérangement), qui
+reviennent au problème des rencontres (module 02).
+
+## Probabilité conditionnelle
+
+### Exercice 1
+
+On lance deux dés équilibrés.
+
+a) Sachant que la somme vaut 8, quelle est la probabilité qu'au moins un
+   des dés montre un 6 ?
+b) Sachant qu'au moins un des dés montre un 6, quelle est la probabilité
+   que la somme soit supérieure ou égale à 10 ?
+
+::: {.corrige}
+Les 36 couples $(i,j)$ sont équiprobables. Dans ce cas,
+$\mathbb{P}(A\mid B)=|A\cap B|/|B|$.
+
+a) $B=\{(2,6),(3,5),(4,4),(5,3),(6,2)\}$ contient 5 couples, dont 2
+   comportent un 6. La probabilité est $2/5$.
+b) « Au moins un 6 » contient $36-25=11$ couples. Parmi eux, ceux dont
+   la somme est au moins 10 sont $(4,6),(6,4),(5,6),(6,5),(6,6)$. La
+   probabilité est $5/11$.
+:::
+
+### Exercice 2
+
+Une famille a deux enfants. On suppose que les quatre possibilités
+(fille ou garçon pour l'aîné, fille ou garçon pour le cadet) sont
+équiprobables.
+
+a) Sachant que la famille a au moins une fille, quelle est la
+   probabilité qu'elle ait deux filles ?
+b) Sachant que l'aînée est une fille, quelle est la probabilité que la
+   famille ait deux filles ?
+c) Expliquez en une phrase pourquoi les deux réponses diffèrent.
+
+::: {.corrige}
+On note $\Omega=\{FF,FG,GF,GG\}$, la première lettre désignant l'aîné.
+
+a) « Au moins une fille » $=\{FF,FG,GF\}$ : la probabilité est $1/3$.
+b) « L'aînée est une fille » $=\{FF,FG\}$ : la probabilité est $1/2$.
+c) L'information « au moins une fille » élimine un seul des quatre cas
+   ($GG$), alors que « l'aînée est une fille » en élimine deux. Les
+   ensembles par lesquels on conditionne ne sont pas les mêmes, donc
+   les probabilités non plus.
+:::
+
+### Exercice 3
+
+On pige 3 cartes d'un paquet ordinaire de 52 cartes.
+
+a) Sachant que la main contient au moins un as, quelle est la
+   probabilité qu'elle en contienne au moins deux ?
+b) Sachant que la main contient l'as de pique, quelle est la
+   probabilité qu'elle contienne au moins deux as ?
+
+::: {.corrige}
+Il y a $\binom{52}{3}=22\,100$ mains équiprobables.
+
+a) Mains sans as : $\binom{48}{3}=17\,296$, donc
+   $|\text{au moins un as}|=4\,804$. Mains avec au moins deux as :
+   $\binom42\binom{48}1+\binom43=288+4=292$. Comme « au moins deux as »
+   est inclus dans « au moins un as »,
+   $$\mathbb{P}=\frac{292}{4\,804}=\frac{73}{1\,201}\approx 0{,}061.$$
+b) Les mains qui contiennent l'as de pique sont déterminées par les deux
+   autres cartes : $\binom{51}{2}=1\,275$ mains. Parmi elles, celles
+   sans autre as : $\binom{48}{2}=1\,128$. La probabilité est
+   $$\frac{1\,275-1\,128}{1\,275}=\frac{147}{1\,275}=\frac{49}{425}\approx 0{,}115.$$
+
+Savoir *quel* as a été pigé rend une deuxième carte as presque deux fois
+plus probable que savoir seulement qu'il y a un as. C'est le même
+phénomène qu'à l'exercice 2.
+:::
+
+### Exercice 4
+
+Soit $A$, $B$ et $C$ des événements avec $\mathbb{P}(C)>0$.
+
+a) Montrez que $\mathbb{P}(A\mid C)+\mathbb{P}(A^c\mid C)=1$.
+b) Montrez que si $A\subseteq C$, alors
+   $\mathbb{P}(A\mid C)=\mathbb{P}(A)/\mathbb{P}(C)$.
+c) Montrez que
+   $\mathbb{P}(A\cup B\mid C)=\mathbb{P}(A\mid C)+\mathbb{P}(B\mid C)-\mathbb{P}(A\cap B\mid C)$.
+
+::: {.corrige}
+a) $A\cap C$ et $A^c\cap C$ sont incompatibles et leur union est $C$.
+   Donc $\mathbb{P}(A\cap C)+\mathbb{P}(A^c\cap C)=\mathbb{P}(C)$ ; on
+   divise par $\mathbb{P}(C)$.
+b) Si $A\subseteq C$, alors $A\cap C=A$.
+c) On applique la formule de l'union aux événements $A\cap C$ et
+   $B\cap C$, dont l'union est $(A\cup B)\cap C$ et l'intersection
+   $(A\cap B)\cap C$, puis on divise par $\mathbb{P}(C)$.
+
+Plus généralement, $A\mapsto\mathbb{P}(A\mid C)$ est elle-même une
+probabilité (voir le module 04, exercice 9). Toutes les règles de calcul
+s'appliquent donc aux probabilités conditionnelles.
+:::
+
+### Exercice 5
+
+On sait que $\mathbb{P}(A)=0{,}5$, $\mathbb{P}(B)=0{,}4$ et
+$\mathbb{P}(A\cup B)=0{,}6$. Calculez
+
+a) $\mathbb{P}(A\cap B)$ ;
+b) $\mathbb{P}(A\mid B)$ et $\mathbb{P}(B\mid A)$ ;
+c) $\mathbb{P}(A^c\mid B^c)$.
+
+::: {.corrige}
+a) $\mathbb{P}(A\cap B)=0{,}5+0{,}4-0{,}6=0{,}3$.
+b) $\mathbb{P}(A\mid B)=0{,}3/0{,}4=0{,}75$ et
+   $\mathbb{P}(B\mid A)=0{,}3/0{,}5=0{,}6$.
+c) $A^c\cap B^c=(A\cup B)^c$ a probabilité $0{,}4$ et
+   $\mathbb{P}(B^c)=0{,}6$. Donc
+   $\mathbb{P}(A^c\mid B^c)=0{,}4/0{,}6=2/3$.
+:::
+
+### Exercice 6
+
+On lance une pièce équilibrée 10 fois. Sachant qu'on a obtenu exactement
+4 piles, calculez la probabilité que
+
+a) le premier lancer ait donné pile ;
+b) les deux premiers lancers aient donné pile.
+
+::: {.corrige}
+Sachant qu'il y a 4 piles, les $\binom{10}{4}=210$ positions possibles
+des piles sont équiprobables.
+
+a) Le premier lancer est pile : il reste à placer 3 piles parmi 9
+   positions, soit $\binom93=84$ façons. Probabilité
+   $84/210=2/5=4/10$. C'est intuitif : chacun des 10 lancers a autant de
+   chances que les autres d'être l'un des 4 piles.
+b) Il reste à placer 2 piles parmi 8 positions :
+   $\binom82/\binom{10}4=28/210=2/15$.
+:::
+
+## Règle de multiplication
+
+### Exercice 7
+
+Une urne contient 4 boules rouges et 6 boules noires. On pige 3 boules
+successivement, sans remise.
+
+a) Quelle est la probabilité que les trois boules soient rouges ?
+b) Quelle est la probabilité que la première boule noire soit obtenue au
+   troisième tirage ?
+c) Quelle est la probabilité d'obtenir exactement une boule noire ?
+
+::: {.corrige}
+On note $R_i$ (resp. $N_i$) l'événement « la $i$-ième boule est rouge
+(resp. noire) ».
+
+a) $\mathbb{P}(R_1\cap R_2\cap R_3)=\dfrac4{10}\cdot\dfrac39\cdot\dfrac28=\dfrac1{30}$.
+b) $\mathbb{P}(R_1\cap R_2\cap N_3)=\dfrac4{10}\cdot\dfrac39\cdot\dfrac68=\dfrac1{10}$.
+c) La boule noire peut sortir en position 1, 2 ou 3. Chacune des trois
+   suites $NRR$, $RNR$, $RRN$ a la même probabilité
+   $\frac{6\cdot4\cdot3}{10\cdot9\cdot8}=\frac1{10}$ (seul l'ordre des
+   facteurs du numérateur change). La probabilité est $3/10$.
+   Vérification par dénombrement : $\binom61\binom42/\binom{10}3=36/120=3/10$.
+:::
+
+### Exercice 8
+
+Vous avez 5 clés et une seule ouvre la porte. Vous les essayez une à une,
+au hasard, en mettant de côté celles qui ont échoué. Montrez que la
+probabilité que la porte s'ouvre exactement au $k$-ième essai vaut
+$1/5$, pour $k=1,\dots,5$.
+
+::: {.corrige}
+Soit $E_i$ l'événement « le $i$-ième essai échoue ». Par la règle de
+multiplication, la porte s'ouvre au $k$-ième essai avec probabilité
+$$\frac45\cdot\frac34\cdots\frac{5-k+1}{5-k+2}\cdot\frac{1}{5-k+1}.$$
+Le produit est télescopique : chaque numérateur se simplifie avec le
+dénominateur suivant, et il reste $1/5$.
+
+Autre point de vue : l'ordre dans lequel on essaie les clés est une
+permutation au hasard des 5 clés. La bonne clé occupe chacune des 5
+positions avec la même probabilité.
+:::
+
+### Exercice 9
+
+Quatre personnes sont choisies au hasard. On suppose que chacune est née
+un jour de la semaine choisi au hasard, indépendamment des autres.
+Calculez, à l'aide de la règle de multiplication, la probabilité que les
+quatre soient nées des jours différents.
+
+::: {.corrige}
+Soit $E_i$ l'événement « la $i$-ième personne est née un jour différent
+de ceux des $i-1$ premières ». Alors
+$$\mathbb{P}(E_2\cap E_3\cap E_4)=1\cdot\frac67\cdot\frac57\cdot\frac47=\frac{120}{343}\approx 0{,}350.$$
+C'est le même calcul que $7\cdot6\cdot5\cdot4/7^4$ par dénombrement.
+:::
+
+### Exercice 10
+
+Une urne contient 2 boules blanches et 1 boule noire. On pige une boule,
+on la remet dans l'urne et on ajoute une boule *de la même couleur*. On
+pige ensuite une deuxième boule.
+
+a) Quelle est la probabilité que les deux boules pigées soient
+   blanches ?
+b) Quelle est la probabilité que la deuxième boule soit blanche ?
+   Comparez avec la probabilité que la première soit blanche.
+
+::: {.corrige}
+a) $\mathbb{P}(B_1\cap B_2)=\mathbb{P}(B_1)\,\mathbb{P}(B_2\mid B_1)=\dfrac23\cdot\dfrac34=\dfrac12$.
+b) Par la loi des probabilités totales, en conditionnant sur la première
+   boule :
+   $$\mathbb{P}(B_2)=\frac23\cdot\frac34+\frac13\cdot\frac24=\frac12+\frac16=\frac23.$$
+   C'est exactement $\mathbb{P}(B_1)$. Le résultat de la deuxième pige
+   dépend de la première, mais sa probabilité, quand on ne connaît pas
+   la première, est la même.
+:::
+
+## Probabilités totales et théorème de Bayes
+
+### Exercice 11
+
+Une usine fabrique des pièces sur trois machines. La machine $A$ produit
+50 % des pièces, $B$ en produit 30 % et $C$ 20 %. Les proportions de
+pièces défectueuses sont de 2 % pour $A$, 3 % pour $B$ et 5 % pour $C$.
+
+a) Quelle est la probabilité qu'une pièce choisie au hasard soit
+   défectueuse ?
+b) Une pièce choisie au hasard est défectueuse. Quelle est la
+   probabilité qu'elle provienne de chacune des machines ?
+
+::: {.corrige}
+On note $D$ l'événement « la pièce est défectueuse ».
+
+a) Par la loi des probabilités totales,
+   $$\mathbb{P}(D)=0{,}5\cdot0{,}02+0{,}3\cdot0{,}03+0{,}2\cdot0{,}05=0{,}010+0{,}009+0{,}010=0{,}029.$$
+b) Par le théorème de Bayes,
+   $\mathbb{P}(A\mid D)=0{,}010/0{,}029=10/29\approx0{,}345$,
+   $\mathbb{P}(B\mid D)=9/29\approx0{,}310$ et
+   $\mathbb{P}(C\mid D)=10/29\approx0{,}345$.
+   La machine $C$ produit peu de pièces, mais ses pièces sont souvent
+   défectueuses : elle est responsable d'autant de défauts que $A$.
+:::
+
+### Exercice 12
+
+Une maladie touche 1 % de la population. Un test de dépistage donne un
+résultat positif chez 95 % des personnes malades et chez 10 % des
+personnes saines.
+
+a) Quelle proportion de la population obtient un résultat positif ?
+b) Une personne obtient un résultat positif. Quelle est la probabilité
+   qu'elle soit malade ?
+c) Cette personne passe un second test. On suppose que, *sachant son état
+   (malade ou saine)*, les deux résultats sont indépendants. Le second
+   test est aussi positif. Quelle est maintenant la probabilité qu'elle
+   soit malade ?
+
+::: {.corrige}
+On note $M$ l'événement « la personne est malade » et $T$ l'événement
+« le test est positif ».
+
+a) $\mathbb{P}(T)=0{,}01\cdot0{,}95+0{,}99\cdot0{,}10=0{,}0095+0{,}099=0{,}1085$.
+b) $\mathbb{P}(M\mid T)=0{,}0095/0{,}1085\approx0{,}088$. Moins de 9 %
+   des personnes ayant un résultat positif sont malades, car les faux
+   positifs (9,9 % de la population) sont beaucoup plus nombreux que les
+   vrais positifs (0,95 %).
+c) Sachant $M$, deux tests positifs ont probabilité $0{,}95^2$ ; sachant
+   $M^c$, ils ont probabilité $0{,}10^2$. Donc
+   $$\mathbb{P}(M\mid T_1\cap T_2)=\frac{0{,}01\cdot0{,}9025}{0{,}01\cdot0{,}9025+0{,}99\cdot0{,}01}=\frac{0{,}009025}{0{,}018925}\approx0{,}477.$$
+   On obtient le même résultat en appliquant Bayes une deuxième fois, avec
+   $0{,}088$ comme nouvelle probabilité d'être malade.
+:::
+
+### Exercice 13
+
+L'urne 1 contient 3 boules rouges et 2 noires ; l'urne 2 contient 1
+boule rouge et 4 noires. On lance une pièce équilibrée pour choisir une
+urne, puis on y pige une boule.
+
+a) Quelle est la probabilité de piger une boule rouge ?
+b) La boule pigée est rouge. Quelle est la probabilité qu'elle provienne
+   de l'urne 1 ?
+
+::: {.corrige}
+a) $\mathbb{P}(R)=\frac12\cdot\frac35+\frac12\cdot\frac15=\frac25$.
+b) $\mathbb{P}(U_1\mid R)=\dfrac{\frac12\cdot\frac35}{\frac25}=\dfrac34$.
+:::
+
+### Exercice 14
+
+On reprend les urnes de l'exercice précédent. Cette fois, on pige une
+boule de l'urne 1 *sans la regarder* et on la place dans l'urne 2. On
+pige ensuite une boule de l'urne 2.
+
+a) Quelle est la probabilité que cette boule soit rouge ?
+b) Elle est rouge. Quelle est la probabilité que la boule transférée ait
+   été rouge ?
+
+::: {.corrige}
+On note $T_R$ l'événement « la boule transférée est rouge ». Après un
+transfert rouge, l'urne 2 contient 2 rouges et 4 noires ; après un
+transfert noir, elle contient 1 rouge et 5 noires.
+
+a) $\mathbb{P}(R)=\frac35\cdot\frac26+\frac25\cdot\frac16=\frac15+\frac1{15}=\frac4{15}$.
+b) $\mathbb{P}(T_R\mid R)=\dfrac{1/5}{4/15}=\dfrac34$.
+:::
+
+### Exercice 15
+
+À un jeu télévisé, une voiture est cachée derrière l'une de trois portes
+et une chèvre derrière chacune des deux autres. Vous choisissez la porte
+1. L'animateur, qui sait où est la voiture, ouvre alors une *autre*
+porte derrière laquelle se trouve une chèvre. S'il a le choix entre
+deux portes, il en ouvre une au hasard. Il ouvre la porte 3.
+
+a) À l'aide du théorème de Bayes, calculez la probabilité que la voiture
+   soit derrière la porte 2. Avez-vous intérêt à changer de porte ?
+b) Même jeu avec 4 portes et une seule voiture. Vous choisissez une
+   porte, l'animateur ouvre une autre porte cachant une chèvre, puis vous
+   changez pour l'une des deux portes encore fermées, choisie au hasard.
+   Quelle est votre probabilité de gagner ? Comparez avec la stratégie
+   qui consiste à garder votre porte.
+
+::: {.corrige}
+a) Soit $V_i$ l'événement « la voiture est derrière la porte $i$ », de
+   probabilité $1/3$, et $O_3$ l'événement « l'animateur ouvre la porte
+   3 ». On a $\mathbb{P}(O_3\mid V_1)=1/2$ (il a le choix),
+   $\mathbb{P}(O_3\mid V_2)=1$ (il n'a pas le choix) et
+   $\mathbb{P}(O_3\mid V_3)=0$. Donc
+   $$\mathbb{P}(V_2\mid O_3)=\frac{\frac13\cdot1}{\frac13\cdot\frac12+\frac13\cdot1+0}=\frac23.$$
+   Changer de porte double vos chances : $2/3$ contre $1/3$.
+b) Si vous gardez votre porte, vous gagnez avec probabilité $1/4$. Si
+   vous changez, vous gagnez seulement si votre premier choix était
+   mauvais (probabilité $3/4$). Dans ce cas, la voiture est derrière
+   l'une des deux portes fermées restantes et vous la trouvez avec
+   probabilité $1/2$. La probabilité est $\frac34\cdot\frac12=\frac38$,
+   ce qui est mieux que $1/4$.
+:::
+
+### Exercice 16
+
+À un examen à choix multiples, chaque question a 4 choix de réponse. Un
+étudiant connaît la réponse à une question avec probabilité $0{,}6$ ;
+sinon, il répond au hasard. Il a bien répondu à une question. Quelle est
+la probabilité qu'il ait connu la réponse ?
+
+::: {.corrige}
+On note $C$ l'événement « il connaît la réponse » et $B$ l'événement
+« il répond correctement ».
+$$\mathbb{P}(C\mid B)=\frac{0{,}6\cdot1}{0{,}6\cdot1+0{,}4\cdot\frac14}=\frac{0{,}6}{0{,}7}=\frac67\approx0{,}857.$$
+:::
+
+### Exercice 17
+
+Une boîte contient trois pièces de monnaie : deux sont équilibrées et la
+troisième a deux côtés pile. On choisit une pièce au hasard et on la
+lance deux fois. On obtient deux fois pile. Quelle est la probabilité
+d'avoir choisi la pièce à deux côtés pile ?
+
+::: {.corrige}
+On note $T$ l'événement « on a choisi la pièce truquée » et $PP$
+l'événement « on obtient deux fois pile ».
+$$\mathbb{P}(T\mid PP)=\frac{\frac13\cdot1}{\frac13\cdot1+\frac23\cdot\frac14}=\frac{1/3}{1/2}=\frac23.$$
+:::
+
+## Indépendance
+
+### Exercice 18
+
+On lance deux dés équilibrés. On note $A$ l'événement « le premier dé
+montre un nombre pair », $B$ l'événement « la somme vaut 7 » et $C$
+l'événement « la somme vaut 8 ».
+
+a) Les événements $A$ et $B$ sont-ils indépendants ?
+b) Les événements $A$ et $C$ sont-ils indépendants ?
+
+::: {.corrige}
+a) $\mathbb{P}(A)=1/2$ et $\mathbb{P}(B)=6/36=1/6$. $A\cap B=\{(2,5),(4,3),(6,1)\}$,
+   donc $\mathbb{P}(A\cap B)=3/36=1/12=\mathbb{P}(A)\,\mathbb{P}(B)$.
+   Ils sont indépendants : savoir que le premier dé est pair ne change
+   rien aux chances d'obtenir une somme de 7.
+b) $\mathbb{P}(C)=5/36$ et $A\cap C=\{(2,6),(4,4),(6,2)\}$, donc
+   $\mathbb{P}(A\cap C)=3/36=6/72$, alors que
+   $\mathbb{P}(A)\,\mathbb{P}(C)=5/72$. Ils ne sont pas indépendants.
+:::
+
+### Exercice 19
+
+Soit $A$ et $B$ des événements indépendants avec $\mathbb{P}(A)=0{,}3$ et
+$\mathbb{P}(B)=0{,}5$. Calculez
+
+a) $\mathbb{P}(A\cup B)$ ;
+b) la probabilité qu'aucun des deux ne se réalise ;
+c) la probabilité qu'exactement un des deux se réalise.
+
+::: {.corrige}
+a) $\mathbb{P}(A\cup B)=0{,}3+0{,}5-0{,}3\cdot0{,}5=0{,}65$.
+b) Par le principe de préservation, $A^c$ et $B^c$ sont indépendants :
+   $\mathbb{P}(A^c\cap B^c)=0{,}7\cdot0{,}5=0{,}35$. On a bien
+   $1-0{,}65=0{,}35$.
+c) $\mathbb{P}(A\cap B^c)+\mathbb{P}(A^c\cap B)=0{,}3\cdot0{,}5+0{,}7\cdot0{,}5=0{,}5$.
+:::
+
+### Exercice 20
+
+a) Montrez que si $A$ et $B$ sont incompatibles avec
+   $\mathbb{P}(A)>0$ et $\mathbb{P}(B)>0$, alors $A$ et $B$ ne sont pas
+   indépendants.
+b) Montrez qu'un événement $A$ tel que $\mathbb{P}(A)=0$ ou
+   $\mathbb{P}(A)=1$ est indépendant de tout événement $B$.
+
+::: {.corrige}
+a) $\mathbb{P}(A\cap B)=\mathbb{P}(\emptyset)=0$, alors que
+   $\mathbb{P}(A)\,\mathbb{P}(B)>0$. Intuitivement, savoir que $B$ s'est
+   réalisé nous apprend que $A$ ne s'est pas réalisé : c'est tout le
+   contraire de l'indépendance.
+b) Si $\mathbb{P}(A)=0$, alors $0\le\mathbb{P}(A\cap B)\le\mathbb{P}(A)=0$,
+   donc $\mathbb{P}(A\cap B)=0=\mathbb{P}(A)\,\mathbb{P}(B)$. Si
+   $\mathbb{P}(A)=1$, alors $\mathbb{P}(A^c)=0$, donc $A^c$ est
+   indépendant de $B$ et, par préservation, $A$ l'est aussi.
+:::
+
+### Exercice 21
+
+Un appareil est formé de composantes qui fonctionnent indépendamment
+les unes des autres, chacune avec probabilité $0{,}9$.
+
+a) Le circuit est formé de la composante 1 *en série* avec un bloc de
+   deux composantes 2 et 3 placées *en parallèle*. Il fonctionne si la
+   composante 1 fonctionne et si au moins une des composantes 2 ou 3
+   fonctionne. Quelle est la probabilité qu'il fonctionne ?
+b) Le circuit est formé de deux branches placées en parallèle. Chaque
+   branche contient deux composantes en série : 1 et 2 dans la première,
+   3 et 4 dans la seconde. Quelle est la probabilité qu'il fonctionne ?
+
+::: {.corrige}
+On note $F_i$ l'événement « la composante $i$ fonctionne ».
+
+a) L'événement est $F_1\cap(F_2\cup F_3)$. Par préservation de
+   l'indépendance, $F_1$ et $F_2\cup F_3$ sont indépendants, et
+   $\mathbb{P}(F_2\cup F_3)=1-0{,}1^2=0{,}99$. La probabilité est
+   $0{,}9\cdot0{,}99=0{,}891$.
+b) L'événement est $(F_1\cap F_2)\cup(F_3\cap F_4)$. Chaque branche
+   fonctionne avec probabilité $0{,}81$, et les deux branches sont
+   indépendantes. La probabilité est $1-(1-0{,}81)^2=1-0{,}0361=0{,}9639$.
+:::
+
+### Exercice 22
+
+Au XVII^e^ siècle, le chevalier de Méré se demandait lequel de ces deux
+paris est le plus avantageux :
+
+- obtenir au moins un 6 en 4 lancers d'un dé ;
+- obtenir au moins un double 6 en 24 lancers d'une paire de dés.
+
+Calculez les deux probabilités, en supposant les lancers indépendants.
+
+::: {.corrige}
+On passe par le complément.
+
+- $1-(5/6)^4=1-625/1\,296\approx0{,}518$.
+- $1-(35/36)^{24}\approx1-0{,}509=0{,}491$.
+
+Le premier pari est favorable, le second ne l'est pas, même si
+$4/6=24/36$.
+:::
+
+### Exercice 23
+
+On lance deux pièces équilibrées. On note $A$ l'événement « la première
+pièce donne pile », $B$ l'événement « la deuxième pièce donne pile » et
+$C$ l'événement « les deux pièces donnent le même résultat ».
+
+a) Montrez que $A$, $B$ et $C$ sont indépendants deux à deux.
+b) Sont-ils indépendants ?
+
+::: {.corrige}
+$\Omega=\{PP,PF,FP,FF\}$, et chacun des trois événements a probabilité
+$1/2$.
+
+a) $A\cap B=\{PP\}$, $A\cap C=\{PP\}$ et $B\cap C=\{PP\}$ ont chacun
+   probabilité $1/4=\frac12\cdot\frac12$.
+b) Non : $A\cap B\cap C=\{PP\}$ a probabilité $1/4\ne1/8$. Si $A$ et $B$
+   se réalisent, $C$ se réalise forcément. C'est le même phénomène que
+   dans l'exemple de Bernstein vu en classe.
+:::
+
+### Exercice 24 **(défi)**
+
+Anne et Bruno lancent à tour de rôle une pièce équilibrée, en commençant
+par Anne. Le premier qui obtient pile gagne. Quelle est la probabilité
+qu'Anne gagne ?
+
+*Indice : partitionnez selon le numéro du lancer où apparaît le premier
+pile, puis utilisez une série géométrique.*
+
+::: {.corrige}
+Anne gagne si le premier pile apparaît à l'un des lancers $1,3,5,\dots$
+Le premier pile apparaît au lancer $2k+1$ avec probabilité
+$(1/2)^{2k+1}$ (indépendance des lancers). Ces événements sont
+incompatibles, donc
+$$\mathbb{P}(\text{Anne gagne})=\sum_{k=0}^\infty\frac{1}{2^{2k+1}}=\frac12\cdot\frac{1}{1-1/4}=\frac23.$$
+Autre méthode : soit $a$ la probabilité cherchée. Si Anne obtient face
+(probabilité $1/2$), c'est Bruno qui se retrouve dans la position
+d'Anne. Donc $a=\frac12+\frac12(1-a)$, d'où $a=2/3$.
+:::

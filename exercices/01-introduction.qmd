@@ -1,0 +1,428 @@
+---
+title: "Module 01 — Introduction aux probabilités discrètes"
+description: "Espace fondamental, événements, poids, cas équiprobable, complément, union, Boole et Bonferroni."
+numero: 1
+---
+
+Dans cette série, on n'utilise que les outils du module 01 : décrire
+l'espace fondamental $\Omega$, compter les résultats favorables (à la
+main, au besoin) et utiliser les propriétés de base de $\mathbb{P}$. Les
+techniques de dénombrement du module 02 simplifient certains calculs,
+mais ne sont pas nécessaires.
+
+## Décrire $\Omega$ et compter
+
+### Exercice 1
+
+On lance une paire de dés équilibrés. Calculez la probabilité que la
+somme des deux résultats soit
+
+a) supérieure ou égale à 10 ;
+b) inférieure ou égale à 4.
+
+::: {.corrige}
+On prend $\Omega=\{(i,j) : 1\le i,j\le 6\}$, avec $|\Omega|=36$
+résultats équiprobables.
+
+a) Somme $\ge 10$ : $(4,6),(5,5),(6,4),(5,6),(6,5),(6,6)$, soit 6
+   résultats. Probabilité $6/36=1/6$.
+b) Somme $\le 4$ : $(1,1),(1,2),(2,1),(1,3),(2,2),(3,1)$, soit 6
+   résultats. Probabilité $1/6$ aussi.
+:::
+
+### Exercice 2
+
+On lance un dé équilibré trois fois.
+
+a) Décrivez l'ensemble $\Omega$ des résultats possibles. Combien
+   contient-il d'éléments ?
+b) Soit $A$ l'événement « le premier résultat est strictement plus petit
+   que le deuxième » et $B$ l'événement « le deuxième résultat est
+   strictement plus petit que le troisième ». Calculez $\mathbb{P}(A)$,
+   $\mathbb{P}(B)$ et $\mathbb{P}(A\cap B)$.
+c) Calculez la probabilité que la somme des trois résultats soit
+   inférieure ou égale à 5.
+
+*Indice pour b) : pour compter les éléments de $A\cap B$, classez-les
+selon la valeur du deuxième lancer.*
+
+::: {.corrige}
+a) $\Omega=\{(i,j,k) : i,j,k\in\{1,\dots,6\}\}$ et $|\Omega|=6^3=216$.
+   Les résultats sont équiprobables.
+
+b) L'événement $A$ ne concerne que les deux premiers lancers. Parmi les
+   36 couples $(i,j)$, 6 ont $i=j$ et, par symétrie, la moitié des 30
+   autres ont $i<j$ : 15 couples. Le troisième lancer est libre, donc
+   $|A|=15\cdot 6=90$ et $\mathbb{P}(A)=90/216=5/12$. De la même façon,
+   $\mathbb{P}(B)=5/12$.
+
+   $A\cap B$ est l'ensemble des triplets strictement croissants
+   $i<j<k$. Si le deuxième résultat vaut $j$, il y a $j-1$ choix pour
+   $i$ et $6-j$ choix pour $k$ :
+
+   | $j$ | 2 | 3 | 4 | 5 |
+   |:-:|:-:|:-:|:-:|:-:|
+   | $(j-1)(6-j)$ | 4 | 6 | 6 | 4 |
+
+   Donc $|A\cap B|=20$ et $\mathbb{P}(A\cap B)=20/216=5/54$.
+
+c) Somme 3 : $(1,1,1)$, 1 résultat. Somme 4 : les trois permutations de
+   $(1,1,2)$. Somme 5 : les trois permutations de $(1,1,3)$ et les trois
+   de $(1,2,2)$. En tout $1+3+6=10$ résultats, d'où une probabilité de
+   $10/216=5/108\approx 0{,}046$.
+:::
+
+### Exercice 3
+
+On lance une pièce de monnaie équilibrée 4 fois.
+
+a) Décrivez l'ensemble des résultats possibles.
+b) Pour $k=0,1,2,3,4$, calculez la probabilité d'obtenir exactement $k$
+   piles.
+
+::: {.corrige}
+a) $\Omega=\{P,F\}^4$, l'ensemble des suites de 4 lettres $P$ ou $F$ :
+   $2^4=16$ résultats équiprobables.
+b) On compte les suites ayant exactement $k$ lettres $P$ (en les
+   énumérant, par exemple) :
+
+   | $k$ | 0 | 1 | 2 | 3 | 4 |
+   |:-:|:-:|:-:|:-:|:-:|:-:|
+   | nombre de suites | 1 | 4 | 6 | 4 | 1 |
+   | probabilité | $1/16$ | $4/16$ | $6/16$ | $4/16$ | $1/16$ |
+
+   La somme des probabilités vaut bien 1.
+:::
+
+### Exercice 4
+
+a) On lance une pièce $n$ fois. Quelle est la probabilité que les $n$
+   résultats soient identiques ?
+b) Même question avec un dé à 6 faces.
+c) Même question avec un dé à $m$ faces équiprobables.
+
+::: {.corrige}
+c) Il y a $m^n$ suites de résultats équiprobables, et exactement $m$
+   d'entre elles sont constantes (une par face). La probabilité est
+   $m/m^n=1/m^{n-1}$.
+
+On en déduit a) $1/2^{n-1}$ (avec $m=2$) et b) $1/6^{n-1}$ (avec $m=6$).
+:::
+
+### Exercice 5
+
+a) On lance une paire de dés ordinaires. Est-il plus probable d'obtenir
+   une somme paire ou une somme impaire ?
+b) Même question avec deux dés à 3 faces numérotées 1, 2, 3.
+c) **(défi)** Même question avec deux dés à $m$ faces numérotées de 1 à
+   $m$. Distinguez les cas $m$ pair et $m$ impair.
+
+::: {.corrige}
+La somme est paire exactement quand les deux résultats ont la même
+parité.
+
+a) Il y a 3 faces paires et 3 faces impaires : $3\cdot 3+3\cdot 3=18$
+   couples de même parité sur 36. Les deux événements ont probabilité
+   $1/2$.
+b) Faces impaires : 1 et 3 ; face paire : 2. Couples de même parité :
+   $2\cdot 2+1\cdot 1=5$ sur 9. Une somme paire est plus probable
+   ($5/9$).
+c) Si $m$ est pair, il y a $m/2$ faces de chaque parité et, comme en a),
+   les deux événements ont probabilité $1/2$. Si $m$ est impair, il y a
+   $(m+1)/2$ faces impaires et $(m-1)/2$ faces paires, donc
+   $$\mathbb{P}(\text{somme paire})=\frac{\left(\frac{m+1}{2}\right)^2+\left(\frac{m-1}{2}\right)^2}{m^2}=\frac{m^2+1}{2m^2}>\frac12 .$$
+   Avec $m=3$, on retrouve $10/18=5/9$.
+:::
+
+## Des poids qui ne sont pas égaux
+
+### Exercice 6
+
+Un dé à 6 faces est truqué : la probabilité d'obtenir la face $j$ est
+proportionnelle à $j$.
+
+*Rappel : une quantité $A$ est proportionnelle à une quantité $B$ s'il
+existe une constante $k$ telle que $A=kB$.*
+
+a) Décrivez $\Omega$ et donnez la probabilité de chaque résultat.
+b) Calculez la probabilité d'obtenir un résultat supérieur ou égal à 5.
+c) Calculez la probabilité d'obtenir un résultat pair.
+
+::: {.corrige}
+a) $\Omega=\{1,2,3,4,5,6\}$ et $p(j)=kj$. Les poids doivent avoir une
+   somme de 1 : $k(1+2+\dots+6)=21k=1$, donc $k=1/21$ et
+   $p(j)=j/21$.
+b) $p(5)+p(6)=11/21$.
+c) $p(2)+p(4)+p(6)=12/21=4/7$.
+:::
+
+### Exercice 7
+
+Un tiroir contient 7 piles électriques : 5 bonnes et 2 défectueuses. On
+en prend deux au hasard.
+
+a) Décrivez un espace fondamental $\Omega$ adapté et donnez son cardinal.
+b) Calculez la probabilité d'obtenir deux bonnes piles.
+c) Calculez la probabilité d'obtenir au moins une pile défectueuse.
+
+::: {.corrige}
+a) On numérote les piles de 1 à 7 (les bonnes portent les numéros 1 à 5).
+   On peut prendre pour $\Omega$ l'ensemble des couples ordonnés
+   $(i,j)$ avec $i\neq j$ (première pile prise, deuxième pile prise) :
+   $|\Omega|=7\cdot 6=42$, résultats équiprobables.
+   (On peut aussi prendre les paires non ordonnées : il y en a 21.)
+b) Couples formés de deux bonnes piles : $5\cdot 4=20$. Probabilité
+   $20/42=10/21$.
+c) C'est le complémentaire de b) : $1-10/21=11/21$.
+:::
+
+### Exercice 8
+
+Le philosophe et mathématicien Leibniz croyait qu'avec une paire de dés,
+une somme de 11 est aussi probable qu'une somme de 12.
+
+a) Montrez qu'une somme de 11 est deux fois plus probable qu'une somme
+   de 12.
+b) Quelle erreur de raisonnement peut mener à la conclusion de Leibniz ?
+
+::: {.corrige}
+a) Somme 11 : $(5,6)$ et $(6,5)$, probabilité $2/36$. Somme 12 :
+   $(6,6)$ seulement, probabilité $1/36$.
+b) Si on ne distingue pas les deux dés, on décrit les résultats comme
+   $\{5,6\}$ et $\{6,6\}$ : un seul résultat dans chaque cas. L'erreur
+   est de supposer ces résultats non ordonnés équiprobables. Avec des dés
+   distinguables (un rouge, un bleu), on voit que $\{5,6\}$ regroupe deux
+   résultats équiprobables, alors que $\{6,6\}$ n'en contient qu'un.
+:::
+
+### Exercice 9
+
+D'Alembert croyait qu'en lançant une pièce deux fois, la probabilité
+d'obtenir au moins une pile est $2/3$.
+
+a) Calculez la bonne probabilité.
+b) Comment peut-on arriver à $2/3$ ?
+
+::: {.corrige}
+a) $\Omega=\{PP,PF,FP,FF\}$, équiprobables. Au moins une pile : $PP,PF,FP$,
+   d'où $3/4$.
+b) En regroupant $PF$ et $FP$ (« une pile et une face »), on obtient
+   trois issues : deux piles, une de chaque, deux faces. Deux d'entre
+   elles contiennent une pile, d'où $2/3$, mais ces trois issues ne sont
+   pas équiprobables : « une de chaque » a probabilité $1/2$.
+:::
+
+## Opérations sur les événements
+
+### Exercice 10
+
+Soit $A$, $B$ et $C$ trois événements. Écrivez chacun des événements
+suivants à l'aide d'unions, d'intersections et de compléments, et
+faites un diagramme de Venn.
+
+a) Au moins un des trois événements se réalise.
+b) Les trois événements ne se réalisent pas tous.
+c) Au moins un des trois se réalise, mais pas les trois.
+d) Seul $A$ se réalise.
+e) Exactement deux des trois événements se réalisent.
+
+::: {.corrige}
+a) $A\cup B\cup C$.
+b) $(A\cap B\cap C)^c=A^c\cup B^c\cup C^c$ (loi de De Morgan).
+c) $(A\cup B\cup C)\cap(A\cap B\cap C)^c$.
+d) $A\cap B^c\cap C^c$.
+e) $(A\cap B\cap C^c)\cup(A\cap B^c\cap C)\cup(A^c\cap B\cap C)$, ou
+   encore $\big((A\cap B)\cup(A\cap C)\cup(B\cap C)\big)\cap(A\cap B\cap C)^c$.
+:::
+
+### Exercice 11
+
+La *différence symétrique* de $A$ et $B$ est
+$A\,\triangle\,B=(A\setminus B)\cup(B\setminus A)$ : c'est l'événement
+« un et un seul des événements $A$ et $B$ se réalise ».
+
+a) Exprimez $\mathbb{P}(A\,\triangle\,B)$ en fonction de
+   $\mathbb{P}(A)$, $\mathbb{P}(B)$ et $\mathbb{P}(A\cap B)$.
+b) Soit $E$ l'événement « exactement deux des événements $A$, $B$, $C$
+   se réalisent ». Montrez que
+   $$\mathbb{P}(E)=\mathbb{P}(A\cap B)+\mathbb{P}(A\cap C)+\mathbb{P}(B\cap C)-3\,\mathbb{P}(A\cap B\cap C).$$
+
+*Indice pour b) : découpez $A\cap B$ en deux morceaux incompatibles selon
+que $C$ se réalise ou non.*
+
+::: {.corrige}
+a) $A\setminus B$ et $B\setminus A$ sont incompatibles, et
+   $\mathbb{P}(A\setminus B)=\mathbb{P}(A)-\mathbb{P}(A\cap B)$. Donc
+   $$\mathbb{P}(A\,\triangle\,B)=\mathbb{P}(A)+\mathbb{P}(B)-2\,\mathbb{P}(A\cap B).$$
+b) Posons $t=\mathbb{P}(A\cap B\cap C)$. On a
+   $A\cap B=(A\cap B\cap C^c)\cup(A\cap B\cap C)$, union incompatible,
+   donc $\mathbb{P}(A\cap B\cap C^c)=\mathbb{P}(A\cap B)-t$, et de même
+   pour les deux autres paires. L'événement $E$ est l'union incompatible
+   des trois morceaux « exactement ces deux-là » (exercice 10 e)), donc
+   $$\mathbb{P}(E)=\big(\mathbb{P}(A\cap B)-t\big)+\big(\mathbb{P}(A\cap C)-t\big)+\big(\mathbb{P}(B\cap C)-t\big).$$
+:::
+
+## Propriétés de $\mathbb{P}$
+
+### Exercice 12
+
+On sait que $\mathbb{P}(A)=0{,}4$, $\mathbb{P}(A\cap B)=0{,}1$ et
+$\mathbb{P}(A\cup B)=0{,}7$. Calculez $\mathbb{P}(B)$ et
+$\mathbb{P}(B\cap A^c)$.
+
+::: {.corrige}
+De $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$ :
+$0{,}7=0{,}4+\mathbb{P}(B)-0{,}1$, donc $\mathbb{P}(B)=0{,}4$.
+
+Ensuite $\mathbb{P}(B\cap A^c)=\mathbb{P}(B)-\mathbb{P}(A\cap B)=0{,}3$.
+:::
+
+### Exercice 13
+
+On a $\mathbb{P}(A)=1/4$ et $\mathbb{P}(B)=1/2$. Calculez
+$\mathbb{P}(A\cup B)$ et $\mathbb{P}(A\,\triangle\,B)$ (voir l'exercice
+11) dans chacun des cas suivants.
+
+a) $A\subseteq B$.
+b) $A\cap B=\varnothing$.
+c) $\mathbb{P}(A\cap B)=1/8$.
+
+::: {.corrige}
+On utilise $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$
+et $\mathbb{P}(A\,\triangle\,B)=\mathbb{P}(A\cup B)-\mathbb{P}(A\cap B)$.
+
+| cas | $\mathbb{P}(A\cap B)$ | $\mathbb{P}(A\cup B)$ | $\mathbb{P}(A\,\triangle\,B)$ |
+|:--|:-:|:-:|:-:|
+| a) $A\subseteq B$ | $1/4$ | $1/2$ | $1/4$ |
+| b) incompatibles | $0$ | $3/4$ | $3/4$ |
+| c) | $1/8$ | $5/8$ | $1/2$ |
+:::
+
+### Exercice 14
+
+On a $\mathbb{P}(A)=0{,}3$ et $\mathbb{P}(B)=0{,}8$.
+
+a) Quelles sont la plus petite et la plus grande valeur possibles de
+   $\mathbb{P}(A\cup B)$ ?
+b) Quelles sont la plus petite et la plus grande valeur possibles de
+   $\mathbb{P}(A\cap B)$ ?
+
+Pour chaque valeur extrême, décrivez une situation où elle est atteinte.
+
+::: {.corrige}
+a) $A\cup B\supseteq B$, donc $\mathbb{P}(A\cup B)\ge 0{,}8$, avec
+   égalité si $A\subseteq B$. Par l'inégalité de Boole,
+   $\mathbb{P}(A\cup B)\le\min(1;\,0{,}3+0{,}8)=1$, avec égalité si
+   $A\cup B=\Omega$. Donc $0{,}8\le\mathbb{P}(A\cup B)\le 1$.
+b) $A\cap B\subseteq A$, donc $\mathbb{P}(A\cap B)\le 0{,}3$, avec
+   égalité si $A\subseteq B$. Par l'inégalité de Bonferroni,
+   $\mathbb{P}(A\cap B)\ge 0{,}3+0{,}8-1=0{,}1$, avec égalité si
+   $A\cup B=\Omega$. Donc $0{,}1\le\mathbb{P}(A\cap B)\le 0{,}3$.
+
+Exemple concret : $\Omega=\{1,2,\dots,10\}$ avec des résultats
+équiprobables et $B=\{1,\dots,8\}$. Avec $A=\{1,2,3\}$, on a
+$A\subseteq B$ ; avec $A=\{8,9,10\}$, on a $A\cup B=\Omega$ et
+$A\cap B=\{8\}$.
+:::
+
+### Exercice 15
+
+On sait que $\mathbb{P}(A)=1/4$, $\mathbb{P}(A^c\cap B)=1/5$ et
+$\mathbb{P}(A^c\cap B^c\cap C)=1/6$. Calculez
+$\mathbb{P}\big((A\cup B\cup C)^c\big)$.
+
+::: {.corrige}
+Les événements $A$, $A^c\cap B$ et $A^c\cap B^c\cap C$ sont deux à deux
+incompatibles et leur union est $A\cup B\cup C$ : un résultat de
+$A\cup B\cup C$ est soit dans $A$, soit hors de $A$ mais dans $B$, soit
+hors de $A$ et de $B$ mais dans $C$. Donc
+$$\mathbb{P}(A\cup B\cup C)=\frac14+\frac15+\frac16=\frac{37}{60}
+\quad\text{et}\quad
+\mathbb{P}\big((A\cup B\cup C)^c\big)=\frac{23}{60}.$$
+:::
+
+### Exercice 16
+
+On tire deux cartes au hasard dans un jeu ordinaire de 52 cartes.
+
+a) Quelle est la probabilité d'obtenir deux as ?
+b) Quelle est la probabilité d'obtenir deux cartes de même valeur ?
+c) Quelle est la probabilité d'obtenir un *blackjack* : un as et une
+   carte valant 10 (un 10, un valet, une dame ou un roi) ?
+
+::: {.corrige}
+On prend pour $\Omega$ les couples ordonnés de cartes distinctes :
+$|\Omega|=52\cdot 51=2652$.
+
+a) $4\cdot 3=12$ couples, d'où $12/2652=1/221\approx 0{,}0045$.
+b) La première carte est quelconque (52 choix), la deuxième doit être
+   l'une des 3 cartes restantes de même valeur : $52\cdot 3/2652=1/17$.
+c) As puis 10 : $4\cdot 16$ couples ; 10 puis as : $16\cdot 4$ couples.
+   Probabilité $128/2652=32/663\approx 0{,}048$.
+:::
+
+## Complément, Boole et Bonferroni
+
+### Exercice 17
+
+a) On lance une pièce équilibrée 4 fois. Quelle est la probabilité
+   d'obtenir au moins une pile ?
+b) Combien de fois faut-il lancer la pièce pour que la probabilité
+   d'obtenir au moins une pile soit d'au moins $0{,}99$ ?
+
+::: {.corrige}
+a) Le complémentaire est « que des faces », un seul résultat sur 16 :
+   $1-1/16=15/16$.
+b) Avec $n$ lancers, la probabilité est $1-1/2^n$. On veut
+   $1/2^n\le 0{,}01$, soit $2^n\ge 100$. Comme $2^6=64$ et
+   $2^7=128$, il faut au moins $n=7$ lancers.
+:::
+
+### Exercice 18
+
+Paul et Marie lancent un dé à tour de rôle, en commençant par Paul. Le
+premier qui obtient un 6 gagne.
+
+a) Quelle est la probabilité que Paul gagne à son $k$-ième lancer ?
+b) Quelle est la probabilité que Paul gagne ? Que Marie gagne ?
+c) Quelle est la probabilité que le jeu ne se termine jamais ?
+
+*On admet que les $k$ premiers lancers forment $6^k$ suites
+équiprobables.*
+
+::: {.corrige}
+a) Paul gagne à son $k$-ième lancer si les $2(k-1)$ lancers précédents ne
+   donnent pas de 6 et que le lancer suivant en donne un :
+   $$p_k=\left(\frac56\right)^{2(k-1)}\frac16 .$$
+b) Ces événements sont deux à deux incompatibles, donc
+   $$\mathbb{P}(\text{Paul gagne})=\sum_{k\ge 1}\frac16\left(\frac{25}{36}\right)^{k-1}=\frac{1/6}{1-25/36}=\frac{6}{11}.$$
+   De même, Marie gagne à son $k$-ième lancer avec probabilité
+   $(5/6)^{2k-1}\cdot\frac16=\frac56\,p_k$, d'où
+   $\mathbb{P}(\text{Marie gagne})=\frac56\cdot\frac{6}{11}=\frac{5}{11}$.
+c) $6/11+5/11=1$ : le jeu se termine avec probabilité 1, donc il ne se
+   termine jamais avec probabilité 0.
+:::
+
+### Exercice 19
+
+Un système comporte 5 composantes. Chacune tombe en panne pendant
+l'année avec probabilité $0{,}02$, mais on ne sait rien de la façon dont
+les pannes sont liées entre elles.
+
+a) Majorez la probabilité qu'au moins une composante tombe en panne.
+b) Minorez la probabilité que les 5 composantes fonctionnent toute
+   l'année.
+c) Que deviennent ces bornes avec 60 composantes ?
+
+::: {.corrige}
+Soit $A_i$ l'événement « la composante $i$ tombe en panne ».
+
+a) Inégalité de Boole :
+   $\mathbb{P}(A_1\cup\dots\cup A_5)\le 5\cdot 0{,}02=0{,}1$.
+b) « Toutes fonctionnent » est le complémentaire de a) :
+   $\mathbb{P}(A_1^c\cap\dots\cap A_5^c)\ge 1-0{,}1=0{,}9$ (c'est
+   l'inégalité de Bonferroni).
+c) La borne de Boole donne $60\cdot 0{,}02=1{,}2$ : elle ne dit rien,
+   puisqu'une probabilité est toujours au plus 1. Ces inégalités sont
+   utiles quand la somme des probabilités est petite.
+:::

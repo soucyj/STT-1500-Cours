@@ -16,6 +16,8 @@
 --     s'affiche dans un encadré repliable.
 --     L'en-tête de la page peut donner une date commune à toutes ses
 --     solutions (corrige: "2026-12-05 18:00") ; date= sur un bloc l'emporte.
+--     Sans date (ni date= ni corrige: dans l'en-tête), la solution est
+--     publiée d'emblée (c'est le cas des séries d'exercices).
 --     Attributs facultatifs : titre="…" (défaut « Solution »),
 --     ouvert="true" (encadré déplié d'emblée).
 --
@@ -66,13 +68,13 @@ end
 
 local function corrige(el, date_page)
   local texte = el.attributes["date"] or date_page
-  if not texte then
-    error("Bloc .corrige sans date : ajouter date=\"AAAA-MM-JJ HH:MM\" " ..
-      "au bloc ou corrige: dans l'en-tête de la page")
-  end
-  local cle, fr = lire_date(texte, "bloc .corrige")
   local titre = el.attributes["titre"] or "Solution"
-  local publiee = cle <= maintenant
+  -- Sans date (ni sur le bloc ni dans l'en-tête) : publiée d'emblée
+  local cle, fr, publiee = nil, nil, true
+  if texte then
+    cle, fr = lire_date(texte, "bloc .corrige")
+    publiee = cle <= maintenant
+  end
 
   if not publiee and not tout_montrer then
     return pandoc.Div(

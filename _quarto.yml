@@ -34,6 +34,14 @@ website:
         text: Le livre
       - href: presentations/index.qmd
         text: Présentations
+      - section: Exercices
+        href: exercices/index.qmd
+        contents:
+          - exercices/01-introduction.qmd
+          - exercices/02-denombrement.qmd
+          - exercices/03-conditionnelle-independance.qmd
+          - exercices/04-fondements.qmd
+          - exercices/05-probabilites-geometriques.qmd
       - section: Laboratoires
         href: laboratoires/index.qmd
         contents:
