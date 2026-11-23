@@ -1,12 +1,11 @@
 ---
-title: "MAT-2901 — Mathématiques et technologie"
-subtitle: "Des notions du secondaire aux applications modernes"
+title: "STT-1500 — Probabilités"
 toc: false
 ---
 
 Bienvenue sur le site du cours. Vous y trouverez le plan de cours, le
-calendrier, le livre, les présentations des cours magistraux et les
-consignes des laboratoires.
+calendrier, les présentations des cours magistraux, des séries
+d'exercices avec solutions et les laboratoires.
 
 ::: {.a-completer}
 À compléter : un court paragraphe de présentation du cours (à qui il
@@ -18,27 +17,25 @@ s'adresse, ce qu'on y fait, l'esprit du cours).
 ::: {.cartes}
 
 ::: {.carte}
-Le livre
+Présentations
 
-Les notes du cours, en ligne et en PDF.
+Les diapositives des cours magistraux, module par module.
 
-[Lire en ligne]({{< var livre.web >}}){.bouton}
-[PDF]({{< var livre.pdf >}}){.bouton}
+[Voir les présentations](presentations/index.qmd){.bouton}
 :::
 
 ::: {.carte}
-Présentations
+Exercices
 
-Les diapositives des cours magistraux, chapitre par chapitre.
+Une série d'exercices par module, avec les solutions à déplier.
 
-[Voir les présentations](presentations/index.qmd){.bouton}
+[Voir les exercices](exercices/index.qmd){.bouton}
 :::
 
 ::: {.carte .labo}
 Laboratoires
 
-Les activités en laboratoire informatique : consignes, fichiers et
-livrables.
+Les activités en laboratoire : consignes, fichiers et solutions.
 
 [Voir les laboratoires](laboratoires/index.qmd){.bouton}
 :::

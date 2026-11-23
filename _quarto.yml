@@ -1,10 +1,7 @@
 # ═══════════════════════════════════════════════════════════════════════
-#  MAT-2901 — Mathématiques et technologie : site du cours
+#  STT-1500 — Probabilités : site du cours
 #    quarto preview   → aperçu qui se met à jour en direct
 #    quarto render    → le site complet dans _site/
-#  Le livre et les présentations Beamer vivent dans le dépôt du livre
-#  (LivreMathTechno) ; ce site y renvoie par des liens. Toutes les
-#  adresses externes sont dans _variables.yml.
 # ═══════════════════════════════════════════════════════════════════════
 project:
   type: website
@@ -13,8 +10,8 @@ project:
 lang: fr
 
 website:
-  title: "MAT-2901"
-  description: "Mathématiques et technologie — site du cours"
+  title: "STT-1500"
+  description: "Probabilités — site du cours"
   search: true
   page-navigation: true
   # Barre latérale comme celle du livre (style « floating », fond en
@@ -22,7 +19,7 @@ website:
   sidebar:
     style: floating
     search: true
-    title: "MAT-2901"
+    title: "STT-1500"
     contents:
       - href: index.qmd
         text: Accueil
@@ -31,7 +28,7 @@ website:
       - href: calendrier.qmd
         text: Calendrier
       - href: livre.qmd
-        text: Le livre
+        text: Notes de cours
       - href: presentations/index.qmd
         text: Présentations
       - section: Exercices
@@ -42,10 +39,8 @@ website:
           - exercices/03-conditionnelle-independance.qmd
           - exercices/04-fondements.qmd
           - exercices/05-probabilites-geometriques.qmd
-      - section: Laboratoires
-        href: laboratoires/index.qmd
-        contents:
-          - laboratoires/latex.qmd
+      - href: laboratoires/index.qmd
+        text: Laboratoires
       - href: ressources.qmd
         text: Ressources
   page-footer:

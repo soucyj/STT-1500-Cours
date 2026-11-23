@@ -3,58 +3,101 @@ title: "Présentations"
 toc: false
 ---
 
-Les diapositives des cours magistraux. Elles suivent le livre, chapitre
-par chapitre : les énoncés y sont, les démonstrations se font au
-tableau et sont détaillées dans le livre.
+Les diapositives des cours magistraux, module par module.
+
+::: {.a-completer}
+À compléter : liens vers les PDF des diapositives.
+:::
 
 ::: {.chapitres .column-page-right}
 
 ::: {.chapitre}
-Chapitre 1 --- Les transformations du plan
+Module 01 --- Introduction aux probabilités discrètes
 
-Transformations, groupe affine, coordonnées homogènes, similitudes et
-isométries.
+Espace fondamental, événements, poids, cas équiprobable, Boole et Bonferroni.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre1.pdf){.bouton .plein}
-[Chapitre du livre]({{< var livre.web >}}01-transformations.html){.lien}
+[Exercices](../exercices/01-introduction.qmd){.lien}
 :::
 
 ::: {.chapitre}
-Chapitre 2 --- Espaces métriques
+Module 02 --- Combinatoire énumérative
 
-Distances, ouverts et compacts, distance de Hausdorff, complétude,
-théorème du point fixe de Banach, méthode de Newton.
+Principe de multiplication, permutations, dérangements, combinaisons, binôme et multinôme, Stirling.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre2.pdf){.bouton .plein}
-[Chapitre du livre]({{< var livre.web >}}02-metriques.html){.lien}
+[Exercices](../exercices/02-denombrement.qmd){.lien}
 :::
 
 ::: {.chapitre}
-Chapitre 3 --- Fractales et systèmes itératifs de fonctions
+Module 03 --- Probabilité conditionnelle et indépendance
 
-Autosimilarité, dimension, SIF et théorème de Hutchinson, jeu du chaos,
-de Weierstrass à Mandelbrot.
+Règle de multiplication, probabilités totales, théorème de Bayes, indépendance.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre3.pdf){.bouton .plein}
-[Chapitre du livre]({{< var livre.web >}}03-fractales.html){.lien}
+[Exercices](../exercices/03-conditionnelle-independance.qmd){.lien}
 :::
 
 ::: {.chapitre}
-Chapitre 4 --- Les chaînes de Markov et PageRank
+Module 04 --- Fondements des probabilités
 
-Probabilités conditionnelles, matrices stochastiques, équilibre,
-PageRank et méthode des puissances.
+Tribus, boréliens, axiomes de Kolmogorov, continuité des probabilités.
 
-[Diapositives (PDF)]({{< var pdf.base >}}chapitre4.pdf){.bouton .plein}
-[Chapitre du livre]({{< var livre.web >}}04-markov.html){.lien}
+[Exercices](../exercices/04-fondements.qmd){.lien}
 :::
 
 ::: {.chapitre}
-Chapitre 5 --- L'analyse en composantes principales
+Module 05 --- Probabilités géométriques et distributions continues
+
+Probabilité uniforme sur une région, densités, lois mixtes.
+
+[Exercices](../exercices/05-probabilites-geometriques.qmd){.lien}
+:::
+
+::: {.chapitre}
+Module 06 --- Variables aléatoires discrètes
 
 Diapositives à venir.
 
-[Chapitre du livre]({{< var livre.web >}}05-acp.html){.lien}
+:::
+
+::: {.chapitre}
+Module 07 --- Variables aléatoires continues
+
+Diapositives à venir.
+
+:::
+
+::: {.chapitre}
+Module 08 --- Espérance mathématique (partie 1)
+
+Diapositives à venir.
+
+:::
+
+::: {.chapitre}
+Module 09 --- Espérance mathématique (partie 2)
+
+Diapositives à venir.
+
+:::
+
+::: {.chapitre}
+Module 10 --- Vecteurs aléatoires (partie 1)
+
+Diapositives à venir.
+
+:::
+
+::: {.chapitre}
+Module 11 --- Vecteurs aléatoires (partie 2)
+
+Diapositives à venir.
+
+:::
+
+::: {.chapitre}
+Module 12 --- La normale, la loi gamma et la loi de Cauchy
+
+Diapositives à venir.
+
 :::
 
 :::

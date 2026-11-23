@@ -2,33 +2,21 @@
 title: "Ressources"
 ---
 
-## LaTeX
-
-- [Overleaf](https://www.overleaf.com) : écrire et compiler LaTeX dans le
-  navigateur.
-- [Documentation d'Overleaf](https://www.overleaf.com/learn) : un
-  tutoriel d'introduction et des listes de symboles.
-- [Detexify](https://detexify.kirelabs.org) : trouver la commande d'un
-  symbole en le dessinant.
-- [La classe exam](https://ctan.org/pkg/exam) : documentation complète,
-  avec de nombreux exemples.
-- [siunitx](https://ctan.org/pkg/siunitx) : nombres et unités.
-
 ## Outils mathématiques
 
 - [Desmos](https://www.desmos.com/calculator?lang=fr) : graphiques,
-  curseurs, régions définies par des inégalités.
+  curseurs, régions définies par des inégalités (utile pour les
+  probabilités géométriques).
 - [GeoGebra](https://www.geogebra.org) : géométrie dynamique, calcul
-  formel.
+  formel, calculatrice de probabilités.
 - [WolframAlpha](https://www.wolframalpha.com) : calcul symbolique et
-  numérique.
+  numérique (sommes, intégrales, coefficients binomiaux).
 
-## Python
+## Pour aller plus loin
 
-Le livre utilise Python pour plusieurs calculs (voir son
-[annexe A]({{< var livre.web >}}annexe-a-python.html)).
+- [Le problème de Monty Hall](https://fr.wikipedia.org/wiki/Problème_de_Monty_Hall)
+- [Les dérangements et le problème des rencontres](https://fr.wikipedia.org/wiki/Dérangement)
 
 ::: {.a-completer}
-À compléter : environnement recommandé pour les étudiants (Colab,
-Anaconda, Jupyter sur les postes du laboratoire…).
+À compléter : autres ressources recommandées aux étudiants.
 :::

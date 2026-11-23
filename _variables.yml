@@ -1,20 +1,7 @@
 # ═══════════════════════════════════════════════════════════════════════
-#  Adresses externes, à un seul endroit.
-#  Dans une page : {{< var livre.web >}}, {{< var pdf.base >}}, etc.
-#
-#  Les PDF des présentations et des laboratoires sont produits dans le
-#  dépôt du livre (dossier Beamer/) et publiés avec le site du livre,
-#  sous le dossier indiqué par pdf.base.
+#  Renseignements et adresses externes, à un seul endroit.
+#  Dans une page : {{< var cours.sigle >}}, {{< var cours.titre >}}, etc.
 # ═══════════════════════════════════════════════════════════════════════
-livre:
-  web: "https://soucyj.github.io/LivreMathTechno/"
-  pdf: "https://soucyj.github.io/LivreMathTechno/Mathématiques-et-technologie.pdf"
-  depot: "https://github.com/soucyj/LivreMathTechno"
-
-pdf:
-  base: "https://soucyj.github.io/LivreMathTechno/presentations/"
-
-overleaf:
-  # Ouvre un fichier .tex en ligne dans un nouveau projet Overleaf :
-  # {{< var overleaf.ouvrir >}}<adresse du fichier .tex>
-  ouvrir: "https://www.overleaf.com/docs?snip_uri="
+cours:
+  sigle: "STT-1500"
+  titre: "Probabilités"
