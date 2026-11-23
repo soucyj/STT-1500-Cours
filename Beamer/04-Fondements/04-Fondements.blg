@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is '04-Fondements.blg'
+[31] biber-darwin:342> INFO - === Mon Nov 23, 2026, 15:09:46
+[38] Biber.pm:421> INFO - Reading '04-Fondements.bcf'
+[75] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
+[83] Biber.pm:4487> INFO - Processing section 0
+[87] Biber.pm:4678> INFO - Looking for bibtex file '../references.bib' for section 0
+[87] bibtex.pm:1713> INFO - LaTeX decoding ...
+[90] bibtex.pm:1519> INFO - Found BibTeX data source '../references.bib'
+[107] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[107] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[107] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'fr-FR'
+[107] Biber.pm:4313> INFO - No sort tailoring available for locale 'fr-FR'
+[108] bbl.pm:676> INFO - Writing '04-Fondements.bbl' with encoding 'UTF-8'
+[108] bbl.pm:779> INFO - Output to 04-Fondements.bbl

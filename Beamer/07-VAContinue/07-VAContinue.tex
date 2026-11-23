@@ -1,0 +1,377 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = fr_CA
+\documentclass[nuit,charter,pied]{BeamerJS}
+\title{Variables aléatoires continues}
+\subtitle{À l'intention des étudiants de STT-1500}
+\institute{Université Laval}
+\fonction{Département de mathématiques et de statistique}
+\logotitre{../logo_UL.pdf}
+\author{Jérôme Soucy}
+\date{Hiver 2025}
+
+\usepackage{adjustbox}
+\usepackage{xstring}
+\usepackage{commandesJS}
+\addbibresource{../references.bib}
+\NouvelleBoiteJS{rems}{Remarques}{Accent}{AccentBG}
+\usepackage{calc}
+\usepackage{nicefrac}
+\usetikzlibrary{calc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{relsize}
+\begin{document}
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+
+\begin{frame}{Résumé}
+\tableofcontents
+\end{frame}
+\section{Introduction}
+\begin{frame}{Résultats du lancer d'un dé}
+Supposons que $Y$ est la variable aléatoire correspondant au résultat du lancer d'un dé régulier.
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        xlabel={$x$},
+        ylabel={$F_Y(y)=\mathbb{P}(Y \leq y)$},
+        xtick={-2,0,1,2,3,4,5,6,7,8},
+        ytick={0,0.1667,0.3333,0.5,0.6667,0.8333,1},
+        yticklabels={0,$\frac{1}{6}$,$\frac{2}{6}$,$\frac{3}{6}$,$\frac{4}{6}$,$\frac{5}{6}$,1},
+        ymin=-0.1,
+        ymax=1.1,
+        xmin=-2,
+        xmax=8,
+        domain=-2:8,
+        samples=100,
+        grid=major
+    ]
+    
+    % Tracé des segments horizontaux
+    \draw[thick] (-2,0) -- (1,0);
+    \draw[thick] (1,1/6) -- (2,1/6);
+    \draw[thick] (2,2/6) -- (3,2/6);
+    \draw[thick] (3,3/6) -- (4,3/6);
+    \draw[thick] (4,4/6) -- (5,4/6);
+    \draw[thick] (5,5/6) -- (6,5/6);
+    \draw[thick] (6,1) -- (8,1);
+    
+    % Points pleins
+    \fill (1,1/6) circle (2pt);
+    \fill (2,2/6) circle (2pt);
+    \fill (3,3/6) circle (2pt);
+    \fill (4,4/6) circle (2pt);
+    \fill (5,5/6) circle (2pt);
+    \fill (6,1) circle (2pt);
+    
+    % Points vides
+    \draw[fill=white] (1,0) circle (2pt);
+    \draw[fill=white] (2,1/6) circle (2pt);
+    \draw[fill=white](3,2/6) circle (2pt);
+    \draw[fill=white] (4,3/6) circle (2pt);
+    \draw[fill=white] (5,4/6) circle (2pt);
+    \draw[fill=white] (6,5/6) circle (2pt);
+    
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}[t]{Vers Idée de base}
+	On souhaite modéliser des phénomènes aléatoires ou l'ensemble des valeurs possibles est non dénombrables. Commençons par un exemple simple : choisir au hasard un nombre réel dans l'intervalle $\interval[open]{0}{6}$. Intuitivement, si $X$ désigne une variable aléatoire correspondant au nombre choisi, nous voudrions que $\P{X\leq 0} = 0,\P{X\leq 1} = 1/6,\P{X\leq 2} = 2/6\ldots$ et $\P{X\leq 6} = 1$. Si on note $F_X(x)$ la fonction correspondant à $\P{X\leq x}$, à quoi devrait ressembler le graphique de $F_X$?
+\end{frame}
+\begin{frame}{Choisir un nombre entre 0 et 6}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        xlabel={$x$},
+        ylabel={$F_X(x)=\mathbb{P}(X \leq x)$},
+        xtick={-2,0,1,2,3,4,5,6,7,8},
+        ytick={0,0.1667,0.3333,0.5,0.6667,0.8333,1},
+        yticklabels={0,$\frac{1}{6}$,$\frac{2}{6}$,$\frac{3}{6}$,$\frac{4}{6}$,$\frac{5}{6}$,1},
+        ymin=-0.1,
+        ymax=1.1,
+        xmin=-2,
+        xmax=8,
+        domain=-2:8,
+        samples=100,
+        grid=major
+    ]
+    
+    % Tracé des segments horizontaux
+    \draw[thick] (0,0) -- (6,1);
+    \draw[thick] (-2,0) -- (0,0);
+    \draw[thick] (6,1) -- (8,1);
+    
+%    % Points pleins
+%    \fill (1,1/6) circle (2pt);
+%    \fill (2,2/6) circle (2pt);
+%    \fill (3,3/6) circle (2pt);
+%    \fill (4,4/6) circle (2pt);
+%    \fill (5,5/6) circle (2pt);
+%    \fill (6,1) circle (2pt);
+%    
+%    % Points vides
+%    \draw[fill=white] (1,0) circle (2pt);
+%    \draw[fill=white] (2,1/6) circle (2pt);
+%    \draw[fill=white](3,2/6) circle (2pt);
+%    \draw[fill=white] (4,3/6) circle (2pt);
+%    \draw[fill=white] (5,4/6) circle (2pt);
+%    \draw[fill=white] (6,5/6) circle (2pt);
+    
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Écrire $F_X$ comme une intégrale}
+	Dans le cas où on s'intéresse à choisir un nombre $t$ dans $]0,6[$, $\P{\{X=t\}}=0$. Par contre, si on s'intéresse à la réalisation d'un événement du genre $\P{1<X\leq 2}$, on constate que cela correspond à \[F_X(2)-F_X(1).\]
+	C'était aussi le cas dans le cas discret (lancer d'un dé). Le graphique tracé précédemment suggère que $F_X$ est continue et que sa dérivée est constante. On peut donc écrire $F_X(x)=\int_0^x f(t)\,dt$, où
+	\[f(t)=\begin{cases}
+		0&\text{si $x\leq 0$},\\
+		\frac{1}{6}&\text{si $0<x\leq 6$}.
+	\end{cases}\]
+\end{frame}
+\section{Fonction de répartition}
+\begin{frame}{Définition}
+	\begin{defn}{}
+		Soit $X$ une variable aléatoire. La \defi{fonction de répartition} de $X$ est la fonction $F(x)$ définie par
+		\[F(x)=\P{X\leq x}.\]
+	\end{defn}
+	Les variables aléatoires discrètes, de même que les variables aléatoires absolument continues, possèdent une fonction de répartition.\\
+	\begin{thm}
+		Soit $X$ une variable aléatoire, et soit $a$ et $b$ des nombres réels vérifiant $a<b$. Alors
+		\[\P{a<X\leq b}=F(b)-F(a).\]
+	\end{thm}
+\end{frame}
+\begin{frame}{Lien entre fonction de masse et fonction de répartition}
+	Soit $X$ une v.a. discrète dont la fonction de masse est $p(x)$. On a donc que
+	\[F(x)=\sum_{u\in(-\infty,x]}p(u).\]
+	Si on pose $F(x^-)=\lim_{\Delta x\rightarrow 0^-}F(x+\Delta x)$, on trouve que
+	\[p(x)=F(x)-F(x^-).\]
+	Cette quantité correspond à la grandeur du saut de $F$ en $x$.
+\end{frame}
+\begin{frame}[t]{Fonction de répartition associée au lancer d'un dé}
+	On lance un dé régulier à $6$ faces. On note $Y$ le nombre obtenu. Tracez la fonction de répartition de $Y$.
+	\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        xlabel={$x$},
+        ylabel={$F_Y(y)=\mathbb{P}(Y \leq y)$},
+        xtick={-2,0,1,2,3,4,5,6,7,8},
+        ytick={0,0.1667,0.3333,0.5,0.6667,0.8333,1},
+        yticklabels={0,$\frac{1}{6}$,$\frac{2}{6}$,$\frac{3}{6}$,$\frac{4}{6}$,$\frac{5}{6}$,1},
+        ymin=-0.1,
+        ymax=1.1,
+        xmin=-2,
+        xmax=8,
+        domain=-2:8,
+        samples=100,
+        grid=major
+    ]
+    
+    % Tracé des segments horizontaux
+    \draw[thick] (-2,0) -- (1,0);
+    \draw[thick] (1,1/6) -- (2,1/6);
+    \draw[thick] (2,2/6) -- (3,2/6);
+    \draw[thick] (3,3/6) -- (4,3/6);
+    \draw[thick] (4,4/6) -- (5,4/6);
+    \draw[thick] (5,5/6) -- (6,5/6);
+    \draw[thick] (6,1) -- (8,1);
+    
+    % Points pleins
+    \fill (1,1/6) circle (2pt);
+    \fill (2,2/6) circle (2pt);
+    \fill (3,3/6) circle (2pt);
+    \fill (4,4/6) circle (2pt);
+    \fill (5,5/6) circle (2pt);
+    \fill (6,1) circle (2pt);
+    
+    % Points vides
+    \draw[fill=white] (1,0) circle (2pt);
+    \draw[fill=white] (2,1/6) circle (2pt);
+    \draw[fill=white](3,2/6) circle (2pt);
+    \draw[fill=white] (4,3/6) circle (2pt);
+    \draw[fill=white] (5,4/6) circle (2pt);
+    \draw[fill=white] (6,5/6) circle (2pt);
+    
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}{Lien entre densité et fonction de répartition}
+	\begin{defn}{}
+		Soit $X$ une v.a. telle que pour tout sous-ensemble $B$ de $\mathbb{R}$ on ait
+		\[\P{X\in B}=\int_B f(x)\,dx.\]
+		$X$ est alors une v.a. (absolument) continue de \defi{densité de probabilité} $f(x)$.
+	\end{defn}
+	On a donc que
+	\[F(x)=\P{X\leq x}=\P{X\in(-\infty,x]}=\int_{-\infty}^xf(u)du.\]
+	En utilisant le théorème fondamental du calcul différentiel et intégral, on obtient aussi que
+	$F'=f$.
+\end{frame}
+\begin{frame}{Fonction de répartition sur $\R$}
+	Une fonction $F:\R\rightarrow\R$ est appelée \defi{fonction de répartition} si elle satisfait les conditions ci-dessous:
+	\begin{enumerate}
+		\item Si $x<y$, alors $F(x)\leq F(y)$;\
+		\item Pour tout $x\in\R$, $\lim_{\Delta x\rightarrow 0^+}F(x+\Delta x)=F(x)$;\
+		\item $\lim_{x\rightarrow -\infty}F(x)=0$;\
+		\item $\lim_{x\rightarrow \infty}F(x)=1$.\
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Continuité vs continuité absolue}
+	\small
+	\begin{minipage}{0.45\textwidth}
+		L'escalier de Cantor est un exemple d'une fonction continue monotone croissante de dérivée nulle presque partout (la dérivée n'est pas définie pour les $x\in\Q$). On ne peut pas l'écrire comme l'intégrale d'une fonction continue, elle n'est donc pas absolument continue. La fonction illustrée ci-contre est un exemple de fonction de répartition continue qui n'est pas absolument continue. Comme ces cas sont plutôt rares en pratique, nous ne distinguerons pas ces types de continuité.
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+			\includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{images/Cantor.pdf}\\
+			{\footnotesize Escalier de Cantor} {\footnotesize (voir \cite{CantorEscalier})}
+		\end{center}
+	\end{minipage}
+\end{frame}
+\section[Espérance]{Espérance d'une v.a. abs. continue}
+
+\begin{frame}{Espérance d'une v.a. absolument continue}
+	\begin{defn}{}
+		Soit $X$ une v.a. avec densité $f(x)$. Si
+		$\int_{-\infty}^{\infty}|x|f(x)dx<\infty,$
+		\defi{l'espérance} de $X$ est définie par
+		\[\Es{X}=\int_{-\infty}^{\infty}xf(x)dx.\]
+	\end{defn}
+
+	\begin{rems}
+	On écrit souvent que $\mu_X=\Es{X}$, et on appelle parfois \defi{moyenne} l'espérance.
+	\end{rems}
+\end{frame}
+\section{Deux distributions}
+\begin{frame}{La loi uniforme}
+	\begin{defn}{}
+		On dira qu'une v.a. $X$ suit une \defi{loi uniforme} sur l'intervalle ouvert $(a,b)$, si sa densité de probabilité est donnée par
+		\[f(x)=\begin{cases}
+			\frac{1}{b-a}&\text{si~}a<x<b,\\
+			0 &\text{sinon.}\\
+		\end{cases}\]
+		On écrira alors que
+		\[X\sim\loiuniforme{a}{b}.\]
+	\end{defn}
+	On trouve facilement que si $X\sim\loiuniforme{a}{b}$, alors $\Es{X}=\frac{a+b}{2}.$
+\end{frame}
+
+\begin{frame}{La loi exponentielle}
+	\begin{defn}{}
+		Soit $\lambda>0$. On dira qu'une v.a. $X$ suit une \defi{loi exponentielle} de paramètre $\lambda$ si sa densité de probabilité est donnée par
+		\[f(x)=\begin{cases}
+			\lambda\text{e}^{-\lambda x}&\text{si~}x>0,\\
+			0 &\text{sinon.}\\
+		\end{cases}\]
+		On écrira alors que
+		\[X\sim\loiexponentielle{\lambda}.\]
+	\end{defn}
+	On trouve facilement que si $X\sim\loiexponentielle{\lambda}$, alors
+	\[\Es{X}=\frac{1}{\lambda}.\]
+\end{frame}
+
+
+
+\section[Fonction d'une v.a.]{Fonction d'une variable aléatoire}
+\begin{frame}{Motivation - Fonction d'une v.a.}
+	Soit $X$ une variable aléatoire suivant une loi uniforme sur l'intervalle $(0,1)$. Quelle est la distribution de la variable aléatoire $Y$ correspondant à $X^2$ ? Plus généralement, si $X$ est une variable aléatoire, quelle sera la distribution de la variable aléatoire $Y$ définie par $Y=g(X)$, où $g$ est une fonction réelle d'une variable réelle?
+\end{frame}
+\begin{frame}{Cas discret}
+	\small
+	Soit $X$ une v.a. discrète dont la fonction de masse est $p_X(x)$. On veut trouver $p_Y(y)$, la fonction de masse de la variable aléatoire $Y$ définie par $Y=g(X)$. Pour y arriver, on:
+	\begin{enumerate}
+		\item détermine l'ensemble des valeurs possibles pour $Y$;
+		\item calcule, pour chaque valeur possible $y$, la probabilité $p_Y(y)$ en remarquant que
+		\begin{align*}
+			p_Y(y)&=\P{Y=y}=\P{g(X)=y}\\
+			&=\P{X\in\{x\in\R:g(x)=y\}}\\
+			&=\sum_{\{x\in\R:g(x)=y\}}p_{X}(x).\
+		\end{align*}
+		Pour obtenir la fonction de répartition de $Y$, on remarque que $F_{Y}(y)=\sum_{u\in(-\infty,y]}p_{Y}(u)$.
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Cas absolument continu}
+	Soit $X$ une v.a. absolument continue dont la densité de probabilité est $f_X(x)$, et la fonction de répartition est $F_X(x)$. On veut trouver $f_Y(y)$, la densité de probabilité de la variable aléatoire $Y$ définie par $Y=g(X)$. Pour y arriver, on
+	\begin{enumerate}
+		\item détermine l'ensemble des valeurs possibles pour $Y$;
+		\item calcule la fonction de répartition $F_Y(y)$ en observant que
+		\begin{align*}
+			F_Y(y)&=\P{Y\leq y}\\
+			&=\P{g(X)\leq y}\\
+			&=\P{X\in\{x\in\R:g(x)\leq y\}}\\
+			&=\int_{\{x\in\R:g(x)\leq y\}}f_{X}(x)dx;\
+		\end{align*}
+		\item dérive la fonction $F_Y(y)$ par rapport à $y$ pour obtenir $f_Y(y)$.\
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Deux cas fréquents}
+	Soit $X$ une v.a. absolument continu dont la densité de probabilité est $f_X(x)$. Supposons que l'ensemble des valeurs de $x$ telles que $f_X(x)>0$ est un intervalle ouvert $I$. Supposons que $Y=g(X)$, où $g$ est une fonction strictement croissante sur I, avec dérivée strictement positive partout sur $I$, ou bien strictement décroissante sur $I$, avec dérivée strictement négative sur $I$. Appelons $J$ l'image de $I$ par $g$. Alors la densité de $Y$ est donnée par
+
+	\[f_Y(y)=\begin{cases}f_X\left(g^{-1}(y)\right)\left|\frac{d}{dy}g^{-1}(y)\right|&\text{si~} y\in J;\\
+		0 &\text{sinon}.\\
+	\end{cases}\]
+\end{frame}
+\section{Simulation}
+\begin{frame}{Cas discret}
+	Faisons l'hypothèse que nous avons la possibilité de générer un nombre aléatoire dans l'intervalle $(0,1)$.\\
+
+	On veut simuler, par exemple, une variable aléatoire dont la fonction de masse est $p(x)$. On suppose que $p(x)$ prend des valeurs positives seulement pour $x_1,x_2,\ldots$. L'idée est de partitionner l'intervalle $(0,1)$ de telle sorte que pour chaque intervalle $I_j$ de la partition choisie, nous avons que $p(x_j)=\text{longueur de l'intervalle~}I_j$.\\
+
+	Si $U\sim\text{uniforme}\,(0,1)$, alors
+	\[\P{X=x_j}=\P{U\in I_j}=p(x_j).\]
+\end{frame}
+\begin{frame}{Cas absolument continu}
+	\small
+	Faisons à nouveau l'hypothèse que nous avons la possibilité de générer un nombre aléatoire dans l'intervalle $(0,1)$. C'est donc dire qu'on peut simuler la variable aléatoire $U$, où  $U\sim\loiuniforme{0}{1}$.\\
+
+	On veut simuler une variable aléatoire $X$ dont la fonction de densité est $f(x)$ et la fonction de répartition $F(x)$. On fait l'hypothèse supplémentaire que $F$ est strictement croissante sur un intervalle $I$ vérifiant $F(I)=(0,1)$. Ce n'est pas une hypothèse trop exigeante. Il existe donc une fonction $F^{-1}:(0,1)\rightarrow I$ qui est une bijection. Définissons la variable aléatoire $Y=F^{-1}(U)$. Nous avons que
+	\begin{align*}
+		\P{Y\leq y}&=\P{F^{-1}(U)\leq y}=\P{U\leq F(y)}\qquad (F \text{~est strictement croissante)}\\
+		&=\frac{\text{longueur de l'intervalle~}(0,F(y))}{\text{longueur de l'intervalle~}(0,1)}\\
+		&=F(y).
+	\end{align*}
+\end{frame}
+\begin{frame}[t]{Fonction quantile}
+	\begin{defn}{}
+		Soit $X$ une v.a. de fonction de répartition continue $F$. La fonction inverse de $F$ se nomme la \defi{fonction quantile} de $X$.
+	\end{defn}
+	Si on souhaite déterminer la médiane de $X$, il suffit de calculer $F^{-1}(\num{0,5})$. De même, si on souhaite trouver le premier quartile, on peut calculer $F^{-1}(\num{0,25})$.
+\end{frame}
+\section{Conditionnement}
+\begin{frame}{Cas discret}
+	Soit $E_1$, $E_2,\ldots E_n$ des ensembles qui forment une partition de $\Omega$, l'ensemble fondamental d'une expérience aléatoire. D'après la loi des probabilités totales, nous avons que
+	\[\P{A}=\sum_{i=1}^n\P{A|E_i}\P{E_i}.\]
+	Imaginons maintenant une variables aléatoire $X$ telle que $X=x_i\iff E_i$ se réalise. On peut donc écrire que
+	\[\P{A}=\sum_{i=1}^n\P{A|X=x_i}\P{X=x_i}.\]
+\end{frame}
+\begin{frame}{Cas absolument continu}
+	Soit $X$ une variable aléatoire dont la densité de probabilité est $f_X(x)$. Supposons qu'on souhaite calculer la probabilité qu'un événement $A$ se réalise, et que la probabilité de réalisation de $A$ est affectée par la valeur que prend la variable aléatoire $X$. Faisons l'hypothèse que $\P{A|X=x}$ est une fonction de $x$ connue, où facilement calculable. Alors
+	\[\P{A}=\int_{\R}\P{A|X=x}f_X(x)dx.\]
+	Notons que l'expression \(\P{A|X=x}\) ne correspond pas à la définition du chapitre 3, puisque l'événement $\{X=x\}$ est de probabilité nulle.
+\end{frame}
+\begin{frame}[allowframebreaks]{Bibliographie}
+\printbibliography[heading=none]
+\vspace{0.5cm}
+
+ \begin{rems}
+ 	\begin{itemize}
+ 		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
+		\item La formulation des définitions et énoncés est fortement inspirée de \cite{belisle}.
+ 	\end{itemize}
+ \end{rems}
+
+ 	\vfill
+ 	\footnotesize Pour signaler une erreur dans ce document, veuillez écrire à~\href{mailto:jerome.soucy@mat.ulaval.ca}{jerome.soucy@mat.ulaval.ca}.
+ \end{frame}
+\end{document}

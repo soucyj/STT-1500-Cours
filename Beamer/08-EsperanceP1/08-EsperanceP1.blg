@@ -1,0 +1,15 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is '06-EsperanceP1.blg'
+[33] biber-darwin:340> INFO - === Wed Jan  7, 2026, 15:26:22
+[41] Biber.pm:420> INFO - Reading '06-EsperanceP1.bcf'
+[71] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[78] Biber.pm:4463> INFO - Processing section 0
+[82] Biber.pm:4654> INFO - Looking for bibtex file '../references.bib' for section 0
+[83] bibtex.pm:1713> INFO - LaTeX decoding ...
+[85] bibtex.pm:1519> INFO - Found BibTeX data source '../references.bib'
+[100] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[100] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[100] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'fr-FR'
+[100] Biber.pm:4289> INFO - No sort tailoring available for locale 'fr-FR'
+[101] bbl.pm:676> INFO - Writing '06-EsperanceP1.bbl' with encoding 'UTF-8'
+[101] bbl.pm:779> INFO - Output to 06-EsperanceP1.bbl

@@ -1,0 +1,7 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Distributions multivariées}{3}{0}{1}
+\beamer@sectionintoc {2}{Lois marginales}{17}{0}{2}
+\beamer@sectionintoc {3}{Lois conditionnelles}{24}{0}{3}
+\beamer@sectionintoc {4}{Variables aléatoires indépendantes}{28}{0}{4}
+\beamer@sectionintoc {5}{Distribution d'une fonction de plusieurs variables aléatoires}{36}{0}{5}
+\beamer@sectionintoc {6}{Somme de variables aléatoires et convolution}{40}{0}{6}

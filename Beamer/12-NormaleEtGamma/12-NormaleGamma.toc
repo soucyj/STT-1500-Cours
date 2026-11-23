@@ -1,0 +1,5 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Loi normale}{3}{0}{1}
+\beamer@sectionintoc {2}{La fonction gamma}{19}{0}{2}
+\beamer@sectionintoc {3}{La loi gamma}{23}{0}{3}
+\beamer@sectionintoc {4}{La loi de Cauchy}{28}{0}{4}

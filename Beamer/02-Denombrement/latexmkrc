@@ -1,0 +1,4 @@
+$ENV{'TEXINPUTS'} = '.:..:' . ($ENV{'TEXINPUTS'} || '');
+$pdf_mode = 5;  # 5 = XeLaTeX
+$latex = 'xelatex -synctex=1 -interaction=nonstopmode -file-line-error %O %S';
+$xelatex = 'xelatex -synctex=1 -interaction=nonstopmode -file-line-error %O %S';

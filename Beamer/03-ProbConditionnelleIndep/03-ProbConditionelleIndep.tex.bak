@@ -1,0 +1,365 @@
+\documentclass[handout]{BeamerJS}
+\title{Probabilité conditionnelle et indépendance}
+\subtitle{À l'intention des étudiants de STT-1500}
+\institute{Université Laval}
+\author{Jérôme Soucy}
+\date{}
+
+\usepackage{adjustbox}
+\usepackage{commandesJS}
+\usepackage{calc}
+\usepackage{nicefrac}
+\usetikzlibrary{calc}
+\usepackage{array}
+\usepackage{booktabs}
+%\newcommand{\demarche}{{\color{orange}\faIcon{pencil-alt}}~}
+\newcommand{\demarche}{{\vspace{0.1cm}\centering\color{orange}\hrule}~\\}
+\begin{document}
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+\begin{frame}{Résumé}
+\tableofcontents
+\end{frame}
+
+\section{Probabilité conditionnelle}
+\begin{frame}{Un exemple --- piger une paire d'as}
+\pause
+	\begin{exST}
+	Pierre pige deux cartes d'un paquet de 52 cartes. Il regarde une des deux cartes et constate qu'il s'agit de l'as de pique. Quelle est la probabilité qu'il ait pigé une paire d'as?
+	\end{exST}
+	\pause
+	 On sait que l'ensemble des deux cartes pigées par Pierre est de la forme \(\{A\spadesuit,X\}\) où \(X\) est une des 51 autre cartes du paquet. De ces 51 éventualités, il y en a 3 qui donnent lieu à une paire d'as. Ainsi, la probabilité cherchée est \(\frac{3}{51}=\frac{1}{17}.\)
+\end{frame}
+
+\begin{frame}{Définition}
+	\begin{defn}
+		Soit $\mathcal{E}$ une expérience aléatoire dont l'ensemble fondamental est $\Omega$. Soit $A$ et $B$ des événements tels que $\P{B}>0$. La \defi{probabilité conditionnelle} de $A$ sachant $B$, notée $\P{A|B}$, est définie par
+		\[\P{A|B}=\frac{\P{A\cap B}}{\P{B}}.\]
+	\end{defn}
+	\pause
+		Observons que si \(\Omega\) est fini, alors
+	\[
+	\P{A|B}=\frac{\P{A\cap B}}{\P{B}}=\frac{
+		\frac{\card{A\cap B}}{\card{\Omega}}}
+	{\frac{\card{B}}{\card{\Omega}}}=\frac{\card{A\cap B}}{\card{B}
+	}.
+	\]
+\end{frame}
+\begin{frame}{Sur la définition d'une probabilité conditionnelle}
+	\begin{thm}
+		Soit $B$ un événement tel que $\P{B}>0$. \pause Alors
+		\begin{enumerate}
+			\item Pour tout événement $A$, on a que $0\leq \P{A|B}\leq 1;$ \pause
+			\item $\P{\emptyset|B}=0$ et $\P{\Omega|B}=1$;\pause
+			\item Soit $A_1,A_2,\ldots$ des événements mutuellement exclusifs. Alors
+			\(\P{\cup_{i=1}^{\infty}A_i|B}=\sum_{i=1}^{\infty}\P{A_i|B}.\)
+		\end{enumerate}
+	\end{thm}
+\end{frame}
+
+\begin{frame}{Retour sur l'exemple}
+\pause
+	\begin{exST}
+	Pierre pige deux cartes d'un paquet de 52 cartes. Il regarde une des deux cartes et constate qu'il s'agit de l'As de pique. Quelle est la probabilité qu'il ait pigé une paire d'As?
+	\end{exST}
+	\pause
+	On définit les événements
+	\begin{align*}
+		A&= \text{Pierre a pigé une paire d'as},\\
+		B&= \text{Pierre a pigé l'as de pique}.
+	\end{align*}
+\end{frame}
+\begin{frame}{Retour sur l'exemple --- suite}
+	On constate que \[\P{A\cap B}=\frac{3}{\binom{52}{2}}=\frac{1}{442}\qquad\text{et}\qquad\P{B}=\frac{51}{\binom{52}{2}}=\frac{1}{26}.\]\pause
+	On vérifie que
+	\[\P{A|B}=\frac{\P{A\cap B}}{\P{B}}=\frac{1/442}{1/26}=\frac{1}{17}.\]
+\end{frame}
+\begin{frame}{Lancer une pièce de monnaie 20 fois}
+\pause
+	\begin{exST}
+	On lance une pièce de monnaie 20 fois. Après 11 lancers, on constate que \emph{pile} est apparue une fois de plus que le nombre de \emph{faces}. Quelle est la probabilités qu'après les 20 lancers on constate qu'il y ait eu un nombre de \emph{faces} supérieur au nombre de \emph{piles}?
+	\end{exST}
+    \pause
+    Parmi les 11 premiers lancers, \textit{pile} est apparu 6 fois et face 5 fois. \pause Pour que \textit{face} soit obtenu au moins 11 fois après 20 lancers, \textit{pile} ne doit pas être obtenu plus de 9 fois après les 20 lancers. \pause C'est donc dire que parmi les 9 lancers qu'il reste à effectuer, au plus 3 doivent mener à un résultat \textit{pile}. \pause La réponse est donc
+    \[
+    	\frac{\binom{9}{0}+\binom{9}{1}+\binom{9}{2}+\binom{9}{3}}{2^9}=\frac{65}{256}\approx \SI{25,4}{\percent}.
+    \]
+\end{frame}
+\begin{frame}[t]{Deux variantes d'un même problème}
+\pause
+	\begin{ex}[Piger une paire]
+		On pige deux cartes d'un paquet régulier de 52 cartes. Quelle est la probabilité d'avoir pigé une paire?
+	\end{ex}
+\pause
+	\vfill
+	\begin{ex}[Piger une paire et en savoir un peu plus]
+		On pige deux cartes d'un paquet régulier de 52 cartes. On remarque que parmi les cartes pigées, il y a une carte de pique et une carte de c\oe ur. Quelle est la probabilité d'avoir pigé une paire?
+	\end{ex}
+\end{frame}
+
+\begin{frame}[t]{Influence positive ou négative}
+\pause
+\begin{exST}
+    Un paquet contient les 4 rois et les 4 as d'un paquet régulier. On pige 3 cartes dans ce paquet de 8 cartes. On définit les événements suivants :
+    \begin{align*}
+    	A&=\text{Piger une paire d'as}\\
+    	B_1&=\text{Avoir pigé l'as de pique}\\
+    	B_2&=\text{Avoir pigé au moins un as}\\
+    	B_3&=\text{Avoir pigé au moins un roi}\\
+    \end{align*}
+    \pause
+Calculez $\P{A|B_i}$ pour $i\in\{1,2,3\}$.
+\end{exST}
+\end{frame}
+
+\begin{frame}{}
+	\begin{boite}
+	$$\P{A|B_1}$$
+	On veut calculer $\P{\text{Piger une paire d'as}|\text{Avoir pigé l'as de pique}}$
+	\end{boite}
+\end{frame}
+\begin{frame}{}
+	\begin{boite}
+		$$\P{A|B_2}$$
+		On veut calculer $\P{\text{Piger une paire d'as}|\text{Avoir pigé au moins un as}}$
+	\end{boite}
+\end{frame}
+\begin{frame}{}
+	\begin{boite}
+		$$\P{A|B_3}$$
+		On veut calculer $\P{\text{Piger une paire d'as}|\text{Avoir pigé au moins un roi}}$
+	\end{boite}
+\end{frame}
+
+\begin{frame}{La règle de multiplication}
+\pause
+	Si les probabilités $\P{A\cap B}$ et $\P{B}$ sont faciles à calculer, alors la définition de probabilité conditionnelle nous permet de calculer directement $\P{A|B}$. Parfois, c'est précisément cette dernière probabilité qui est facile à calculer. Dans ce cas, on peut se servir de l'information fournie par $\P{A|B}$ pour calculer la probabilité que $A$ et $B$ se réalisent conjointement.
+	\pause
+	\begin{thm}{}
+		Soit $A$ et $B$ des événements. Alors
+		\[\P{A\cap B}=\P{A|B}\P{B}\qquad\text{et}\qquad\P{A\cap B}=\P{B|A}\P{A}.\]
+	\end{thm}
+	\pause
+	\begin{lumiere}
+	Pour que les équations précédentes aient du sens, il est nécessaire que $\P{B}>0$ dans le premier cas et que $\P{A}>0$ dans le second.
+	\end{lumiere}
+\end{frame}
+\begin{frame}{Retour sur l'exemple des 20 lancers}
+\pause
+	\begin{exST}
+		On lance une pièce de monnaie 20 fois. On définit les événements suivants:
+		\begin{align*}
+			E&=\text{Après 11 lancers, \textit{pile} est apparue une fois de plus que face.}\\
+			F&=\text{Après 20 lancers, \textit{face} est apparue plus souvent que pile.}
+		\end{align*}
+		Quelle est la probabilité que \(E\) et \(F\) se réalisent simultanément?
+	\end{exST}
+	\pause
+    Nous avons que \[\P{E\cap F}=\P{F|E}\P{E}=\frac{65}{256}\cdot\frac{\binom{11}{6}}{2^{11}}\approx\SI{5,7}{\percent}.\]
+\end{frame}
+\begin{frame}{La règle de multiplication - cas général}
+	Dans le cas où nous avons $n$ événements, la règle prend la forme ci-dessous.
+	\pause
+	\begin{thm}
+		Soit $E_1,E_2,\ldots, E_n$ des événements tels que \[\P{\cap_{i=1}^{n-1}E_i}>0.\]
+		Alors
+		\[\P{\cap_{i=1}^{n}E_i}=\P{E_1}\P{E_2|E_1}\P{E_3|E_1\cap E_2}\ldots\P{E_n|\cap_{i=1}^{n-1} E_i}.\]
+	\end{thm}
+\end{frame}
+\begin{frame}{Exemple : des boules et des diviseurs}
+\pause
+	\begin{exST}
+	On place les boules $B_i, i\in\{1,2,\ldots,9\}$, dans des urnes numérotées 1, 2 et 3. Quelle est la probabilité que pour chaque valeur de \(i\), la boule \(B_i\) soit placée dans une urne dont le numéro est un diviseur de \(i\)?
+\end{exST}
+\pause
+	On définit l'événement \(E_i\) par: \textit{la boule \(B_i\) est placée dans une urne dont le numéro est un diviseur de \(i\)}.
+	
+\end{frame}
+\begin{frame}{Exemple : des boules qui s'ajoutent}
+\pause
+	\begin{exST}
+	On pige 5 boules d'une urne contenant initialement 5 boules rouges et 5 boules noires. À la \(i\ap{ième}\) pige, si on pige une boule rouge, on remet la boule dans l'urne pour les autres piges et on y ajoute aussi 5 nouvelles boules rouges. Si on pige une boule noire, on fait simplement remettre la boule noire dans l'urne. Quelle est la probabilité de piger 5 boules rouges lors des cinq piges?
+	\end{exST}
+\pause
+	On définit l'événement \(E_i\) par: \textit{une boule rouge est pigée lors de la \(i\ap{ième}\) pige}.
+\end{frame}
+
+\begin{frame}{La loi des probabilités totales}
+\pause
+	\begin{thm}{}
+	Soit $\{E_1,E_2,\ldots,E_n\}$ une partition de $\Omega$. Alors pour tout événement $A\subseteq \Omega$,
+	\[\P{A}=\sum_{i=1}^{n}\P{A|E_i}\P{E_i}.\]
+	\end{thm}
+	\pause
+	\begin{rems}
+	\begin{enumerate}
+		\item Dire que $\{E_1,E_2,\ldots,E_n\}$ est une partition de $\Omega$ signifie que les événements $E_1,E_2,\ldots,E_n$ sont non vides, mutuellement exclusifs et que $\cup_{i=1}^n E_i=\Omega$. \pause
+		\item La loi des probabilités totales est aussi valide dans le cas où on a une famille infinie dénombrable d'ensembles.
+	\end{enumerate}
+	\end{rems}
+\end{frame}
+\begin{frame}{Événements exhaustifs}
+\pause
+\begin{defn}
+Soit \(\Omega\) l'espace fondamental associé à une expérience aléatoire. Une collection d'événements \(\{E_1, E_2, \dots, E_n\}\) est dite \textbf{exhaustive} si
+\[
+\bigcup_{i=1}^n E_i = \Omega.
+\]
+\end{defn}
+\pause
+\begin{rem}
+Pour signifier que les ensembles $E_1, E_2, \dots, E_n$ forment une partition de $\Omega$, on peut aussi dire que les $E_i$ sont non vides, mutuellement exclusifs et exhaustifs.
+\end{rem}
+\end{frame}
+\begin{frame}[t]{Exemple d'utilisation de la loi des probabilités totales}
+\pause
+	\begin{exST}
+	Le tournoi de pétanque annuel de la résidence Déziel s'amorcera demain. Au premier tour, Henri-Paul affrontera Muguette avec probabilité $\num{0,2}$, Ghyslaine avec probabilité $\num{0,3}$ ou Yvon avec probabilité $\num{0,5}$. Sa probabilité de victoire contre la redoutable Muguette n'est que de $\num{0,3}$. Par contre, elle est de $\num{0,6}$ contre Ghyslaine et de $\num{0,7}$ contre Yvon. Quelle est la probabilité qu'Henri-Paul passe au deuxième tour?
+	\end{exST}
+\end{frame}
+\begin{frame}{Le théorème de Bayes}
+\pause
+	\begin{thm}{}
+		Soit $\{E_1,E_2,\ldots,E_n\}$ une partition de $\Omega$. Soit $A\subseteq\Omega$ un événement tel que $\P{A}>0$. Alors pour tout $i\in\{1,2,\ldots,n\}$, nous avons que
+		\[\P{E_i|A}=\frac{\P{A|E_i}\P{E_i}}{\sum_{i=1}^{n}\P{A|E_i}\P{E_i}}.\]
+	\end{thm}
+\pause
+	\begin{rem}
+	Le théorème de Bayes est aussi valide dans le cas où on a une famille infinie dénombrable.
+	\end{rem}
+\end{frame}
+\begin{frame}{Démonstration}
+Pour démontrer le théorème de Bayes, on procède comme suit:\pause
+	\begin{enumerate}
+		\item on utilise d'abord la définition d'une probabilité conditionnelle pour exprimer $\P{E_i|A}$;\pause
+		\item puis la règle de multiplication en conditionnant sur les $E_i$ au numérateur;\pause
+		\item puis on exprime $\P{A}$ au moyen du théorème des probabilités totales au dénominateur.
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Un exemple --- les étudiants du cours de génie}
+\pause
+\begin{exST}
+	\begin{center}
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		Programme        & Nb. d'inscrits & Nb. d'échecs \\ \midrule
+		Génie mécanique  & 50             & 10           \\
+		Génie géologique & 38             & 5            \\
+		Génie civil      & 17             & 2            \\ \bottomrule
+	\end{tabular}
+	\end{center}
+	\pause
+On choisit un étudiant au hasard inscrit dans ce cours de génie. On constate qu'il a réussi le cours. Quelle est la probabilité que l'étudiant choisi soit inscrit au programme de génie mécanique?
+\end{exST}
+\end{frame}
+\begin{frame}{Exemple : devine la couleur}
+\pause
+	\begin{exST}
+		Un paquet contient trois cartes : une a les deux faces rouges, une à les deux faces noires et une a une face rouge et une face noire. On pige une carte au hasard et on la pose sur la table. La face qui est exposée est rouge. Qu'elle est la probabilité qu'en la retournant, on constate que son autre face soit aussi de couleur rouge?
+	\end{exST}
+\end{frame}
+
+\section{Indépendance}
+
+\begin{frame}{Définition}
+	\begin{defn}
+		Deux événements $A$ et $B$ sont indépendants si on a que
+		\[\P{A\cap B}=\P{A}\P{B}.\]
+	\end{defn}
+	\pause
+	\begin{prop}
+		Soit $A$ et $B$ des événements indépendants.
+		\begin{enumerate}
+			\item Si $\P{B}>0$, alors $\P{A|B}=\P{A}$.
+			\item Si $\P{A}>0$, alors $\P{B|A}=\P{B}$.
+		\end{enumerate}
+	\end{prop}
+\end{frame}
+
+\begin{frame}{Remarques sur l'indépendance}
+\pause
+	\begin{enumerate}
+		\item On peut montrer que si  des événements $A$ et $B$ satisfont simultanément $\P{A|B}=\P{A}$ et $\P{B|A}=\P{B}$, alors ils sont indépendants.\pause
+		\item On peut montrer que si $\P{A}>0$ et $\P{B}>0$,
+			\[\P{A|B}=\P{A}\Longleftrightarrow\P{B|A}=\P{B}.\]\pause
+		\item Les deux remarques précédentes nous permettent de définir l'indépendance d'événements en utilisant les probabilités conditionnelles.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{L'indépendance pour trois événements}
+\pause
+	\begin{defn}{}{}
+		Trois événements $A$, $B$ et $C$ sont indépendants si les quatre conditions suivantes sont satisfaites:\pause
+		\begin{enumerate}
+			\item $\P{A\cap B}=\P{A}\P{B}$;
+			\item $\P{A\cap C}=\P{A}\P{C}$;
+			\item $\P{B\cap C}=\P{B}\P{C}$;
+			\item $\P{A\cap B\cap C}=\P{A}\P{B}\P{C}$.
+		\end{enumerate}
+	\end{defn}
+	\pause
+	\begin{rem}
+	Dès que les conditions 1, 2 et 3 sont vérifiées, on peut dire que les événements $A$, $B$ et $C$ sont \defi{indépendants deux à deux}.
+	\end{rem}
+\end{frame}
+\begin{frame}{L'exemple de Bernstein (1928)}
+\pause
+\begin{exST}
+	Une urne contient quatre billets portant chacun un numéro. Ces derniers sont $112, 121, 211$ et $222$. On pige un billet. On définit les événements suivants :
+	\begin{align*}
+		A_1&=\text{Le premier chiffre du numéro sur le billet pigé est $1$}\\
+		A_2&=\text{Le deuxième chiffre du numéro sur le billet pigé est $1$}\\
+		A_3&=\text{Le troisième chiffre du numéro sur le billet pigé est $1$}
+	\end{align*}
+\end{exST}
+\pause
+\begin{rem}
+   Cet exemple est tiré du livre:\\
+   \fullcite{stoyanov}.
+\end{rem}
+\end{frame}
+
+\begin{frame}{Cas général}
+\pause
+	\begin{defn}{}{}
+		Soit $J$ un ensemble fini ou dénombrable. Soit $\mathcal{B}=\{B_j:j\in J\},$ une collection quelconque d'événements. Ces événements sont dits indépendants si pour chaque $n\in\Ns$ et pour chaque choix de $j_1,j_2,\ldots,j_n\in J$, avec $j_h\neq j_{\ell}$ pour tout $h\neq \ell$, on a
+		\[\P{\bigcap_{k=1}^n B_{j_k}}=\prod_{k=1}^n\P{B_{j_k}}.\]
+	\end{defn}
+	\pause
+	\begin{rem}
+	On peut vérifier que cette définition est cohérente avec les définitions données précédemment pour les cas de deux et trois événements.
+	\end{rem}
+\end{frame}
+
+\begin{frame}{Principe de préservation de l'indépendance}
+\pause
+	\begin{thm}{}{}
+		Soit \(m,n\in\Ns\). Soit \(E_1,E_2,\ldots,E_m,E_{m+1},\ldots,E_{m+n}\) des événements mutuellement indépendants. Soit \(F\) un événement défini à partir des événements $E_1,E_2,\ldots,E_m$ à l'aide des opérations ensemblistes union, intersection et complémentation. Soit \(G\) un événement défini à partir des événements $E_{m+1},E_{m+2},\ldots,E_{m+n}$ à l'aide des opérations ensemblistes union, intersection et complémentation. Alors les événements \(F\) et \(G\) sont indépendants.
+	\end{thm}
+	\pause
+	De ce principe, on peut entre autre tirer les conclusions ci-dessous:
+	\begin{enumerate}
+		\item Si $A$ et $B$ sont indépendants, alors $A\comp$ et $B$ sont indépendants;\pause
+		\item Si $A,B$ et $C$ sont indépendants, alors $A\comp$ et $B\cup C$ sont indépendants.
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Exemple}
+\begin{exST}
+	Soit $A$ et $B$ des événements indépendants. Montrez que $A$ et $B\comp$ sont aussi des événements indépendants.
+\end{exST}
+\end{frame}
+
+ \begin{frame}{Bibliographie}
+ \printbibliography[heading=none]
+\vfill
+ \begin{rems}
+ 	\begin{itemize}
+ 		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
+ 		\item La formulation des définitions et résultats est fortement inspirée de \cite{belisle}.
+ 	\end{itemize}
+ \end{rems}
+ 	\vfill
+ 	\footnotesize Pour signaler une erreur dans ce document, veuillez écrire à~\href{mailto:jerome.soucy@mat.ulaval.ca}{jerome.soucy@mat.ulaval.ca}.
+ \end{frame}
+\end{document}

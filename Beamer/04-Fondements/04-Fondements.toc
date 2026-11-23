@@ -1,0 +1,6 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Pourquoi revenir aux fondements?}{3}{0}{1}
+\beamer@sectionintoc {2}{Tribus d'événements}{21}{0}{2}
+\beamer@sectionintoc {3}{Les axiomes de Kolmogorov}{53}{0}{3}
+\beamer@sectionintoc {4}{Conséquences des axiomes}{71}{0}{4}
+\beamer@sectionintoc {5}{Continuité des probabilités}{90}{0}{5}

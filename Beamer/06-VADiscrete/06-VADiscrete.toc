@@ -1,0 +1,4 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Variables aléatoires}{3}{0}{1}
+\beamer@sectionintoc {2}{Espérance d'une v.a. discrète}{23}{0}{2}
+\beamer@sectionintoc {3}{Quelques distributions discrètes}{27}{0}{3}

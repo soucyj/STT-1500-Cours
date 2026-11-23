@@ -1,0 +1,5 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Espérance}{3}{0}{1}
+\beamer@sectionintoc {2}{Espérance d'une fonction d'une v.a.}{9}{0}{2}
+\beamer@sectionintoc {3}{Moments d'une v.a.}{16}{0}{3}
+\beamer@sectionintoc {4}{Variance et écart-type d'une v.a.}{23}{0}{4}

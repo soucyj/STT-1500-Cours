@@ -1,0 +1,383 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = fr_CA
+\documentclass[nuit,charter,pied]{BeamerJS}
+\title{Fondements des probabilités}
+\subtitle{À l'intention des étudiants de STT-1500}
+\institute{Université Laval}
+\fonction{Département de mathématiques et de statistique}
+\logotitre{../logo_UL.pdf}
+\author{Jérôme Soucy}
+\date{Hiver 2025}
+
+\usepackage{commandesJS}
+\addbibresource{../references.bib}
+\NouvelleBoiteJS{defns}{Définitions}{Dominante}{DominanteBG}
+\NouvelleBoiteJS{props}{Propositions}{VertPreuve}{PreuveBG}
+\NouvelleBoiteJS{exs}{Exemples}{GrisExemple}{ExempleBG}
+\NouvelleBoiteJS{rems}{Remarques}{Accent}{AccentBG}
+
+% Encadré sans titre
+\newtcolorbox{cadre}{enhanced, breakable, sharp corners, boxrule=0.7pt,
+	colback=Fond, colframe=Dominante!45, top=8pt, bottom=8pt,
+	left=10pt, right=10pt, before skip=10pt, after skip=8pt}
+
+\newcommand{\tribu}{\mathcal{F}}
+\newcommand{\borel}{\mathcal{B}(\R)}
+
+\begin{document}
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+\begin{frame}{Résumé}
+\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pourquoi revenir aux fondements?}
+
+\begin{frame}[t]{Ce que nous savons faire}
+\pause
+	Dans le module d'introduction, une probabilité sur un espace fondamental \emph{discret} \(\Omega\) était construite à partir de poids :
+	\[p(\omega)\geq 0,\qquad \sum_{\omega\in\Omega}p(\omega)=1,\qquad \P{A}=\sum_{\omega\in A}p(\omega).\]
+	\pause
+	Nous en avons déduit les règles de calcul suivantes :
+	\begin{itemize}
+		\item \(\P{A}\geq 0\) et \(\P{\Omega}=1\);\pause
+		\item si \(A_1,A_2,\ldots\) sont deux à deux incompatibles, \(\P{\bigcup_{k}A_k}=\sum_{k}\P{A_k}\).
+	\end{itemize}
+	\pause
+	\begin{lumiere}
+		Toutes les autres propriétés (complémentarité, probabilité d'une union, monotonicité, Boole, Bonferroni) ont été obtenues à partir de ces règles seulement, sans jamais revenir aux poids.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Ce que nous ne savons pas encore faire}
+\pause
+	On choisit un nombre au hasard dans \(\Omega=\interval{0}{1}\).
+	\pause
+	\begin{itemize}
+		\item Chaque nombre \(x\) doit avoir une probabilité nulle : \(\P{\{x\}}=0\).\pause
+		\item Pourtant, on s'attend à ce que \(\P{\interval{a}{b}}=b-a\) pour \(0\leq a\leq b\leq 1\).\pause
+		\item Les poids ne permettent pas de retrouver la probabilité d'un intervalle : une somme de zéros vaut zéro.
+	\end{itemize}
+	\pause
+	\begin{lumiere}
+		\textbf{Idée de Kolmogorov (1933) :} oublier les poids et prendre comme \emph{définition} les règles de calcul que l'on veut voir respectées. Une probabilité devient une fonction définie directement sur les événements.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[c]{Un peu d'histoire}
+\pause
+	\begin{itemize}
+		\item En 1900, au Congrès international des mathématiciens, David Hilbert propose \num{23} problèmes. \pause Le sixième demande, entre autres, une axiomatisation du calcul des probabilités.\pause
+		\item En 1933, Andreï Kolmogorov publie \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung} (\textit{Fondements de la théorie des probabilités}).\pause
+		\item Il s'appuie sur la théorie de la mesure (Borel, Lebesgue), développée au début du \siecle{20} pour mesurer longueurs, aires et volumes d'ensembles très généraux.
+	\end{itemize}
+	\pause
+	\begin{lumiere}
+		Une probabilité est une manière de « mesurer » les événements, comme la longueur mesure les intervalles, avec la contrainte que la mesure totale vaut \(1\).
+	\end{lumiere}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tribus d'événements}
+
+\begin{frame}[t]{Quels ensembles sont des événements?}
+\pause
+	Lorsque \(\Omega\) est discret, tout sous-ensemble de \(\Omega\) est un événement : on peut lui attribuer une probabilité.
+	\pause
+	\medskip
+
+	Lorsque \(\Omega\) n'est pas dénombrable, on peut démontrer qu'il est \emph{impossible} d'attribuer une « longueur » à \emph{tous} les sous-ensembles de \(\interval{0}{1}\) en respectant les règles de calcul habituelles (résultat de Vitali, 1905).
+	\pause
+	\begin{lumiere}
+		On se restreint donc à une famille \(\tribu\) de sous-ensembles de \(\Omega\), appelés \defi{événements}. \pause Cette famille doit être assez riche pour que les opérations ensemblistes (complémentaire, union, intersection) appliquées à des événements donnent encore des événements.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Tribu}
+\pause
+	\begin{defn}
+		Soit \(\Omega\) un ensemble. Une \defi{tribu} (ou \defi{\(\sigma\)-algèbre}) sur \(\Omega\) est une famille \(\tribu\) de sous-ensembles de \(\Omega\) telle que\pause
+		\begin{enumerate}
+			\item \(\Omega\in\tribu\);\pause
+			\item si \(A\in\tribu\), alors \(A\comp\in\tribu\);\pause
+			\item si \(A_1,A_2,\ldots\in\tribu\), alors \(\displaystyle\bigcup_{k=1}^{\infty}A_k\in\tribu\).
+		\end{enumerate}
+	\end{defn}
+	\pause
+	Le couple \((\Omega,\tribu)\) est appelé un \defi{espace probabilisable}. Les éléments de \(\tribu\) sont les \defi{événements}.
+\end{frame}
+
+\begin{frame}{Exemples de tribus}
+\pause
+	\begin{exs}
+		Soit \(\Omega\) un ensemble et \(A\subseteq\Omega\).
+		\begin{itemize}
+			\item \(\{\emptyset,\Omega\}\) est une tribu : la plus petite possible.\pause
+			\item \(\{\emptyset,A,A\comp,\Omega\}\) est une tribu.\pause
+			\item \(\mathcal{P}(\Omega)\), l'ensemble de \emph{tous} les sous-ensembles de \(\Omega\), est une tribu : la plus grande possible.
+		\end{itemize}
+	\end{exs}
+	\pause
+	\begin{lumiere}
+		Dans le cas discret, on prend toujours \(\tribu=\mathcal{P}(\Omega)\). C'est ce que nous avons fait implicitement jusqu'ici.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Propriétés des tribus}
+\pause
+	\begin{prop}
+		Soit \(\tribu\) une tribu sur \(\Omega\). Alors
+		\begin{enumerate}
+			\item \(\emptyset\in\tribu\);\pause
+			\item si \(A_1,A_2,\ldots\in\tribu\), alors \(\displaystyle\bigcap_{k=1}^{\infty}A_k\in\tribu\);\pause
+			\item si \(A,B\in\tribu\), alors \(A\cup B\), \(A\cap B\) et \(A\setminus B\) sont dans \(\tribu\).
+		\end{enumerate}
+	\end{prop}
+	\pause
+	\begin{cadre}
+		Démontrez la propriété 2 à l'aide des lois de De Morgan : \(\bigcap_{k}A_k=\bigl(\bigcup_{k}A_k\comp\bigr)\comp\).
+	\end{cadre}
+\end{frame}
+
+\begin{frame}[t]{Tribu engendrée et tribu borélienne}
+\pause
+	\begin{prop}
+		Soit \(\mathcal{C}\) une famille de sous-ensembles de \(\Omega\). Il existe une plus petite tribu contenant \(\mathcal{C}\). On l'appelle la \defi{tribu engendrée} par \(\mathcal{C}\) et on la note \(\sigma(\mathcal{C})\).
+	\end{prop}
+	\pause
+	\begin{defn}
+		La \defi{tribu borélienne} \(\borel\) est la tribu sur \(\R\) engendrée par les intervalles. Ses éléments sont appelés les \defi{boréliens}.
+	\end{defn}
+	\pause
+	\begin{lumiere}
+		Les intervalles, les points, les ensembles finis ou dénombrables (comme \(\Q\)), les unions dénombrables d'intervalles, et leurs complémentaires sont des boréliens. En pratique, tous les ensembles que vous rencontrerez dans ce cours sont des boréliens.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}{Exemple : Pourquoi \(\{x\}\) et \(\Q\) sont des boréliens}
+	\pause
+	\begin{itemize}
+		\item Pour \(x\in\R\), \(\{x\}=\interval{x}{x}\) est un intervalle fermé. \pause On peut aussi l'écrire
+		\[\{x\}=\bigcap_{n=1}^{\infty}\interval[open]{x-\tfrac{1}{n}}{x+\tfrac{1}{n}}.\]\pause
+		\item \(\Q\) est dénombrable : \(\Q=\{q_1,q_2,q_3,\ldots\}\). \pause Ainsi
+		\[\Q=\bigcup_{k=1}^{\infty}\{q_k\}\]
+		est une union dénombrable de boréliens, donc un borélien.\pause
+		\item Par conséquent, \(\R\setminus\Q\), l'ensemble des irrationnels, est aussi un borélien.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Les axiomes de Kolmogorov}
+
+\begin{frame}[t]{Une mesure de probabilité}
+\pause
+	\begin{defn}{}
+		Soit \((\Omega,\tribu)\) un espace probabilisable. Une \defi{mesure de probabilité} sur \((\Omega,\tribu)\) est une fonction \(\mathbb{P}:\tribu\rightarrow \R\) satisfaisant les conditions suivantes :\pause
+		\begin{enumerate}
+			\item \(\P{A}\geq 0\) pour tout \(A\in\tribu\);\pause
+			\item \(\P{\Omega}=1\);\pause
+			\item \textbf{(\(\sigma\)-additivité)} si \(A_1,A_2,\ldots\in\tribu\) sont deux à deux incompatibles, alors
+			\[\P{\bigcup_{k=1}^{\infty}A_k}=\sum_{k=1}^{\infty}\P{A_k}.\]
+		\end{enumerate}
+	\end{defn}
+	\pause
+	Le triplet \((\Omega,\tribu,\mathbb{P})\) est appelé un \defi{espace probabilisé}.
+\end{frame}
+
+\begin{frame}[t]{Le cas discret est un cas particulier}
+\pause
+	\begin{prop}
+		Soit \(\Omega\) un ensemble discret et \(\tribu=\mathcal{P}(\Omega)\).
+		\begin{enumerate}
+			\item Si \(p\) est une loi de probabilité sur \(\Omega\) (au sens du module d'introduction), alors \(\P{A}=\sum_{\omega\in A}p(\omega)\) définit une mesure de probabilité sur \((\Omega,\tribu)\).\pause
+			\item Réciproquement, si \(\mathbb{P}\) est une mesure de probabilité sur \((\Omega,\tribu)\), alors \(p(\omega)=\P{\{\omega\}}\) est une loi de probabilité et \(\P{A}=\sum_{\omega\in A}p(\omega)\).
+		\end{enumerate}
+	\end{prop}
+	\pause
+	\begin{lumiere}
+		Sur un espace discret, se donner une mesure de probabilité ou se donner des poids, c'est la même chose. Tout ce qui a été fait dans les modules précédents s'inscrit donc dans le cadre de Kolmogorov.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Démonstration de la réciproque}
+\pause
+	Soit \(\mathbb{P}\) une mesure de probabilité sur \((\Omega,\mathcal{P}(\Omega))\), avec \(\Omega\) discret, et posons \(p(\omega)=\P{\{\omega\}}\).
+	\pause
+	\begin{itemize}
+		\item Par l'axiome 1, \(p(\omega)\geq 0\).\pause
+		\item Soit \(A=\{a_1,a_2,\ldots\}\subseteq\Omega\) (fini ou dénombrable). Les singletons \(\{a_k\}\) sont deux à deux incompatibles et leur union est \(A\). \pause Par \(\sigma\)-additivité,
+		\[\P{A}=\sum_{k}\P{\{a_k\}}=\sum_{\omega\in A}p(\omega).\]\pause
+		\item Avec \(A=\Omega\) et l'axiome 2, on obtient \(\sum_{\omega\in\Omega}p(\omega)=1\).
+	\end{itemize}
+	\pause
+	\begin{lumiere}
+		C'est l'étape « décomposer \(A\) en singletons » qui échoue si \(\Omega\) n'est pas dénombrable.
+	\end{lumiere}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conséquences des axiomes}
+
+\begin{frame}[t]{Premières conséquences}
+\pause
+	\begin{prop}
+		Soit \((\Omega,\tribu,\mathbb{P})\) un espace probabilisé. Alors
+		\begin{enumerate}
+			\item \(\P{\emptyset}=0\);\pause
+			\item \textbf{(additivité finie)} si \(A_1,\ldots,A_n\in\tribu\) sont deux à deux incompatibles,
+			\[\P{\bigcup_{k=1}^{n}A_k}=\sum_{k=1}^{n}\P{A_k}.\]
+		\end{enumerate}
+	\end{prop}
+	\pause
+\end{frame}
+
+\begin{frame}[t]{Premières conséquences --- démonstration}
+	\textbf{1.} Appliquons la \(\sigma\)-additivité à \(\Omega,\emptyset,\emptyset,\ldots\), qui sont deux à deux incompatibles :
+	\[\P{\Omega}=\P{\Omega}+\sum_{k=2}^{\infty}\P{\emptyset}.\]
+	\pause Comme \(\P{\emptyset}\geq 0\), cette série ne peut valoir \(0\) que si \(\P{\emptyset}=0\).
+	\pause
+	\medskip
+
+	\textbf{2.} On complète la famille par \(A_{n+1}=A_{n+2}=\cdots=\emptyset\) et on applique la \(\sigma\)-additivité, puis le point 1 :
+	\[\P{\bigcup_{k=1}^{n}A_k}=\sum_{k=1}^{n}\P{A_k}+\sum_{k=n+1}^{\infty}\underbrace{\P{\emptyset}}_{=0}.\]
+\end{frame}
+
+\begin{frame}[t]{Les propriétés du module d'introduction restent vraies}
+\pause
+	Les démonstrations du module d'introduction n'utilisaient que la positivité, \(\P{\Omega}=1\) et l'additivité. \pause Elles valent donc pour \emph{toute} mesure de probabilité.
+	\pause
+	\begin{props}
+		Pour tous \(A,B,A_1,A_2,\ldots\in\tribu\) :
+		\begin{itemize}
+			\item \(\P{A\comp}=1-\P{A}\) et \(\P{A\cup B}=\P{A}+\P{B}-\P{A\cap B}\);\pause
+			\item si \(A\subseteq B\), alors \(\P{A}\leq\P{B}\) et \(\P{B\setminus A}=\P{B}-\P{A}\);\pause
+			\item \(\displaystyle\P{\bigcup_{k=1}^{\infty}A_k}\leq\sum_{k=1}^{\infty}\P{A_k}\) \hfill (Boole);\pause
+			\item \(\displaystyle\P{\bigcap_{k=1}^{n}A_k}\geq 1-\sum_{k=1}^{n}\P{A_k\comp}\) \hfill (Bonferroni).
+		\end{itemize}
+	\end{props}
+\end{frame}
+
+\begin{frame}{Exemple : Une démonstration à partir des axiomes}
+	\begin{cadre}
+		À partir des axiomes de Kolmogorov et de l'additivité finie, démontrez que \(\P{A\comp}=1-\P{A}\) pour tout \(A\in\tribu\).
+	\end{cadre}
+	\pause
+	Les événements \(A\) et \(A\comp\) sont incompatibles et \(A\cup A\comp=\Omega\). \pause Par additivité finie et l'axiome 2,
+	\[1=\P{\Omega}=\P{A\cup A\comp}=\P{A}+\P{A\comp}.\]
+	\pause
+	\begin{lumiere}
+		Remarquez que \(A\comp\in\tribu\) grâce à la deuxième propriété des tribus : sans elle, \(\P{A\comp}\) ne serait même pas défini.
+	\end{lumiere}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Continuité des probabilités}
+
+\begin{frame}[t]{Suites monotones d'événements}
+\pause
+	\begin{defns}
+		Soit \(A_1,A_2,\ldots\) une suite d'événements.
+		\begin{itemize}
+			\item La suite est \defi{croissante} si \(A_1\subseteq A_2\subseteq A_3\subseteq\cdots\). On note alors \(A_n\uparrow A\), où \(A=\bigcup_{n=1}^{\infty}A_n\).\pause
+			\item La suite est \defi{décroissante} si \(A_1\supseteq A_2\supseteq A_3\supseteq\cdots\). On note alors \(A_n\downarrow A\), où \(A=\bigcap_{n=1}^{\infty}A_n\).
+		\end{itemize}
+	\end{defns}
+	\pause
+	\begin{exs}
+		\(\interval{0}{1-\frac{1}{n}}\uparrow\interval[open right]{0}{1}\)\qquad et \qquad\(\interval[open]{x-\frac{1}{n}}{x+\frac{1}{n}}\downarrow\{x\}\).
+	\end{exs}
+\end{frame}
+
+\begin{frame}[t]{Théorème de continuité}
+\pause
+	\begin{thm}
+		Soit \((\Omega,\tribu,\mathbb{P})\) un espace probabilisé.
+		\begin{enumerate}
+			\item Si \(A_n\uparrow A\), alors \(\displaystyle\lim_{n\to\infty}\P{A_n}=\P{A}\).\pause
+			\item Si \(A_n\downarrow A\), alors \(\displaystyle\lim_{n\to\infty}\P{A_n}=\P{A}\).
+		\end{enumerate}
+	\end{thm}
+	\pause
+	\begin{lumiere}
+		On peut « passer à la limite » à l'intérieur de \(\mathbb{P}\) le long d'une suite monotone d'événements. Ce résultat est une conséquence directe de la \(\sigma\)-additivité : l'additivité finie ne suffirait pas.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Démonstration du cas croissant}
+\pause
+	Posons \(B_1=A_1\) et \(B_n=A_n\setminus A_{n-1}\) pour \(n\geq 2\). \pause Les \(B_n\) sont deux à deux incompatibles et
+	\[A_n=\bigcup_{k=1}^{n}B_k,\qquad A=\bigcup_{k=1}^{\infty}B_k.\]
+	\pause
+	Par \(\sigma\)-additivité, puis additivité finie,
+	\[\P{A}=\sum_{k=1}^{\infty}\P{B_k}=\lim_{n\to\infty}\sum_{k=1}^{n}\P{B_k}=\lim_{n\to\infty}\P{A_n}.\]
+	\pause
+	\begin{cadre}
+		Déduisez le cas décroissant en passant aux complémentaires : si \(A_n\downarrow A\), alors \(A_n\comp\uparrow A\comp\).
+	\end{cadre}
+\end{frame}
+
+\begin{frame}{Exemple : Ne jamais obtenir pile}
+	\begin{cadre}
+		On lance indéfiniment une pièce de monnaie équilibrée. Quelle est la probabilité de ne jamais obtenir pile?
+	\end{cadre}
+	\pause
+	Soit \(A_n\) l'événement \textit{aucun pile lors des \(n\) premiers lancers}. \pause On a \(\P{A_n}=\frac{1}{2^n}\) et \(A_n\downarrow A\), où \(A\) est l'événement \textit{ne jamais obtenir pile}.
+	\pause
+	Par continuité,
+	\[\P{A}=\lim_{n\to\infty}\frac{1}{2^n}=0.\]
+	\pause
+	\begin{lumiere}
+		\(A\) n'est pas vide (il contient \(F,F,F,\ldots\)) : un événement de probabilité nulle n'est pas forcément impossible.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Exemple : Probabilité d'un point}
+	\pause
+	Supposons que \(\mathbb{P}\) soit une mesure de probabilité sur \((\R,\borel)\) telle que \(\P{\interval{a}{b}}=b-a\) pour \(0\leq a\leq b\leq 1\) (choix d'un nombre au hasard dans \(\interval{0}{1}\)).
+	\pause
+	\medskip
+
+	Pour \(x\in\interval[open]{0}{1}\), on a \(\interval[open]{x-\frac{1}{n}}{x+\frac{1}{n}}\downarrow\{x\}\). \pause Par continuité,
+	\[\P{\{x\}}=\lim_{n\to\infty}\P{\interval[open]{x-\tfrac{1}{n}}{x+\tfrac{1}{n}}}=\lim_{n\to\infty}\frac{2}{n}=0.\]
+	\pause
+	\begin{lumiere}
+		Chaque point a une probabilité nulle, alors que les intervalles ont une probabilité positive : c'est le point de départ du module sur les probabilités géométriques.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}{En résumé}
+\pause
+	\begin{center}
+	{\small
+	\begin{tabular}{|l|l|l|}
+		\hline
+		 & \textbf{Cas discret} & \textbf{Cas général} \\ \hline
+		Événements & \(\mathcal{P}(\Omega)\) & une tribu \(\tribu\) \\ \hline
+		Probabilité & donnée par les poids \(p(\omega)\) & donnée sur les événements \\ \hline
+		\(\P{A}\) & \(\sum_{\omega\in A}p(\omega)\) & axiomes de Kolmogorov \\ \hline
+		\(\P{\{\omega\}}\) & \(p(\omega)\), souvent \(>0\) & souvent \(0\) \\ \hline
+	\end{tabular}
+	}
+	\end{center}
+	\pause
+	\begin{lumiere}
+		Les axiomes de Kolmogorov offrent un seul et même cadre pour les expériences aléatoires discrètes et continues. Toutes les règles de calcul (complémentarité, union, Boole, probabilités conditionnelles, indépendance, etc.) s'y appliquent sans modification.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliographie}
+\printbibliography[heading=none]
+\vspace{0.5cm}
+\begin{rems}
+	\begin{itemize}
+		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
+		\item La formulation des définitions et énoncés est inspirée de \cite{belisle}.
+	\end{itemize}
+\end{rems}
+	\vfill
+	\footnotesize Pour signaler une erreur dans ce document, veuillez écrire à~\href{mailto:jerome.soucy@mat.ulaval.ca}{jerome.soucy@mat.ulaval.ca}.
+\end{frame}
+\end{document}

@@ -1,0 +1,325 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = fr_CA
+\documentclass[nuit,charter,pied]{BeamerJS}
+\title{Probabilités géométriques et distributions continues}
+\subtitle{À l'intention des étudiants de STT-1500}
+\institute{Université Laval}
+\fonction{Département de mathématiques et de statistique}
+\logotitre{../logo_UL.pdf}
+\author{Jérôme Soucy}
+\date{Hiver 2025}
+
+\usepackage{commandesJS}
+\addbibresource{../references.bib}
+\NouvelleBoiteJS{defns}{Définitions}{Dominante}{DominanteBG}
+\NouvelleBoiteJS{props}{Propositions}{VertPreuve}{PreuveBG}
+\NouvelleBoiteJS{exs}{Exemples}{GrisExemple}{ExempleBG}
+\NouvelleBoiteJS{rems}{Remarques}{Accent}{AccentBG}
+\usepackage{adjustbox}
+
+% Encadré sans titre
+\newtcolorbox{cadre}{enhanced, breakable, sharp corners, boxrule=0.7pt,
+	colback=Fond, colframe=Dominante!45, top=8pt, bottom=8pt,
+	left=10pt, right=10pt, before skip=10pt, after skip=8pt}
+
+\newcommand{\borel}{\mathcal{B}(\R)}
+\newcommand{\mesure}[1]{\lvert #1\rvert}
+
+\begin{document}
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+\begin{frame}{Résumé}
+\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Probabilités géométriques}
+
+\begin{frame}[t]{Cas où \(\Omega\) est non dénombrable}
+\pause
+	Un intervalle d'intérieur non vide (par exemple \(\interval[open]{0}{1}\)), ou un disque dans le plan, sont parfois des espaces fondamentaux pour des expériences aléatoires. \pause Dans ces cas, prendre le rapport des cardinalités ne donne pas lieu à une mesure de probabilité : tous les ensembles en jeu sont infinis.
+	\pause
+	\medskip
+
+	On procède plutôt en mesurant la \emph{longueur} (ou l'\emph{aire}, ou le \emph{volume}) des régions contenant les réalisations de l'événement.
+	\pause
+	\begin{lumiere}
+		Pour une région \(A\) de \(\R\), \(\R^2\) ou \(\R^3\), on note \(\mesure{A}\) sa longueur, son aire ou son volume. Le cadre de Kolmogorov garantit que cette notion est bien définie pour tous les boréliens.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{La probabilité uniforme sur une région}
+\pause
+	\begin{defn}
+		Soit \(\Omega\) une région de \(\R\), \(\R^2\) ou \(\R^3\) telle que \(0<\mesure{\Omega}<\infty\). On dit qu'un point est \defi{choisi au hasard} (ou \defi{uniformément}) dans \(\Omega\) si, pour tout événement \(A\subseteq\Omega\),
+		\[\P{A}=\frac{\mesure{A}}{\mesure{\Omega}}.\]
+	\end{defn}
+	\pause
+	\begin{rems}
+		\begin{itemize}
+			\item On admet que cette fonction satisfait les axiomes de Kolmogorov.\pause
+			\item C'est l'analogue continu du cas équiprobable \(\P{A}=\frac{\card{A}}{\card{\Omega}}\).\pause
+			\item Un point a une mesure nulle : \(\P{\{x\}}=0\), \pause d'où \(\P{\interval{a}{b}}=\P{\interval[open]{a}{b}}\).
+		\end{itemize}
+	\end{rems}
+\end{frame}
+
+\begin{frame}{Deux exemples}
+\pause
+	\begin{exs}
+	\textbf{Exemple 1 :} On choisit un nombre au hasard dans \(\interval[open]{0}{2}\). Quelle est la probabilité de choisir un nombre dans \(\interval[open]{\frac{1}{3}}{\frac{1}{2}}\)?
+
+	\medskip
+	\pause
+	{\color{Dominante}Réponse : \(\dfrac{\frac{1}{2}-\frac{1}{3}}{2-0}=\dfrac{1}{12}\)}
+
+	\medskip
+	\pause
+	\textbf{Exemple 2 :} On choisit un point au hasard dans un disque de rayon 10. Quelle est la probabilité que le point choisi soit plus près du centre que de la frontière?
+
+	\medskip
+	\pause
+	{\color{Dominante}Réponse : \(\frac{\pi 5^2}{\pi 10^2}=\frac{1}{4}\)}
+	\end{exs}
+\end{frame}
+
+\begin{frame}{Exemple : Plancher avec planches habituelles}
+		On laisse tomber une pièce de monnaie circulaire de diamètre \(d\leq\ell\) sur un plancher dont les planches rectangulaires sont de largeur $\ell$. Quelle est la probabilité que la pièce de monnaie touche à plus d'une planche?
+
+\begin{center}
+		\begin{tikzpicture}[scale=0.75]
+			\fill[Dominante] (0,0) rectangle (10,5);
+			\foreach \x in {0,1,...,5}{
+				\draw[draw=Accent, line width=2pt] (\x*2,0) -- (\x*2,5);
+			}
+			\foreach \x in {3}{
+				\draw[<->,white] (\x*2,1) -- node[below]{$\ell$} (\x*2+2,1);
+			}
+			\foreach \x in {3}{
+				\fill[white] (\x+0.776,2.5) circle (0.6);
+				\draw[<->](\x+0.776-0.6,2.5) -- (\x+0.776+0.6,2.5);
+				\draw(\x+0.776-0.6,2.5) -- (\x+0.776,2.5) node[below,yshift=0.05cm]{$d$};
+			}
+		\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Exemple : Plancher --- solution}
+\pause
+	Seule compte la position horizontale du centre de la pièce à l'intérieur de sa planche : on la suppose choisie au hasard dans \(\interval{0}{\ell}\).
+	\pause
+
+	La pièce reste sur une seule planche si et seulement si son centre est à une distance d'au moins \(\frac{d}{2}\) des deux bords, c'est-à-dire s'il se trouve dans \(\interval{\frac{d}{2}}{\ell-\frac{d}{2}}\), de longueur \(\ell-d\).
+	\pause
+	\[\P{\text{touche plus d'une planche}}=1-\frac{\ell-d}{\ell}=\frac{d}{\ell}.\]
+	\pause
+	\begin{lumiere}
+		On a remplacé « position de la pièce sur le plancher » par un modèle plus simple contenant toute l'information utile : c'est une étape clé de la modélisation.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}{Exemple : Tuiles en triangles équilatéraux}
+	On laisse tomber une pièce de monnaie circulaire de rayon \(r\) sur un plancher formé de tuiles qui sont des triangles équilatéraux dont les côtés sont de longueur 1. Sur la figure ci-dessous, on peut apercevoir six de ces tuiles partageant un sommet. Quelle est la probabilité que la pièce de monnaie ne touche à aucun des segments de couleur orange?
+
+	\begin{center}
+	\begin{tikzpicture}[scale=2]
+		\coordinate (A) at (1,0);
+		\coordinate (B) at ({cos(60)},{sin(60)});
+		\coordinate (C) at ({cos(120)},{sin(120)});
+		\coordinate (D) at ({cos(180)},{sin(180)});
+		\coordinate (E) at ({cos(240)},{sin(240)});
+		\coordinate (F) at ({cos(300)},{sin(300)});
+		\coordinate (O) at (0,0);
+		\draw[thick,Accent,fill=Dominante] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+		\draw[thick,Accent] (O) -- (A);
+		\draw[thick,Accent] (O) -- (B);
+		\draw[thick,Accent] (O) -- (C);
+		\draw[thick,Accent] (O) -- (D);
+		\draw[thick,Accent] (O) -- (E);
+		\draw[thick,Accent] (O) -- (F);
+	\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Exemple : Tuiles --- solution}
+\pause
+	On suppose que le centre de la pièce tombe au hasard dans une tuile. Le rayon du cercle inscrit dans un triangle équilatéral de côté \(1\) est \(\rho=\frac{\sqrt{3}}{6}\).
+	\pause
+	\medskip
+
+	La pièce ne touche aucun côté si et seulement si son centre est à une distance d'au moins \(r\) des trois côtés. \pause Ces points forment un triangle équilatéral de même centre, dont le cercle inscrit a pour rayon \(\rho-r\) (si \(r\leq\rho\)).
+	\pause
+	\medskip
+
+	Le rapport des aires de deux triangles semblables est le carré du rapport de similitude :
+	\[\P{\text{aucun segment touché}}=\left(\frac{\rho-r}{\rho}\right)^2=\left(1-2\sqrt{3}\,r\right)^2,\qquad 0\leq r\leq\tfrac{\sqrt{3}}{6}.\]
+\end{frame}
+
+\begin{frame}{Majoration et minoration d'une probabilité}
+\pause
+	Ci-dessous est représenté le graphique du polynôme \(p(x)=2x^{5}-2x+1\) qui possède exactement deux racines réelles positives, disons \(r_1\) et \(r_2\) (avec $r_1<r_2$), dans l'intervalle \(\interval[open]{0}{1}\). On effectue une expérience aléatoire qui consiste à choisir un nombre réel au hasard dans cet intervalle.
+	\begin{center}
+	\begin{tikzpicture}[scale=2.5]
+			\draw[->] (0,0) -- (1.3,0) node[right]{$x$};
+			\draw[->] (0,0) -- (0,1.3) node[above]{$y$};
+			\draw[fill=black] (1,0) circle (.75pt) node[below]{$1$};
+			\draw[domain=0:1] plot ({\x},{2*\x*\x*\x*\x*\x-2*\x+1});
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\begin{frame}{Exemple : Majoration et minoration}
+	\small
+\begin{cadre}
+	Trouvez une majoration et une minoration non triviales de la probabilité de réalisation de l'événement \(A\), où \(A\) correspond à : \textit{Le nombre choisi se trouve dans l'intervalle \(\interval[open]{r_1}{r_2}\)}.
+\end{cadre}
+\pause
+	On vérifie que \(p\left(\num{0,5}\right)>0,p\left(\num{0,6}\right)<0, p\left(\num{0,7}\right)<0\) et \(p\left(\num{0,8}\right)>0\). Soit \(B\) l'événement \textit{le nombre est choisi dans l'intervalle \(\interval[open,separator symbol =\,;]{\num{0,5}}{\num{0,8}}\)} \pause et soit \(C\) l'événement \textit{le nombre est choisi dans l'intervalle \(\interval[open,separator symbol =\,;]{\num{0,6}}{\num{0,7}}\).} \pause Nous avons que \(C\subseteq A \subseteq B\). \pause Par monotonicité, comme \(\P{C}=\frac{1}{10}\) et \(\P{B}=\frac{3}{10}\), on en déduit que \(\frac{1}{10}\leq\P{A}\leq\frac{3}{10}.\)
+	\begin{lumiere}
+À l'aide d'une méthode numérique pour le calcul des racines de $p(x)$, on trouve que $\P{A}\approx \num{0,218}.$
+\end{lumiere}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vers les distributions continues}
+
+\begin{frame}[t]{Retour sur le disque}
+\pause
+	On choisit un point au hasard dans un disque de rayon \(1\). Pour \(0\leq r\leq 1\),
+	\[\P{\text{distance}\leq r}=\frac{\pi r^2}{\pi\cdot 1^2}=r^2.\]
+	\pause
+	Pour \(0\leq a\leq b\leq 1\), on en déduit
+	\[\P{a<\text{distance}\leq b}=b^2-a^2=\int_a^b 2r\,\mathrm{d}r.\]
+	\pause
+	\begin{lumiere}
+		Le point est uniforme dans le disque, mais sa distance au centre \emph{n'est pas} uniforme dans \(\interval{0}{1}\). La fonction \(f(r)=2r\) décrit comment la probabilité se répartit.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Densité de probabilité}
+\pause
+	\begin{defn}
+		Une \defi{densité de probabilité} est une fonction \(f:\R\to\R\) intégrable telle que\pause
+		\begin{enumerate}
+			\item \(f(x)\geq 0\) pour tout \(x\in\R\);\pause
+			\item \(\displaystyle\int_{-\infty}^{\infty}f(x)\,\mathrm{d}x=1\).
+		\end{enumerate}
+	\end{defn}
+\end{frame}
+
+\begin{frame}[t]{Mesure de probabilité associée à une densité}
+	\pause
+	\begin{prop}
+		Si \(f\) est une densité, il existe une unique mesure de probabilité \(\mathbb{P}\) sur \((\R,\borel)\) telle que
+		\[\P{\interval{a}{b}}=\int_a^b f(x)\,\mathrm{d}x\qquad\text{pour tous } a\leq b.\]
+	\end{prop}
+	\pause
+	\begin{lumiere}
+		Ce résultat est admis : sa démonstration relève de la théorie de la mesure. Pour tout borélien \(A\), on écrit alors \(\P{A}=\int_A f(x)\,\mathrm{d}x\).
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}{Exemples de densités}
+\pause
+	\begin{exs}
+		\begin{itemize}
+			\item \textbf{Uniforme sur \(\interval{a}{b}\) :} \(f(x)=\frac{1}{b-a}\) si \(a\leq x\leq b\), et \(0\) sinon. \pause On retrouve \(\P{\interval{c}{d}}=\frac{d-c}{b-a}\) pour \(a\leq c\leq d\leq b\).\pause
+			\item \textbf{Distance au centre dans le disque :} \(f(r)=2r\) si \(0\leq r\leq 1\), et \(0\) sinon.\pause
+			\item \textbf{Durée de vie :} \(f(x)=\eu^{-x}\) si \(x\geq 0\), et \(0\) sinon. \pause On vérifie que \(\int_0^{\infty}\eu^{-x}\,\mathrm{d}x=1\).
+		\end{itemize}
+	\end{exs}
+\end{frame}
+
+\begin{frame}{Allure de deux densités}
+	\begin{center}
+	\begin{tikzpicture}[scale=1.6]
+		\draw[->] (-0.2,0) -- (3.3,0) node[right]{$x$};
+		\draw[->] (0,-0.2) -- (0,2.3);
+		\draw[very thick,Dominante,domain=0:1] plot ({\x},{2*\x}) -- (1,0);
+		\draw[very thick,Accent,domain=0:3.1,samples=40] plot ({\x},{exp(-\x)});
+		\node[Dominante] at (1.3,2) {$2r$};
+		\node[Accent] at (2.4,0.45) {$\eu^{-x}$};
+		\draw (1,0) node[below]{$1$};
+	\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Exemple : Trouver la constante}
+	\begin{cadre}
+		Soit \(f(x)=c\,x^2\) si \(0\leq x\leq 2\), et \(f(x)=0\) sinon.
+		\begin{enumerate}
+			\item Déterminez la constante \(c\) pour que \(f\) soit une densité.
+			\item Un nombre est choisi selon la densité \(f\). Calculez la probabilité qu'il soit supérieur à \(1\).
+		\end{enumerate}
+	\end{cadre}
+	\pause
+	{\color{Dominante}
+	\[1=\int_0^2 c\,x^2\,\mathrm{d}x=\frac{8c}{3}\quad\Longrightarrow\quad c=\frac{3}{8}.\]
+	\pause
+	\[\P{\interval{1}{2}}=\int_1^2\frac{3}{8}x^2\,\mathrm{d}x=\frac{8-1}{8}=\frac{7}{8}.\]
+	}
+\end{frame}
+
+\begin{frame}[t]{Une densité n'est pas une probabilité}
+\pause
+	\begin{rems}
+		\begin{itemize}
+			\item Pour tout \(x\), \(\P{\{x\}}=\int_x^x f(t)\,\mathrm{d}t=0\). La valeur \(f(x)\) \emph{n'est pas} la probabilité de \(\{x\}\).\pause
+			\item Une densité peut prendre des valeurs supérieures à \(1\) : la densité uniforme sur \(\interval{0}{\frac{1}{2}}\) vaut \(2\).\pause
+			\item Si \(f\) est continue en \(x\) et \(h>0\) est petit, \(\P{\interval{x}{x+h}}\approx f(x)\,h\) : \(f(x)\) est une probabilité \emph{par unité de longueur}.
+		\end{itemize}
+	\end{rems}
+\end{frame}
+
+\begin{frame}{Discret et continu : un même cadre}
+\pause
+	\begin{center}
+	{\small
+	\begin{tabular}{|l|l|l|}
+		\hline
+		 & \textbf{Discret} & \textbf{Continu (à densité)} \\ \hline
+		Espace & \(\Omega\) fini ou dénombrable & \(\R\) (ou un intervalle) \\ \hline
+		Description & poids \(p(\omega)\geq 0\) & densité \(f(x)\geq 0\) \\ \hline
+		Normalisation & \(\sum_{\omega}p(\omega)=1\) & \(\int_{-\infty}^{\infty}f(x)\,\mathrm{d}x=1\) \\ \hline
+		\(\P{A}\) & \(\sum_{\omega\in A}p(\omega)\) & \(\int_A f(x)\,\mathrm{d}x\) \\ \hline
+		\(\P{\{x\}}\) & \(p(x)\) & \(0\) \\ \hline
+	\end{tabular}
+	}
+	\end{center}
+	\pause
+	\begin{lumiere}
+		Dans les deux cas, \(\mathbb{P}\) est une mesure de probabilité au sens de Kolmogorov : toutes les règles de calcul (complémentarité, union, Boole, probabilité conditionnelle, Bayes, indépendance) s'appliquent de la même façon.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Ni discret, ni continu}
+\pause
+	\begin{ex}
+		Un automobiliste arrive à un feu. Avec probabilité \(\frac{1}{2}\), le feu est vert et il n'attend pas; sinon, il attend un temps choisi au hasard dans \(\interval[open left]{0}{60}\) secondes.
+	\end{ex}
+	\pause
+	Pour \(0\leq t\leq 60\), par la loi des probabilités totales,
+	\[\P{\text{attente}\leq t}=\frac{1}{2}\cdot 1+\frac{1}{2}\cdot\frac{t}{60}.\]
+	\pause
+	Comme \(\P{\text{attente}=0}=\frac{1}{2}>0\), ce n'est pas une loi à densité; \pause comme l'attente prend un continuum de valeurs, ce n'est pas une loi discrète.
+	\pause
+	\begin{lumiere}
+		Le cadre de Kolmogorov traite aussi ce cas mixte.
+	\end{lumiere}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliographie}
+\printbibliography[heading=none]
+\vspace{0.5cm}
+\begin{rems}
+	\begin{itemize}
+		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
+		\item Les figures ont été réalisées en utilisant TikZ (un paquet de \LaTeX).
+		\item La structure de ce document est inspirée de \cite{belisle}.
+	\end{itemize}
+\end{rems}
+	\vfill
+	\footnotesize Pour signaler une erreur dans ce document, veuillez écrire à~\href{mailto:jerome.soucy@mat.ulaval.ca}{jerome.soucy@mat.ulaval.ca}.
+\end{frame}
+\end{document}

@@ -1,0 +1,5 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Espérance d'une fonction de variables aléatoires}{3}{0}{1}
+\beamer@sectionintoc {2}{Somme de v.a. et f.g.m.}{10}{0}{2}
+\beamer@sectionintoc {3}{Covariance et corrélation}{16}{0}{3}
+\beamer@sectionintoc {4}{Espérance par conditionnement}{36}{0}{4}

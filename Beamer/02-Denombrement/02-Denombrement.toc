@@ -1,0 +1,6 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Principe fondamental du dénombrement }{3}{0}{1}
+\beamer@sectionintoc {2}{Permutations et \textit {k}-permutations}{21}{0}{2}
+\beamer@sectionintoc {3}{Combinaisons}{44}{0}{3}
+\beamer@sectionintoc {4}{Les coefficients multinomiaux}{74}{0}{4}
+\beamer@sectionintoc {5}{La formule de Stirling}{90}{0}{5}

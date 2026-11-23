@@ -1,0 +1,7 @@
+\xpg@aux {frenchpart=false}{french}
+\beamer@sectionintoc {1}{Origines}{3}{0}{1}
+\beamer@sectionintoc {2}{Expériences aléatoires et événements}{8}{0}{2}
+\beamer@sectionintoc {3}{Opérations sur les événements}{16}{0}{3}
+\beamer@sectionintoc {4}{Probabilités sur un espace discret}{27}{0}{4}
+\beamer@sectionintoc {5}{Propriétés fondamentales des probabilités}{41}{0}{5}
+\beamer@sectionintoc {6}{Au-delà du cas discret}{53}{0}{6}

@@ -1,0 +1,282 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = fr_CA
+\documentclass[nuit,charter,pied]{BeamerJS}
+\title{Vecteurs aléatoires --- partie 1}
+\subtitle{À l'intention des étudiants de STT-1500}
+\institute{Université Laval}
+\fonction{Département de mathématiques et de statistique}
+\logotitre{../logo_UL.pdf}
+\author{Jérôme Soucy}
+\date{Hiver 2025}
+
+\usepackage{adjustbox}
+\usepackage{xstring}
+\usepackage{commandesJS}
+\addbibresource{../references.bib}
+\NouvelleBoiteJS{rems}{Remarques}{Accent}{AccentBG}
+\usepackage{calc}
+\usepackage{nicefrac}
+\usetikzlibrary{calc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{relsize}
+\usepackage{xfrac}
+\begin{document}
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+
+\begin{frame}{Résumé}
+\tableofcontents
+\end{frame}
+\section{Distributions multivariées}
+\begin{frame}[t]{Définition}
+	\pause
+	\begin{defn}{}
+		Un \defi{vecteur aléatoire} de dimension \(n\) est un vecteur de dimension \(n\) dont toutes les composantes sont des variables aléatoires.
+	\end{defn}
+	Nous allons surtout considérer le cas \(n=2\), mais les autres cas se traitent de la même façon.
+\end{frame}
+\begin{frame}[t]{Cas discret}
+	\pause
+	\begin{defn}{}
+		Lorsque l'ensemble des valeurs possibles pour le couple \((X,Y)\) est fini ou dénombrable, la \defi{distribution conjointe} des variables aléatoires $X$ et $Y$ est caractérisée par la \defi{fonction de masse conjointe} $p(x,y)$ définie par
+		\[p(x,y)=\P{(X,Y)=(x,y)}=\P{\{X=x\}\cap\{Y=y\}}.\]
+	\end{defn}
+	\begin{rem}	La fonction $p$ est toujours positive, et on a que
+	\[\sum_{(x,y)\in\R^2}p(x,y)=1.\]
+	\end{rem}
+\end{frame}
+\begin{frame}[t]{Cas absolument continu}
+	\pause
+	\begin{defn}{}
+		On dit que la distribution conjointe des variables aléatoires $X$ et $Y$ est \defi{absolument continue} s'il existe une fonction $f$, appelée \defi{fonction de densité}, vérifiant
+		\[\P{\{a<X\leq b\}\cap\{c< Y\leq d\}}=\int_c^d\int_a^b f(x,y)dxdy\]
+		pour tout choix de $a\leq b$ et $c\leq d$.
+	\end{defn}
+\end{frame}
+\begin{frame}[t]{Cas absolument continu - suite}
+	\pause
+	La fonction $f$ satisfait ainsi
+	\[\P{(X,Y)\in B}=\int\int_B f(x,y)dxdy\]
+	pour tout sous-ensemble $B$ de $\R^2$ pour lequel l'intégrale est définie.
+	\pause
+	Une fonction de densité conjointe de deux variables aléatoires absolument continues possède des propriétés analogues à la fonction de densité d'une variable aléatoire. Nous avons que
+	
+	\begin{enumerate}
+		\item \[\int\int_{\R^2}f(x,y)dxdy=1;\]\\
+		\item \[f(x,y)\geq 0~\forall (x,y)\in\R^2.\]
+	\end{enumerate}
+\end{frame}
+\begin{frame}[t]{Fonction de répartition}
+	\pause
+	\begin{defn}{}
+		La \defi{fonction de répartition conjointe} de deux variables est définie par
+		\[F(x,y)=\P{\{X\leq x\}\cap\{Y\leq y\}}.\]
+	\end{defn}
+	Dans le cas absolument continu, nous avons que
+	\begin{align*}
+		F(x,y)=&\int_{-\infty}^{y}\int_{-\infty}^{x} f(u,v)dudv=\int_{-\infty}^{x}\int_{-\infty}^{y} f(u,v)dvdu;\\
+		f(x,y)=&\frac{\partial^2F}{\partial x\partial y}=\frac{\partial^2F}{\partial y\partial x}.
+	\end{align*}
+	Pour démontrer ces résultats, il faut utiliser le théorème fondamental du calcul différentiel et le théorème de Fubini.
+\end{frame}
+\begin{frame}[t]{Fonction de répartition - suite}
+	\pause
+	\begin{prop}
+		Soit $X$ et $Y$ des variables aléatoires dont la fonction de répartition conjointe est $F$. Alors
+		\[\P{\{a<X\leq b\}\cap\{c<Y\leq d\}}=F(b,d)-F(a,d)-F(b,c)+F(a,c)\]
+		pour tout choix de $a\leq b$ et $c\leq d$.
+	\end{prop}
+\end{frame}
+
+\section[Lois marg.]{Lois marginales}
+\begin{frame}[t]{Fonctions de masse marginales}
+	\pause
+	\begin{defn}{}
+		Soit $X$ et $Y$ des variables aléatoires dont la fonction de masse conjointe est $p$. Les \defi{fonctions de masse marginales} de $X$ et $Y$ sont données respectivement par $p_X$ et $p_Y$, définies comme suit:
+		\[p_X(x)=\sum_{y\in\R}p(x,y)\qquad\text{et}\qquad p_Y(y)=\sum_{x\in\R}p(x,y).\]
+	\end{defn}
+\end{frame}
+\begin{frame}[t]{Un exemple}
+	On lance deux dés réguliers à 6 faces. On définit les v.a. suivantes:
+	\begin{align*}
+	X&=\text{Le minimum des deux nombres obtenus\,;}\\
+	X&=\text{La somme des deux nombres obtenus.}
+	\end{align*}
+\end{frame}
+\begin{frame}[t]{Représentation d'une fonction de masse sous forme de tableau}
+	\begin{table}[h!]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{c c c c c c c c c c c c c c}
+\toprule
+$X \backslash Y$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & $P_X(x)$ \\
+\midrule
+1 & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & &  &  &  &  & $\sfrac{11}{36}$ \\
+2 & &  & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & & & & & $\sfrac{9}{36}$ \\
+3 & & & &  & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ &$\sfrac{2}{36}$ & & & & $\sfrac{7}{36}$ \\
+4 & & & &  &  &  & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & & & $\sfrac{5}{36}$ \\
+5 & & & & &  &  & & & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & & $\sfrac{3}{36}$ \\
+6 & & & & & &  & & & & &$\sfrac{1}{36}$ & $\sfrac{1}{36}$ \\
+\midrule
+$P_Y(y)$ & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{3}{36}$ & $\sfrac{4}{36}$ & $\sfrac{5}{36}$ & $\sfrac{6}{36}$ & $\sfrac{5}{36}$ & $\sfrac{4}{36}$ & $\sfrac{3}{36}$ & $\sfrac{2}{36}$ & $\sfrac{1}{36}$ & \\
+\bottomrule
+\end{tabular}
+\caption{Fonction de masse conjointe des variables $X$ et $Y$}
+\end{table}
+\end{frame}
+\begin{frame}[t]{Fonctions de densité marginales}
+	\pause
+	\begin{defn}{}
+		Soit $X$ et $Y$ des variables aléatoires dont la fonction de densité conjointe est $f$. Alors les \defi{fonctions de densité marginales} de $X$ et $Y$ sont données respectivement par les fonctions $f_X$ et $f_Y$, définies ci-dessous:
+		\[f_X(x)=\int_{-\infty}^{\infty} f(x,y)dy\qquad\text{et}\qquad f_Y(y)=\int_{-\infty}^{\infty} f(x,y)dx.\]
+	\end{defn}
+\end{frame}
+\section[Lois cond.]{Lois conditionnelles}
+\begin{frame}[t]{Définitions}
+	Il arrive parfois que nous connaissons la fonction de masse ou la fonction de densité conjointe de deux variables aléatoires, et qu'en plus de cela, nous connaissons aussi la valeur prise par l'une des deux variables aléatoires. Avec cette nouvelle information, on peut se demander quelle est la fonction de masse (ou la fonction de densité) conditionnelle de l'autre variable aléatoire.
+	\begin{defn}{}
+		Soit $X$ et $Y$ des variables aléatoires dont la fonction de masse conjointe est $p$, et soit $x\in\R$ tel que $\P{X=x}>0$. La \defi{fonction de masse conditionnelle} de $Y$ sachant que $X=x$ est définie par l'équation
+		\[p_{Y|X=x}(y)=\frac{p(x,y)}{p_X(x)}.\]
+		%La fonction de masse conditionnelle de $X$ sachant que $Y=y$ est définie de façon analogue.
+	\end{defn}
+\end{frame}
+\begin{frame}[t]{Définition - suite}
+	\begin{defn}{}
+		Soit $X$ et $Y$ des variables aléatoires dont la fonction de densité conjointe est $f$. Alors la \defi{fonction de densité conditionnelle} de $Y$ sachant que $X=x$ est donnée par l'équation
+		\[f_{Y|X=x}(y)=\frac{f(x,y)}{f_X(x)}.\]
+		La fonction de densité conditionnelle de $X$ sachant que $Y=y$ est définie de façon analogue.
+	\end{defn}
+\end{frame}
+\begin{frame}[t]{Fonction de répartition}
+	\begin{defn}{}
+		Soit $X$ et $Y$ des variables aléatoires, et soit $x\in\R$. La \defi{fonction de répartition conditionnelle} de $Y$ sachant que $X=x$ est définie par l'équation
+		\[F_{Y|X=x}(y)=\P{Y\leq y|X=x}.\]
+		La fonction de répartition conditionnelle de $X$ sachant que $Y=y$ est définie de façon analogue.
+	\end{defn}
+	Pour que cette définition soit valable dans le cas discret, il faut que $\P{X=x}>0$. Dans le cas continu, il faut que $f_X(x)>0$.
+\end{frame}
+\section[V.a. indépendantes]{Variables aléatoires indépendantes}
+\begin{frame}[t]{Définition}
+	\begin{defn}{}
+		Les variables aléatoires $X$ et $Y$ sont \defi{indépendantes} si pour tout choix de sous-ensembles de $\R$, disons $C$ et $D$, les événements $\{X\in C\}$ et $\{Y\in D\}$ sont indépendants.
+	\end{defn}
+	Au regard de la définition de l'indépendance de deux événements, deux variables aléatoires sont indépendantes si, pour tout choix de sous-ensembles de $C$ et $D$, nous avons que
+	\[\P{\{X\in C\}\cap\{Y\in D\}}=\P{X\in C}\cdot \P{Y\in D}.\]
+\end{frame}
+\begin{frame}[t]{Résultat}
+	\begin{prop}
+		Les variables aléatoires $X$ et $Y$ sont indépendantes si et seulement si pour tout choix de $a\leq b$ et $c\leq d$, on a que
+		\[\P{\{a<X\leq b\}\cap\{c<Y\leq d\}}=\P{a<X\leq b}\cdot \P{c<Y\leq d}.\]
+	\end{prop}
+	Puisque cette proposition donne une caractérisation des variables indépendantes, elle pourrait servir à \textit{définir} l'indépendance de deux variables aléatoires.
+\end{frame}
+\begin{frame}[t]{Théorèmes}
+	\begin{thm}
+		Si $X$ et $Y$ sont deux variables aléatoires indépendantes, et si $h$ et $g$ sont des fonctions réelles d'une variable réelle, alors les variables aléatoires $h(X)$ et $g(Y)$ sont indépendantes.
+	\end{thm}
+	\begin{thm}
+		Deux variables aléatoires $X$ et $Y$ sont indépendantes si et seulement si la fonction de répartition conjointe $F$ est égale au produit des fonctions de répartition marginales $F_X$ et $F_Y$.
+	\end{thm}
+\end{frame}
+\begin{frame}[t]{Théorèmes}
+	\begin{thm}
+		Deux variables aléatoires absolument continues sont indépendantes si et seulement si leur fonction de densité conjointe est égale au produit des fonctions de densité marginales de ces deux variables.
+	\end{thm}
+	\begin{thm}
+		Deux variables aléatoires discrètes sont indépendantes si et seulement si leur fonction de masse conjointe est égale au produit des fonctions de masse marginales de ces deux variables.
+	\end{thm}
+\end{frame}
+\begin{frame}[t]{Retour sur l'exemple du lancer de deux dés réguliers}
+	Rappelons que $X$ correspond au minimum des deux nombres obtenus alors que $Y$ est la somme des deux nombres obtenus.
+	
+	\begin{table}[h!]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{c c c c c c c c c c c c c c}
+\toprule
+$X \backslash Y$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & $P_X(x)$ \\
+\midrule
+1 & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & &  &  &  &  & $\sfrac{11}{36}$ \\
+2 & &  & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & & & & & $\sfrac{9}{36}$ \\
+3 & & & &  & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ &$\sfrac{2}{36}$ & & & & $\sfrac{7}{36}$ \\
+4 & & & &  &  &  & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{2}{36}$ & & & $\sfrac{5}{36}$ \\
+5 & & & & &  &  & & & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & & $\sfrac{3}{36}$ \\
+6 & & & & & &  & & & & &$\sfrac{1}{36}$ & $\sfrac{1}{36}$ \\
+\midrule
+$P_Y(y)$ & $\sfrac{1}{36}$ & $\sfrac{2}{36}$ & $\sfrac{3}{36}$ & $\sfrac{4}{36}$ & $\sfrac{5}{36}$ & $\sfrac{6}{36}$ & $\sfrac{5}{36}$ & $\sfrac{4}{36}$ & $\sfrac{3}{36}$ & $\sfrac{2}{36}$ & $\sfrac{1}{36}$ & \\
+\bottomrule
+\end{tabular}
+\caption{Fonction de masse conjointe des variables $X$ et $Y$}
+\end{table}
+\end{frame}
+\begin{frame}[t]{Est-ce que $X$ et $Y$ sont indépendantes?}
+	Pour que $X$ et $Y$ soient indépendantes, on doit avoir que
+	\[p(x,y)=p_X(x)p_Y(y)\qquad\forall (x,y)\in\R^2.\]
+	Selon le tableau de la page précédente, nous avons que\,:
+	\begin{align*}
+	p(2,6)&=\sfrac{2}{36},\\
+	p_X(2)&=\sfrac{9}{36},\\
+	p_Y(6)&=\sfrac{5}{36}.
+	\end{align*}
+	Comme $p(2,6)\neq p_X(2)p_Y(6)$, $X$ et $Y$ ne sont pas indépendantes.
+\end{frame}
+\begin{frame}[t]{L'indépendance et les distributions conditionnelles}
+	\begin{rem}
+		On peut montrer que les variables aléatoires $X$ et $Y$ sont indépendantes si et seulement si les distributions conditionnelles de l'une sachant l'autre sont égales aux distributions marginales correspondantes. Ainsi, dans le cas absolument continu, nous avons que
+		\[f_{X,Y}(x,y)=f_X(x)\times f_Y(y)\]
+		si et seulement si
+		\[f_{Y|X=x}(y)=f_Y(y)\text{~et~} f_{X|Y=y}(x)=f_X(x).\]
+	\end{rem}
+\end{frame}
+\section[Distribution d'une fct.]{Distribution d'une fonction de plusieurs variables aléatoires}
+\begin{frame}[t]{Contexte}
+	Soit $g:\R^2\rightarrow\R$ une fonction, et soit $X$ et $Y$ des variables aléatoires dont la distribution conjointe est connue. On veut déterminer la distribution de la variable aléatoire $W$, définie par $W=g(X,Y)$.
+\end{frame}
+\begin{frame}[t]{Cas discret}
+	\begin{enumerate}
+		\item On détermine l'ensemble des valeurs possibles pour $W$;\\
+		\item Pour chaque valeur de $w$ on calcule la fonction de masse $p_W(w)=\P{W=w}$ en observant que
+		\[p_W(w)=\sum_{\{(x,y)\in\R^2:g(x,y)=w\}}p(x,y),\]
+		ou $p$ est la fonction de masse conjointe de $X$ et $Y$.
+	\end{enumerate}
+\end{frame}
+\begin{frame}[t]{Cas absolument continu}
+	\begin{enumerate}
+		\item On détermine l'ensemble des valeurs possibles pour $W$;\\
+		\item On calcule la fonction de répartition de $W$ en observant que
+		\[F_W(w)=\int\int_{\{(x,y)\in\R^2:g(x,y)\leq w\}}f(x,y)dxdy;\]
+		\item On dérive $F_W(w)$ par rapport à $w$ pour obtenir la fonction de densité.\\
+	\end{enumerate}
+\end{frame}
+
+\section[Somme et convolution]{Somme de variables aléatoires et convolution}
+\begin{frame}[t]
+	Plusieurs problèmes nécessitent de répondre à la question suivante: Soient $X$ et $Y$ des variables aléatoires indépendantes dont la distribution est connue. Quelle est la distribution de la variable aléatoire $T$ définie par $T=X+Y$?\\
+	Dans le cas où les variables $X$ et $Y$ sont à valeurs entières non négatives, on montre que la fonction de masse de $T$ satisfait
+	\[p_T(k)=\begin{cases}\sum_{i=0}^{k}p_X(i)p_Y(k-i)&\text{si~}k\in\N,\\
+		0&\text{sinon.}\end{cases}\]
+\end{frame}
+\begin{frame}[t]
+	Dans le cas où les variables $X$ et $Y$ sont absolument continues, on montre que la fonction de densité de $T$ satisfait
+	\[f_T(t)=\int_{-\infty}^{\infty}f_X(x)f_Y(t-x)dx.\]
+	La dernière intégrale s'appelle la \defi{convolution} des fonctions $f_X$ et $f_Y$. De plus, si les variables $X$ et $Y$ sont à valeurs non négatives, nous avons que
+	\[f_T(t)=\begin{cases}\int_{0}^{t}f_X(x)f_Y(t-x)dx&\text{si~}t\geq 0,\\
+		0&\text{sinon.}\end{cases}\]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliographie}
+\printbibliography[heading=none]
+\vspace{0.5cm}
+
+ \begin{rems}
+ 	\begin{itemize}
+ 		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
+		\item La formulation des définitions et énoncés est fortement inspirée de \cite{belisle}.
+ 	\end{itemize}
+ \end{rems}
+
+ 	\vfill
+ 	\footnotesize Pour signaler une erreur dans ce document, veuillez écrire à~\href{mailto:jerome.soucy@mat.ulaval.ca}{jerome.soucy@mat.ulaval.ca}.
+ \end{frame}
+\end{document}

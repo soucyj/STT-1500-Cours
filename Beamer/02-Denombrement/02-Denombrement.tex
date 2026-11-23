@@ -1,0 +1,394 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = fr_CA
+\documentclass[nuit,charter,pied]{BeamerJS}
+\title{Combinatoire énumérative}
+\subtitle{À l'intention des étudiants de STT-1500}
+\institute{Université Laval}
+\fonction{Département de mathématiques et de statistique}
+\logotitre{../logo_UL.pdf}
+\author{Jérôme Soucy}
+\date{Hiver 2025}
+
+\usepackage{commandesJS}
+\addbibresource{../references.bib}
+\NouvelleBoiteJS{props}{Propositions}{VertPreuve}{PreuveBG}
+\NouvelleBoiteJS{exs}{Exemples}{GrisExemple}{ExempleBG}
+\NouvelleBoiteJS{rems}{Remarques}{Accent}{AccentBG}
+\usepackage{array}
+\usepackage{booktabs}
+
+\newcommand{\demarche}{{\vspace{0.1cm}\centering\color{Accent}\hrule}~\\}
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\displaystyle #2}}}
+
+
+\begin{document}
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+\begin{frame}{Résumé}
+\tableofcontents
+\end{frame}	
+\section{Principe fondamental du dénombrement }
+\begin{frame}{Exemple : Plaques d'immatriculation}
+	Combien de plaques d'immatriculation différentes de la forme \texttt{LLL CCC} existent-t-il? Ici, \texttt{L} est une des lettres de l'alphabet et \texttt{C} un chiffre (en base dix).
+	\vfill
+	\pause
+	Combien de plaques d'immatriculation différentes de la forme \texttt{LLL CCC} utilisent des symboles différents?
+	\vfill
+\end{frame}
+
+\begin{frame}{Exemple : Boules et urnes}
+	De combien de façons différentes pouvons-nous placer $N$ boules distinguables dans $r$ urnes distinguables?
+\end{frame}
+
+\begin{frame}{Exemple : Principe d'inclusion/exclusion}
+	On place $N$ boules distinguables dans $3$ urnes distinguables. Quelle est la probabilité qu'aucune urne ne soit vide?
+\end{frame}
+
+\begin{frame}{Description de la procédure énumérative}
+\pause
+	Considérons une procédure pouvant être décomposée en $k$ tâches à réaliser, \emph{dans un ordre déterminé}. \pause On pourrait donc identifier cette procédure à un vecteur $(t_1,t_2,\ldots,t_k)$.\pause
+Faisons maintenant les hypothèses suivantes sur les $t_i$.\pause
+\begin{itemize}
+\item Il y a $n_1$ façon de réaliser la tâche $t_1$;\pause
+\item Peu importe la façon choisie pour réaliser $t_1$, il y a $n_2$ façons de réaliser $t_2$;\pause
+\item Peu importe la façon choisie pour réaliser $t_2$ et $t_1$, il y a $n_3$ façons de réaliser $t_3$;\pause
+\item $\ldots$\pause
+\item Peu importe la façon choisie pour réaliser $t_{k-1},t_{k-2},\ldots t_2$ et $t_1$, il y a $n_k$ façons de réaliser $t_k$.
+\end{itemize}
+\end{frame}
+\begin{frame}{Conséquence}
+\pause
+	\begin{prop}
+Si une procédure réalisée selon les conventions de l'acétate précédente comprend les étapes $t_1,t_2,\ldots,t_k$ et que l'étape $t_i$ peut être réalisée de $n_i$ façons pour tout $i\in\{1,2,\ldots,k\}$, alors il y a $\prod_{i=1}^k n_i$ façons de réaliser la procédure.
+\end{prop}
+\pause
+Ce principe est équivalent à affirmer que si nous prenons le produit cartésien d'ensembles finis, alors la cardinalité de l'ensemble ainsi formé correspond au produit des cardinalités des ensembles apparaissant dans le produit cartésien. \pause Plus formellement, si $E_1,E_2,\ldots, E_n$ sont des ensembles finis, alors
+\[\card{E_1\times E_2\times \cdots\times E_n}=\prod_{i=1}^n\card{E_i}.\]
+\end{frame}
+\section{Permutations et \textit{k}-permutations}
+\begin{frame}{$k$-permutations}
+\pause
+\begin{defn}{}
+Soit $E$ un ensemble fini de cardinalité $n$. Une \defi{$k$-permutation} de $E$ est un $k$-uplet d'éléments de $E$ dont toutes les composantes sont distinctes.
+\end{defn}
+\pause
+\begin{prop}
+Si $P_{n,k}$ désigne le nombre de $k$-permutations de $\{1,2,\ldots,n\}$, alors
+\[P_{n,k}=\frac{n!}{(n-k)!}.\]
+\end{prop}
+\pause
+\begin{lumiere}
+Dans \cite{belisle}, une $k$-permutation d'éléments provenant d'un ensemble de cardinalité $n$ s'appelle une permutation de $n$ objets pris $k$ à la fois.
+\end{lumiere}
+\end{frame}
+\begin{frame}
+\begin{prop}
+Soit $E$ un ensemble fini de cardinalité $n$. Le nombre de $k$-permutations de $E$ correspond au nombre de fonctions injectives de $\{1,2,\ldots,k\}$ dans $E$.
+\end{prop}
+\pause
+\begin{lumiere}
+ Rappelons qu'une fonction \(f:A\rightarrow B\) est injective si \[f(x)=f(y)\Rightarrow x=y.\] C'est donc dire qu'une fonction injective est telle qu'elle ne prend jamais deux fois la même valeur. La contraposée (un équivalent logique) de l'énoncé précédent est
+ \[x\neq y\Rightarrow f(x)\neq f(y).\]
+\end{lumiere}
+\end{frame}
+
+\begin{frame}[t]{Permutations}
+\begin{defn}
+Soit $E$ un ensemble fini de cardinalité $n$. Une \defi{permutation} de $E$ est une $n$-permutation d'éléments de $E$.
+\end{defn}
+\pause
+\begin{prop}
+Il y a $n!$ permutations de l'ensemble \(\{1,2,\ldots,n\}\).
+\end{prop}
+\end{frame}
+\begin{frame}{Remarques}
+\begin{rems}
+\begin{itemize}
+\item Le nombre de permutations d'un ensemble fini $E$ correspond au nombre de fonctions bijectives de $E$ dans $E$.
+\item L'ensemble des permutations muni de la loi de composition possède une structure de groupe. Cette structure algébrique est étudiée dans le cours \emph{MAT-2300 : Algèbre I}.
+\end{itemize}
+\end{rems}
+\end{frame}
+
+\begin{frame}{Exemple : Les téléphones}
+	Albert, Bernard et Chantal déposent leur téléphone dans une boîte. Ensuite, chacun pige un téléphone (sans remise). Quelle est la probabilité qu'au moins une de ces personnes ait pigé son propre téléphone?
+\end{frame}
+
+\begin{frame}{Point fixe d'une permutation}
+\pause
+\begin{defn}
+Soit \(X\) un ensemble fini. Un \defi{point fixe pour une permutation} $S:X\rightarrow X$ est un élément $x\in X$ tel que \(S(x)=x\). 
+\end{defn}
+\pause
+La permutation \(\sigma\) sur l'ensemble \(\{A,B,C,D\}\) possède \(A\) et \(D\) comme point fixe.
+\[\sigma_1=
+\begin{pmatrix}
+    A & B & C & D\\
+    A & C & B & D
+  \end{pmatrix}
+ \]
+ \begin{lumiere}
+ 	La permutation \(\sigma_1\) ci-haut envoie \(A\) sur \(A\), \(B\) sur \(C\), \(C\) sur \(B\), et \(D\) sur \(D\).
+ \end{lumiere}
+\end{frame}
+\begin{frame}{Dérangement}
+\begin{defn}{}
+Soit \(X\) un ensemble fini. Un \defi{dérangement} d'un ensemble \(X\) est une permutation de \(X\) qui ne possède aucun point fixe.
+\end{defn}
+\pause
+La permutation \(\sigma_2\) sur l'ensemble \(\{A,B,C,D\}\) est un dérangement.
+\[\sigma_2=
+\begin{pmatrix}
+    A & B & C & D\\
+    B & C & D & A
+  \end{pmatrix}
+ \]
+ \pause
+ \begin{rem}
+ 	Dans le problème des téléphones d'Albert, Bernard et Chantal, il fallait trouver le nombre de permutations sur un ensemble à trois éléments qui ne sont pas des dérangements.
+ \end{rem}
+\end{frame}
+\begin{frame}{Exemple : Dans un contexte statistique}
+	On place $6$ boules dans $6$ urnes numérotées. Chaque urne ne peut contenir qu'une seule boule. On numérote les boules de $1$ à $6$. On place les boules au hasard dans les urnes. Quelle est la probabilité qu'aucune boule ne se retrouve dans l'urne ayant le numéro correspondant?
+\end{frame}
+\begin{frame}{La formule des dérangements}
+\pause
+\begin{thm}
+Soit \(D_n\) le nombre de dérangements de l'ensemble \(\{1,2,\ldots,n\}\). Alors
+\[D_n=n!\sum_{k=0}^n\frac{(-1)^k}{k!}.\]
+\end{thm}
+\pause
+\begin{lumiere}
+On peut montrer que cette quantité est très proche de \(\frac{n!}{e}\).
+\end{lumiere}
+\end{frame}
+\begin{frame}{Application}
+\pause
+\begin{ex}
+Retournons à notre problème de placement de boules dans des urnes. On veut savoir \(\frac{D_6}{6!}.\) On calcule :
+\begin{align*}
+\frac{D_6}{6!}&=\sum_{k=0}^6\frac{(-1)^k}{k!}\\
+&=\frac{1}{1}-\frac{1}{1}+\frac{1}{2}-\frac{1}{6}+\frac{1}{24}-\frac{1}{120}+\frac{1}{720}\\
+&=\frac{53}{144}\approx\num{0.36806}.
+\end{align*}
+\end{ex}
+\end{frame}
+\section{Combinaisons}
+\begin{frame}{Définitions}
+\pause
+\begin{defn}
+Soit $E$ un ensemble fini de cardinalité $n$ et soit $k\in\{0,1,2,\ldots,n\}$. Une \defi{$k$-combinaison} de $E$ (ou encore une \defi{combinaison de $k$ éléments de $E$}) est un sous-ensemble de $E$ dont la cardinalité est $k$.
+\end{defn}
+\pause
+\begin{defn}
+	Soit $n$ et $k$ des entiers naturels tels que $0\leq k\leq n$. On appelle \defi{coefficient binomial} le nombre de $k$-combinaisons d'un ensemble de cardinal $n$. On utilise la notation \(\binom{n}{k}\). En France, on utilise parfois $C_n^k$
+\end{defn}
+\end{frame}
+\begin{frame}{Propriétés}
+\pause
+\begin{props}
+\textbf{Formule explicite :}
+
+Soit $n$ et $k$ des entiers naturels tels que $0\leq k\leq n$. Alors
+\[\binom{n}{k}=\frac{n!}{k!(n-k)!}.\]
+
+\pause
+\medskip
+\textbf{Symétrie :}
+
+Soit $n$ et $k$ des entiers naturels tels que $0\leq k\leq n$. Alors
+\[\binom{n}{k}=\binom{n}{n-k}.\]
+\end{props}
+\end{frame}
+\begin{frame}{Exemple}
+\pause
+\begin{ex}
+De combien de manières différentes pouvons-nous former une main de 5 cartes à partir d'un jeu standard de 52 cartes?
+\end{ex}
+\vfill
+\pause
+{\color{black!60}Réponse: \(\binom{52}{5}=\num{2598960}\)}
+\end{frame}
+\begin{frame}{Quelques exemples --- suite}
+\pause
+\begin{exs}
+Au poker, une quinte flush royale correspond à la main d'un joueur comprenant les 5 cartes suivantes : $10$, valet, dame, roi et as, toutes de la même couleur. Il y en a donc $4$ : en cœur, en carreau, en pique et en trèfle.
+\end{exs}
+\pause
+Quelle est la probabilité d'obtenir une quinte flush royale au premier tour d'une partie de poker?
+\pause
+\[\frac{4}{\binom{52}{5}}=\frac{4}{\num{2598960}}\approx \num{1.5390771693292703e-6}.\]
+\end{frame}
+\begin{frame}{Binôme de Newton}
+\pause
+\begin{ex}
+Combien de termes \(x^k y^{n-k}\) obtiendra-t-on lorsqu'on développe le produit \((x+y)^n\)?
+\end{ex}
+\pause
+{\color{black!60}Réponse: \(\binom{n}{k}\)}
+\end{frame}
+\begin{frame}{Exploration}
+\pause
+Observons ceci :
+\[(x+y)^4=\binom{4}{0}x^4 + \binom{4}{1}x^3 y + \binom{4}{2}x^2 y^2 + \binom{4}{3}x y^3 + \binom{4}{4}y^4.\]
+\pause
+Explication : \((x+y)^4=(x+y)(x+y)(x+y)(x+y).\)
+Pour déterminer le coefficient de \(x^3 y\) par exemple, il nous faut évaluer le nombre de termes \(x^3 y\) obtenus dans le produit. Il y en a autant qu'il y a de manières de choisir un \(y\) dans les 4 facteurs présents. Ce nombre est \(\binom{4}{1}\).
+\end{frame}
+\begin{frame}{Exploration --- suite}
+Observons ceci :
+
+\begin{align*}
+(2x+3y)^4&=\binom{4}{0}(2x)^4 + \binom{4}{1}(2x)^3 (3y) \\
+&\quad+ \binom{4}{2}(2x)^2 (3y)^2 + \binom{4}{3}(2x) (3y)^3 + \binom{4}{4}(3y)^4
+\end{align*}
+\pause
+Pour déterminer le coefficient de \(x^3 y\) par exemple, il nous faut évaluer le produit \(\binom{4}{1}\cdot 2^3\cdot 3\). Celui-ci correspond à \(96\).
+\end{frame}
+\begin{frame}{Formule du binôme de Newton}
+\pause
+	\begin{thm}{}
+		Soit \(x\) et \(y\) deux nombres réels et soit \(n\in\N\). Alors 
+\[(x+y)^{n}=\sum _{k=0}^{n}\binom{n}{k}x^{k}y^{n-k}=\sum _{k=0}^{n}\binom{n}{k}x^{n-k}y^{k}.\]
+	\end{thm}
+	\pause
+	Ce théorème a plusieurs conséquences, dont celle-ci : \(\sum _{k=0}^{n}\binom{n}{k}=2^n\).
+	\pause
+	On peut en donner une démonstration purement combinatoire : d'une part, il y a \(2^n\) sous-ensembles d'un ensemble à \(n\) éléments. En effet, pour construire un sous-ensemble, on doit se demander pour les éléments \(x_1,x_2,\ldots, x_n\) si, oui ou non, ils appartiendront au sous-ensemble. Il y a \(2^n\) manières de répondre à ces \(n\) questions. D'autre part, \(\sum _{k=0}^{n}\binom{n}{k}\) décrit le nombre de sous-ensembles contenant \(0, 1, 2, \ldots\) et  \(n\) éléments. Cela épuise tous les types de sous-ensembles possibles.
+\end{frame}
+\begin{frame}{Le triangle de Pascal}
+	\begin{center}
+	\begin{tabular}{rccccccccc}
+		$n=0$:&    &    &    &    &  1\\\noalign{\smallskip\smallskip}
+		$n=1$:&    &    &    &  1 &    &  1\\\noalign{\smallskip\smallskip}
+		$n=2$:&    &    &  1 &    &  2 &    &  1\\\noalign{\smallskip\smallskip}
+		$n=3$:&    &  1 &    &  3 &    &  3 &    &  1\\\noalign{\smallskip\smallskip}
+		$n=4$:&  1 &    &  4 &    &  6 &    &  4 &    &  1\\\noalign{\smallskip\smallskip}
+	\end{tabular}
+	\end{center}
+	Les éléments d'une ligne sont calculés en faisant la somme des deux éléments qui se trouvent au-dessus à droite et au-dessus à gauche. On débute en plaçant des 1 aux extrémités.
+\end{frame}
+\begin{frame}{Le triangle de Pascal --- prise 2}
+	\begin{center}
+		\begin{tabular}{rccccccccc}
+			$n=0$:&    &    &    &    &  $\binom{0}{0}$\\\noalign{\smallskip\smallskip}
+			$n=1$:&    &    &    &  $\binom{1}{0}$ &    & $\binom{1}{1}$\\\noalign{\smallskip\smallskip}
+			$n=2$:&    &    &  $\binom{2}{0}$ &    &  $\binom{2}{1}$ &    &  $\binom{2}{2}$\\\noalign{\smallskip\smallskip}
+			$n=3$:&    &  $\binom{3}{0}$ &    &  $\binom{3}{1}$ &    &  $\binom{3}{2}$ &    &  $\binom{3}{3}$\\\noalign{\smallskip\smallskip}
+			$n=4$:&  $\binom{4}{0}$ &    &  $\binom{4}{1}$ &    &  $\binom{4}{2}$ &    &  $\binom{4}{3}$ &    &  $\binom{4}{4}$\\\noalign{\smallskip\smallskip}
+		\end{tabular}
+	\end{center}
+	Cette correspondance suggère une identité faisant intervenir les coefficients binomiaux.
+\end{frame}
+\begin{frame}{L'identité de Pascal}
+	\begin{thm}{}{}
+		Soit \(n\in\N\) et soit \(k\in\{0,1,2,\ldots,n\}\). Alors
+		\[\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}.\]
+	\end{thm}
+	\pause
+	On peut interpréter cette identité de la manière suivante : supposons que vous êtes dans un groupe de \(n\) personnes. On doit choisir un groupe de \(k\) personnes. Ou bien vous faites partie du groupe, ou bien non. Si vous en faites partie, il faut choisir les \(k-1\) membres parmi les \(n-1\) personnes du groupe autres que vous. Cela se fait de \(\binom{n-1}{k-1}\) manières. Si vous n'en faite pas partie, il faut choisir les \(k\) personnes parmi les \(n-1\) personnes du groupe autre que vous. Cela se faite de \(\binom{n-1}{k}\) manières. Comme il y a \(\binom{n}{k}\) manières de choisir \(k\) personnes parmi \(n\), on déduit l'identité.
+\end{frame}
+\section{Les coefficients multinomiaux}
+\begin{frame}[t]{Une interprétation des coefficients binomiaux}
+	Supposons que vous avez $n$ boules distinguables à placer dans deux urnes distinguables, disons $U_1$ et $U_2$. Le coefficient binomial $\binom{n}{k}$ donne le nombre de façons de mettre $k$ boules dans l'urne $U_1$ et $n-k$ boules dans l'urne $U_2$.
+\end{frame}
+\begin{frame}{Description d'un problème}
+	Supposons maintenant que vous avez $n$ boules distinguables à placer dans $m$ urnes distinguables, disons $U_1, U_2, \ldots, U_m$. De combien de manières différentes pouvons-nous répartir $n_1$ boules dans $U_1$, $n_2$ boules dans $U_2$, etc, jusqu'à $n_m$ boules dans $U_m$? \pause
+	\[\binom{n}{n_1}\binom{n-n_1}{n_2}\binom{n-n_1-n_2}{n_3} \cdots \binom{n-n_1-n_2-\ldots-n_{m-1}}{n_m}\]
+	\pause
+	La quantité précédente peut être simplifiée. Elle correspond à
+	\[\frac{n!}{n_1!n_2!\cdots n_m!}.\]
+\end{frame}
+\begin{frame}{Le théorème multinomial}
+\pause
+	\begin{thm}{}
+		Soit $m,n\in\Ns$ et soit \(x_1,x_2,\ldots,x_m\) des nombres réels. Désignons par $V_{n,m}$ l'ensemble de tous les $m$-uplets $(n_1,n_2,\ldots,n_m)$ d'éléments de $\N$ satisfaisant $n_1+n_2+\ldots+n_m=n$. Alors 
+		\[(x_1+x_2+\ldots+x_m)^{n}=\sum _{(n_1,n_2,\ldots,n_m)\in V_{n,m}}^{n}\frac{n!}{n_1!n_2!\cdots n_m!}x_1^{n_1}x_2^{n_2}\cdots x_m^{n_m}.\]
+	\end{thm}
+\end{frame}
+
+\begin{frame}{Exemple : Répartition des tâches}
+	Sur une ferme, on doit répartir 20 personnes de la manière suivante : 5 seront responsables du jardin, 5 seront responsables des chevaux, 8 seront responsables des vaches et 2 seront responsables des cochons. Une personne ne peut être responsable de plus d'une tâche à la fois. De combien de manières peut-on répartir les tâches?
+	\vfill 
+	\pause
+	{\color{black!60}Réponse: \(\frac{20!}{5!5!8!2!}=\num{2095133040}\)}
+\end{frame}
+
+\begin{frame}{Exemple : Formation d'équipes}
+	Sur une ferme, on doit répartir 20 travailleurs en 4 équipes de cinq personnes qui seront à tour de rôle responsable de la traite des vaches. De combien de manières peut-on former les équipes de travailleurs?
+	\vfill 
+	\pause
+	{\color{black!60}Réponse: \(\frac{20!}{5!5!5!5!{\color{Dominante}4!}}=\num{488864376}\)}
+\end{frame}
+
+\begin{frame}{Anagrammes : \textsc{oui} et \textsc{non}}
+\begin{exs}
+\textbf{Exemple 1 :} Les anagrammes du mot \textsc{oui} sont \textsc{oiu}, \textsc{uio}, \textsc{uoi}, \textsc{iou}, \textsc{iuo} et \textsc{oui}. En permutant les lettres \textsc{o}, \textsc{u} et \textsc{i}, on forme donc \(3!=6\) anagrammes.
+
+\medskip
+\pause
+\textbf{Exemple 2 :} Les anagrammes du mot \textsc{non} sont \textsc{onn}, \textsc{nno} et \textsc{non}. En permutant les lettres \textsc{n}, \textsc{o} et \textsc{n}, on forme donc \(3\) anagrammes. Ce nombre peut être envisagé de la manière suivante : on constate qu'il y a \(3!\) permutation des symboles {\color{Dominante}\textsc{n}}, \textsc{o} et {\color{Accent}\textsc{n}}. Ensuite, on se dit que {\color{Dominante}\textsc{n}} et {\color{Accent}\textsc{n}} ne sont pas des objets distinguables. Il y a \(2!\) manières de les interchanger. Ainsi, le nombre de permutations \(3!\) doit être divisé par ce \(2!\) pour ne garder que les anagrammes.
+\end{exs}
+\end{frame}
+
+\begin{frame}{Exemple : Anagrammes de \textsc{ressasser}}
+	Combien y a-t-il d'anagrammes du mot \textsc{ressasser}? On constate qu'il s'agit d'un mot à 9 lettres dont 2 \textsc{r}, 2 \textsc{e}, 4 \textsc{s} et 1 \textsc{a}.
+	\vfill
+	\pause
+	{\color{black!60}Réponse: \(\frac{9!}{2!2!4!1!}=\num{3780}\)}
+	\vfill
+	\pause
+	À titre informatif, le mot \textsc{ressasser} est le plus long palindrôme de la langue française.
+\end{frame}
+
+\section{La formule de Stirling}
+
+\begin{frame}{Exemple : Motivation pour Stirling}
+	On joue à pile ou face $2n$ fois. Quelle est la probabilité d'obtenir le même nombre de pile que de face?
+	\vfill
+	\pause
+	On voudrait avoir une approximation de cette quantité où la notion de factoriel est absente.
+\end{frame}
+
+\begin{frame}{Le théorème de Stirling}
+	 \begin{thm}{}
+	 	\[\lim_{n\rightarrow \infty}\frac{n!}{n^n e^{-n}\sqrt{2\pi n}}=1.\]
+	 \end{thm}
+	 \pause
+\textbf{Conséquence} : pour $n$ suffisament grand, on peux approximer $n!$ par $n^n e^{-n}\sqrt{2\pi n}$.
+\vfill 
+\pause
+La démonstration se trouve dans les notes de cours, mais n'est pas matière à examen.
+\end{frame}
+\begin{frame}{Application à notre problème}
+	En résolvant le problème « On joue à pile ou face $2n$ fois. Quelle est la probabilité d'obtenir le même nombre de pile que de face? », nous avons obtenu la réponse \(\frac{(2n)!}{(n!)^2 2^{2n}}\).
+	\pause
+	\begin{center}
+	\begin{tabular}{@{}llll@{}}
+\toprule
+\(n\) & \(\frac{(2n)!}{2^{2n}(n!)^2}\) & \(\frac{1}{\sqrt{\pi n}}\) & Différence           \\ \midrule
+$5$     & \(\num{0.24609375}\)     & \(\num{0.25231325}\)       & \(\num{0.0062195}\)  \\
+$10$    & \(\num{0.17619705}\)     & \(\num{0.17841241}\)       & \(\num{0.00221536}\) \\
+$20$    & \(\num{0.12537069}\)     & \(\num{0.12615663}\)       & \(\num{0.00078594}\) \\
+$100$   & \(\num{0.05634847}\)     & \(\num{0.05641896}\)       & \(\num{0.00007049}\) \\ \bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliographie}
+\printbibliography[heading=none]
+\vspace{0.5cm}
+
+ \begin{rems}
+ 	\begin{itemize}
+ 		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
+		\item La formulation des définitions et énoncés est fortement inspirée de \cite{belisle}.
+ 	\end{itemize}
+ \end{rems}
+ 	
+ 	\vfill
+ 	\footnotesize Pour signaler une erreur dans ce document, veuillez écrire à~\href{mailto:jerome.soucy@mat.ulaval.ca}{jerome.soucy@mat.ulaval.ca}.
+ \end{frame}
+\end{document}
