@@ -296,20 +296,20 @@ La durée de vie (en années) d'un appareil est décrite par la densité
 $f(x)=\lambda e^{-\lambda x}$ pour $x\ge0$ (et $0$ sinon), où
 $\lambda>0$.
 
-a) Vérifiez que $f$ est une densité et calculez la probabilité que
-   l'appareil dure plus de $t$ années.
-b) Avec $\lambda=0{,}5$, quelle est la probabilité que l'appareil dure
+a) Vérifiez que $f$ est une densité.
+b) Calculez la probabilité que l'appareil dure plus de $t$ années.
+c) Avec $\lambda=0{,}5$, quelle est la probabilité que l'appareil dure
    plus de 2 ans ?
-c) Montrez que
+d) Montrez que
    $\mathbb{P}(\text{durée}>s+t\mid\text{durée}>s)=\mathbb{P}(\text{durée}>t)$.
-   Interprétez.
+e) Interprétez le résultat de d).
 
 ::: {.corrige}
-a) $\int_0^\infty\lambda e^{-\lambda x}\,\mathrm{d}x=\bigl[-e^{-\lambda x}\bigr]_0^\infty=1$,
-   et de même $\mathbb{P}(\text{durée}>t)=e^{-\lambda t}$.
-b) $e^{-1}\approx0{,}368$.
-c) $\dfrac{e^{-\lambda(s+t)}}{e^{-\lambda s}}=e^{-\lambda t}$. Un
-   appareil qui fonctionne encore après $s$ années est « comme neuf » :
+a) $f\ge0$ et $\int_0^\infty\lambda e^{-\lambda x}\,\mathrm{d}x=\bigl[-e^{-\lambda x}\bigr]_0^\infty=1$.
+b) $\int_t^\infty\lambda e^{-\lambda x}\,\mathrm{d}x=e^{-\lambda t}$.
+c) $e^{-0{,}5\cdot2}=e^{-1}\approx0{,}368$.
+d) $\dfrac{e^{-\lambda(s+t)}}{e^{-\lambda s}}=e^{-\lambda t}$.
+e) Un appareil qui fonctionne encore après $s$ années est « comme neuf » :
    il n'y a pas d'usure. On parle d'*absence de mémoire*.
 :::
 

@@ -34,23 +34,24 @@ b) Somme $\le 4$ : $(1,1),(1,2),(2,1),(1,3),(2,2),(3,1)$, soit 6
 
 On lance un dé équilibré trois fois.
 
-a) Décrivez l'ensemble $\Omega$ des résultats possibles. Combien
-   contient-il d'éléments ?
-b) Soit $A$ l'événement « le premier résultat est strictement plus petit
+a) Décrivez l'ensemble $\Omega$ des résultats possibles.
+b) Combien l'ensemble $\Omega$ contient-il d'éléments ?
+c) Soit $A$ l'événement « le premier résultat est strictement plus petit
    que le deuxième » et $B$ l'événement « le deuxième résultat est
    strictement plus petit que le troisième ». Calculez $\mathbb{P}(A)$,
    $\mathbb{P}(B)$ et $\mathbb{P}(A\cap B)$.
-c) Calculez la probabilité que la somme des trois résultats soit
+d) Calculez la probabilité que la somme des trois résultats soit
    inférieure ou égale à 5.
 
-*Indice pour b) : pour compter les éléments de $A\cap B$, classez-les
+*Indice pour c) : pour compter les éléments de $A\cap B$, classez-les
 selon la valeur du deuxième lancer.*
 
 ::: {.corrige}
-a) $\Omega=\{(i,j,k) : i,j,k\in\{1,\dots,6\}\}$ et $|\Omega|=6^3=216$.
-   Les résultats sont équiprobables.
+a) $\Omega=\{(i,j,k) : i,j,k\in\{1,\dots,6\}\}$, l'ensemble des
+   triplets de résultats.
+b) $|\Omega|=6^3=216$. Les résultats sont équiprobables.
 
-b) L'événement $A$ ne concerne que les deux premiers lancers. Parmi les
+c) L'événement $A$ ne concerne que les deux premiers lancers. Parmi les
    36 couples $(i,j)$, 6 ont $i=j$ et, par symétrie, la moitié des 30
    autres ont $i<j$ : 15 couples. Le troisième lancer est libre, donc
    $|A|=15\cdot 6=90$ et $\mathbb{P}(A)=90/216=5/12$. De la même façon,
@@ -66,7 +67,7 @@ b) L'événement $A$ ne concerne que les deux premiers lancers. Parmi les
 
    Donc $|A\cap B|=20$ et $\mathbb{P}(A\cap B)=20/216=5/54$.
 
-c) Somme 3 : $(1,1,1)$, 1 résultat. Somme 4 : les trois permutations de
+d) Somme 3 : $(1,1,1)$, 1 résultat. Somme 4 : les trois permutations de
    $(1,1,2)$. Somme 5 : les trois permutations de $(1,1,3)$ et les trois
    de $(1,2,2)$. En tout $1+3+6=10$ résultats, d'où une probabilité de
    $10/216=5/108\approx 0{,}046$.
@@ -144,16 +145,17 @@ proportionnelle à $j$.
 *Rappel : une quantité $A$ est proportionnelle à une quantité $B$ s'il
 existe une constante $k$ telle que $A=kB$.*
 
-a) Décrivez $\Omega$ et donnez la probabilité de chaque résultat.
-b) Calculez la probabilité d'obtenir un résultat supérieur ou égal à 5.
-c) Calculez la probabilité d'obtenir un résultat pair.
+a) Décrivez $\Omega$.
+b) Déterminez la probabilité de chaque résultat.
+c) Calculez la probabilité d'obtenir un résultat supérieur ou égal à 5.
+d) Calculez la probabilité d'obtenir un résultat pair.
 
 ::: {.corrige}
-a) $\Omega=\{1,2,3,4,5,6\}$ et $p(j)=kj$. Les poids doivent avoir une
-   somme de 1 : $k(1+2+\dots+6)=21k=1$, donc $k=1/21$ et
-   $p(j)=j/21$.
-b) $p(5)+p(6)=11/21$.
-c) $p(2)+p(4)+p(6)=12/21=4/7$.
+a) $\Omega=\{1,2,3,4,5,6\}$.
+b) $p(j)=kj$. Les poids doivent avoir une somme de 1 :
+   $k(1+2+\dots+6)=21k=1$, donc $k=1/21$ et $p(j)=j/21$.
+c) $p(5)+p(6)=11/21$.
+d) $p(2)+p(4)+p(6)=12/21=4/7$.
 :::
 
 ### Exercice 7
@@ -161,19 +163,21 @@ c) $p(2)+p(4)+p(6)=12/21=4/7$.
 Un tiroir contient 7 piles électriques : 5 bonnes et 2 défectueuses. On
 en prend deux au hasard.
 
-a) Décrivez un espace fondamental $\Omega$ adapté et donnez son cardinal.
-b) Calculez la probabilité d'obtenir deux bonnes piles.
-c) Calculez la probabilité d'obtenir au moins une pile défectueuse.
+a) Décrivez un espace fondamental $\Omega$ adapté.
+b) Donnez le cardinal de $\Omega$.
+c) Calculez la probabilité d'obtenir deux bonnes piles.
+d) Calculez la probabilité d'obtenir au moins une pile défectueuse.
 
 ::: {.corrige}
 a) On numérote les piles de 1 à 7 (les bonnes portent les numéros 1 à 5).
    On peut prendre pour $\Omega$ l'ensemble des couples ordonnés
-   $(i,j)$ avec $i\neq j$ (première pile prise, deuxième pile prise) :
-   $|\Omega|=7\cdot 6=42$, résultats équiprobables.
-   (On peut aussi prendre les paires non ordonnées : il y en a 21.)
-b) Couples formés de deux bonnes piles : $5\cdot 4=20$. Probabilité
+   $(i,j)$ avec $i\neq j$ (première pile prise, deuxième pile prise).
+   On peut aussi prendre les paires non ordonnées.
+b) $|\Omega|=7\cdot 6=42$ couples ordonnés, équiprobables (ou 21 paires
+   non ordonnées).
+c) Couples formés de deux bonnes piles : $5\cdot 4=20$. Probabilité
    $20/42=10/21$.
-c) C'est le complémentaire de b) : $1-10/21=11/21$.
+d) C'est le complémentaire de c) : $1-10/21=11/21$.
 :::
 
 ### Exercice 8
@@ -306,27 +310,30 @@ et $\mathbb{P}(A\,\triangle\,B)=\mathbb{P}(A\cup B)-\mathbb{P}(A\cap B)$.
 
 On a $\mathbb{P}(A)=0{,}3$ et $\mathbb{P}(B)=0{,}8$.
 
-a) Quelles sont la plus petite et la plus grande valeur possibles de
-   $\mathbb{P}(A\cup B)$ ?
-b) Quelles sont la plus petite et la plus grande valeur possibles de
-   $\mathbb{P}(A\cap B)$ ?
-
-Pour chaque valeur extrême, décrivez une situation où elle est atteinte.
+a) Quelle est la plus petite valeur possible de $\mathbb{P}(A\cup B)$ ?
+b) Quelle est la plus grande valeur possible de $\mathbb{P}(A\cup B)$ ?
+c) Quelle est la plus petite valeur possible de $\mathbb{P}(A\cap B)$ ?
+d) Quelle est la plus grande valeur possible de $\mathbb{P}(A\cap B)$ ?
+e) Pour chacune de ces valeurs extrêmes, décrivez une situation où elle
+   est atteinte.
 
 ::: {.corrige}
 a) $A\cup B\supseteq B$, donc $\mathbb{P}(A\cup B)\ge 0{,}8$, avec
-   égalité si $A\subseteq B$. Par l'inégalité de Boole,
+   égalité si $A\subseteq B$. La plus petite valeur est $0{,}8$.
+b) Par l'inégalité de Boole,
    $\mathbb{P}(A\cup B)\le\min(1;\,0{,}3+0{,}8)=1$, avec égalité si
-   $A\cup B=\Omega$. Donc $0{,}8\le\mathbb{P}(A\cup B)\le 1$.
-b) $A\cap B\subseteq A$, donc $\mathbb{P}(A\cap B)\le 0{,}3$, avec
-   égalité si $A\subseteq B$. Par l'inégalité de Bonferroni,
+   $A\cup B=\Omega$. La plus grande valeur est $1$.
+c) Par l'inégalité de Bonferroni,
    $\mathbb{P}(A\cap B)\ge 0{,}3+0{,}8-1=0{,}1$, avec égalité si
-   $A\cup B=\Omega$. Donc $0{,}1\le\mathbb{P}(A\cap B)\le 0{,}3$.
-
-Exemple concret : $\Omega=\{1,2,\dots,10\}$ avec des résultats
-équiprobables et $B=\{1,\dots,8\}$. Avec $A=\{1,2,3\}$, on a
-$A\subseteq B$ ; avec $A=\{8,9,10\}$, on a $A\cup B=\Omega$ et
-$A\cap B=\{8\}$.
+   $A\cup B=\Omega$. La plus petite valeur est $0{,}1$.
+d) $A\cap B\subseteq A$, donc $\mathbb{P}(A\cap B)\le 0{,}3$, avec
+   égalité si $A\subseteq B$. La plus grande valeur est $0{,}3$.
+e) On prend $\Omega=\{1,2,\dots,10\}$ avec des résultats équiprobables
+   et $B=\{1,\dots,8\}$.
+   - Avec $A=\{1,2,3\}$, on a $A\subseteq B$ :
+     $\mathbb{P}(A\cup B)=0{,}8$ et $\mathbb{P}(A\cap B)=0{,}3$ (cas a et d).
+   - Avec $A=\{8,9,10\}$, on a $A\cup B=\Omega$ et $A\cap B=\{8\}$ :
+     $\mathbb{P}(A\cup B)=1$ et $\mathbb{P}(A\cap B)=0{,}1$ (cas b et c).
 :::
 
 ### Exercice 15
@@ -388,8 +395,9 @@ Paul et Marie lancent un dé à tour de rôle, en commençant par Paul. Le
 premier qui obtient un 6 gagne.
 
 a) Quelle est la probabilité que Paul gagne à son $k$-ième lancer ?
-b) Quelle est la probabilité que Paul gagne ? Que Marie gagne ?
-c) Quelle est la probabilité que le jeu ne se termine jamais ?
+b) Quelle est la probabilité que Paul gagne ?
+c) Quelle est la probabilité que Marie gagne ?
+d) Quelle est la probabilité que le jeu ne se termine jamais ?
 
 *On admet que les $k$ premiers lancers forment $6^k$ suites
 équiprobables.*
@@ -400,10 +408,10 @@ a) Paul gagne à son $k$-ième lancer si les $2(k-1)$ lancers précédents ne
    $$p_k=\left(\frac56\right)^{2(k-1)}\frac16 .$$
 b) Ces événements sont deux à deux incompatibles, donc
    $$\mathbb{P}(\text{Paul gagne})=\sum_{k\ge 1}\frac16\left(\frac{25}{36}\right)^{k-1}=\frac{1/6}{1-25/36}=\frac{6}{11}.$$
-   De même, Marie gagne à son $k$-ième lancer avec probabilité
+c) Marie gagne à son $k$-ième lancer avec probabilité
    $(5/6)^{2k-1}\cdot\frac16=\frac56\,p_k$, d'où
    $\mathbb{P}(\text{Marie gagne})=\frac56\cdot\frac{6}{11}=\frac{5}{11}$.
-c) $6/11+5/11=1$ : le jeu se termine avec probabilité 1, donc il ne se
+d) $6/11+5/11=1$ : le jeu se termine avec probabilité 1, donc il ne se
    termine jamais avec probabilité 0.
 :::
 

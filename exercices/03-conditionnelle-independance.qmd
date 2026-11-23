@@ -217,14 +217,15 @@ pige ensuite une deuxième boule.
 a) Quelle est la probabilité que les deux boules pigées soient
    blanches ?
 b) Quelle est la probabilité que la deuxième boule soit blanche ?
-   Comparez avec la probabilité que la première soit blanche.
+c) Comparez cette probabilité avec la probabilité que la première boule
+   soit blanche.
 
 ::: {.corrige}
 a) $\mathbb{P}(B_1\cap B_2)=\mathbb{P}(B_1)\,\mathbb{P}(B_2\mid B_1)=\dfrac23\cdot\dfrac34=\dfrac12$.
 b) Par la loi des probabilités totales, en conditionnant sur la première
    boule :
    $$\mathbb{P}(B_2)=\frac23\cdot\frac34+\frac13\cdot\frac24=\frac12+\frac16=\frac23.$$
-   C'est exactement $\mathbb{P}(B_1)$. Le résultat de la deuxième pige
+c) C'est exactement $\mathbb{P}(B_1)$. Le résultat de la deuxième pige
    dépend de la première, mais sa probabilité, quand on ne connaît pas
    la première, est la même.
 :::
@@ -328,12 +329,16 @@ porte derrière laquelle se trouve une chèvre. S'il a le choix entre
 deux portes, il en ouvre une au hasard. Il ouvre la porte 3.
 
 a) À l'aide du théorème de Bayes, calculez la probabilité que la voiture
-   soit derrière la porte 2. Avez-vous intérêt à changer de porte ?
-b) Même jeu avec 4 portes et une seule voiture. Vous choisissez une
-   porte, l'animateur ouvre une autre porte cachant une chèvre, puis vous
-   changez pour l'une des deux portes encore fermées, choisie au hasard.
-   Quelle est votre probabilité de gagner ? Comparez avec la stratégie
-   qui consiste à garder votre porte.
+   soit derrière la porte 2.
+b) Avez-vous intérêt à changer de porte ?
+
+On joue maintenant avec 4 portes et une seule voiture. Vous choisissez
+une porte, puis l'animateur ouvre une autre porte cachant une chèvre.
+
+c) Vous changez pour l'une des deux autres portes encore fermées,
+   choisie au hasard. Quelle est votre probabilité de gagner ?
+d) Quelle est votre probabilité de gagner si vous gardez votre porte ?
+e) Quelle stratégie est la meilleure ?
 
 *Pour l'origine historique, voir [Sources et attributions](sources.qmd#monty-hall).*
 
@@ -344,13 +349,15 @@ a) Soit $V_i$ l'événement « la voiture est derrière la porte $i$ », de
    $\mathbb{P}(O_3\mid V_2)=1$ (il n'a pas le choix) et
    $\mathbb{P}(O_3\mid V_3)=0$. Donc
    $$\mathbb{P}(V_2\mid O_3)=\frac{\frac13\cdot1}{\frac13\cdot\frac12+\frac13\cdot1+0}=\frac23.$$
-   Changer de porte double vos chances : $2/3$ contre $1/3$.
-b) Si vous gardez votre porte, vous gagnez avec probabilité $1/4$. Si
-   vous changez, vous gagnez seulement si votre premier choix était
-   mauvais (probabilité $3/4$). Dans ce cas, la voiture est derrière
-   l'une des deux portes fermées restantes et vous la trouvez avec
-   probabilité $1/2$. La probabilité est $\frac34\cdot\frac12=\frac38$,
-   ce qui est mieux que $1/4$.
+b) Oui : la voiture est derrière votre porte avec probabilité
+   $\mathbb{P}(V_1\mid O_3)=1-\frac23=\frac13$. Changer de porte double
+   vos chances : $2/3$ contre $1/3$.
+c) Vous gagnez seulement si votre premier choix était mauvais
+   (probabilité $3/4$). Dans ce cas, la voiture est derrière l'une des
+   deux portes fermées restantes et vous la trouvez avec probabilité
+   $1/2$. La probabilité est $\frac34\cdot\frac12=\frac38$.
+d) Vous gagnez si votre premier choix était le bon : $1/4$.
+e) Changer de porte : $3/8>1/4=2/8$.
 :::
 
 ### Exercice 16

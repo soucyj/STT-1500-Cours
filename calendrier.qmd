@@ -1,27 +1,55 @@
 ---
 title: "Calendrier"
+subtitle: "Hiver 2027"
 ---
 
-::: {.a-completer}
-Coquille à remplir pour la session : dates, contenu de chaque séance et
-échéances. Les liens renvoient aux chapitres du livre et aux
-présentations.
-:::
+Les cours ont lieu les lundis et les mercredis, du 11 janvier au
+21 avril 2027. La semaine du 1er mars est la semaine de lecture.
 
-| Semaine | Date | Cours | Laboratoire | À remettre |
-|:-:|:-:|:--|:--|:--|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
-| 11 | | | | |
-| 12 | | | | |
-| 13 | | | | |
-| 14 | | | | |
-| 15 | | | | |
+| Semaine | Date | Séance | Matière |
+|:-:|:--|:--|:--|
+| 1 | lundi 11 janvier | Cours 1 | |
+|  | mercredi 13 janvier | Cours 2 | |
+| 2 | lundi 18 janvier | Cours 3 | |
+|  | mercredi 20 janvier | Cours 4 | |
+| 3 | lundi 25 janvier | Laboratoire 1 | |
+|  | mercredi 27 janvier | Cours 5 | |
+| 4 | lundi 1er février | Cours 6 | |
+|  | mercredi 3 février | Cours 7 | |
+| 5 | lundi 8 février | Laboratoire 2 | |
+|  | mercredi 10 février | **Examen 1** | |
+| 6 | lundi 15 février | Cours 8 | |
+|  | mercredi 17 février | Cours 9 | |
+| 7 | lundi 22 février | Cours 10 | |
+|  | mercredi 24 février | Laboratoire 3 | |
+| 8 | 1er au 5 mars | *Semaine de lecture (relâche)* | |
+| 9 | lundi 8 mars | Cours 11 | |
+|  | mercredi 10 mars | Cours 12 | |
+| 10 | lundi 15 mars | Laboratoire 4 | |
+|  | mercredi 17 mars | **Examen 2** | |
+| 11 | lundi 22 mars | Cours 13 | |
+|  | mercredi 24 mars | Cours 14 | |
+| 12 | lundi 29 mars | *Lundi de Pâques : congé* | |
+|  | mercredi 31 mars | Laboratoire 5 | |
+| 13 | lundi 5 avril | Cours 15 | |
+|  | mercredi 7 avril | Laboratoire 6 | |
+| 14 | lundi 12 avril | Cours 16 | |
+|  | mercredi 14 avril | Cours 17 | |
+| 15 | lundi 19 avril | Cours 18 | |
+|  | mercredi 21 avril | Laboratoire 7 | |
+| 16 | lundi 26 avril | **Examen final** | |
+
+## Dates importantes
+
+| Évaluation | Date |
+|:--|:--|
+| Examen 1 | mercredi 10 février |
+| Examen 2 | mercredi 17 mars |
+| Examen final | lundi 26 avril |
+
+Laboratoires : 25 janvier, 8 février, 24 février, 15 mars, 31 mars,
+7 avril et 21 avril.
+
+::: {.a-completer}
+À compléter : la matière (modules) couverte à chaque cours.
+:::

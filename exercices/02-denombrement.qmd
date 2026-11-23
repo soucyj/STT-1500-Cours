@@ -89,22 +89,23 @@ $40\cdot 39\cdot 39=60\,840$ combinaisons.
 
 Un étudiant propose plutôt : « 40 choix pour le premier, 40 pour le
 troisième, puis 38 pour le deuxième, puisqu'il doit différer des deux
-autres, donc $40\cdot 40\cdot 38=60\,800$. » Où est l'erreur ? Corrigez
-son raisonnement en gardant son ordre de choix.
+autres, donc $40\cdot 40\cdot 38=60\,800$. »
+
+a) Où est l'erreur dans ce raisonnement ?
+b) Corrigez son raisonnement en gardant son ordre de choix.
 
 ::: {.corrige}
-Le nombre de choix pour le deuxième nombre dépend des choix précédents :
-si le premier et le troisième sont égaux, le deuxième n'a qu'une valeur
-interdite et il reste 39 choix, pas 38. Le principe de multiplication
-exige que le nombre de choix à chaque étape ne dépende pas des choix
-précédents.
+a) Le nombre de choix pour le deuxième nombre dépend des choix
+   précédents : si le premier et le troisième sont égaux, le deuxième
+   n'a qu'une valeur interdite et il reste 39 choix, pas 38. Le principe
+   de multiplication exige que le nombre de choix à chaque étape ne
+   dépende pas des choix précédents.
+b) On sépare les deux cas :
 
-On sépare donc les deux cas :
+   - premier $=$ troisième : $40\cdot 1\cdot 39$ combinaisons ;
+   - premier $\neq$ troisième : $40\cdot 39\cdot 38$ combinaisons.
 
-- premier $=$ troisième : $40\cdot 1\cdot 39$ combinaisons ;
-- premier $\neq$ troisième : $40\cdot 39\cdot 38$ combinaisons.
-
-Total : $40\cdot 39\cdot(1+38)=40\cdot 39\cdot 39=60\,840$.
+   Total : $40\cdot 39\cdot(1+38)=40\cdot 39\cdot 39=60\,840$.
 :::
 
 ### Exercice 6
@@ -123,11 +124,17 @@ façons.
 
 Deux femmes et huit hommes s'assoient au hasard sur 10 chaises.
 
-a) Les chaises forment une ligne. Quelle est la probabilité que les deux
-   femmes soient côte à côte ? Qu'elles occupent les deux extrémités ?
-b) Les chaises forment un cercle. Quelle est la probabilité que les deux
-   femmes soient côte à côte ? Qu'elles soient diamétralement opposées ?
-c) **(défi)** Sur une ligne de $n$ chaises, $k$ femmes et $n-k$ hommes
+Dans les questions a) et b), les chaises forment une ligne.
+
+a) Quelle est la probabilité que les deux femmes soient côte à côte ?
+b) Quelle est la probabilité qu'elles occupent les deux extrémités de la
+   ligne ?
+
+Dans les questions c) et d), les chaises forment un cercle.
+
+c) Quelle est la probabilité que les deux femmes soient côte à côte ?
+d) Quelle est la probabilité qu'elles soient diamétralement opposées ?
+e) **(défi)** Sur une ligne de $n$ chaises, $k$ femmes et $n-k$ hommes
    s'assoient au hasard. Quelle est la probabilité que les $k$ femmes
    soient toutes côte à côte ?
 
@@ -135,11 +142,11 @@ c) **(défi)** Sur une ligne de $n$ chaises, $k$ femmes et $n-k$ hommes
 Seules comptent les chaises occupées par les femmes : les
 $\binom{10}{2}=45$ paires de chaises sont équiprobables.
 
-a) Ligne : 9 paires de chaises voisines, d'où $9/45=1/5$. Une seule
-   paire d'extrémités : $1/45$.
-b) Cercle : 10 paires de chaises voisines, d'où $10/45=2/9$. Paires
-   opposées : 5, d'où $5/45=1/9$.
-c) Il y a $\binom nk$ ensembles de chaises équiprobables pour les femmes,
+a) Ligne : 9 paires de chaises voisines, d'où $9/45=1/5$.
+b) Une seule paire d'extrémités : $1/45$.
+c) Cercle : 10 paires de chaises voisines, d'où $10/45=2/9$.
+d) Paires de chaises opposées : 5, d'où $5/45=1/9$.
+e) Il y a $\binom nk$ ensembles de chaises équiprobables pour les femmes,
    et $n-k+1$ blocs de $k$ chaises consécutives (le bloc commence en
    position $1,\dots,n-k+1$). Probabilité $(n-k+1)\big/\binom nk$. Avec
    $n=10$ et $k=2$, on retrouve $9/45$.
@@ -153,11 +160,13 @@ c) Il y a $\binom nk$ ensembles de chaises équiprobables pour les femmes,
 panier. À la sortie, chacun reprend un téléphone au hasard.
 
 a) Pour $n=4$, énumérez les façons de redistribuer les téléphones sans
-   que personne ne reprenne le sien, et calculez la probabilité de cet
-   événement.
-b) À l'aide de la formule des dérangements, calculez cette probabilité
-   pour $n=5$ et comparez-la à $1/e$.
-c) Pour $n=4$, quelle est la probabilité qu'exactement une personne
+   que personne ne reprenne le sien.
+b) Pour $n=4$, calculez la probabilité que personne ne reprenne son
+   téléphone.
+c) À l'aide de la formule des dérangements, calculez cette probabilité
+   pour $n=5$.
+d) Comparez le résultat de c) à $1/e$.
+e) Pour $n=4$, quelle est la probabilité qu'exactement une personne
    reprenne son propre téléphone ?
 
 ::: {.corrige}
@@ -166,12 +175,12 @@ a) Numérotons les personnes et leurs téléphones 1, 2, 3, 4. Une
    sans point fixe :
 
    2143, 2341, 2413, 3142, 3412, 3421, 4123, 4312, 4321.
-
-   Il y en a $D_4=9$ sur $4!=24$, d'où $9/24=3/8=0{,}375$.
-b) $D_5=5!\left(1-1+\frac1{2!}-\frac1{3!}+\frac1{4!}-\frac1{5!}\right)=44$,
-   d'où $44/120\approx 0{,}3667$. Comparez à $1/e\approx 0{,}3679$ :
-   la probabilité se stabilise très vite.
-c) On choisit la personne qui reprend son téléphone (4 choix), puis les
+b) Il y en a $D_4=9$ sur $4!=24$, d'où $9/24=3/8=0{,}375$.
+c) $D_5=5!\left(1-1+\frac1{2!}-\frac1{3!}+\frac1{4!}-\frac1{5!}\right)=44$,
+   d'où $44/120\approx 0{,}3667$.
+d) $1/e\approx 0{,}3679$ : l'écart n'est que d'environ $0{,}001$. La
+   probabilité se stabilise très vite.
+e) On choisit la personne qui reprend son téléphone (4 choix), puis les
    3 autres doivent former un dérangement ($D_3=2$) : $4\cdot 2/24=1/3$.
 :::
 
@@ -479,13 +488,15 @@ On sépare au hasard un jeu de 52 cartes en deux paquets de 26.
 a) Calculez la probabilité que chaque paquet contienne 13 cartes rouges
    et 13 cartes noires.
 b) Avec la formule obtenue en b) de l'exercice précédent, donnez une
-   approximation de cette probabilité et comparez.
+   approximation de cette probabilité.
+c) Comparez l'approximation à la valeur exacte.
 
 ::: {.corrige}
 a) On choisit les 26 cartes du premier paquet ; il faut 13 rouges parmi
    26 et 13 noires parmi 26 :
    $$\frac{\binom{26}{13}^2}{\binom{52}{26}}\approx 0{,}2181.$$
 b) Avec $\binom{2n}n\approx 4^n/\sqrt{\pi n}$ pour $n=13$ et $n=26$ :
-   $$\frac{\left(4^{13}/\sqrt{13\pi}\right)^2}{4^{26}/\sqrt{26\pi}}=\frac{\sqrt{26\pi}}{13\pi}=\sqrt{\frac{2}{13\pi}}\approx 0{,}2213,$$
-   une erreur relative d'environ 1,5 %.
+   $$\frac{\left(4^{13}/\sqrt{13\pi}\right)^2}{4^{26}/\sqrt{26\pi}}=\frac{\sqrt{26\pi}}{13\pi}=\sqrt{\frac{2}{13\pi}}\approx 0{,}2213.$$
+c) L'approximation $0{,}2213$ dépasse la valeur exacte $0{,}2181$ d'environ
+   $0{,}003$ : une erreur relative d'environ 1,5 %.
 :::
