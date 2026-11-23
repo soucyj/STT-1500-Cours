@@ -432,3 +432,77 @@ details.corrige {
   color: rgba($body-color, 0.75);
   p:last-child { margin-bottom: 0; }
 }
+
+// ── Calendrier (page générée par _outils/generer_calendrier.py) ───────────
+$cal-cours:  rgb(190, 226, 170);   // vert
+$cal-labo:   rgb(250, 226, 120);   // jaune
+$cal-examen: rgb(232, 120, 110);   // rouge
+$cal-conge:  rgb(205, 205, 205);   // gris
+
+.calendrier {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem 1.6rem;
+  margin: 1.2rem 0 1.5rem;
+  font-family: $font-family-sans-serif;
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 0 0 0.4rem;
+    text-align: center;
+  }
+}
+.cal-grille {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+.cal-entete {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba($sectioncolor, 0.7);
+  padding-bottom: 2px;
+}
+.cal-jour {
+  min-height: 2.9rem;
+  border-radius: 4px;
+  padding: 2px 4px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba($sectioncolor, 0.08);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  overflow: hidden;
+  &.hors { background: transparent; border-color: transparent; }
+  &.fin-semaine:not(.conge) { background: rgba(255, 255, 255, 0.3); }
+  &.cours  { background: $cal-cours; }
+  &.labo   { background: $cal-labo; }
+  &.examen { background: $cal-examen; color: #fff; }
+  &.conge  { background: $cal-conge; color: rgba(0, 0, 0, 0.55); }
+}
+.cal-num { font-size: 0.78rem; font-weight: 600; }
+.cal-etiquette {
+  font-size: 0.6rem;
+  font-weight: 600;
+  margin-top: auto;
+  hyphens: manual;
+}
+.cal-legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.8rem;
+  span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  i {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 3px;
+    &.cours  { background: $cal-cours; }
+    &.labo   { background: $cal-labo; }
+    &.examen { background: $cal-examen; }
+    &.conge  { background: $cal-conge; }
+  }
+}

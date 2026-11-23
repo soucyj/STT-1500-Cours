@@ -1,43 +1,212 @@
 ---
 title: "Calendrier"
 subtitle: "Hiver 2027"
+toc: false
 ---
 
-Les cours ont lieu les lundis et les mercredis, du 11 janvier au
-21 avril 2027. La semaine du 1er mars est la semaine de lecture.
+<!-- Page générée par _outils/generer_calendrier.py : modifier le script,
+     puis le relancer, plutôt que d'éditer cette page à la main. -->
 
-| Semaine | Date | Séance | Matière |
-|:-:|:--|:--|:--|
-| 1 | lundi 11 janvier | Cours 1 | |
-|  | mercredi 13 janvier | Cours 2 | |
-| 2 | lundi 18 janvier | Cours 3 | |
-|  | mercredi 20 janvier | Cours 4 | |
-| 3 | lundi 25 janvier | Laboratoire 1 | |
-|  | mercredi 27 janvier | Cours 5 | |
-| 4 | lundi 1er février | Cours 6 | |
-|  | mercredi 3 février | Cours 7 | |
-| 5 | lundi 8 février | Laboratoire 2 | |
-|  | mercredi 10 février | **Examen 1** | |
-| 6 | lundi 15 février | Cours 8 | |
-|  | mercredi 17 février | Cours 9 | |
-| 7 | lundi 22 février | Cours 10 | |
-|  | mercredi 24 février | Laboratoire 3 | |
-| 8 | 1er au 5 mars | *Semaine de lecture (relâche)* | |
-| 9 | lundi 8 mars | Cours 11 | |
-|  | mercredi 10 mars | Cours 12 | |
-| 10 | lundi 15 mars | Laboratoire 4 | |
-|  | mercredi 17 mars | **Examen 2** | |
-| 11 | lundi 22 mars | Cours 13 | |
-|  | mercredi 24 mars | Cours 14 | |
-| 12 | lundi 29 mars | *Lundi de Pâques : congé* | |
-|  | mercredi 31 mars | Laboratoire 5 | |
-| 13 | lundi 5 avril | Cours 15 | |
-|  | mercredi 7 avril | Laboratoire 6 | |
-| 14 | lundi 12 avril | Cours 16 | |
-|  | mercredi 14 avril | Cours 17 | |
-| 15 | lundi 19 avril | Cours 18 | |
-|  | mercredi 21 avril | Laboratoire 7 | |
-| 16 | lundi 26 avril | **Examen final** | |
+::: {.callout-important}
+En cas de disparité entre ce calendrier et le site du cours sur Brio, ce
+sont les dates indiquées sur Brio qui prévalent.
+:::
+
+Les cours ont lieu les lundis et les mercredis, du lundi 11 janvier au
+mercredi 21 avril. Passez le curseur sur une journée pour en voir la
+description.
+
+```{=html}
+<div class="cal-legende">
+<span><i class="cours"></i>Cours</span>
+<span><i class="labo"></i>Laboratoire</span>
+<span><i class="examen"></i>Examen</span>
+<span><i class="conge"></i>Semaine de lecture et congés de Pâques</span>
+</div>
+<div class="calendrier">
+<div class="cal-mois">
+<h3>Janvier 2027</h3>
+<div class="cal-grille">
+<div class="cal-entete">L</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">J</div>
+<div class="cal-entete">V</div>
+<div class="cal-entete">S</div>
+<div class="cal-entete">D</div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour " title="vendredi 1er janvier"><span class="cal-num">1</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 2 janvier"><span class="cal-num">2</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 3 janvier"><span class="cal-num">3</span></div>
+<div class="cal-jour " title="lundi 4 janvier"><span class="cal-num">4</span></div>
+<div class="cal-jour " title="mardi 5 janvier"><span class="cal-num">5</span></div>
+<div class="cal-jour " title="mercredi 6 janvier"><span class="cal-num">6</span></div>
+<div class="cal-jour " title="jeudi 7 janvier"><span class="cal-num">7</span></div>
+<div class="cal-jour " title="vendredi 8 janvier"><span class="cal-num">8</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 9 janvier"><span class="cal-num">9</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 10 janvier"><span class="cal-num">10</span></div>
+<div class="cal-jour cours" title="lundi 11 janvier : Cours"><span class="cal-num">11</span></div>
+<div class="cal-jour " title="mardi 12 janvier"><span class="cal-num">12</span></div>
+<div class="cal-jour cours" title="mercredi 13 janvier : Cours"><span class="cal-num">13</span></div>
+<div class="cal-jour " title="jeudi 14 janvier"><span class="cal-num">14</span></div>
+<div class="cal-jour " title="vendredi 15 janvier"><span class="cal-num">15</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 16 janvier"><span class="cal-num">16</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 17 janvier"><span class="cal-num">17</span></div>
+<div class="cal-jour cours" title="lundi 18 janvier : Cours"><span class="cal-num">18</span></div>
+<div class="cal-jour " title="mardi 19 janvier"><span class="cal-num">19</span></div>
+<div class="cal-jour cours" title="mercredi 20 janvier : Cours"><span class="cal-num">20</span></div>
+<div class="cal-jour " title="jeudi 21 janvier"><span class="cal-num">21</span></div>
+<div class="cal-jour " title="vendredi 22 janvier"><span class="cal-num">22</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 23 janvier"><span class="cal-num">23</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 24 janvier"><span class="cal-num">24</span></div>
+<div class="cal-jour labo" title="lundi 25 janvier : Laboratoire 1"><span class="cal-num">25</span><span class="cal-etiquette">Labo&nbsp;1</span></div>
+<div class="cal-jour " title="mardi 26 janvier"><span class="cal-num">26</span></div>
+<div class="cal-jour cours" title="mercredi 27 janvier : Cours"><span class="cal-num">27</span></div>
+<div class="cal-jour " title="jeudi 28 janvier"><span class="cal-num">28</span></div>
+<div class="cal-jour " title="vendredi 29 janvier"><span class="cal-num">29</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 30 janvier"><span class="cal-num">30</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 31 janvier"><span class="cal-num">31</span></div>
+</div>
+</div>
+<div class="cal-mois">
+<h3>Février 2027</h3>
+<div class="cal-grille">
+<div class="cal-entete">L</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">J</div>
+<div class="cal-entete">V</div>
+<div class="cal-entete">S</div>
+<div class="cal-entete">D</div>
+<div class="cal-jour cours" title="lundi 1er février : Cours"><span class="cal-num">1</span></div>
+<div class="cal-jour " title="mardi 2 février"><span class="cal-num">2</span></div>
+<div class="cal-jour cours" title="mercredi 3 février : Cours"><span class="cal-num">3</span></div>
+<div class="cal-jour " title="jeudi 4 février"><span class="cal-num">4</span></div>
+<div class="cal-jour " title="vendredi 5 février"><span class="cal-num">5</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 6 février"><span class="cal-num">6</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 7 février"><span class="cal-num">7</span></div>
+<div class="cal-jour labo" title="lundi 8 février : Laboratoire 2"><span class="cal-num">8</span><span class="cal-etiquette">Labo&nbsp;2</span></div>
+<div class="cal-jour " title="mardi 9 février"><span class="cal-num">9</span></div>
+<div class="cal-jour examen" title="mercredi 10 février : Examen 1"><span class="cal-num">10</span><span class="cal-etiquette">Exam.&nbsp;1</span></div>
+<div class="cal-jour " title="jeudi 11 février"><span class="cal-num">11</span></div>
+<div class="cal-jour " title="vendredi 12 février"><span class="cal-num">12</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 13 février"><span class="cal-num">13</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 14 février"><span class="cal-num">14</span></div>
+<div class="cal-jour cours" title="lundi 15 février : Cours"><span class="cal-num">15</span></div>
+<div class="cal-jour " title="mardi 16 février"><span class="cal-num">16</span></div>
+<div class="cal-jour cours" title="mercredi 17 février : Cours"><span class="cal-num">17</span></div>
+<div class="cal-jour " title="jeudi 18 février"><span class="cal-num">18</span></div>
+<div class="cal-jour " title="vendredi 19 février"><span class="cal-num">19</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 20 février"><span class="cal-num">20</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 21 février"><span class="cal-num">21</span></div>
+<div class="cal-jour cours" title="lundi 22 février : Cours"><span class="cal-num">22</span></div>
+<div class="cal-jour " title="mardi 23 février"><span class="cal-num">23</span></div>
+<div class="cal-jour labo" title="mercredi 24 février : Laboratoire 3"><span class="cal-num">24</span><span class="cal-etiquette">Labo&nbsp;3</span></div>
+<div class="cal-jour " title="jeudi 25 février"><span class="cal-num">25</span></div>
+<div class="cal-jour " title="vendredi 26 février"><span class="cal-num">26</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 27 février"><span class="cal-num">27</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 28 février"><span class="cal-num">28</span></div>
+</div>
+</div>
+<div class="cal-mois">
+<h3>Mars 2027</h3>
+<div class="cal-grille">
+<div class="cal-entete">L</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">J</div>
+<div class="cal-entete">V</div>
+<div class="cal-entete">S</div>
+<div class="cal-entete">D</div>
+<div class="cal-jour conge" title="lundi 1er mars : Semaine de lecture"><span class="cal-num">1</span></div>
+<div class="cal-jour conge" title="mardi 2 mars : Semaine de lecture"><span class="cal-num">2</span></div>
+<div class="cal-jour conge" title="mercredi 3 mars : Semaine de lecture"><span class="cal-num">3</span></div>
+<div class="cal-jour conge" title="jeudi 4 mars : Semaine de lecture"><span class="cal-num">4</span></div>
+<div class="cal-jour conge" title="vendredi 5 mars : Semaine de lecture"><span class="cal-num">5</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 6 mars"><span class="cal-num">6</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 7 mars"><span class="cal-num">7</span></div>
+<div class="cal-jour cours" title="lundi 8 mars : Cours"><span class="cal-num">8</span></div>
+<div class="cal-jour " title="mardi 9 mars"><span class="cal-num">9</span></div>
+<div class="cal-jour cours" title="mercredi 10 mars : Cours"><span class="cal-num">10</span></div>
+<div class="cal-jour " title="jeudi 11 mars"><span class="cal-num">11</span></div>
+<div class="cal-jour " title="vendredi 12 mars"><span class="cal-num">12</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 13 mars"><span class="cal-num">13</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 14 mars"><span class="cal-num">14</span></div>
+<div class="cal-jour labo" title="lundi 15 mars : Laboratoire 4"><span class="cal-num">15</span><span class="cal-etiquette">Labo&nbsp;4</span></div>
+<div class="cal-jour " title="mardi 16 mars"><span class="cal-num">16</span></div>
+<div class="cal-jour examen" title="mercredi 17 mars : Examen 2"><span class="cal-num">17</span><span class="cal-etiquette">Exam.&nbsp;2</span></div>
+<div class="cal-jour " title="jeudi 18 mars"><span class="cal-num">18</span></div>
+<div class="cal-jour " title="vendredi 19 mars"><span class="cal-num">19</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 20 mars"><span class="cal-num">20</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 21 mars"><span class="cal-num">21</span></div>
+<div class="cal-jour cours" title="lundi 22 mars : Cours"><span class="cal-num">22</span></div>
+<div class="cal-jour " title="mardi 23 mars"><span class="cal-num">23</span></div>
+<div class="cal-jour cours" title="mercredi 24 mars : Cours"><span class="cal-num">24</span></div>
+<div class="cal-jour " title="jeudi 25 mars"><span class="cal-num">25</span></div>
+<div class="cal-jour conge" title="vendredi 26 mars : Vendredi saint"><span class="cal-num">26</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 27 mars"><span class="cal-num">27</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 28 mars"><span class="cal-num">28</span></div>
+<div class="cal-jour conge" title="lundi 29 mars : Lundi de Pâques"><span class="cal-num">29</span></div>
+<div class="cal-jour " title="mardi 30 mars"><span class="cal-num">30</span></div>
+<div class="cal-jour labo" title="mercredi 31 mars : Laboratoire 5"><span class="cal-num">31</span><span class="cal-etiquette">Labo&nbsp;5</span></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+</div>
+</div>
+<div class="cal-mois">
+<h3>Avril 2027</h3>
+<div class="cal-grille">
+<div class="cal-entete">L</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">M</div>
+<div class="cal-entete">J</div>
+<div class="cal-entete">V</div>
+<div class="cal-entete">S</div>
+<div class="cal-entete">D</div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour " title="jeudi 1er avril"><span class="cal-num">1</span></div>
+<div class="cal-jour " title="vendredi 2 avril"><span class="cal-num">2</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 3 avril"><span class="cal-num">3</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 4 avril"><span class="cal-num">4</span></div>
+<div class="cal-jour cours" title="lundi 5 avril : Cours"><span class="cal-num">5</span></div>
+<div class="cal-jour " title="mardi 6 avril"><span class="cal-num">6</span></div>
+<div class="cal-jour labo" title="mercredi 7 avril : Laboratoire 6"><span class="cal-num">7</span><span class="cal-etiquette">Labo&nbsp;6</span></div>
+<div class="cal-jour " title="jeudi 8 avril"><span class="cal-num">8</span></div>
+<div class="cal-jour " title="vendredi 9 avril"><span class="cal-num">9</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 10 avril"><span class="cal-num">10</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 11 avril"><span class="cal-num">11</span></div>
+<div class="cal-jour cours" title="lundi 12 avril : Cours"><span class="cal-num">12</span></div>
+<div class="cal-jour " title="mardi 13 avril"><span class="cal-num">13</span></div>
+<div class="cal-jour cours" title="mercredi 14 avril : Cours"><span class="cal-num">14</span></div>
+<div class="cal-jour " title="jeudi 15 avril"><span class="cal-num">15</span></div>
+<div class="cal-jour " title="vendredi 16 avril"><span class="cal-num">16</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 17 avril"><span class="cal-num">17</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 18 avril"><span class="cal-num">18</span></div>
+<div class="cal-jour cours" title="lundi 19 avril : Cours"><span class="cal-num">19</span></div>
+<div class="cal-jour " title="mardi 20 avril"><span class="cal-num">20</span></div>
+<div class="cal-jour labo" title="mercredi 21 avril : Laboratoire 7"><span class="cal-num">21</span><span class="cal-etiquette">Labo&nbsp;7</span></div>
+<div class="cal-jour " title="jeudi 22 avril"><span class="cal-num">22</span></div>
+<div class="cal-jour " title="vendredi 23 avril"><span class="cal-num">23</span></div>
+<div class="cal-jour  fin-semaine" title="samedi 24 avril"><span class="cal-num">24</span></div>
+<div class="cal-jour  fin-semaine" title="dimanche 25 avril"><span class="cal-num">25</span></div>
+<div class="cal-jour examen" title="lundi 26 avril : Examen final"><span class="cal-num">26</span><span class="cal-etiquette">Final</span></div>
+<div class="cal-jour " title="mardi 27 avril"><span class="cal-num">27</span></div>
+<div class="cal-jour " title="mercredi 28 avril"><span class="cal-num">28</span></div>
+<div class="cal-jour " title="jeudi 29 avril"><span class="cal-num">29</span></div>
+<div class="cal-jour " title="vendredi 30 avril"><span class="cal-num">30</span></div>
+<div class="cal-jour hors"></div>
+<div class="cal-jour hors"></div>
+</div>
+</div>
+</div>
+```
 
 ## Dates importantes
 
@@ -47,9 +216,4 @@ Les cours ont lieu les lundis et les mercredis, du 11 janvier au
 | Examen 2 | mercredi 17 mars |
 | Examen final | lundi 26 avril |
 
-Laboratoires : 25 janvier, 8 février, 24 février, 15 mars, 31 mars,
-7 avril et 21 avril.
-
-::: {.a-completer}
-À compléter : la matière (modules) couverte à chaque cours.
-:::
+Laboratoires : lundi 25 janvier, lundi 8 février, mercredi 24 février, lundi 15 mars, mercredi 31 mars, mercredi 7 avril, mercredi 21 avril.
