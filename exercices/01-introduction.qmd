@@ -185,6 +185,8 @@ a) Montrez qu'une somme de 11 est deux fois plus probable qu'une somme
    de 12.
 b) Quelle erreur de raisonnement peut mener à la conclusion de Leibniz ?
 
+*Pour l'origine historique, voir [Sources et attributions](sources.qmd#leibniz).*
+
 ::: {.corrige}
 a) Somme 11 : $(5,6)$ et $(6,5)$, probabilité $2/36$. Somme 12 :
    $(6,6)$ seulement, probabilité $1/36$.
@@ -202,6 +204,8 @@ d'obtenir au moins une pile est $2/3$.
 
 a) Calculez la bonne probabilité.
 b) Comment peut-on arriver à $2/3$ ?
+
+*Pour l'origine historique, voir [Sources et attributions](sources.qmd#dalembert).*
 
 ::: {.corrige}
 a) $\Omega=\{PP,PF,FP,FF\}$, équiprobables. Au moins une pile : $PP,PF,FP$,

@@ -18,5 +18,8 @@ Une série d'exercices par module, dans l'ordre des présentations. Chaque
 exercice est suivi de sa solution, dans un encadré à déplier : cherchez
 d'abord, puis vérifiez.
 
+Plusieurs exercices s'inspirent des notes de cours de Claude Bélisle
+ou de problèmes historiques : voir [Sources et attributions](sources.qmd).
+
 Les exercices marqués **(défi)** demandent un peu plus de recul ; ils ne
 sont pas nécessaires pour suivre la suite du cours.

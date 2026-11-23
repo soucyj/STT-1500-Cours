@@ -1,0 +1,170 @@
+---
+title: "Sources et attributions"
+toc: true
+---
+
+## Les notes de cours de Claude Bélisle
+
+Plusieurs exercices de ces séries sont inspirés d'exemples ou
+d'exercices des notes de cours de Claude Bélisle, *STT-1500 :
+Probabilités* (Université Laval, 2021). Les énoncés ont été reformulés,
+souvent simplifiés ou adaptés aux modules du cours, et les solutions ont
+été rédigées à neuf. Les tableaux ci-dessous indiquent, pour chaque
+exercice concerné, le passage des notes dont il s'inspire. Les
+exercices qui n'y figurent pas sont originaux.
+
+### Module 01
+
+| Exercice | Notes de Bélisle |
+|:-:|:--|
+| 1 à 4 | chapitre 1, numéros 1 à 4 |
+| 5 | chapitre 1, numéros 5 et 6 |
+| 6 et 7 | chapitre 1, numéros 7 et 8 |
+| 8 et 9 | chapitre 1, numéros 12 et 13 (Leibniz, d'Alembert) |
+| 10 | chapitre 1, numéro 22 |
+| 11 | chapitre 1, numéros 14 et 15 |
+| 12 | chapitre 1, numéro 16 |
+| 13 | chapitre 1, numéro 18 |
+| 14 | chapitre 1, numéro 17 |
+| 15 | chapitre 1, numéro 19 |
+| 16 | chapitre 1, numéros 28 et 29 |
+| 17 | chapitre 1, numéro 30 |
+| 18 | chapitre 1, numéro 27, et exemple 3 de la section 1.1 |
+
+### Module 02
+
+| Exercice | Notes de Bélisle |
+|:-:|:--|
+| 1 et 2 | chapitre 2, numéros 1 et 2 |
+| 3 | chapitre 2, numéro 30 |
+| 4 | chapitre 2, numéro 17 |
+| 5 | chapitre 2, numéro 34 |
+| 6 | chapitre 2, numéro 28 |
+| 7 | chapitre 2, numéros 9, 10 et 11 |
+| 8 | chapitre 3, section 3.6.2 (le problème des rencontres) |
+| 9 | chapitre 2, numéro 3 |
+| 10 | chapitre 2, numéro 6 |
+| 11 | chapitre 2, numéro 7 |
+| 12 | chapitre 2, numéro 13 |
+| 13 | chapitre 2, numéro 8 |
+| 14 | chapitre 2, numéro 14 |
+| 15 | chapitre 2, numéro 27 |
+| 16 | chapitre 2, numéro 26 |
+| 17 | chapitre 2, numéro 4 |
+| 18 | chapitre 2, numéros 19 et 20 |
+| 19 | chapitre 2, numéro 18 |
+| 20 | chapitre 2, numéro 16 |
+| 21 | chapitre 2, numéro 5 |
+| 22 | chapitre 2, numéro 21 |
+| 23 | chapitre 2, numéro 25 |
+| 24 | chapitre 2, numéro 24 |
+
+### Module 03
+
+| Exercice | Notes de Bélisle |
+|:-:|:--|
+| 2 | chapitre 3, numéro 4 (même idée) |
+| 7 | chapitre 3, numéros 15 et 17 |
+| 8 | chapitre 3, numéro 3 b) |
+| 9 | chapitre 3, section 3.6 (le problème des anniversaires) |
+| 10 | chapitre 3, numéro 29 |
+| 11 | chapitre 3, exemple 3 de la section 3.3, et numéro 2 |
+| 12 | chapitre 3, exemple 7 de la section 3.4 |
+| 15 | chapitre 3, section 3.6 (Monty Hall) et numéro 27 |
+| 16 | chapitre 3, numéro 19 |
+| 17 | chapitre 3, numéro 20 (même idée) |
+| 21 | chapitre 3, section 3.6 et numéro 25 (fiabilité des réseaux) |
+| 22 | chapitre 3, numéro 8 (même idée) |
+| 23 | chapitre 3, section 3.5 (indépendance deux à deux) |
+| 24 | chapitre 1, exemple 3 de la section 1.1 |
+
+### Module 04
+
+| Exercice | Notes de Bélisle |
+|:-:|:--|
+| 7 b) et 8 | chapitre 1, numéro 36 |
+| 10 | chapitre 1, section 1.4 |
+| 13 et 14 | chapitre 1, section 1.4.7 (continuité) |
+| 16 | chapitre 1, section 1.4.5 (inégalité de Boole) |
+
+### Module 05
+
+| Exercice | Notes de Bélisle |
+|:-:|:--|
+| 9 | chapitre 1, numéro 10 |
+| 10 | chapitre 1, numéro 38 |
+| 11 | chapitre 5, exemple 13 de la section 5.7 (l'aiguille de Buffon) |
+| 15 | chapitre 5 (absence de mémoire de la loi exponentielle) |
+
+## Raisonnements célèbres {#historique}
+
+Quelques exercices reprennent des problèmes historiques, dont certains
+ont d'abord été résolus de façon erronée. Voici des sources fiables sur
+leur origine.
+
+### L'erreur de Leibniz (module 01, exercice 8) {#leibniz}
+
+Leibniz affirme qu'avec deux dés, une somme de 12 est aussi facile à
+obtenir qu'une somme de 11, chacune ne pouvant, selon lui, se faire que
+d'une seule manière. Il ne distingue pas les deux résultats $(5,6)$ et
+$(6,5)$.
+
+- G. W. Leibniz, *Opera omnia*, éd. L. Dutens, Genève, 1768.
+- P. Gorroochurn, *Classic Problems of Probability*, Hoboken, Wiley,
+  2012, problème « Leibniz's Error (1768) ».
+
+### D'Alembert et l'article « Croix ou pile » (module 01, exercice 9) {#dalembert}
+
+Dans l'*Encyclopédie*, d'Alembert soutient qu'en deux lancers, la
+probabilité d'obtenir au moins une fois « croix » est $2/3$ et non
+$3/4$ : il arrête le jeu dès que croix apparaît et compte trois cas,
+qu'il croit à tort équiprobables.
+
+- J. le Rond d'Alembert, « Croix ou pile », dans D. Diderot et
+  J. le Rond d'Alembert (dir.), *Encyclopédie, ou Dictionnaire raisonné
+  des sciences, des arts et des métiers*, t. IV, Paris, Briasson, 1754,
+  p. 512-513.
+- P. Gorroochurn, *Classic Problems of Probability*, Wiley, 2012,
+  problème « d'Alembert and the "Croix ou Pile" Article (1754) ».
+
+### Le chevalier de Méré (module 03, exercice 22) {#mere}
+
+Le chevalier de Méré pensait que les deux paris étaient équivalents,
+par une règle de proportion ($4/6=24/36$). Il en fit part à Pascal, ce
+qui est à l'origine de la correspondance entre Pascal et Fermat,
+souvent considérée comme l'acte de naissance du calcul des
+probabilités.
+
+- B. Pascal, lettre à P. de Fermat du 29 juillet 1654, dans *Œuvres de
+  Fermat*, éd. P. Tannery et C. Henry, t. II, Paris, Gauthier-Villars,
+  1894.
+- P. Gorroochurn, *Classic Problems of Probability*, Wiley, 2012,
+  problème « The Chevalier de Méré Problem I: The Problem of Dice
+  (1654) ».
+
+### Le problème de Monty Hall (module 03, exercice 15) {#monty-hall}
+
+Le problème a été publié par le biostatisticien Steve Selvin en 1975.
+La réponse intuitive, mais fausse, selon laquelle les deux portes
+restantes ont chacune une probabilité de $1/2$, est très répandue :
+elle a suscité de nombreuses objections, dès 1975 puis lors de la
+popularisation du problème en 1990.
+
+- S. Selvin, « A Problem in Probability », lettre, *The American
+  Statistician*, vol. 29, n^o^ 1, 1975, p. 67.
+- S. Selvin, « On the Monty Hall Problem », lettre, *The American
+  Statistician*, vol. 29, n^o^ 3, 1975, p. 134.
+- P. Gorroochurn, *Classic Problems of Probability*, Wiley, 2012,
+  problème « Monty-Hall, Cars, and Goats (1975) ».
+
+### L'aiguille de Buffon (module 05, exercice 11) {#buffon}
+
+- G.-L. Leclerc de Buffon, « Essai d'arithmétique morale », dans
+  *Histoire naturelle, générale et particulière*, Supplément, t. IV,
+  Paris, Imprimerie royale, 1777.
+
+### Autre référence
+
+- J. M. Stoyanov, *Counterexamples in Probability*, Wiley. Source de
+  l'exemple de Bernstein vu en classe, auquel renvoie l'exercice 23 du
+  module 03.

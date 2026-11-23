@@ -39,6 +39,7 @@ website:
           - exercices/03-conditionnelle-independance.qmd
           - exercices/04-fondements.qmd
           - exercices/05-probabilites-geometriques.qmd
+          - exercices/sources.qmd
       - href: laboratoires/index.qmd
         text: Laboratoires
       - href: ressources.qmd

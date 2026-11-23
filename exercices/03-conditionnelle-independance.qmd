@@ -335,6 +335,8 @@ b) Même jeu avec 4 portes et une seule voiture. Vous choisissez une
    Quelle est votre probabilité de gagner ? Comparez avec la stratégie
    qui consiste à garder votre porte.
 
+*Pour l'origine historique, voir [Sources et attributions](sources.qmd#monty-hall).*
+
 ::: {.corrige}
 a) Soit $V_i$ l'événement « la voiture est derrière la porte $i$ », de
    probabilité $1/3$, et $O_3$ l'événement « l'animateur ouvre la porte
@@ -468,6 +470,8 @@ paris est le plus avantageux :
 - obtenir au moins un double 6 en 24 lancers d'une paire de dés.
 
 Calculez les deux probabilités, en supposant les lancers indépendants.
+
+*Pour l'origine historique, voir [Sources et attributions](sources.qmd#mere).*
 
 ::: {.corrige}
 On passe par le complément.

@@ -222,6 +222,8 @@ a) Montrez que l'aiguille croise un joint si et seulement si
    $x\le\frac L2\sin\theta$.
 b) Calculez la probabilité que l'aiguille croise un joint.
 
+*Pour l'origine historique, voir [Sources et attributions](sources.qmd#buffon).*
+
 ::: {.corrige}
 a) La demi-aiguille qui pointe vers le joint le plus proche s'en
    approche, dans la direction perpendiculaire aux joints, de
