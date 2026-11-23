@@ -1,0 +1,25 @@
+---
+title: "Module 10 — Vecteurs aléatoires (partie 1)"
+description: "Distributions conjointes, fonctions de masse et de densité marginales, indépendance, distributions conditionnelles."
+numero: 10
+---
+
+Lorsque plusieurs quantités aléatoires sont observées en même temps, on
+les regroupe en un vecteur aléatoire. Ce module présente leur
+distribution conjointe dans les cas discret et absolument continu, les
+distributions marginales, l'indépendance de variables aléatoires et les
+distributions conditionnelles.
+
+## Au programme
+
+- Distributions multivariées : cas discret et cas absolument continu
+- Fonction de répartition conjointe
+- Fonctions de masse et de densité marginales
+- Indépendance de variables aléatoires
+- Distributions conditionnelles
+
+## Documents
+
+[Diapositives (PDF)](pdf/10-vecteurs-aleatoires-1.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.

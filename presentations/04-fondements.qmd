@@ -1,0 +1,25 @@
+---
+title: "Module 04 — Fondements des probabilités"
+description: "Tribus, boréliens, axiomes de Kolmogorov et leurs conséquences, continuité des probabilités."
+numero: 4
+---
+
+Les poids du module 01 ne permettent pas de choisir un nombre au hasard
+dans $[0,1]$ : chaque point doit y avoir une probabilité nulle. Ce
+module présente la solution de Kolmogorov (1933) : une probabilité est
+définie directement sur une famille d'événements, la tribu, et doit
+satisfaire trois axiomes. Le cas discret devient un cas particulier, et
+toutes les règles de calcul déjà vues restent valables.
+
+## Au programme
+
+- Pourquoi revenir aux fondements
+- Tribus d'événements, tribu engendrée et tribu borélienne
+- Les axiomes de Kolmogorov ; le cas discret comme cas particulier
+- Conséquences des axiomes
+- Continuité des probabilités le long d'une suite monotone d'événements
+
+## Documents
+
+[Diapositives (PDF)](pdf/04-fondements.pdf){.bouton}
+[Série d'exercices](../exercices/04-fondements.qmd){.bouton}

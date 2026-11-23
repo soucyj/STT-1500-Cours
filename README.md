@@ -24,7 +24,8 @@ index.qmd                 accueil et accès rapides
 plan.qmd                  plan de cours (coquille)
 calendrier.qmd            calendrier de la session (coquille)
 livre.qmd                 notes de cours
-presentations/index.qmd   une carte par module
+presentations/             « Présentation de la matière » : une page par module
+presentations/pdf/         PDF des diapositives (copiés par copier-pdf.sh)
 exercices/                une série d'exercices par module, avec solutions
 laboratoires/index.qmd    liste automatique des laboratoires
 ressources.qmd            outils et liens
@@ -33,6 +34,16 @@ styles/                   couleurs et polices
 ```
 
 Les encadrés « À compléter » marquent les parties de la coquille à remplir.
+
+## Présentations
+
+Les PDF des diapositives sont copiés depuis les dossiers Beamer par
+
+```
+sh presentations/copier-pdf.sh [dossier source]   # défaut : Beamer/
+```
+
+Après une recompilation des Beamer, relancer ce script puis pousser.
 
 ## Exercices
 

@@ -1,0 +1,24 @@
+---
+title: "Module 05 — Probabilités géométriques et distributions continues"
+description: "Probabilité uniforme sur une région, longueurs et aires, densités de probabilité, lois mixtes."
+numero: 5
+---
+
+Choisir un point au hasard dans un intervalle, un disque ou un carré :
+la probabilité d'une région est alors le rapport de sa longueur ou de
+son aire à celle de l'espace entier. Ce module part de ces probabilités
+géométriques pour introduire la notion de densité de probabilité,
+analogue continu des poids du cas discret.
+
+## Au programme
+
+- La probabilité uniforme sur une région de $\mathbb{R}$, $\mathbb{R}^2$ ou $\mathbb{R}^3$
+- Exemples : planchers, tuiles, majoration et minoration d'une probabilité
+- Densités de probabilité et mesure associée
+- Discret et continu : un même cadre
+- Une loi ni discrète ni continue
+
+## Documents
+
+[Diapositives (PDF)](pdf/05-probabilites-geometriques.pdf){.bouton}
+[Série d'exercices](../exercices/05-probabilites-geometriques.qmd){.bouton}

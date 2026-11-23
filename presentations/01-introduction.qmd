@@ -1,0 +1,27 @@
+---
+title: "Module 01 — Introduction aux probabilités discrètes"
+description: "Expériences aléatoires, espace fondamental, événements, poids, cas équiprobable, Boole et Bonferroni."
+numero: 1
+---
+
+Ce premier module pose le vocabulaire du cours. Une expérience aléatoire
+est décrite par son espace fondamental $\Omega$, l'ensemble de ses
+résultats possibles, et les questions qu'on se pose deviennent des
+événements, c'est-à-dire des sous-ensembles de $\Omega$. Lorsque $\Omega$
+est discret, une probabilité se construit à partir de poids
+$p(\omega)\ge0$ dont la somme vaut 1. On en tire les règles de calcul
+qui serviront tout au long de la session.
+
+## Au programme
+
+- Les origines du calcul des probabilités
+- Expériences aléatoires, espace fondamental et événements
+- Opérations sur les événements : union, intersection, complément, lois de De Morgan
+- Probabilités sur un espace discret : poids et cas équiprobable
+- Propriétés fondamentales : complément, probabilité d'une union, monotonicité, inégalités de Boole et de Bonferroni
+- Au-delà du cas discret : pourquoi les poids ne suffisent plus
+
+## Documents
+
+[Diapositives (PDF)](pdf/01-introduction.pdf){.bouton}
+[Série d'exercices](../exercices/01-introduction.qmd){.bouton}

@@ -1,0 +1,24 @@
+---
+title: "Module 09 — Espérance mathématique (partie 2)"
+description: "Moments, variance, coefficient d'asymétrie, fonction génératrice des moments."
+numero: 9
+---
+
+Ce module poursuit l'étude de l'espérance. Il revient sur les moments
+d'une distribution, la variance et le coefficient d'asymétrie, puis
+introduit la fonction génératrice des moments, un outil qui permet de
+retrouver tous les moments d'une variable aléatoire et, souvent, de
+reconnaître sa loi.
+
+## Au programme
+
+- Moments d'ordre $n$
+- Variance et écart-type
+- Coefficient d'asymétrie
+- La fonction génératrice des moments
+
+## Documents
+
+[Diapositives (PDF)](pdf/09-esperance-2.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.

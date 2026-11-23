@@ -1,0 +1,25 @@
+---
+title: "Module 08 — Espérance mathématique (partie 1)"
+description: "Espérance dans les cas discret et continu, espérance d'une fonction, linéarité, moments, variance et écart-type."
+numero: 8
+---
+
+L'espérance résume une distribution par sa valeur moyenne. Ce module
+en donne la définition dans les cas discret et absolument continu,
+montre comment calculer l'espérance d'une fonction d'une variable
+aléatoire et établit sa linéarité. Les moments, la variance et
+l'écart-type mesurent ensuite la dispersion autour de cette moyenne.
+
+## Au programme
+
+- Définition de l'espérance, cas discret et cas absolument continu
+- Espérance d'une fonction d'une variable aléatoire
+- Linéarité de l'espérance
+- Moments par rapport à l'origine et moments centraux
+- Variance, écart-type et écart absolu moyen
+
+## Documents
+
+[Diapositives (PDF)](pdf/08-esperance-1.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.

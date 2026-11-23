@@ -1,0 +1,26 @@
+---
+title: "Module 07 — Variables aléatoires continues"
+description: "Fonction de répartition, variables absolument continues, lois uniforme et exponentielle, fonction d'une variable aléatoire, simulation, conditionnement."
+numero: 7
+---
+
+La fonction de répartition décrit la distribution de toute variable
+aléatoire, qu'elle soit discrète ou continue. Ce module la relie à la
+fonction de masse et à la densité, présente les lois uniforme et
+exponentielle, puis montre comment obtenir la loi d'une fonction d'une
+variable aléatoire et comment simuler une variable de loi donnée.
+
+## Au programme
+
+- La fonction de répartition et ses liens avec la fonction de masse et la densité
+- Continuité et continuité absolue
+- Les lois uniforme et exponentielle
+- Distribution d'une fonction d'une variable aléatoire
+- Simulation et fonction quantile
+- Calcul de probabilités par conditionnement
+
+## Documents
+
+[Diapositives (PDF)](pdf/07-va-continues.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.

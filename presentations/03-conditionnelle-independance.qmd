@@ -1,0 +1,26 @@
+---
+title: "Module 03 — Probabilité conditionnelle et indépendance"
+description: "Probabilité conditionnelle, règle de multiplication, probabilités totales, théorème de Bayes, indépendance."
+numero: 3
+---
+
+Une information partielle sur le résultat d'une expérience modifie les
+probabilités : c'est la probabilité conditionnelle. Ce module en
+présente la définition et les trois outils de calcul qui en découlent,
+la règle de multiplication, la loi des probabilités totales et le
+théorème de Bayes. Il définit ensuite l'indépendance, d'abord pour deux
+événements, puis pour une famille quelconque.
+
+## Au programme
+
+- Définition de la probabilité conditionnelle
+- La règle de multiplication
+- La loi des probabilités totales et les partitions
+- Le théorème de Bayes
+- Indépendance de deux, de trois, puis de plusieurs événements
+- L'exemple de Bernstein et le principe de préservation de l'indépendance
+
+## Documents
+
+[Diapositives (PDF)](pdf/03-conditionnelle-independance.pdf){.bouton}
+[Série d'exercices](../exercices/03-conditionnelle-independance.qmd){.bouton}

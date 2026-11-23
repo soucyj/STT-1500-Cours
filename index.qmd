@@ -17,11 +17,12 @@ s'adresse, ce qu'on y fait, l'esprit du cours).
 ::: {.cartes}
 
 ::: {.carte}
-Présentations
+Présentation de la matière
 
-Les diapositives des cours magistraux, module par module.
+Une page par module : présentation, diapositives des cours magistraux et
+série d'exercices.
 
-[Voir les présentations](presentations/index.qmd){.bouton}
+[Voir les modules](presentations/index.qmd){.bouton}
 :::
 
 ::: {.carte}

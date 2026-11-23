@@ -29,8 +29,21 @@ website:
         text: Calendrier
       - href: livre.qmd
         text: Notes de cours
-      - href: presentations/index.qmd
-        text: Présentations
+      - section: Présentation de la matière
+        href: presentations/index.qmd
+        contents:
+          - presentations/01-introduction.qmd
+          - presentations/02-denombrement.qmd
+          - presentations/03-conditionnelle-independance.qmd
+          - presentations/04-fondements.qmd
+          - presentations/05-probabilites-geometriques.qmd
+          - presentations/06-va-discretes.qmd
+          - presentations/07-va-continues.qmd
+          - presentations/08-esperance-1.qmd
+          - presentations/09-esperance-2.qmd
+          - presentations/10-vecteurs-aleatoires-1.qmd
+          - presentations/11-vecteurs-aleatoires-2.qmd
+          - presentations/12-normale-gamma.qmd
       - section: Exercices
         href: exercices/index.qmd
         contents:

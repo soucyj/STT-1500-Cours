@@ -1,0 +1,25 @@
+---
+title: "Module 12 — La normale, la loi gamma et la loi de Cauchy"
+description: "Loi normale et approximation de la binomiale, fonction gamma, loi gamma, loi de Cauchy."
+numero: 12
+---
+
+Ce dernier module présente trois lois continues importantes. La loi
+normale apparaît comme limite de sommes de variables aléatoires et
+permet d'approcher la loi binomiale. La fonction gamma, qui prolonge la
+factorielle, mène à la loi gamma, liée à la loi exponentielle. La loi de
+Cauchy, enfin, est l'exemple type d'une distribution sans espérance.
+
+## Au programme
+
+- La loi normale : densité, propriétés, fonction génératrice
+- Approximation de la loi binomiale par la loi normale
+- La fonction gamma et la factorielle
+- La loi gamma et son lien avec la loi exponentielle
+- La loi de Cauchy : le problème de l'archer aveugle, une distribution sans espérance
+
+## Documents
+
+[Diapositives (PDF)](pdf/12-normale-gamma.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.

@@ -1,0 +1,25 @@
+---
+title: "Module 02 — Combinatoire énumérative"
+description: "Principe de multiplication, permutations, dérangements, combinaisons, coefficients multinomiaux, formule de Stirling."
+numero: 2
+---
+
+Dans le cas équiprobable, calculer une probabilité revient à compter :
+$\mathbb{P}(A)=|A|/|\Omega|$. Ce module présente les techniques de
+dénombrement qui rendent ces calculs possibles lorsque l'énumération à
+la main devient impraticable. La formule de Stirling permet ensuite
+d'approcher les factorielles qui apparaissent dans les grands
+dénombrements.
+
+## Au programme
+
+- Le principe fondamental du dénombrement
+- Permutations, arrangements et dérangements (le problème des rencontres)
+- Combinaisons, triangle de Pascal et théorème du binôme
+- Coefficients multinomiaux
+- La formule de Stirling
+
+## Documents
+
+[Diapositives (PDF)](pdf/02-denombrement.pdf){.bouton}
+[Série d'exercices](../exercices/02-denombrement.qmd){.bouton}

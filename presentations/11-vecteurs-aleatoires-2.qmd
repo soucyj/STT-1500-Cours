@@ -1,0 +1,26 @@
+---
+title: "Module 11 — Vecteurs aléatoires (partie 2)"
+description: "Espérance d'une fonction de plusieurs variables, sommes et fonction génératrice, covariance, corrélation, espérance par conditionnement."
+numero: 11
+---
+
+Ce module étend l'espérance aux fonctions de plusieurs variables
+aléatoires. Il montre comment la fonction génératrice des moments permet
+d'obtenir la loi d'une somme de variables indépendantes, puis introduit
+la covariance et le coefficient de corrélation, qui mesurent le lien
+entre deux variables. Il se termine par le calcul d'espérances par
+conditionnement.
+
+## Au programme
+
+- Espérance d'une fonction de variables aléatoires
+- Sommes de variables indépendantes et fonction génératrice des moments (lois de Poisson et exponentielle)
+- Covariance et variance d'une somme
+- Coefficient de corrélation
+- Espérance par conditionnement
+
+## Documents
+
+[Diapositives (PDF)](pdf/11-vecteurs-aleatoires-2.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.

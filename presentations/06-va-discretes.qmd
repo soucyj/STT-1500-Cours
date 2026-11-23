@@ -1,0 +1,26 @@
+---
+title: "Module 06 — Variables aléatoires discrètes"
+description: "Variable aléatoire, fonction de masse, espérance ; lois de Bernoulli, binomiale, géométrique, binomiale négative, de Poisson, hypergéométrique."
+numero: 6
+---
+
+Une variable aléatoire associe un nombre à chaque résultat d'une
+expérience aléatoire. Ce module définit cette notion, sa distribution et,
+dans le cas discret, sa fonction de masse. Il introduit l'espérance et
+présente les principales lois discrètes, avec leurs contextes
+d'utilisation.
+
+## Au programme
+
+- Variables aléatoires et leur distribution
+- Fonction de masse et ses propriétés
+- Espérance d'une variable aléatoire discrète
+- Les lois de Bernoulli, binomiale, géométrique et binomiale négative
+- La loi de Poisson, cas limite de la loi binomiale
+- La loi hypergéométrique
+
+## Documents
+
+[Diapositives (PDF)](pdf/06-va-discretes.pdf){.bouton}
+
+La série d'exercices de ce module est à venir.
