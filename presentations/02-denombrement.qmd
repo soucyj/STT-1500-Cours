@@ -1,7 +1,8 @@
 ---
-title: "Module 02 — Combinatoire énumérative"
+title: "Combinatoire énumérative"
+subtitle: "Module 02"
 description: "Principe de multiplication, permutations, dérangements, combinaisons, coefficients multinomiaux, formule de Stirling."
-numero: 2
+numero: "02"
 ---
 
 Dans le cas équiprobable, calculer une probabilité revient à compter :

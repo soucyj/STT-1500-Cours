@@ -1,7 +1,11 @@
 ---
-title: "Module 05 — Probabilités géométriques et densités"
+title: "Probabilités géométriques et densités"
+subtitle: "Module 05"
 description: "Probabilité uniforme sur une région, longueurs et aires, densités de probabilité, lois mixtes."
-numero: 5
+numero: "05"
+format:
+  html: default
+  fiche-typst: default
 ---
 
 Pour un point choisi au hasard dans une région $\Omega$,

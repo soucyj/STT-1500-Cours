@@ -1,7 +1,8 @@
 ---
-title: "Module 05 — Probabilités géométriques et distributions continues"
+title: "Probabilités géométriques et distributions continues"
+subtitle: "Module 05"
 description: "Probabilité uniforme sur une région, longueurs et aires, densités de probabilité, lois mixtes."
-numero: 5
+numero: "05"
 ---
 
 Choisir un point au hasard dans un intervalle, un disque ou un carré :

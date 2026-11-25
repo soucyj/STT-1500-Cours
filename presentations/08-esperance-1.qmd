@@ -1,7 +1,8 @@
 ---
-title: "Module 08 — Espérance mathématique (partie 1)"
+title: "Espérance mathématique (partie 1)"
+subtitle: "Module 08"
 description: "Espérance dans les cas discret et continu, espérance d'une fonction, linéarité, moments, variance et écart-type."
-numero: 8
+numero: "08"
 ---
 
 L'espérance résume une distribution par sa valeur moyenne. Ce module

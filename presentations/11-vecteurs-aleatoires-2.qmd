@@ -1,7 +1,8 @@
 ---
-title: "Module 11 — Vecteurs aléatoires (partie 2)"
+title: "Vecteurs aléatoires (partie 2)"
+subtitle: "Module 11"
 description: "Espérance d'une fonction de plusieurs variables, sommes et fonction génératrice, covariance, corrélation, espérance par conditionnement."
-numero: 11
+numero: "11"
 ---
 
 Ce module étend l'espérance aux fonctions de plusieurs variables

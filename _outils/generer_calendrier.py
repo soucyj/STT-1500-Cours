@@ -25,7 +25,7 @@ LABORATOIRES = [dt.date(2027, 1, 25), dt.date(2027, 2, 8),
                 dt.date(2027, 4, 21)]
 EXAMENS = {dt.date(2027, 2, 10): "Examen 1",
            dt.date(2027, 3, 17): "Examen 2",
-           dt.date(2027, 4, 26): "Examen final"}
+           dt.date(2027, 4, 26): "Examen 3"}
 # Journées sans cours, grisées : semaine de lecture et congés de Pâques
 CONGES = {dt.date(2027, 3, 1) + dt.timedelta(days=k): "Semaine de lecture"
           for k in range(5)}
@@ -52,7 +52,7 @@ def journee(d):
     """(classe CSS, étiquette affichée, description) pour la date d."""
     if d in EXAMENS:
         nom = EXAMENS[d]
-        court = "Final" if nom == "Examen final" else nom.replace("Examen", "Exam.")
+        court = nom.replace("Examen", "Exam.")
         return "examen", court, nom
     if d in CONGES:
         return "conge", "", CONGES[d]
@@ -104,8 +104,9 @@ sont les dates indiquées sur Brio qui prévalent.
 :::
 
 Les cours ont lieu les lundis et les mercredis, du {date_fr(DEBUT)} au
-{date_fr(FIN_COURS)}. Passez le curseur sur une journée pour en voir la
-description.
+{date_fr(FIN_COURS)}. Il n'y a pas de cours durant la semaine du 1er mars
+(semaine de lecture) ni le lundi 29 mars (lundi de Pâques). Passez le
+curseur sur une journée pour en voir la description.
 
 ```{{=html}}
 <div class="cal-legende">

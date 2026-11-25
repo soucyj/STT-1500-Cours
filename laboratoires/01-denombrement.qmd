@@ -1,7 +1,10 @@
 ---
-title: "Laboratoire 1 — Compter pour calculer des probabilités"
+title: "Compter pour calculer des probabilités"
 description: "Modules 01 et 02 : espace fondamental, complément, union, dénombrement."
 numero: 1
+format:
+  html: default
+  fiche-typst: default
 ---
 
 ## Déroulement

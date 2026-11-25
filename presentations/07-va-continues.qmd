@@ -1,7 +1,8 @@
 ---
-title: "Module 07 — Variables aléatoires continues"
+title: "Variables aléatoires continues"
+subtitle: "Module 07"
 description: "Fonction de répartition, variables absolument continues, lois uniforme et exponentielle, fonction d'une variable aléatoire, simulation, conditionnement."
-numero: 7
+numero: "07"
 ---
 
 La fonction de répartition décrit la distribution de toute variable

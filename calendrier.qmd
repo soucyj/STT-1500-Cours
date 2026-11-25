@@ -13,8 +13,9 @@ sont les dates indiquées sur Brio qui prévalent.
 :::
 
 Les cours ont lieu les lundis et les mercredis, du lundi 11 janvier au
-mercredi 21 avril. Passez le curseur sur une journée pour en voir la
-description.
+mercredi 21 avril. Il n'y a pas de cours durant la semaine du 1er mars
+(semaine de lecture) ni le lundi 29 mars (lundi de Pâques). Passez le
+curseur sur une journée pour en voir la description.
 
 ```{=html}
 <div class="cal-legende">
@@ -196,7 +197,7 @@ description.
 <div class="cal-jour " title="vendredi 23 avril"><span class="cal-num">23</span></div>
 <div class="cal-jour  fin-semaine" title="samedi 24 avril"><span class="cal-num">24</span></div>
 <div class="cal-jour  fin-semaine" title="dimanche 25 avril"><span class="cal-num">25</span></div>
-<div class="cal-jour examen" title="lundi 26 avril : Examen final"><span class="cal-num">26</span><span class="cal-etiquette">Final</span></div>
+<div class="cal-jour examen" title="lundi 26 avril : Examen 3"><span class="cal-num">26</span><span class="cal-etiquette">Exam.&nbsp;3</span></div>
 <div class="cal-jour " title="mardi 27 avril"><span class="cal-num">27</span></div>
 <div class="cal-jour " title="mercredi 28 avril"><span class="cal-num">28</span></div>
 <div class="cal-jour " title="jeudi 29 avril"><span class="cal-num">29</span></div>
@@ -214,6 +215,6 @@ description.
 |:--|:--|
 | Examen 1 | mercredi 10 février |
 | Examen 2 | mercredi 17 mars |
-| Examen final | lundi 26 avril |
+| Examen 3 | lundi 26 avril |
 
 Laboratoires : lundi 25 janvier, lundi 8 février, mercredi 24 février, lundi 15 mars, mercredi 31 mars, mercredi 7 avril, mercredi 21 avril.

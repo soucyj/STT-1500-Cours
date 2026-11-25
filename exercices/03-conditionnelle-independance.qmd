@@ -1,7 +1,11 @@
 ---
-title: "Module 03 — Probabilité conditionnelle et indépendance"
+title: "Probabilité conditionnelle et indépendance"
+subtitle: "Module 03"
 description: "Probabilité conditionnelle, règle de multiplication, probabilités totales, Bayes, indépendance."
-numero: 3
+numero: "03"
+format:
+  html: default
+  fiche-typst: default
 ---
 
 Les outils de cette série sont la définition

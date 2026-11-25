@@ -1,7 +1,8 @@
 ---
-title: "Module 09 — Espérance mathématique (partie 2)"
+title: "Espérance mathématique (partie 2)"
+subtitle: "Module 09"
 description: "Moments, variance, coefficient d'asymétrie, fonction génératrice des moments."
-numero: 9
+numero: "09"
 ---
 
 Ce module poursuit l'étude de l'espérance. Il revient sur les moments

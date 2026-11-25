@@ -1,7 +1,8 @@
 ---
-title: "Module 10 — Vecteurs aléatoires (partie 1)"
+title: "Vecteurs aléatoires (partie 1)"
+subtitle: "Module 10"
 description: "Distributions conjointes, fonctions de masse et de densité marginales, indépendance, distributions conditionnelles."
-numero: 10
+numero: "10"
 ---
 
 Lorsque plusieurs quantités aléatoires sont observées en même temps, on

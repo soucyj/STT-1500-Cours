@@ -1,0 +1,4 @@
+# Le lien automatique « Autres formats » est désactivé : le bouton vers la
+# fiche PDF (format fiche-typst, voir _extensions/fiche/) est ajouté sous
+# l'introduction de chaque laboratoire par filtres/lien-fiche.lua.
+format-links: false

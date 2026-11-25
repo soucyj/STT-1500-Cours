@@ -1,7 +1,11 @@
 ---
-title: "Module 04 — Fondements"
+title: "Fondements"
+subtitle: "Module 04"
 description: "Tribus, boréliens, axiomes de Kolmogorov et leurs conséquences, continuité des probabilités."
-numero: 4
+numero: "04"
+format:
+  html: default
+  fiche-typst: default
 ---
 
 Cette série demande surtout de *justifier* : vérifier qu'une famille est

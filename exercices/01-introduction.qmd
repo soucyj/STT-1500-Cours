@@ -1,7 +1,11 @@
 ---
-title: "Module 01 — Introduction aux probabilités discrètes"
+title: "Introduction aux probabilités discrètes"
+subtitle: "Module 01"
 description: "Espace fondamental, événements, poids, cas équiprobable, complément, union, Boole et Bonferroni."
-numero: 1
+numero: "01"
+format:
+  html: default
+  fiche-typst: default
 ---
 
 Dans cette série, on n'utilise que les outils du module 01 : décrire

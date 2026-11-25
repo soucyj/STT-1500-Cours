@@ -1,7 +1,8 @@
 ---
-title: "Module 12 — La normale, la loi gamma et la loi de Cauchy"
+title: "La normale, la loi gamma et la loi de Cauchy"
+subtitle: "Module 12"
 description: "Loi normale et approximation de la binomiale, fonction gamma, loi gamma, loi de Cauchy."
-numero: 12
+numero: "12"
 ---
 
 Ce dernier module présente trois lois continues importantes. La loi

@@ -1,6 +1,6 @@
 # STT-1500 — Probabilités : site du cours
 
-Site Quarto (type `website`) du cours STT-1500 : plan de cours,
+Site Quarto (type `website`) du cours STT-1500 :
 calendrier, présentations, exercices avec solutions et laboratoires.
 
 ## Travailler sur le site
@@ -21,12 +21,13 @@ Actions.
 _quarto.yml               barre latérale, thème, pied de page
 _variables.yml            renseignements réutilisés dans les pages
 index.qmd                 accueil et accès rapides
-plan.qmd                  plan de cours (coquille)
 calendrier.qmd            calendrier de la session (coquille)
 livre.qmd                 notes de cours
 presentations/             « Présentation de la matière » : une page par module
 presentations/pdf/         PDF des diapositives (copiés par copier-pdf.sh)
 exercices/                une série d'exercices par module, avec solutions
+exercices/_metadata.yml   réglages communs des séries d'exercices
+_extensions/fiche/        format « fiche » : PDF paysage pour tablette, sans solutions
 laboratoires/index.qmd    liste automatique des laboratoires
 ressources.qmd            outils et liens
 filtres/solutions.lua     publication à date et heure fixes
@@ -57,7 +58,9 @@ elle est publiée d'emblée, dans un encadré repliable.
 
 Une page `NN-sujet.qmd` par laboratoire dans `laboratoires/` (en-tête :
 `title`, `description`, `numero`) : elle apparaît dans la liste. Chaque
-solution va dans un bloc `::: {.corrige}`.
+solution va dans un bloc `::: {.corrige}`. Pour la fiche PDF, ajouter
+le `format:` décrit à la section « Fiches PDF pour tablette ».
+
 
 ## Calendrier de publication
 
@@ -83,3 +86,26 @@ MAINTENANT="2027-01-25 10:45" quarto preview     # simuler un moment
 `calendrier.qmd` est généré par `_outils/generer_calendrier.py` :
 modifier les dates en tête du script, puis lancer
 `python3 _outils/generer_calendrier.py`.
+
+## Fiches PDF pour tablette
+
+Chaque série d'exercices et chaque laboratoire peut produire un PDF
+paysage (format 4:3, une question par page, sans solutions) pour
+l'annotation sur tablette : une page par « ### Exercice » dans les
+séries, une page par section « ## » (Déroulement, Problème 1…) dans les
+laboratoires. Dans l'en-tête de la page :
+
+```
+format:
+  html: default
+  fiche-typst: default
+```
+
+Le bouton « Version PDF pour tablette (sans solutions) » est ajouté
+automatiquement sous l'introduction de la page (`filtres/lien-fiche.lua`).
+
+Le PDF est régénéré à chaque `quarto render` (localement et sur GitHub
+Actions) : il suit toujours les exercices. Mise en page :
+`_extensions/fiche/typst-template.typ` ; découpage et retrait des
+solutions : `_extensions/fiche/fiche.lua`. Les polices (Fira Sans,
+STIX Two, licence OFL) sont incluses dans `_extensions/fiche/polices/`.

@@ -23,8 +23,6 @@ website:
     contents:
       - href: index.qmd
         text: Accueil
-      - href: plan.qmd
-        text: Plan de cours
       - href: calendrier.qmd
         text: Calendrier
       - href: livre.qmd
@@ -32,26 +30,43 @@ website:
       - section: Présentation de la matière
         href: presentations/index.qmd
         contents:
-          - presentations/01-introduction.qmd
-          - presentations/02-denombrement.qmd
-          - presentations/03-conditionnelle-independance.qmd
-          - presentations/04-fondements.qmd
-          - presentations/05-probabilites-geometriques.qmd
-          - presentations/06-va-discretes.qmd
-          - presentations/07-va-continues.qmd
-          - presentations/08-esperance-1.qmd
-          - presentations/09-esperance-2.qmd
-          - presentations/10-vecteurs-aleatoires-1.qmd
-          - presentations/11-vecteurs-aleatoires-2.qmd
-          - presentations/12-normale-gamma.qmd
+          - href: presentations/01-introduction.qmd
+            text: "01 — Introduction aux probabilités discrètes"
+          - href: presentations/02-denombrement.qmd
+            text: "02 — Combinatoire énumérative"
+          - href: presentations/03-conditionnelle-independance.qmd
+            text: "03 — Probabilité conditionnelle et indépendance"
+          - href: presentations/04-fondements.qmd
+            text: "04 — Fondements des probabilités"
+          - href: presentations/05-probabilites-geometriques.qmd
+            text: "05 — Probabilités géométriques et distributions continues"
+          - href: presentations/06-va-discretes.qmd
+            text: "06 — Variables aléatoires discrètes"
+          - href: presentations/07-va-continues.qmd
+            text: "07 — Variables aléatoires continues"
+          - href: presentations/08-esperance-1.qmd
+            text: "08 — Espérance mathématique (partie 1)"
+          - href: presentations/09-esperance-2.qmd
+            text: "09 — Espérance mathématique (partie 2)"
+          - href: presentations/10-vecteurs-aleatoires-1.qmd
+            text: "10 — Vecteurs aléatoires (partie 1)"
+          - href: presentations/11-vecteurs-aleatoires-2.qmd
+            text: "11 — Vecteurs aléatoires (partie 2)"
+          - href: presentations/12-normale-gamma.qmd
+            text: "12 — La normale, la loi gamma et la loi de Cauchy"
       - section: Exercices
         href: exercices/index.qmd
         contents:
-          - exercices/01-introduction.qmd
-          - exercices/02-denombrement.qmd
-          - exercices/03-conditionnelle-independance.qmd
-          - exercices/04-fondements.qmd
-          - exercices/05-probabilites-geometriques.qmd
+          - href: exercices/01-introduction.qmd
+            text: "01 — Introduction aux probabilités discrètes"
+          - href: exercices/02-denombrement.qmd
+            text: "02 — Dénombrement"
+          - href: exercices/03-conditionnelle-independance.qmd
+            text: "03 — Probabilité conditionnelle et indépendance"
+          - href: exercices/04-fondements.qmd
+            text: "04 — Fondements"
+          - href: exercices/05-probabilites-geometriques.qmd
+            text: "05 — Probabilités géométriques et densités"
           - exercices/sources.qmd
       - href: laboratoires/index.qmd
         text: Laboratoires
@@ -64,6 +79,7 @@ website:
 # Solutions publiées à une date précise : voir filtres/solutions.lua
 filters:
   - filtres/solutions.lua
+  - filtres/lien-fiche.lua
 
 format:
   html:

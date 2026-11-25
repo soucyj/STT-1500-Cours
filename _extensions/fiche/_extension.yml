@@ -1,0 +1,32 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  Format « fiche » : la série d'exercices d'un module en PDF paysage,
+#  pour annoter sur tablette (Goodnotes, Notability…).
+#    - page couverture sur le dégradé du site, titre en bleu ;
+#    - une question par page, le reste de la page libre pour écrire ;
+#    - aucune solution.
+#
+#  Utilisation, dans l'en-tête d'une série d'exercices :
+#    format:
+#      html: default
+#      fiche-typst: default
+#  Le PDF est produit à chaque génération du site, à côté de la page HTML
+#  (exercices/01-introduction.pdf) : il suit toujours les exercices.
+#  Typst est inclus dans Quarto : rien d'autre à installer.
+# ═══════════════════════════════════════════════════════════════════════
+title: Fiche d'exercices (PDF tablette)
+author: Jérôme Soucy
+version: 1.0.0
+quarto-required: ">=1.6.0"
+contributes:
+  formats:
+    typst:
+      font-paths: [polices]
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
+        - page.typ
+      filters:
+        - fiche.lua
+      toc: false
+      section-numbering: null
+      keep-typ: false

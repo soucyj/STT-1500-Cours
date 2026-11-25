@@ -3,14 +3,9 @@ title: "STT-1500 — Probabilités"
 toc: false
 ---
 
-Bienvenue sur le site du cours. Vous y trouverez le plan de cours, le
+Bienvenue sur le site du cours. Vous y trouverez le
 calendrier, les présentations des cours magistraux, des séries
 d'exercices avec solutions et les laboratoires.
-
-::: {.a-completer}
-À compléter : un court paragraphe de présentation du cours (à qui il
-s'adresse, ce qu'on y fait, l'esprit du cours).
-:::
 
 ## Accès rapide
 
@@ -42,12 +37,10 @@ Les activités en laboratoire : consignes, fichiers et solutions.
 :::
 
 ::: {.carte}
-Plan de cours et calendrier
+Calendrier
 
-Objectifs, évaluation, et le déroulement de la session semaine par
-semaine.
+Le déroulement de la session : cours, laboratoires et examens.
 
-[Plan de cours](plan.qmd){.bouton}
 [Calendrier](calendrier.qmd){.bouton}
 :::
 
@@ -56,6 +49,5 @@ semaine.
 ## Annonces
 
 ::: {.a-completer}
-À compléter au fil de la session (ou à retirer si les annonces passent
-uniquement par monPortail).
+Les informations importantes (par exemple l'annonc des locaux pour les examens) vous seront communiquées par courriel.
 :::

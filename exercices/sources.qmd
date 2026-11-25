@@ -7,10 +7,8 @@ toc: true
 
 Plusieurs exercices de ces séries sont inspirés d'exemples ou
 d'exercices des notes de cours de Claude Bélisle, *STT-1500 :
-Probabilités* (Université Laval, 2021). Les énoncés ont été reformulés,
-souvent simplifiés ou adaptés aux modules du cours, et les solutions ont
-été rédigées à neuf. Les tableaux ci-dessous indiquent, pour chaque
-exercice concerné, le passage des notes dont il s'inspire. Les
+Probabilités* (Université Laval, 2021). Les énoncés ont parfois été reformulés ou adaptés aux modules du cours, et les solutions ont
+été rédigées à partir de la base. Les tableaux ci-dessous indiquent, pour chaque exercice concerné, le passage des notes dont il s'inspire. Les
 exercices qui n'y figurent pas sont originaux.
 
 ### Module 01

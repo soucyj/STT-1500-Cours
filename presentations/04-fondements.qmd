@@ -1,7 +1,8 @@
 ---
-title: "Module 04 — Fondements des probabilités"
+title: "Fondements des probabilités"
+subtitle: "Module 04"
 description: "Tribus, boréliens, axiomes de Kolmogorov et leurs conséquences, continuité des probabilités."
-numero: 4
+numero: "04"
 ---
 
 Les poids du module 01 ne permettent pas de choisir un nombre au hasard

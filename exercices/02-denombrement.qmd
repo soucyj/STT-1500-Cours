@@ -1,7 +1,11 @@
 ---
-title: "Module 02 — Dénombrement"
+title: "Dénombrement"
+subtitle: "Module 02"
 description: "Principe de multiplication, permutations, dérangements, combinaisons, binôme et multinôme, Stirling."
-numero: 2
+numero: "02"
+format:
+  html: default
+  fiche-typst: default
 ---
 
 Dans les problèmes de cette série, les résultats sont équiprobables :

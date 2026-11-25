@@ -1,7 +1,8 @@
 ---
-title: "Module 06 — Variables aléatoires discrètes"
+title: "Variables aléatoires discrètes"
+subtitle: "Module 06"
 description: "Variable aléatoire, fonction de masse, espérance ; lois de Bernoulli, binomiale, géométrique, binomiale négative, de Poisson, hypergéométrique."
-numero: 6
+numero: "06"
 ---
 
 Une variable aléatoire associe un nombre à chaque résultat d'une

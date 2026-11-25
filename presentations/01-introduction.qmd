@@ -1,7 +1,8 @@
 ---
-title: "Module 01 — Introduction aux probabilités discrètes"
+title: "Introduction aux probabilités discrètes"
+subtitle: "Module 01"
 description: "Expériences aléatoires, espace fondamental, événements, poids, cas équiprobable, Boole et Bonferroni."
-numero: 1
+numero: "01"
 ---
 
 Ce premier module pose le vocabulaire du cours. Une expérience aléatoire
