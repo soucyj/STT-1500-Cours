@@ -217,7 +217,7 @@ longueur de $2\pi/3$, d'où une probabilité de
 $$\frac{2\pi/3}{2\pi}=\frac13.$$
 :::
 
-### Exercice 11 **(défi)**
+### Exercice 11
 
 *L'aiguille de Buffon.* Un plancher est formé de planches de largeur
 $\ell$. On y laisse tomber une aiguille de longueur $L\le\ell$. On note

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 330" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="white"/>
+<g transform="translate(0,0)">
+<circle cx="150" cy="120" r="75" fill="#2563eb" fill-opacity="0.10" stroke="#2563eb" stroke-width="2"/>
+<circle cx="230" cy="120" r="75" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2"/>
+<circle cx="190" cy="190" r="75" fill="#16a34a" fill-opacity="0.10" stroke="#16a34a" stroke-width="2"/>
+<text x="72" y="58" font-size="22" font-style="italic" fill="#2563eb">A</text>
+<text x="295" y="58" font-size="22" font-style="italic" fill="#dc2626">B</text>
+<text x="268" y="258" font-size="22" font-style="italic" fill="#16a34a">C</text>
+<text x="112" y="107" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">1</text>
+<text x="268" y="107" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">1</text>
+<text x="190" y="251" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">1</text>
+<text x="190" y="91" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">2</text>
+<text x="143" y="179" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">2</text>
+<text x="237" y="179" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">2</text>
+<text x="190" y="147" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">3</text>
+<text x="190" y="310" font-size="17" text-anchor="middle" fill="#1f2937">Dans S₁ = P(A) + P(B) + P(C)</text>
+</g>
+<g transform="translate(380,0)">
+<circle cx="150" cy="120" r="75" fill="#2563eb" fill-opacity="0.10" stroke="#2563eb" stroke-width="2"/>
+<circle cx="230" cy="120" r="75" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2"/>
+<circle cx="190" cy="190" r="75" fill="#16a34a" fill-opacity="0.10" stroke="#16a34a" stroke-width="2"/>
+<text x="72" y="58" font-size="22" font-style="italic" fill="#2563eb">A</text>
+<text x="295" y="58" font-size="22" font-style="italic" fill="#dc2626">B</text>
+<text x="268" y="258" font-size="22" font-style="italic" fill="#16a34a">C</text>
+<text x="112" y="107" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="268" y="107" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="190" y="251" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="190" y="91" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">1</text>
+<text x="143" y="179" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">1</text>
+<text x="237" y="179" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">1</text>
+<text x="190" y="147" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">3</text>
+<text x="190" y="310" font-size="17" text-anchor="middle" fill="#1f2937">Dans S₂ = P(A∩B) + P(A∩C) + P(B∩C)</text>
+</g>
+<g transform="translate(760,0)">
+<circle cx="150" cy="120" r="75" fill="#2563eb" fill-opacity="0.10" stroke="#2563eb" stroke-width="2"/>
+<circle cx="230" cy="120" r="75" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2"/>
+<circle cx="190" cy="190" r="75" fill="#16a34a" fill-opacity="0.10" stroke="#16a34a" stroke-width="2"/>
+<text x="72" y="58" font-size="22" font-style="italic" fill="#2563eb">A</text>
+<text x="295" y="58" font-size="22" font-style="italic" fill="#dc2626">B</text>
+<text x="268" y="258" font-size="22" font-style="italic" fill="#16a34a">C</text>
+<text x="112" y="107" font-size="20" text-anchor="middle" font-weight="bold" fill="#b45309">1</text>
+<text x="268" y="107" font-size="20" text-anchor="middle" font-weight="bold" fill="#b45309">1</text>
+<text x="190" y="251" font-size="20" text-anchor="middle" font-weight="bold" fill="#b45309">1</text>
+<text x="190" y="91" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="143" y="179" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="237" y="179" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="190" y="147" font-size="20" text-anchor="middle" font-weight="normal" fill="#1f2937">0</text>
+<text x="190" y="310" font-size="17" text-anchor="middle" fill="#1f2937">Dans S₁ − 2S₂ + 3 P(A∩B∩C)</text>
+</g>
+</svg>

@@ -19,5 +19,3 @@ exercice est suivi de sa solution, dans un encadré à déplier : essayez de tro
 
 Quelques exercices reprennent des problèmes historiques : voir
 [Sources et attributions](sources.qmd).
-
-Les exercices marqués **(défi)** demandent un peu plus de réflexion, mais restent accessibles à partir de la matière vue pendant les cours et des connaissances préalables requises.

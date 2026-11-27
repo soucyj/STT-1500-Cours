@@ -344,7 +344,7 @@ Ainsi, quelle que soit la probabilité sur $\mathbb{R}$, presque toute la
 masse se trouve dans un intervalle borné assez grand.
 :::
 
-### Exercice 16 **(défi)**
+### Exercice 16
 
 Démontrez l'inégalité de Boole pour une suite infinie d'événements :
 $$\mathbb{P}\Bigl(\bigcup_{k=1}^\infty A_k\Bigr)\le\sum_{k=1}^\infty\mathbb{P}(A_k).$$

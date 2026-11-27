@@ -149,7 +149,7 @@ table ronde.
 
 c) Quelle est la probabilité que les trois enfants soient côte à côte ?
 d) Quelle est la probabilité que deux enfants ne soient jamais voisins ?
-e) **(défi)** Sur une ligne de $n$ chaises, $k$ enfants et $n-k$ adultes
+e) Sur une ligne de $n$ chaises, $k$ enfants et $n-k$ adultes
    s'assoient au hasard. Quelle est la probabilité que deux enfants ne
    soient jamais voisins ?
 
@@ -329,7 +329,7 @@ On choisit au hasard un code de trois chiffres parmi 000, 001, …, 999.
 
 a) Quelle est la probabilité que le chiffre du milieu soit strictement
    plus grand que chacun des deux autres ?
-b) **(défi)** Quelle est la probabilité que le code contienne au moins
+b) Quelle est la probabilité que le code contienne au moins
    un 0 et au moins un 1 ?
 
 ::: {.corrige}
@@ -370,7 +370,7 @@ On place au hasard 4 boules distinctes dans 3 boîtes (chaque boule
 choisit sa boîte au hasard, indépendamment des autres).
 
 a) Quelle est la probabilité qu'aucune boîte ne reste vide ?
-b) **(défi)** Même question avec $n+1$ boules et $n$ boîtes.
+b) Même question avec $n+1$ boules et $n$ boîtes.
 
 ::: {.corrige}
 b) $|\Omega|=n^{n+1}$. Si aucune boîte n'est vide, une boîte contient
@@ -459,7 +459,7 @@ e) Valeur du triple (6), valeur restante (5), position du lancer
    $120/1296=5/54\approx 0{,}093$.
 :::
 
-### Exercice 21 **(défi)**
+### Exercice 21
 
 L'identité de Vandermonde dit que, pour des entiers $m,n,r\ge0$,
 $$\binom{m+n}{r}=\sum_{k=0}^{r}\binom mk\binom n{r-k},$$
@@ -528,7 +528,7 @@ c) $n=8$ : valeur exacte $\binom{16}{8}/4^{8}=12\,870/65\,536\approx 0{,}1964$ ;
    approximation $1/\sqrt{8\pi}\approx 0{,}1995$.
 :::
 
-### Exercice 24 **(défi)**
+### Exercice 24
 
 Un groupe de 40 étudiants, 20 femmes et 20 hommes, est séparé au hasard
 en deux sections de 20.

@@ -524,7 +524,7 @@ b) Non : $A\cap B\cap C$ est encore « deux nombres pairs », de
    en classe.
 :::
 
-### Exercice 24 **(défi)**
+### Exercice 24
 
 Anne et Bruno lancent à tour de rôle une fléchette vers une cible, en
 commençant par Anne. Chaque lancer atteint le centre de la cible avec

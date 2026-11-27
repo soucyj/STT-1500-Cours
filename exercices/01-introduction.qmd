@@ -138,7 +138,7 @@ c) « Le plus grand numéro est $k$ » signifie « tous les numéros sont
 a) On lance une paire de dés ordinaires. Est-il plus probable que le
    produit des deux résultats soit pair ou qu'il soit impair ?
 b) Même question avec deux dés à 5 faces numérotées de 1 à 5.
-c) **(défi)** Même question avec deux dés à $m$ faces numérotées de 1 à
+c) Même question avec deux dés à $m$ faces numérotées de 1 à
    $m$. Pour quelles valeurs de $m$ un produit impair est-il plus
    probable ?
 
@@ -293,16 +293,48 @@ a) $A\cup B$ est l'union incompatible de $A\,\triangle\,B$ et de
    $A\cap B$ : un résultat de $A\cup B$ est soit dans un seul des deux
    événements, soit dans les deux. Donc
    $\mathbb{P}(A\cup B)=\mathbb{P}(A\,\triangle\,B)+\mathbb{P}(A\cap B)$.
-b) Dans la somme $\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)$, une région
-   du diagramme de Venn contenue dans exactement $j$ des événements est
-   comptée $j$ fois ; dans la somme des trois intersections deux à
-   deux, la région « exactement deux » est comptée une fois et la région
-   centrale trois fois. En notant $S_1$ la première somme et $S_2$ la
-   seconde :
-   $$S_1=r_1+2r_2+3r_3,\qquad S_2=r_2+3r_3 .$$
-   Donc
-   $S_1-2S_2+3r_3=r_1+2r_2+3r_3-2r_2-6r_3+3r_3=r_1=\mathbb{P}(F)$,
-   puisque $r_3=\mathbb{P}(A\cap B\cap C)$. L'événement $F$ est celui de
+b) Le diagramme de Venn de $A$, $B$ et $C$ découpe $A\cup B\cup C$ en
+   7 régions deux à deux incompatibles :
+
+   - 3 régions contenues dans *un seul* des événements
+     ($A\cap B^c\cap C^c$, $A^c\cap B\cap C^c$, $A^c\cap B^c\cap C$) ;
+     leur union est $F$ et la somme de leurs probabilités est
+     $r_1=\mathbb{P}(F)$ ;
+   - 3 régions contenues dans *exactement deux* des événements
+     ($A\cap B\cap C^c$, $A\cap B^c\cap C$, $A^c\cap B\cap C$), dont les
+     probabilités ont pour somme $r_2$ ;
+   - la région centrale $A\cap B\cap C$, de probabilité $r_3$.
+
+   Chaque événement $A$, $B$, $C$, ou chaque intersection, est l'union
+   incompatible des régions qu'il contient : sa probabilité est la somme
+   des probabilités de ces régions. Il suffit donc de compter combien de
+   fois chaque région intervient dans chaque somme. Les nombres inscrits
+   dans les régions de la figure ci-dessous sont ces nombres de fois.
+
+   ![Nombre de fois que chaque région du diagramme de Venn est comptée.](images/exercice-01-11b.svg){fig-alt="Trois diagrammes de Venn de A, B et C. Dans S1, les régions à un seul événement valent 1, celles à deux événements valent 2 et la région centrale vaut 3. Dans S2, elles valent 0, 1 et 3. Dans S1 moins 2 S2 plus 3 P(A inter B inter C), elles valent 1, 0 et 0."}
+
+   *Somme $S_1=\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)$.* Une région
+   contenue dans un seul événement apparaît dans un seul terme ; une
+   région contenue dans deux événements, par exemple $A\cap B\cap C^c$,
+   apparaît dans $\mathbb{P}(A)$ et dans $\mathbb{P}(B)$ ; la région
+   centrale apparaît dans les trois termes. Donc
+   $$S_1=r_1+2r_2+3r_3 .$$
+
+   *Somme $S_2=\mathbb{P}(A\cap B)+\mathbb{P}(A\cap C)+\mathbb{P}(B\cap C)$.*
+   Une région contenue dans un seul événement n'est dans aucune
+   intersection de deux événements ; la région $A\cap B\cap C^c$ n'est
+   que dans $A\cap B$, et de même pour les deux autres régions de ce
+   type ; la région centrale est dans les trois intersections. Donc
+   $$S_2=r_2+3r_3 .$$
+
+   *Conclusion.* On cherche une combinaison de $S_1$, $S_2$ et $r_3$ qui
+   donne $r_1$ : il faut d'abord éliminer $r_2$, ce qui se fait avec
+   $S_1-2S_2=r_1-3r_3$, puis rajouter $3r_3$. Comme
+   $r_3=\mathbb{P}(A\cap B\cap C)$,
+   $$S_1-2S_2+3\,\mathbb{P}(A\cap B\cap C)
+   =(r_1+2r_2+3r_3)-2(r_2+3r_3)+3r_3=r_1=\mathbb{P}(F),$$
+   ce qui est la formule demandée (dernière figure : seules les régions
+   de $F$ sont comptées, une fois chacune). L'événement $F$ est celui de
    l'exercice 10 c).
 :::
 
@@ -447,9 +479,6 @@ a) Quelle est la probabilité qu'Ana gagne à son $k$-ième lancer ?
 b) Quelle est la probabilité qu'Ana gagne ?
 c) Quelle est la probabilité que Béa gagne ? que Carl gagne ?
 d) Quelle est la probabilité que le jeu ne se termine jamais ?
-
-*On admet que les $k$ premiers lancers forment $6^k$ suites
-équiprobables.*
 
 ::: {.corrige}
 a) Ana gagne à son $k$-ième lancer si les $3(k-1)$ lancers précédents ne
