@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>08-VecteursAleatoires.bcf</file>
+      <file>10-VecteursAleatoires.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>08-VecteursAleatoires.bbl</file>
+      <file>10-VecteursAleatoires.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -67,19 +67,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>08-VecteursAleatoires</infile>
+      <infile>10-VecteursAleatoires</infile>
     </cmdline>
     <input>
-      <file>08-VecteursAleatoires.bcf</file>
+      <file>10-VecteursAleatoires.bcf</file>
     </input>
     <output>
-      <file>08-VecteursAleatoires.bbl</file>
+      <file>10-VecteursAleatoires.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>08-VecteursAleatoires.bbl</file>
+      <file>10-VecteursAleatoires.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>08-VecteursAleatoires.bcf</file>
+      <file>10-VecteursAleatoires.bcf</file>
     </requires>
     <requires type="editable">
       <file>../references.bib</file>

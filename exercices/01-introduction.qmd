@@ -18,170 +18,192 @@ mais ne sont pas nécessaires.
 
 ### Exercice 1
 
-On lance une paire de dés équilibrés. Calculez la probabilité que la
-somme des deux résultats soit
+On lance un dé rouge ordinaire, à 6 faces, et un dé bleu à 4 faces
+numérotées de 1 à 4. Calculez la probabilité que
 
-a) supérieure ou égale à 10 ;
-b) inférieure ou égale à 4.
+a) la somme des deux résultats soit supérieure ou égale à 8 ;
+b) le résultat du dé rouge soit strictement plus grand que celui du dé
+   bleu.
 
 ::: {.corrige}
-On prend $\Omega=\{(i,j) : 1\le i,j\le 6\}$, avec $|\Omega|=36$
-résultats équiprobables.
+On prend $\Omega=\{(r,b) : 1\le r\le 6,\ 1\le b\le 4\}$, avec
+$|\Omega|=24$ résultats équiprobables.
 
-a) Somme $\ge 10$ : $(4,6),(5,5),(6,4),(5,6),(6,5),(6,6)$, soit 6
-   résultats. Probabilité $6/36=1/6$.
-b) Somme $\le 4$ : $(1,1),(1,2),(2,1),(1,3),(2,2),(3,1)$, soit 6
-   résultats. Probabilité $1/6$ aussi.
+a) Somme $\ge 8$ : $(4,4)$, $(5,3)$, $(5,4)$, $(6,2)$, $(6,3)$, $(6,4)$,
+   soit 6 résultats. Probabilité $6/24=1/4$.
+b) On classe selon le dé bleu : si $b=1$, il y a 5 valeurs de $r$ qui
+   conviennent ; si $b=2$, 4 ; si $b=3$, 3 ; si $b=4$, 2. En tout
+   $5+4+3+2=14$ résultats, d'où une probabilité de $14/24=7/12$.
 :::
 
 ### Exercice 2
 
-On lance un dé équilibré trois fois.
+On fait tourner trois fois une roue de loterie divisée en 5 secteurs
+égaux, numérotés de 1 à 5.
 
 a) Décrivez l'ensemble $\Omega$ des résultats possibles.
 b) Combien l'ensemble $\Omega$ contient-il d'éléments ?
-c) Soit $A$ l'événement « le premier résultat est strictement plus petit
-   que le deuxième » et $B$ l'événement « le deuxième résultat est
+c) Soit $A$ l'événement « le premier numéro est strictement plus petit
+   que le deuxième » et $B$ l'événement « le deuxième numéro est
    strictement plus petit que le troisième ». Calculez $\mathbb{P}(A)$,
    $\mathbb{P}(B)$ et $\mathbb{P}(A\cap B)$.
-d) Calculez la probabilité que la somme des trois résultats soit
+d) Calculez la probabilité que la somme des trois numéros soit
    inférieure ou égale à 5.
 
 *Indice pour c) : pour compter les éléments de $A\cap B$, classez-les
-selon la valeur du deuxième lancer.*
+selon la valeur du deuxième numéro.*
 
 ::: {.corrige}
-a) $\Omega=\{(i,j,k) : i,j,k\in\{1,\dots,6\}\}$, l'ensemble des
-   triplets de résultats.
-b) $|\Omega|=6^3=216$. Les résultats sont équiprobables.
+a) $\Omega=\{(i,j,k) : i,j,k\in\{1,\dots,5\}\}$, l'ensemble des
+   triplets de numéros.
+b) $|\Omega|=5^3=125$. Les résultats sont équiprobables.
 
-c) L'événement $A$ ne concerne que les deux premiers lancers. Parmi les
-   36 couples $(i,j)$, 6 ont $i=j$ et, par symétrie, la moitié des 30
-   autres ont $i<j$ : 15 couples. Le troisième lancer est libre, donc
-   $|A|=15\cdot 6=90$ et $\mathbb{P}(A)=90/216=5/12$. De la même façon,
-   $\mathbb{P}(B)=5/12$.
+c) L'événement $A$ ne concerne que les deux premiers tours. Parmi les
+   25 couples $(i,j)$, 5 ont $i=j$ et, par symétrie, la moitié des 20
+   autres ont $i<j$ : 10 couples. Le troisième tour est libre, donc
+   $|A|=10\cdot 5=50$ et $\mathbb{P}(A)=50/125=2/5$. De la même façon,
+   $\mathbb{P}(B)=2/5$.
 
    $A\cap B$ est l'ensemble des triplets strictement croissants
-   $i<j<k$. Si le deuxième résultat vaut $j$, il y a $j-1$ choix pour
-   $i$ et $6-j$ choix pour $k$ :
+   $i<j<k$. Si le deuxième numéro vaut $j$, il y a $j-1$ choix pour
+   $i$ et $5-j$ choix pour $k$ :
 
-   | $j$ | 2 | 3 | 4 | 5 |
-   |:-:|:-:|:-:|:-:|:-:|
-   | $(j-1)(6-j)$ | 4 | 6 | 6 | 4 |
+   | $j$ | 2 | 3 | 4 |
+   |:-:|:-:|:-:|:-:|
+   | $(j-1)(5-j)$ | 3 | 4 | 3 |
 
-   Donc $|A\cap B|=20$ et $\mathbb{P}(A\cap B)=20/216=5/54$.
+   Donc $|A\cap B|=10$ et $\mathbb{P}(A\cap B)=10/125=2/25$.
 
 d) Somme 3 : $(1,1,1)$, 1 résultat. Somme 4 : les trois permutations de
    $(1,1,2)$. Somme 5 : les trois permutations de $(1,1,3)$ et les trois
    de $(1,2,2)$. En tout $1+3+6=10$ résultats, d'où une probabilité de
-   $10/216=5/108\approx 0{,}046$.
+   $10/125=2/25=0{,}08$.
 :::
 
 ### Exercice 3
 
-On lance une pièce de monnaie équilibrée 4 fois.
+Un quiz comporte 5 questions de type vrai ou faux. Une personne qui n'a
+pas étudié répond à chaque question au hasard.
 
-a) Décrivez l'ensemble des résultats possibles.
-b) Pour $k=0,1,2,3,4$, calculez la probabilité d'obtenir exactement $k$
-   piles.
+a) Décrivez l'ensemble des résultats possibles (on note B une bonne
+   réponse et M une mauvaise).
+b) Pour $k=0,1,\dots,5$, calculez la probabilité d'obtenir exactement
+   $k$ bonnes réponses.
 
 ::: {.corrige}
-a) $\Omega=\{P,F\}^4$, l'ensemble des suites de 4 lettres $P$ ou $F$ :
-   $2^4=16$ résultats équiprobables.
-b) On compte les suites ayant exactement $k$ lettres $P$ (en les
-   énumérant, par exemple) :
+a) $\Omega=\{B,M\}^5$, l'ensemble des suites de 5 lettres $B$ ou $M$ :
+   $2^5=32$ résultats équiprobables.
+b) On compte les suites ayant exactement $k$ lettres $B$. Pour $k=1$,
+   il suffit de choisir la position du $B$ : 5 suites. Pour $k=2$, on
+   énumère les paires de positions : $\{1,2\},\{1,3\},\dots,\{4,5\}$,
+   soit 10 suites. Les cas $k=3,4,5$ s'obtiennent en échangeant les
+   rôles de $B$ et de $M$ :
 
-   | $k$ | 0 | 1 | 2 | 3 | 4 |
-   |:-:|:-:|:-:|:-:|:-:|:-:|
-   | nombre de suites | 1 | 4 | 6 | 4 | 1 |
-   | probabilité | $1/16$ | $4/16$ | $6/16$ | $4/16$ | $1/16$ |
+   | $k$ | 0 | 1 | 2 | 3 | 4 | 5 |
+   |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+   | nombre de suites | 1 | 5 | 10 | 10 | 5 | 1 |
+   | probabilité | $1/32$ | $5/32$ | $10/32$ | $10/32$ | $5/32$ | $1/32$ |
 
    La somme des probabilités vaut bien 1.
 :::
 
 ### Exercice 4
 
-a) On lance une pièce $n$ fois. Quelle est la probabilité que les $n$
-   résultats soient identiques ?
-b) Même question avec un dé à 6 faces.
-c) Même question avec un dé à $m$ faces équiprobables.
+Une urne contient $m$ boules numérotées de 1 à $m$. On tire $n$ fois une
+boule, en la remettant dans l'urne après chaque tirage, et on note la
+suite des numéros obtenus.
+
+a) Quelle est la probabilité que toutes les boules tirées portent le
+   numéro 1 ?
+b) Soit $k\in\{1,\dots,m\}$. Quelle est la probabilité que tous les
+   numéros tirés soient inférieurs ou égaux à $k$ ?
+c) Déduisez-en la probabilité que le plus grand numéro tiré soit
+   exactement $k$.
 
 ::: {.corrige}
-c) Il y a $m^n$ suites de résultats équiprobables, et exactement $m$
-   d'entre elles sont constantes (une par face). La probabilité est
-   $m/m^n=1/m^{n-1}$.
+Il y a $m^n$ suites de numéros, équiprobables.
 
-On en déduit a) $1/2^{n-1}$ (avec $m=2$) et b) $1/6^{n-1}$ (avec $m=6$).
+a) Une seule suite convient : $1/m^n$.
+b) Chaque tirage doit donner l'un des numéros $1,\dots,k$ : $k^n$ suites,
+   d'où une probabilité de $(k/m)^n$.
+c) « Le plus grand numéro est $k$ » signifie « tous les numéros sont
+   $\le k$ », mais pas « tous les numéros sont $\le k-1$ ». Le second
+   événement est inclus dans le premier, donc la probabilité est
+   $$\frac{k^n-(k-1)^n}{m^n}.$$
+   Avec $k=1$, on retrouve a).
 :::
 
 ### Exercice 5
 
-a) On lance une paire de dés ordinaires. Est-il plus probable d'obtenir
-   une somme paire ou une somme impaire ?
-b) Même question avec deux dés à 3 faces numérotées 1, 2, 3.
+a) On lance une paire de dés ordinaires. Est-il plus probable que le
+   produit des deux résultats soit pair ou qu'il soit impair ?
+b) Même question avec deux dés à 5 faces numérotées de 1 à 5.
 c) **(défi)** Même question avec deux dés à $m$ faces numérotées de 1 à
-   $m$. Distinguez les cas $m$ pair et $m$ impair.
+   $m$. Pour quelles valeurs de $m$ un produit impair est-il plus
+   probable ?
 
 ::: {.corrige}
-La somme est paire exactement quand les deux résultats ont la même
-parité.
+Le produit est impair exactement quand les deux résultats sont impairs.
 
-a) Il y a 3 faces paires et 3 faces impaires : $3\cdot 3+3\cdot 3=18$
-   couples de même parité sur 36. Les deux événements ont probabilité
-   $1/2$.
-b) Faces impaires : 1 et 3 ; face paire : 2. Couples de même parité :
-   $2\cdot 2+1\cdot 1=5$ sur 9. Une somme paire est plus probable
-   ($5/9$).
-c) Si $m$ est pair, il y a $m/2$ faces de chaque parité et, comme en a),
-   les deux événements ont probabilité $1/2$. Si $m$ est impair, il y a
-   $(m+1)/2$ faces impaires et $(m-1)/2$ faces paires, donc
-   $$\mathbb{P}(\text{somme paire})=\frac{\left(\frac{m+1}{2}\right)^2+\left(\frac{m-1}{2}\right)^2}{m^2}=\frac{m^2+1}{2m^2}>\frac12 .$$
-   Avec $m=3$, on retrouve $10/18=5/9$.
+a) 3 faces impaires sur 6 : $3\cdot 3=9$ couples sur 36 donnent un
+   produit impair. $\mathbb{P}(\text{impair})=1/4$ : un produit pair est
+   plus probable ($3/4$).
+b) Faces impaires : 1, 3, 5. $\mathbb{P}(\text{impair})=9/25$ et
+   $\mathbb{P}(\text{pair})=16/25$ : un produit pair est plus probable.
+c) Si $m$ est pair, il y a $m/2$ faces impaires et
+   $\mathbb{P}(\text{impair})=1/4$. Si $m$ est impair, il y en a
+   $(m+1)/2$ et
+   $$\mathbb{P}(\text{impair})=\frac{(m+1)^2}{4m^2}.$$
+   Cette probabilité dépasse $1/2$ si et seulement si
+   $(m+1)^2>2m^2$, c'est-à-dire $m^2-2m-1<0$, soit $m<1+\sqrt2$. Comme
+   $m$ est impair, seul $m=1$ convient (le produit vaut alors toujours
+   1). Pour tout $m\ge2$, un produit pair est plus probable.
 :::
 
 ## Des poids qui ne sont pas égaux
 
 ### Exercice 6
 
-Un dé à 6 faces est truqué : la probabilité d'obtenir la face $j$ est
-proportionnelle à $j$.
+Un dé à 4 faces est truqué : la probabilité d'obtenir la face $j$ est
+proportionnelle à $j^2$.
 
 *Rappel : une quantité $A$ est proportionnelle à une quantité $B$ s'il
 existe une constante $k$ telle que $A=kB$.*
 
 a) Décrivez $\Omega$.
 b) Déterminez la probabilité de chaque résultat.
-c) Calculez la probabilité d'obtenir un résultat supérieur ou égal à 5.
+c) Calculez la probabilité d'obtenir un résultat supérieur ou égal à 3.
 d) Calculez la probabilité d'obtenir un résultat pair.
 
 ::: {.corrige}
-a) $\Omega=\{1,2,3,4,5,6\}$.
-b) $p(j)=kj$. Les poids doivent avoir une somme de 1 :
-   $k(1+2+\dots+6)=21k=1$, donc $k=1/21$ et $p(j)=j/21$.
-c) $p(5)+p(6)=11/21$.
-d) $p(2)+p(4)+p(6)=12/21=4/7$.
+a) $\Omega=\{1,2,3,4\}$.
+b) $p(j)=kj^2$. Les poids doivent avoir une somme de 1 :
+   $k(1+4+9+16)=30k=1$, donc $k=1/30$ et $p(j)=j^2/30$.
+c) $p(3)+p(4)=(9+16)/30=5/6$.
+d) $p(2)+p(4)=(4+16)/30=2/3$.
 :::
 
 ### Exercice 7
 
-Un tiroir contient 7 piles électriques : 5 bonnes et 2 défectueuses. On
-en prend deux au hasard.
+Un lot de 8 billets de tirage contient 3 billets gagnants. Vous en
+prenez deux au hasard.
 
 a) Décrivez un espace fondamental $\Omega$ adapté.
 b) Donnez le cardinal de $\Omega$.
-c) Calculez la probabilité d'obtenir deux bonnes piles.
-d) Calculez la probabilité d'obtenir au moins une pile défectueuse.
+c) Calculez la probabilité d'obtenir deux billets gagnants.
+d) Calculez la probabilité d'obtenir au moins un billet gagnant.
 
 ::: {.corrige}
-a) On numérote les piles de 1 à 7 (les bonnes portent les numéros 1 à 5).
-   On peut prendre pour $\Omega$ l'ensemble des couples ordonnés
-   $(i,j)$ avec $i\neq j$ (première pile prise, deuxième pile prise).
+a) On numérote les billets de 1 à 8 (les gagnants portent les numéros 1
+   à 3). On peut prendre pour $\Omega$ l'ensemble des couples ordonnés
+   $(i,j)$ avec $i\neq j$ (premier billet pris, deuxième billet pris).
    On peut aussi prendre les paires non ordonnées.
-b) $|\Omega|=7\cdot 6=42$ couples ordonnés, équiprobables (ou 21 paires
+b) $|\Omega|=8\cdot 7=56$ couples ordonnés, équiprobables (ou 28 paires
    non ordonnées).
-c) Couples formés de deux bonnes piles : $5\cdot 4=20$. Probabilité
-   $20/42=10/21$.
-d) C'est le complémentaire de c) : $1-10/21=11/21$.
+c) Couples formés de deux billets gagnants : $3\cdot 2=6$. Probabilité
+   $6/56=3/28$.
+d) Le complémentaire est « deux billets perdants » : $5\cdot 4=20$
+   couples. Probabilité $1-20/56=36/56=9/14$.
 :::
 
 ### Exercice 8
@@ -228,23 +250,25 @@ b) En regroupant $PF$ et $FP$ (« une pile et une face »), on obtient
 
 ### Exercice 10
 
-Soit $A$, $B$ et $C$ trois événements. Écrivez chacun des événements
-suivants à l'aide d'unions, d'intersections et de compléments, et
-faites un diagramme de Venn.
+Trois amies, Alice, Béatrice et Chloé, passent le même examen. On note
+$A$, $B$ et $C$ les événements « Alice réussit », « Béatrice réussit »
+et « Chloé réussit ». Écrivez chacun des événements suivants à l'aide
+d'unions, d'intersections et de compléments, et hachurez-le sur un
+diagramme de Venn.
 
-a) Au moins un des trois événements se réalise.
-b) Les trois événements ne se réalisent pas tous.
-c) Au moins un des trois se réalise, mais pas les trois.
-d) Seul $A$ se réalise.
-e) Exactement deux des trois événements se réalisent.
+a) Au moins une des trois réussit.
+b) Aucune des trois ne réussit.
+c) Exactement une des trois réussit.
+d) Alice et Béatrice réussissent, mais pas Chloé.
+e) Au plus deux des trois réussissent.
 
 ::: {.corrige}
 a) $A\cup B\cup C$.
-b) $(A\cap B\cap C)^c=A^c\cup B^c\cup C^c$ (loi de De Morgan).
-c) $(A\cup B\cup C)\cap(A\cap B\cap C)^c$.
-d) $A\cap B^c\cap C^c$.
-e) $(A\cap B\cap C^c)\cup(A\cap B^c\cap C)\cup(A^c\cap B\cap C)$, ou
-   encore $\big((A\cap B)\cup(A\cap C)\cup(B\cap C)\big)\cap(A\cap B\cap C)^c$.
+b) $A^c\cap B^c\cap C^c=(A\cup B\cup C)^c$ (loi de De Morgan).
+c) $(A\cap B^c\cap C^c)\cup(A^c\cap B\cap C^c)\cup(A^c\cap B^c\cap C)$.
+d) $A\cap B\cap C^c$.
+e) C'est le contraire de « les trois réussissent » :
+   $(A\cap B\cap C)^c=A^c\cup B^c\cup C^c$.
 :::
 
 ### Exercice 11
@@ -253,51 +277,64 @@ La *différence symétrique* de $A$ et $B$ est
 $A\,\triangle\,B=(A\setminus B)\cup(B\setminus A)$ : c'est l'événement
 « un et un seul des événements $A$ et $B$ se réalise ».
 
-a) Exprimez $\mathbb{P}(A\,\triangle\,B)$ en fonction de
-   $\mathbb{P}(A)$, $\mathbb{P}(B)$ et $\mathbb{P}(A\cap B)$.
-b) Soit $E$ l'événement « exactement deux des événements $A$, $B$, $C$
-   se réalisent ». Montrez que
-   $$\mathbb{P}(E)=\mathbb{P}(A\cap B)+\mathbb{P}(A\cap C)+\mathbb{P}(B\cap C)-3\,\mathbb{P}(A\cap B\cap C).$$
+a) Montrez que $\mathbb{P}(A\,\triangle\,B)=\mathbb{P}(A\cup B)-\mathbb{P}(A\cap B)$.
+b) Soit $F$ l'événement « exactement un des événements $A$, $B$, $C$
+   se réalise ». Montrez que
+   $$\mathbb{P}(F)=\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)-2\big(\mathbb{P}(A\cap B)+\mathbb{P}(A\cap C)+\mathbb{P}(B\cap C)\big)+3\,\mathbb{P}(A\cap B\cap C).$$
 
-*Indice pour b) : découpez $A\cap B$ en deux morceaux incompatibles selon
-que $C$ se réalise ou non.*
+*Indice pour b) : notez $r_1$, $r_2$ et $r_3$ les probabilités que
+exactement un, exactement deux et les trois événements se réalisent.
+Exprimez $\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)$ et
+$\mathbb{P}(A\cap B)+\mathbb{P}(A\cap C)+\mathbb{P}(B\cap C)$ en
+fonction de $r_1$, $r_2$, $r_3$, en vous aidant d'un diagramme de Venn.*
 
 ::: {.corrige}
-a) $A\setminus B$ et $B\setminus A$ sont incompatibles, et
-   $\mathbb{P}(A\setminus B)=\mathbb{P}(A)-\mathbb{P}(A\cap B)$. Donc
-   $$\mathbb{P}(A\,\triangle\,B)=\mathbb{P}(A)+\mathbb{P}(B)-2\,\mathbb{P}(A\cap B).$$
-b) Posons $t=\mathbb{P}(A\cap B\cap C)$. On a
-   $A\cap B=(A\cap B\cap C^c)\cup(A\cap B\cap C)$, union incompatible,
-   donc $\mathbb{P}(A\cap B\cap C^c)=\mathbb{P}(A\cap B)-t$, et de même
-   pour les deux autres paires. L'événement $E$ est l'union incompatible
-   des trois morceaux « exactement ces deux-là » (exercice 10 e)), donc
-   $$\mathbb{P}(E)=\big(\mathbb{P}(A\cap B)-t\big)+\big(\mathbb{P}(A\cap C)-t\big)+\big(\mathbb{P}(B\cap C)-t\big).$$
+a) $A\cup B$ est l'union incompatible de $A\,\triangle\,B$ et de
+   $A\cap B$ : un résultat de $A\cup B$ est soit dans un seul des deux
+   événements, soit dans les deux. Donc
+   $\mathbb{P}(A\cup B)=\mathbb{P}(A\,\triangle\,B)+\mathbb{P}(A\cap B)$.
+b) Dans la somme $\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)$, une région
+   du diagramme de Venn contenue dans exactement $j$ des événements est
+   comptée $j$ fois ; dans la somme des trois intersections deux à
+   deux, la région « exactement deux » est comptée une fois et la région
+   centrale trois fois. En notant $S_1$ la première somme et $S_2$ la
+   seconde :
+   $$S_1=r_1+2r_2+3r_3,\qquad S_2=r_2+3r_3 .$$
+   Donc
+   $S_1-2S_2+3r_3=r_1+2r_2+3r_3-2r_2-6r_3+3r_3=r_1=\mathbb{P}(F)$,
+   puisque $r_3=\mathbb{P}(A\cap B\cap C)$. L'événement $F$ est celui de
+   l'exercice 10 c).
 :::
 
 ## Propriétés de $\mathbb{P}$
 
 ### Exercice 12
 
-On sait que $\mathbb{P}(A)=0{,}4$, $\mathbb{P}(A\cap B)=0{,}1$ et
-$\mathbb{P}(A\cup B)=0{,}7$. Calculez $\mathbb{P}(B)$ et
-$\mathbb{P}(B\cap A^c)$.
+Parmi les clients d'une épicerie, 55 % achètent du pain, 20 % achètent
+du pain et du lait, et 80 % achètent au moins l'un des deux. On choisit
+un client au hasard.
+
+a) Quelle est la probabilité qu'il achète du lait ?
+b) Quelle est la probabilité qu'il achète du lait, mais pas de pain ?
 
 ::: {.corrige}
-De $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$ :
-$0{,}7=0{,}4+\mathbb{P}(B)-0{,}1$, donc $\mathbb{P}(B)=0{,}4$.
+On note $A$ l'événement « il achète du pain » et $B$ l'événement « il
+achète du lait ».
 
-Ensuite $\mathbb{P}(B\cap A^c)=\mathbb{P}(B)-\mathbb{P}(A\cap B)=0{,}3$.
+a) De $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$ :
+   $0{,}8=0{,}55+\mathbb{P}(B)-0{,}2$, donc $\mathbb{P}(B)=0{,}45$.
+b) $\mathbb{P}(B\cap A^c)=\mathbb{P}(B)-\mathbb{P}(A\cap B)=0{,}25$.
 :::
 
 ### Exercice 13
 
-On a $\mathbb{P}(A)=1/4$ et $\mathbb{P}(B)=1/2$. Calculez
+On a $\mathbb{P}(A)=1/3$ et $\mathbb{P}(B)=1/2$. Calculez
 $\mathbb{P}(A\cup B)$ et $\mathbb{P}(A\,\triangle\,B)$ (voir l'exercice
 11) dans chacun des cas suivants.
 
 a) $A\subseteq B$.
 b) $A\cap B=\varnothing$.
-c) $\mathbb{P}(A\cap B)=1/8$.
+c) $\mathbb{P}(A\cap B)=1/6$.
 
 ::: {.corrige}
 On utilise $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$
@@ -305,14 +342,16 @@ et $\mathbb{P}(A\,\triangle\,B)=\mathbb{P}(A\cup B)-\mathbb{P}(A\cap B)$.
 
 | cas | $\mathbb{P}(A\cap B)$ | $\mathbb{P}(A\cup B)$ | $\mathbb{P}(A\,\triangle\,B)$ |
 |:--|:-:|:-:|:-:|
-| a) $A\subseteq B$ | $1/4$ | $1/2$ | $1/4$ |
-| b) incompatibles | $0$ | $3/4$ | $3/4$ |
-| c) | $1/8$ | $5/8$ | $1/2$ |
+| a) $A\subseteq B$ | $1/3$ | $1/2$ | $1/6$ |
+| b) incompatibles | $0$ | $5/6$ | $5/6$ |
+| c) | $1/6$ | $2/3$ | $1/2$ |
 :::
 
 ### Exercice 14
 
-On a $\mathbb{P}(A)=0{,}3$ et $\mathbb{P}(B)=0{,}8$.
+Dans un sondage, 60 % des personnes interrogées disent boire du café et
+70 % disent boire du thé. On note $A$ et $B$ ces deux événements pour
+une personne choisie au hasard.
 
 a) Quelle est la plus petite valeur possible de $\mathbb{P}(A\cup B)$ ?
 b) Quelle est la plus grande valeur possible de $\mathbb{P}(A\cup B)$ ?
@@ -322,28 +361,29 @@ e) Pour chacune de ces valeurs extrêmes, décrivez une situation où elle
    est atteinte.
 
 ::: {.corrige}
-a) $A\cup B\supseteq B$, donc $\mathbb{P}(A\cup B)\ge 0{,}8$, avec
-   égalité si $A\subseteq B$. La plus petite valeur est $0{,}8$.
+a) $A\cup B\supseteq B$, donc $\mathbb{P}(A\cup B)\ge 0{,}7$, avec
+   égalité si $A\subseteq B$. La plus petite valeur est $0{,}7$.
 b) Par l'inégalité de Boole,
-   $\mathbb{P}(A\cup B)\le\min(1;\,0{,}3+0{,}8)=1$, avec égalité si
+   $\mathbb{P}(A\cup B)\le\min(1;\,0{,}6+0{,}7)=1$, avec égalité si
    $A\cup B=\Omega$. La plus grande valeur est $1$.
 c) Par l'inégalité de Bonferroni,
-   $\mathbb{P}(A\cap B)\ge 0{,}3+0{,}8-1=0{,}1$, avec égalité si
-   $A\cup B=\Omega$. La plus petite valeur est $0{,}1$.
-d) $A\cap B\subseteq A$, donc $\mathbb{P}(A\cap B)\le 0{,}3$, avec
-   égalité si $A\subseteq B$. La plus grande valeur est $0{,}3$.
-e) On prend $\Omega=\{1,2,\dots,10\}$ avec des résultats équiprobables
-   et $B=\{1,\dots,8\}$.
-   - Avec $A=\{1,2,3\}$, on a $A\subseteq B$ :
-     $\mathbb{P}(A\cup B)=0{,}8$ et $\mathbb{P}(A\cap B)=0{,}3$ (cas a et d).
-   - Avec $A=\{8,9,10\}$, on a $A\cup B=\Omega$ et $A\cap B=\{8\}$ :
-     $\mathbb{P}(A\cup B)=1$ et $\mathbb{P}(A\cap B)=0{,}1$ (cas b et c).
+   $\mathbb{P}(A\cap B)\ge 0{,}6+0{,}7-1=0{,}3$, avec égalité si
+   $A\cup B=\Omega$. La plus petite valeur est $0{,}3$.
+d) $A\cap B\subseteq A$, donc $\mathbb{P}(A\cap B)\le 0{,}6$, avec
+   égalité si $A\subseteq B$. La plus grande valeur est $0{,}6$.
+e) Imaginons 10 personnes numérotées de 1 à 10, choisies avec la même
+   probabilité, et $B=\{1,\dots,7\}$ (les buveurs de thé).
+   - Avec $A=\{1,\dots,6\}$, on a $A\subseteq B$ :
+     $\mathbb{P}(A\cup B)=0{,}7$ et $\mathbb{P}(A\cap B)=0{,}6$ (cas a et d).
+   - Avec $A=\{5,\dots,10\}$, on a $A\cup B=\Omega$ et
+     $A\cap B=\{5,6,7\}$ : $\mathbb{P}(A\cup B)=1$ et
+     $\mathbb{P}(A\cap B)=0{,}3$ (cas b et c).
 :::
 
 ### Exercice 15
 
-On sait que $\mathbb{P}(A)=1/4$, $\mathbb{P}(A^c\cap B)=1/5$ et
-$\mathbb{P}(A^c\cap B^c\cap C)=1/6$. Calculez
+On sait que $\mathbb{P}(A)=1/3$, $\mathbb{P}(A^c\cap B)=1/4$ et
+$\mathbb{P}(A^c\cap B^c\cap C)=1/5$. Calculez
 $\mathbb{P}\big((A\cup B\cup C)^c\big)$.
 
 ::: {.corrige}
@@ -351,72 +391,80 @@ Les événements $A$, $A^c\cap B$ et $A^c\cap B^c\cap C$ sont deux à deux
 incompatibles et leur union est $A\cup B\cup C$ : un résultat de
 $A\cup B\cup C$ est soit dans $A$, soit hors de $A$ mais dans $B$, soit
 hors de $A$ et de $B$ mais dans $C$. Donc
-$$\mathbb{P}(A\cup B\cup C)=\frac14+\frac15+\frac16=\frac{37}{60}
+$$\mathbb{P}(A\cup B\cup C)=\frac13+\frac14+\frac15=\frac{47}{60}
 \quad\text{et}\quad
-\mathbb{P}\big((A\cup B\cup C)^c\big)=\frac{23}{60}.$$
+\mathbb{P}\big((A\cup B\cup C)^c\big)=\frac{13}{60}.$$
 :::
 
 ### Exercice 16
 
-On tire deux cartes au hasard dans un jeu ordinaire de 52 cartes.
+On tire deux cartes au hasard, l'une après l'autre, dans un jeu
+ordinaire de 52 cartes.
 
-a) Quelle est la probabilité d'obtenir deux as ?
-b) Quelle est la probabilité d'obtenir deux cartes de même valeur ?
-c) Quelle est la probabilité d'obtenir un *blackjack* : un as et une
-   carte valant 10 (un 10, un valet, une dame ou un roi) ?
+a) Quelle est la probabilité d'obtenir deux cœurs ?
+b) Quelle est la probabilité que les deux cartes soient de la même
+   couleur (deux rouges ou deux noires) ?
+c) Quelle est la probabilité d'obtenir un as et une figure (valet, dame
+   ou roi), dans n'importe quel ordre ?
 
 ::: {.corrige}
 On prend pour $\Omega$ les couples ordonnés de cartes distinctes :
 $|\Omega|=52\cdot 51=2652$.
 
-a) $4\cdot 3=12$ couples, d'où $12/2652=1/221\approx 0{,}0045$.
+a) $13\cdot 12=156$ couples, d'où $156/2652=1/17\approx 0{,}059$.
 b) La première carte est quelconque (52 choix), la deuxième doit être
-   l'une des 3 cartes restantes de même valeur : $52\cdot 3/2652=1/17$.
-c) As puis 10 : $4\cdot 16$ couples ; 10 puis as : $16\cdot 4$ couples.
-   Probabilité $128/2652=32/663\approx 0{,}048$.
+   l'une des 25 cartes restantes de la même couleur :
+   $52\cdot 25/2652=25/51\approx 0{,}490$.
+c) As puis figure : $4\cdot 12$ couples ; figure puis as : $12\cdot 4$
+   couples. Probabilité $96/2652=8/221\approx 0{,}036$.
 :::
 
 ## Complément, Boole et Bonferroni
 
 ### Exercice 17
 
-a) On lance une pièce équilibrée 4 fois. Quelle est la probabilité
-   d'obtenir au moins une pile ?
-b) Combien de fois faut-il lancer la pièce pour que la probabilité
-   d'obtenir au moins une pile soit d'au moins $0{,}99$ ?
+a) On lance un dé équilibré 3 fois. Quelle est la probabilité d'obtenir
+   au moins un 6 ?
+b) Combien de fois faut-il lancer le dé pour que la probabilité
+   d'obtenir au moins un 6 soit d'au moins $0{,}95$ ?
 
 ::: {.corrige}
-a) Le complémentaire est « que des faces », un seul résultat sur 16 :
-   $1-1/16=15/16$.
-b) Avec $n$ lancers, la probabilité est $1-1/2^n$. On veut
-   $1/2^n\le 0{,}01$, soit $2^n\ge 100$. Comme $2^6=64$ et
-   $2^7=128$, il faut au moins $n=7$ lancers.
+a) Le complémentaire est « aucun 6 » : $5^3=125$ suites sur $6^3=216$.
+   La probabilité est $1-125/216=91/216\approx 0{,}421$.
+b) Avec $n$ lancers, la probabilité est $1-(5/6)^n$. On veut
+   $(5/6)^n\le 0{,}05$, soit
+   $n\ge\ln 0{,}05/\ln(5/6)\approx 16{,}4$. Il faut au moins $n=17$
+   lancers. (Vérification : $(5/6)^{16}\approx0{,}054$ et
+   $(5/6)^{17}\approx0{,}045$.)
 :::
 
 ### Exercice 18
 
-Paul et Marie lancent un dé à tour de rôle, en commençant par Paul. Le
-premier qui obtient un 6 gagne.
+Ana, Béa et Carl lancent un dé à tour de rôle, dans cet ordre (Ana,
+Béa, Carl, Ana, Béa, …). Le premier qui obtient un 6 gagne.
 
-a) Quelle est la probabilité que Paul gagne à son $k$-ième lancer ?
-b) Quelle est la probabilité que Paul gagne ?
-c) Quelle est la probabilité que Marie gagne ?
+a) Quelle est la probabilité qu'Ana gagne à son $k$-ième lancer ?
+b) Quelle est la probabilité qu'Ana gagne ?
+c) Quelle est la probabilité que Béa gagne ? que Carl gagne ?
 d) Quelle est la probabilité que le jeu ne se termine jamais ?
 
 *On admet que les $k$ premiers lancers forment $6^k$ suites
 équiprobables.*
 
 ::: {.corrige}
-a) Paul gagne à son $k$-ième lancer si les $2(k-1)$ lancers précédents ne
+a) Ana gagne à son $k$-ième lancer si les $3(k-1)$ lancers précédents ne
    donnent pas de 6 et que le lancer suivant en donne un :
-   $$p_k=\left(\frac56\right)^{2(k-1)}\frac16 .$$
+   $$p_k=\left(\frac56\right)^{3(k-1)}\frac16 .$$
 b) Ces événements sont deux à deux incompatibles, donc
-   $$\mathbb{P}(\text{Paul gagne})=\sum_{k\ge 1}\frac16\left(\frac{25}{36}\right)^{k-1}=\frac{1/6}{1-25/36}=\frac{6}{11}.$$
-c) Marie gagne à son $k$-ième lancer avec probabilité
-   $(5/6)^{2k-1}\cdot\frac16=\frac56\,p_k$, d'où
-   $\mathbb{P}(\text{Marie gagne})=\frac56\cdot\frac{6}{11}=\frac{5}{11}$.
-d) $6/11+5/11=1$ : le jeu se termine avec probabilité 1, donc il ne se
-   termine jamais avec probabilité 0.
+   $$\mathbb{P}(\text{Ana gagne})=\sum_{k\ge 1}\frac16\left(\frac{125}{216}\right)^{k-1}=\frac{1/6}{1-125/216}=\frac{36}{91}\approx0{,}396.$$
+c) Béa gagne à son $k$-ième lancer avec probabilité $\frac56\,p_k$ (un
+   lancer raté de plus, celui d'Ana), et Carl avec probabilité
+   $\left(\frac56\right)^2p_k$. Donc
+   $\mathbb{P}(\text{Béa gagne})=\frac56\cdot\frac{36}{91}=\frac{30}{91}$
+   et $\mathbb{P}(\text{Carl gagne})=\frac{25}{36}\cdot\frac{36}{91}=\frac{25}{91}$.
+d) $\frac{36+30+25}{91}=1$ : le jeu se termine avec probabilité 1, donc
+   il ne se termine jamais avec probabilité 0. Jouer en premier donne un
+   avantage.
 :::
 
 ### Exercice 19

@@ -19,34 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{belisle}{book}{}{}
+    \entry{CantorEscalier}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=6b1fb8f44cef5329ed9a763e63e527ac}{%
-           family={Bélisle},
-           familyi={B\bibinitperiod},
-           given={Claude},
-           giveni={C\bibinitperiod}}}%
+        {{hash=b0f38e3e7a99226021c6c24ea9f7749c}{%
+           family={Theon},
+           familyi={T\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Université Laval}%
-      }
-      \strng{namehash}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{fullhash}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{fullhashraw}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{bibnamehash}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{authorbibnamehash}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{authornamehash}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{authorfullhash}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \strng{authorfullhashraw}{6b1fb8f44cef5329ed9a763e63e527ac}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \strng{namehash}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{fullhash}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{fullhashraw}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{bibnamehash}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{authorbibnamehash}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{authornamehash}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{authorfullhash}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \strng{authorfullhashraw}{b0f38e3e7a99226021c6c24ea9f7749c}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{STT-1500 : Probabilités}
-      \field{year}{2021}
+      \field{note}{CC BY-SA 3.0, via Wikimedia Commons. Document consulté le 18 février 2025}
+      \field{title}{A graph of the Cantor function}
+      \verb{urlraw}
+      \verb https://commons.wikimedia.org/wiki/File:CantorEscalier.svg
+      \endverb
+      \verb{url}
+      \verb https://commons.wikimedia.org/wiki/File:CantorEscalier.svg
+      \endverb
     \endentry
   \enddatalist
-  \missing{CantorEscalier}
 \endrefsection
 \endinput
 

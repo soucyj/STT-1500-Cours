@@ -157,7 +157,7 @@ Soit $\Omega=\{a,b,c\}$ et $\mathcal{T}=\mathcal{P}(\Omega)$. Pour chacune
 des fonctions suivantes, dites si c'est une mesure de probabilité.
 
 a) $Q_1(A)=|A|/3$.
-b) $Q_2(A)=(|A|/3)^2$.
+b) $Q_2(A)=1$ si $A\neq\emptyset$, et $Q_2(\emptyset)=0$.
 c) $Q_3(A)=1$ si $a\in A$, et $Q_3(A)=0$ sinon.
 
 ::: {.corrige}
@@ -165,8 +165,8 @@ Sur un ensemble fini, la $\sigma$-additivité se ramène à l'additivité
 finie (seul un nombre fini des $A_k$ peuvent être non vides).
 
 a) Oui : c'est la probabilité uniforme, de poids $1/3$.
-b) Non : $Q_2(\Omega)=1$ et $Q_2\ge0$, mais
-   $Q_2(\{a,b\})=4/9\neq Q_2(\{a\})+Q_2(\{b\})=2/9$.
+b) Non : $Q_2\ge0$ et $Q_2(\Omega)=1$, mais
+   $Q_2(\{a,b\})=1\neq Q_2(\{a\})+Q_2(\{b\})=2$.
 c) Oui : c'est la probabilité donnée par les poids $p(a)=1$ et
    $p(b)=p(c)=0$. Elle décrit une expérience dont le résultat est
    toujours $a$.
@@ -174,25 +174,26 @@ c) Oui : c'est la probabilité donnée par les poids $p(a)=1$ et
 
 ### Exercice 8
 
-Soit $\mathbb{P}_1$ et $\mathbb{P}_2$ deux mesures de probabilité sur
-$(\Omega,\mathcal{T})$ et $\lambda\in[0,1]$. Montrez que
-$Q=\lambda\,\mathbb{P}_1+(1-\lambda)\,\mathbb{P}_2$ est une mesure de
-probabilité.
+Soit $\mathbb{P}_1$, $\mathbb{P}_2$ et $\mathbb{P}_3$ trois mesures de
+probabilité sur $(\Omega,\mathcal{T})$, et $w_1,w_2,w_3\ge0$ des poids
+tels que $w_1+w_2+w_3=1$. Montrez que
+$$Q=w_1\,\mathbb{P}_1+w_2\,\mathbb{P}_2+w_3\,\mathbb{P}_3$$
+est une mesure de probabilité.
 
-*Interprétation : on lance une pièce qui donne pile avec probabilité
-$\lambda$ ; selon le résultat, on réalise l'expérience décrite par
-$\mathbb{P}_1$ ou par $\mathbb{P}_2$. L'exemple du feu de circulation
-(module 05) est de ce type.*
+*Interprétation : on commence par un tirage qui donne $i$ avec
+probabilité $w_i$ (par exemple, un dé : 1 ou 2 donne $i=1$, 3 donne
+$i=2$, 4, 5 ou 6 donne $i=3$) ; on réalise ensuite l'expérience décrite
+par $\mathbb{P}_i$. On parle d'un mélange. L'exemple du feu de
+circulation (module 05) est de ce type.*
 
 ::: {.corrige}
-1. $Q(A)=\lambda\,\mathbb{P}_1(A)+(1-\lambda)\,\mathbb{P}_2(A)\ge0$, car
-   les deux termes sont des produits de nombres positifs.
-2. $Q(\Omega)=\lambda+(1-\lambda)=1$.
+1. $Q(A)=\sum_iw_i\,\mathbb{P}_i(A)\ge0$, car chaque terme est un produit
+   de nombres positifs.
+2. $Q(\Omega)=w_1+w_2+w_3=1$.
 3. Si les $A_k$ sont deux à deux incompatibles,
-   $$Q\Bigl(\bigcup_kA_k\Bigr)=\lambda\sum_k\mathbb{P}_1(A_k)+(1-\lambda)\sum_k\mathbb{P}_2(A_k)=\sum_kQ(A_k),$$
-   en utilisant la $\sigma$-additivité de $\mathbb{P}_1$ et de
-   $\mathbb{P}_2$ (on peut additionner deux séries convergentes terme à
-   terme).
+   $$Q\Bigl(\bigcup_kA_k\Bigr)=\sum_{i=1}^3w_i\sum_k\mathbb{P}_i(A_k)=\sum_k\sum_{i=1}^3w_i\,\mathbb{P}_i(A_k)=\sum_kQ(A_k),$$
+   en utilisant la $\sigma$-additivité de chaque $\mathbb{P}_i$ (on peut
+   additionner terme à terme un nombre fini de séries convergentes).
 :::
 
 ### Exercice 9
@@ -272,23 +273,27 @@ dénombrable.
 
 ### Exercice 13
 
-On lance indéfiniment un dé équilibré, et les lancers sont indépendants.
+On tire indéfiniment une carte d'un jeu ordinaire de 52 cartes, en la
+remettant dans le jeu après chaque tirage. Les tirages sont
+indépendants.
 
 a) À l'aide de la continuité des probabilités, montrez que la
-   probabilité de ne jamais obtenir de 6 vaut 0.
-b) Calculez la probabilité que le premier 6 apparaisse à un lancer de
+   probabilité de ne jamais tirer d'as vaut 0.
+b) Calculez la probabilité que le premier as apparaisse à un tirage de
    rang pair.
 
 ::: {.corrige}
-a) Soit $A_n$ l'événement « aucun 6 lors des $n$ premiers lancers ».
-   Alors $\mathbb{P}(A_n)=(5/6)^n$, la suite est décroissante et
-   $\bigcap_nA_n$ est l'événement « jamais de 6 ». Par continuité,
-   sa probabilité est $\lim_n(5/6)^n=0$.
-b) Le premier 6 apparaît au lancer $m$ avec probabilité
-   $(5/6)^{m-1}(1/6)$. Ces événements sont incompatibles, donc
-   $$\sum_{k\ge1}\Bigl(\frac56\Bigr)^{2k-1}\frac16=\frac16\cdot\frac56\cdot\frac{1}{1-25/36}=\frac{5}{36}\cdot\frac{36}{11}=\frac5{11}.$$
-   Comme la probabilité de ne jamais obtenir de 6 est nulle, le rang est
-   impair avec probabilité $6/11$.
+Chaque tirage donne un as avec probabilité $4/52=1/13$.
+
+a) Soit $A_n$ l'événement « aucun as lors des $n$ premiers tirages ».
+   Alors $\mathbb{P}(A_n)=(12/13)^n$, la suite est décroissante et
+   $\bigcap_nA_n$ est l'événement « jamais d'as ». Par continuité,
+   sa probabilité est $\lim_n(12/13)^n=0$.
+b) Le premier as apparaît au tirage $m$ avec probabilité
+   $(12/13)^{m-1}(1/13)$. Ces événements sont incompatibles, donc
+   $$\sum_{k\ge1}\Bigl(\frac{12}{13}\Bigr)^{2k-1}\frac1{13}=\frac{1}{13}\cdot\frac{12}{13}\cdot\frac{1}{1-144/169}=\frac{12}{169}\cdot\frac{169}{25}=\frac{12}{25}.$$
+   Comme la probabilité de ne jamais tirer d'as est nulle, le rang est
+   impair avec probabilité $13/25$.
 :::
 
 ### Exercice 14
@@ -298,20 +303,26 @@ de probabilité sur $(\mathbb{R},\mathcal{B})$ telle que
 $\mathbb{P}([a,b])=b-a$ pour $0\le a\le b\le1$.
 
 a) À l'aide d'une suite croissante d'intervalles fermés, montrez que
-   $\mathbb{P}([0,\frac12[)=\frac12$.
-b) Montrez que $\mathbb{P}(\mathbb{Q}\cap[0,1])=0$, en utilisant le fait
-   que $\mathbb{P}(\{x\})=0$ pour tout $x$.
-c) Quelle est la probabilité de choisir un nombre irrationnel ?
+   $\mathbb{P}(]0,\frac13])=\frac13$.
+b) Soit $D$ l'ensemble des nombres de $[0,1]$ qui ont un développement
+   décimal fini (comme $0{,}25$ ou $0{,}375$). Montrez que
+   $\mathbb{P}(D)=0$, en utilisant le fait que $\mathbb{P}(\{x\})=0$ pour
+   tout $x$.
+c) Quelle est la probabilité de choisir un nombre dont le développement
+   décimal est infini ?
 
 ::: {.corrige}
-a) $A_n=[0,\frac12-\frac1n]$ (pour $n\ge2$) est une suite croissante dont
-   l'union est $[0,\frac12[$. Par continuité,
-   $\mathbb{P}([0,\frac12[)=\lim_n(\frac12-\frac1n)=\frac12$.
-b) $\mathbb{Q}\cap[0,1]=\{q_1,q_2,\dots\}$ est dénombrable. Par
+a) $A_n=[\frac1n,\frac13]$ (pour $n\ge3$) est une suite croissante dont
+   l'union est $]0,\frac13]$. Par continuité,
+   $\mathbb{P}(]0,\frac13])=\lim_n(\frac13-\frac1n)=\frac13$.
+b) $D$ est l'ensemble des nombres $k/10^n$ avec $n\ge0$ et
+   $0\le k\le10^n$ : c'est une union dénombrable d'ensembles finis, donc
+   un ensemble dénombrable $\{d_1,d_2,\dots\}$. Par
    $\sigma$-additivité,
-   $\mathbb{P}(\mathbb{Q}\cap[0,1])=\sum_k\mathbb{P}(\{q_k\})=0$.
+   $\mathbb{P}(D)=\sum_k\mathbb{P}(\{d_k\})=0$.
 c) Par complément (dans $[0,1]$, de probabilité 1), la probabilité est
-   1. Pourtant, il y a des rationnels partout dans $[0,1]$.
+   1. Pourtant, il y a des nombres de $D$ dans tout intervalle de
+   $[0,1]$, aussi petit soit-il.
 :::
 
 ### Exercice 15

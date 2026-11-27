@@ -44,25 +44,28 @@ b) « Au moins un 6 » contient $36-25=11$ couples. Parmi eux, ceux dont
 
 ### Exercice 2
 
-Une famille a deux enfants. On suppose que les quatre possibilités
-(fille ou garçon pour l'aîné, fille ou garçon pour le cadet) sont
+Une famille a trois enfants. On suppose que les huit possibilités (fille
+ou garçon pour chacun des enfants, de l'aîné au cadet) sont
 équiprobables.
 
 a) Sachant que la famille a au moins une fille, quelle est la
-   probabilité qu'elle ait deux filles ?
+   probabilité qu'elle ait au moins deux filles ?
 b) Sachant que l'aînée est une fille, quelle est la probabilité que la
-   famille ait deux filles ?
+   famille ait au moins deux filles ?
 c) Expliquez en une phrase pourquoi les deux réponses diffèrent.
 
 ::: {.corrige}
-On note $\Omega=\{FF,FG,GF,GG\}$, la première lettre désignant l'aîné.
+On note $\Omega=\{F,G\}^3$, la première lettre désignant l'aîné.
 
-a) « Au moins une fille » $=\{FF,FG,GF\}$ : la probabilité est $1/3$.
-b) « L'aînée est une fille » $=\{FF,FG\}$ : la probabilité est $1/2$.
-c) L'information « au moins une fille » élimine un seul des quatre cas
-   ($GG$), alors que « l'aînée est une fille » en élimine deux. Les
-   ensembles par lesquels on conditionne ne sont pas les mêmes, donc
-   les probabilités non plus.
+a) « Au moins une fille » contient les 7 cas autres que $GGG$. Parmi
+   eux, « au moins deux filles » en contient 4 : $FFF$, $FFG$, $FGF$,
+   $GFF$. La probabilité est $4/7$.
+b) « L'aînée est une fille » $=\{FFF,FFG,FGF,FGG\}$, dont 3 cas ont au
+   moins deux filles. La probabilité est $3/4$.
+c) Les ensembles par lesquels on conditionne ne sont pas les mêmes :
+   savoir *quel* enfant est une fille laisse moins de cas possibles que
+   savoir seulement qu'il y a une fille, et les proportions de cas
+   favorables diffèrent.
 :::
 
 ### Exercice 3
@@ -158,65 +161,68 @@ b) Il reste à placer 2 piles parmi 8 positions :
 
 ### Exercice 7
 
-Une urne contient 4 boules rouges et 6 boules noires. On pige 3 boules
+Un sac contient 5 jetons rouges et 3 jetons verts. On pige 3 jetons
 successivement, sans remise.
 
-a) Quelle est la probabilité que les trois boules soient rouges ?
-b) Quelle est la probabilité que la première boule noire soit obtenue au
+a) Quelle est la probabilité que les trois jetons soient verts ?
+b) Quelle est la probabilité que le premier jeton rouge soit obtenu au
    troisième tirage ?
-c) Quelle est la probabilité d'obtenir exactement une boule noire ?
+c) Quelle est la probabilité d'obtenir exactement un jeton rouge ?
 
 ::: {.corrige}
-On note $R_i$ (resp. $N_i$) l'événement « la $i$-ième boule est rouge
-(resp. noire) ».
+On note $R_i$ (resp. $V_i$) l'événement « le $i$-ième jeton est rouge
+(resp. vert) ».
 
-a) $\mathbb{P}(R_1\cap R_2\cap R_3)=\dfrac4{10}\cdot\dfrac39\cdot\dfrac28=\dfrac1{30}$.
-b) $\mathbb{P}(R_1\cap R_2\cap N_3)=\dfrac4{10}\cdot\dfrac39\cdot\dfrac68=\dfrac1{10}$.
-c) La boule noire peut sortir en position 1, 2 ou 3. Chacune des trois
-   suites $NRR$, $RNR$, $RRN$ a la même probabilité
-   $\frac{6\cdot4\cdot3}{10\cdot9\cdot8}=\frac1{10}$ (seul l'ordre des
-   facteurs du numérateur change). La probabilité est $3/10$.
-   Vérification par dénombrement : $\binom61\binom42/\binom{10}3=36/120=3/10$.
+a) $\mathbb{P}(V_1\cap V_2\cap V_3)=\dfrac38\cdot\dfrac27\cdot\dfrac16=\dfrac1{56}$.
+b) $\mathbb{P}(V_1\cap V_2\cap R_3)=\dfrac38\cdot\dfrac27\cdot\dfrac56=\dfrac5{56}$.
+c) Le jeton rouge peut sortir en position 1, 2 ou 3. Chacune des trois
+   suites $RVV$, $VRV$, $VVR$ a la même probabilité
+   $\frac{5\cdot3\cdot2}{8\cdot7\cdot6}=\frac5{56}$ (seul l'ordre des
+   facteurs du numérateur change). La probabilité est $15/56$.
+   Vérification par dénombrement : $\binom51\binom32/\binom83=15/56$.
 :::
 
 ### Exercice 8
 
-Vous avez 5 clés et une seule ouvre la porte. Vous les essayez une à une,
-au hasard, en mettant de côté celles qui ont échoué. Montrez que la
-probabilité que la porte s'ouvre exactement au $k$-ième essai vaut
-$1/5$, pour $k=1,\dots,5$.
+Vous avez noté 7 mots de passe possibles pour un vieux compte, et un
+seul est le bon. Vous les essayez un à un, au hasard, sans jamais
+réessayer un mot de passe refusé. Montrez que la probabilité que le
+compte s'ouvre exactement au $k$-ième essai vaut $1/7$, pour
+$k=1,\dots,7$.
 
 ::: {.corrige}
-Soit $E_i$ l'événement « le $i$-ième essai échoue ». Par la règle de
-multiplication, la porte s'ouvre au $k$-ième essai avec probabilité
-$$\frac45\cdot\frac34\cdots\frac{5-k+1}{5-k+2}\cdot\frac{1}{5-k+1}.$$
+Par la règle de multiplication, les $k-1$ premiers essais échouent et
+le $k$-ième réussit avec probabilité
+$$\frac67\cdot\frac56\cdots\frac{7-k+1}{7-k+2}\cdot\frac{1}{7-k+1}.$$
 Le produit est télescopique : chaque numérateur se simplifie avec le
-dénominateur suivant, et il reste $1/5$.
+dénominateur suivant, et il reste $1/7$.
 
-Autre point de vue : l'ordre dans lequel on essaie les clés est une
-permutation au hasard des 5 clés. La bonne clé occupe chacune des 5
-positions avec la même probabilité.
+Autre point de vue : l'ordre dans lequel on essaie les mots de passe est
+une permutation au hasard des 7 mots de passe. Le bon occupe chacune des
+7 positions avec la même probabilité.
 :::
 
 ### Exercice 9
 
-Quatre personnes sont choisies au hasard. On suppose que chacune est née
-un jour de la semaine choisi au hasard, indépendamment des autres.
-Calculez, à l'aide de la règle de multiplication, la probabilité que les
-quatre soient nées des jours différents.
+Six amis choisissent chacun, au hasard et indépendamment, l'une des 10
+saveurs d'un bar laitier. Calculez, à l'aide de la règle de
+multiplication, la probabilité que les six saveurs choisies soient
+toutes différentes.
 
 ::: {.corrige}
-Soit $E_i$ l'événement « la $i$-ième personne est née un jour différent
-de ceux des $i-1$ premières ». Alors
-$$\mathbb{P}(E_2\cap E_3\cap E_4)=1\cdot\frac67\cdot\frac57\cdot\frac47=\frac{120}{343}\approx 0{,}350.$$
-C'est le même calcul que $7\cdot6\cdot5\cdot4/7^4$ par dénombrement.
+Soit $E_i$ l'événement « le $i$-ième ami choisit une saveur différente
+de celles des $i-1$ premiers ». Alors
+$$\mathbb{P}(E_2\cap\dots\cap E_6)=1\cdot\frac9{10}\cdot\frac8{10}\cdot\frac7{10}\cdot\frac6{10}\cdot\frac5{10}=0{,}1512.$$
+C'est le même calcul que $10\cdot9\cdot8\cdot7\cdot6\cdot5/10^6$ par
+dénombrement. Même avec 10 saveurs pour 6 personnes, une répétition est
+très probable.
 :::
 
 ### Exercice 10
 
-Une urne contient 2 boules blanches et 1 boule noire. On pige une boule,
-on la remet dans l'urne et on ajoute une boule *de la même couleur*. On
-pige ensuite une deuxième boule.
+Une urne contient 3 boules blanches et 2 boules noires. On pige une
+boule, on la remet dans l'urne et on ajoute *deux* boules de la même
+couleur. On pige ensuite une deuxième boule.
 
 a) Quelle est la probabilité que les deux boules pigées soient
    blanches ?
@@ -225,10 +231,10 @@ c) Comparez cette probabilité avec la probabilité que la première boule
    soit blanche.
 
 ::: {.corrige}
-a) $\mathbb{P}(B_1\cap B_2)=\mathbb{P}(B_1)\,\mathbb{P}(B_2\mid B_1)=\dfrac23\cdot\dfrac34=\dfrac12$.
+a) $\mathbb{P}(B_1\cap B_2)=\mathbb{P}(B_1)\,\mathbb{P}(B_2\mid B_1)=\dfrac35\cdot\dfrac57=\dfrac37$.
 b) Par la loi des probabilités totales, en conditionnant sur la première
    boule :
-   $$\mathbb{P}(B_2)=\frac23\cdot\frac34+\frac13\cdot\frac24=\frac12+\frac16=\frac23.$$
+   $$\mathbb{P}(B_2)=\frac35\cdot\frac57+\frac25\cdot\frac37=\frac{15}{35}+\frac{6}{35}=\frac35.$$
 c) C'est exactement $\mathbb{P}(B_1)$. Le résultat de la deuxième pige
    dépend de la première, mais sa probabilité, quand on ne connaît pas
    la première, est la même.
@@ -238,56 +244,55 @@ c) C'est exactement $\mathbb{P}(B_1)$. Le résultat de la deuxième pige
 
 ### Exercice 11
 
-Une usine fabrique des pièces sur trois machines. La machine $A$ produit
-50 % des pièces, $B$ en produit 30 % et $C$ 20 %. Les proportions de
-pièces défectueuses sont de 2 % pour $A$, 3 % pour $B$ et 5 % pour $C$.
+Un hôpital achète ses masques chez trois fournisseurs : 45 % viennent
+du fournisseur $A$, 35 % de $B$ et 20 % de $C$. Les proportions de
+masques défectueux sont de 1 % chez $A$, 2 % chez $B$ et 4 % chez $C$.
 
-a) Quelle est la probabilité qu'une pièce choisie au hasard soit
-   défectueuse ?
-b) Une pièce choisie au hasard est défectueuse. Quelle est la
-   probabilité qu'elle provienne de chacune des machines ?
+a) Quelle est la probabilité qu'un masque choisi au hasard soit
+   défectueux ?
+b) Un masque choisi au hasard est défectueux. Quelle est la probabilité
+   qu'il provienne de chacun des fournisseurs ?
 
 ::: {.corrige}
-On note $D$ l'événement « la pièce est défectueuse ».
+On note $D$ l'événement « le masque est défectueux ».
 
 a) Par la loi des probabilités totales,
-   $$\mathbb{P}(D)=0{,}5\cdot0{,}02+0{,}3\cdot0{,}03+0{,}2\cdot0{,}05=0{,}010+0{,}009+0{,}010=0{,}029.$$
+   $$\mathbb{P}(D)=0{,}45\cdot0{,}01+0{,}35\cdot0{,}02+0{,}2\cdot0{,}04=0{,}0045+0{,}007+0{,}008=0{,}0195.$$
 b) Par le théorème de Bayes,
-   $\mathbb{P}(A\mid D)=0{,}010/0{,}029=10/29\approx0{,}345$,
-   $\mathbb{P}(B\mid D)=9/29\approx0{,}310$ et
-   $\mathbb{P}(C\mid D)=10/29\approx0{,}345$.
-   La machine $C$ produit peu de pièces, mais ses pièces sont souvent
-   défectueuses : elle est responsable d'autant de défauts que $A$.
+   $\mathbb{P}(A\mid D)=0{,}0045/0{,}0195=3/13\approx0{,}231$,
+   $\mathbb{P}(B\mid D)=14/39\approx0{,}359$ et
+   $\mathbb{P}(C\mid D)=16/39\approx0{,}410$.
+   Le fournisseur $C$ livre le moins de masques, mais c'est de lui que
+   vient la plus grande part des masques défectueux.
 :::
 
 ### Exercice 12
 
-Une maladie touche 1 % de la population. Un test de dépistage donne un
-résultat positif chez 95 % des personnes malades et chez 10 % des
-personnes saines.
+Lors d'une compétition, 2 % des athlètes sont dopés. Le test
+antidopage donne un résultat positif chez 98 % des athlètes dopés et
+chez 3 % des athlètes qui ne le sont pas.
 
-a) Quelle proportion de la population obtient un résultat positif ?
-b) Une personne obtient un résultat positif. Quelle est la probabilité
-   qu'elle soit malade ?
-c) Cette personne passe un second test. On suppose que, *sachant son état
-   (malade ou saine)*, les deux résultats sont indépendants. Le second
-   test est aussi positif. Quelle est maintenant la probabilité qu'elle
-   soit malade ?
+a) Quelle proportion des athlètes obtient un résultat positif ?
+b) Un athlète obtient un résultat positif. Quelle est la probabilité
+   qu'il soit dopé ?
+c) L'athlète passe une contre-expertise. On suppose que, *sachant son
+   état (dopé ou non)*, les deux résultats sont indépendants. La
+   contre-expertise est aussi positive. Quelle est maintenant la
+   probabilité qu'il soit dopé ?
 
 ::: {.corrige}
-On note $M$ l'événement « la personne est malade » et $T$ l'événement
+On note $D$ l'événement « l'athlète est dopé » et $T$ l'événement
 « le test est positif ».
 
-a) $\mathbb{P}(T)=0{,}01\cdot0{,}95+0{,}99\cdot0{,}10=0{,}0095+0{,}099=0{,}1085$.
-b) $\mathbb{P}(M\mid T)=0{,}0095/0{,}1085\approx0{,}088$. Moins de 9 %
-   des personnes ayant un résultat positif sont malades, car les faux
-   positifs (9,9 % de la population) sont beaucoup plus nombreux que les
-   vrais positifs (0,95 %).
-c) Sachant $M$, deux tests positifs ont probabilité $0{,}95^2$ ; sachant
-   $M^c$, ils ont probabilité $0{,}10^2$. Donc
-   $$\mathbb{P}(M\mid T_1\cap T_2)=\frac{0{,}01\cdot0{,}9025}{0{,}01\cdot0{,}9025+0{,}99\cdot0{,}01}=\frac{0{,}009025}{0{,}018925}\approx0{,}477.$$
+a) $\mathbb{P}(T)=0{,}02\cdot0{,}98+0{,}98\cdot0{,}03=0{,}0196+0{,}0294=0{,}049$.
+b) $\mathbb{P}(D\mid T)=0{,}0196/0{,}049=0{,}4$. Seulement 40 % des
+   athlètes positifs sont dopés, car les faux positifs (2,94 % des
+   athlètes) sont plus nombreux que les vrais positifs (1,96 %).
+c) Sachant $D$, deux tests positifs ont probabilité $0{,}98^2$ ; sachant
+   $D^c$, ils ont probabilité $0{,}03^2$. Donc
+   $$\mathbb{P}(D\mid T_1\cap T_2)=\frac{0{,}02\cdot0{,}9604}{0{,}02\cdot0{,}9604+0{,}98\cdot0{,}0009}=\frac{0{,}019208}{0{,}02009}\approx0{,}956.$$
    On obtient le même résultat en appliquant Bayes une deuxième fois, avec
-   $0{,}088$ comme nouvelle probabilité d'être malade.
+   $0{,}4$ comme nouvelle probabilité d'être dopé.
 :::
 
 ### Exercice 13
@@ -336,10 +341,10 @@ a) À l'aide du théorème de Bayes, calculez la probabilité que la voiture
    soit derrière la porte 2.
 b) Avez-vous intérêt à changer de porte ?
 
-On joue maintenant avec 4 portes et une seule voiture. Vous choisissez
+On joue maintenant avec 5 portes et une seule voiture. Vous choisissez
 une porte, puis l'animateur ouvre une autre porte cachant une chèvre.
 
-c) Vous changez pour l'une des deux autres portes encore fermées,
+c) Vous changez pour l'une des trois autres portes encore fermées,
    choisie au hasard. Quelle est votre probabilité de gagner ?
 d) Quelle est votre probabilité de gagner si vous gardez votre porte ?
 e) Quelle stratégie est la meilleure ?
@@ -357,37 +362,37 @@ b) Oui : la voiture est derrière votre porte avec probabilité
    $\mathbb{P}(V_1\mid O_3)=1-\frac23=\frac13$. Changer de porte double
    vos chances : $2/3$ contre $1/3$.
 c) Vous gagnez seulement si votre premier choix était mauvais
-   (probabilité $3/4$). Dans ce cas, la voiture est derrière l'une des
-   deux portes fermées restantes et vous la trouvez avec probabilité
-   $1/2$. La probabilité est $\frac34\cdot\frac12=\frac38$.
-d) Vous gagnez si votre premier choix était le bon : $1/4$.
-e) Changer de porte : $3/8>1/4=2/8$.
+   (probabilité $4/5$). Dans ce cas, la voiture est derrière l'une des
+   trois portes fermées restantes et vous la trouvez avec probabilité
+   $1/3$. La probabilité est $\frac45\cdot\frac13=\frac4{15}$.
+d) Vous gagnez si votre premier choix était le bon : $1/5=3/15$.
+e) Changer de porte : $4/15>3/15$.
 :::
 
 ### Exercice 16
 
-À un examen à choix multiples, chaque question a 4 choix de réponse. Un
-étudiant connaît la réponse à une question avec probabilité $0{,}6$ ;
-sinon, il répond au hasard. Il a bien répondu à une question. Quelle est
-la probabilité qu'il ait connu la réponse ?
+À un jeu-questionnaire, chaque question a 5 choix de réponse. Une
+candidate connaît la réponse à une question avec probabilité $0{,}7$ ;
+sinon, elle répond au hasard. Elle a bien répondu à une question. Quelle
+est la probabilité qu'elle ait connu la réponse ?
 
 ::: {.corrige}
-On note $C$ l'événement « il connaît la réponse » et $B$ l'événement
-« il répond correctement ».
-$$\mathbb{P}(C\mid B)=\frac{0{,}6\cdot1}{0{,}6\cdot1+0{,}4\cdot\frac14}=\frac{0{,}6}{0{,}7}=\frac67\approx0{,}857.$$
+On note $C$ l'événement « elle connaît la réponse » et $B$ l'événement
+« elle répond correctement ».
+$$\mathbb{P}(C\mid B)=\frac{0{,}7\cdot1}{0{,}7\cdot1+0{,}3\cdot\frac15}=\frac{0{,}7}{0{,}76}=\frac{35}{38}\approx0{,}921.$$
 :::
 
 ### Exercice 17
 
-Une boîte contient trois pièces de monnaie : deux sont équilibrées et la
-troisième a deux côtés pile. On choisit une pièce au hasard et on la
-lance deux fois. On obtient deux fois pile. Quelle est la probabilité
-d'avoir choisi la pièce à deux côtés pile ?
+Un sac contient quatre dés : trois dés ordinaires et un dé truqué dont
+les six faces portent un 6. On choisit un dé au hasard et on le lance
+deux fois. On obtient deux 6. Quelle est la probabilité d'avoir choisi
+le dé truqué ?
 
 ::: {.corrige}
-On note $T$ l'événement « on a choisi la pièce truquée » et $PP$
-l'événement « on obtient deux fois pile ».
-$$\mathbb{P}(T\mid PP)=\frac{\frac13\cdot1}{\frac13\cdot1+\frac23\cdot\frac14}=\frac{1/3}{1/2}=\frac23.$$
+On note $T$ l'événement « on a choisi le dé truqué » et $S$ l'événement
+« on obtient deux 6 ».
+$$\mathbb{P}(T\mid S)=\frac{\frac14\cdot1}{\frac14\cdot1+\frac34\cdot\frac1{36}}=\frac{1/4}{13/48}=\frac{12}{13}\approx0{,}923.$$
 :::
 
 ## Indépendance
@@ -449,27 +454,29 @@ b) Si $\mathbb{P}(A)=0$, alors $0\le\mathbb{P}(A\cap B)\le\mathbb{P}(A)=0$,
 
 ### Exercice 21
 
-Un appareil est formé de composantes qui fonctionnent indépendamment
-les unes des autres, chacune avec probabilité $0{,}9$.
+Un réseau est formé de composantes qui fonctionnent indépendamment les
+unes des autres, chacune avec probabilité $0{,}8$.
 
-a) Le circuit est formé de la composante 1 *en série* avec un bloc de
-   deux composantes 2 et 3 placées *en parallèle*. Il fonctionne si la
-   composante 1 fonctionne et si au moins une des composantes 2 ou 3
-   fonctionne. Quelle est la probabilité qu'il fonctionne ?
-b) Le circuit est formé de deux branches placées en parallèle. Chaque
-   branche contient deux composantes en série : 1 et 2 dans la première,
-   3 et 4 dans la seconde. Quelle est la probabilité qu'il fonctionne ?
+a) Le réseau est formé de la composante 1 *en parallèle* avec une
+   branche qui contient les composantes 2 et 3 *en série*. Il fonctionne
+   si la composante 1 fonctionne ou si les composantes 2 et 3
+   fonctionnent toutes les deux. Quelle est la probabilité qu'il
+   fonctionne ?
+b) Le réseau est formé de deux blocs placés en série. Chaque bloc
+   contient deux composantes en parallèle : 1 et 2 dans le premier, 3 et
+   4 dans le second. Quelle est la probabilité qu'il fonctionne ?
 
 ::: {.corrige}
 On note $F_i$ l'événement « la composante $i$ fonctionne ».
 
-a) L'événement est $F_1\cap(F_2\cup F_3)$. Par préservation de
-   l'indépendance, $F_1$ et $F_2\cup F_3$ sont indépendants, et
-   $\mathbb{P}(F_2\cup F_3)=1-0{,}1^2=0{,}99$. La probabilité est
-   $0{,}9\cdot0{,}99=0{,}891$.
-b) L'événement est $(F_1\cap F_2)\cup(F_3\cap F_4)$. Chaque branche
-   fonctionne avec probabilité $0{,}81$, et les deux branches sont
-   indépendantes. La probabilité est $1-(1-0{,}81)^2=1-0{,}0361=0{,}9639$.
+a) L'événement est $F_1\cup(F_2\cap F_3)$. Par préservation de
+   l'indépendance, $F_1^c$ et $(F_2\cap F_3)^c$ sont indépendants, et
+   $\mathbb{P}(F_2\cap F_3)=0{,}64$. La probabilité que le réseau tombe
+   en panne est $0{,}2\cdot0{,}36=0{,}072$ ; il fonctionne avec
+   probabilité $0{,}928$.
+b) L'événement est $(F_1\cup F_2)\cap(F_3\cup F_4)$. Chaque bloc
+   fonctionne avec probabilité $1-0{,}2^2=0{,}96$, et les deux blocs
+   sont indépendants. La probabilité est $0{,}96^2=0{,}9216$.
 :::
 
 ### Exercice 22
@@ -496,40 +503,45 @@ $4/6=24/36$.
 
 ### Exercice 23
 
-On lance deux pièces équilibrées. On note $A$ l'événement « la première
-pièce donne pile », $B$ l'événement « la deuxième pièce donne pile » et
-$C$ l'événement « les deux pièces donnent le même résultat ».
+On lance deux dés équilibrés. On note $A$ l'événement « le premier dé
+donne un nombre pair », $B$ l'événement « le deuxième dé donne un nombre
+pair » et $C$ l'événement « la somme des deux dés est paire ».
 
 a) Montrez que $A$, $B$ et $C$ sont indépendants deux à deux.
 b) Sont-ils indépendants ?
 
 ::: {.corrige}
-$\Omega=\{PP,PF,FP,FF\}$, et chacun des trois événements a probabilité
-$1/2$.
+Chacun des trois événements a probabilité $1/2$ (pour $C$ : la somme
+est paire quand les deux dés ont la même parité, soit $9+9=18$ cas sur
+36).
 
-a) $A\cap B=\{PP\}$, $A\cap C=\{PP\}$ et $B\cap C=\{PP\}$ ont chacun
-   probabilité $1/4=\frac12\cdot\frac12$.
-b) Non : $A\cap B\cap C=\{PP\}$ a probabilité $1/4\ne1/8$. Si $A$ et $B$
-   se réalisent, $C$ se réalise forcément. C'est le même phénomène que
-   dans l'exemple de Bernstein vu en classe.
+a) $A\cap B$ (« deux nombres pairs ») contient $3\cdot3=9$ cas ;
+   $A\cap C$ et $B\cap C$ sont aussi égaux à « deux nombres pairs ».
+   Chacun a probabilité $9/36=1/4=\frac12\cdot\frac12$.
+b) Non : $A\cap B\cap C$ est encore « deux nombres pairs », de
+   probabilité $1/4\ne1/8$. Si $A$ et $B$ se réalisent, $C$ se réalise
+   forcément. C'est le même phénomène que dans l'exemple de Bernstein vu
+   en classe.
 :::
 
 ### Exercice 24 **(défi)**
 
-Anne et Bruno lancent à tour de rôle une pièce équilibrée, en commençant
-par Anne. Le premier qui obtient pile gagne. Quelle est la probabilité
-qu'Anne gagne ?
+Anne et Bruno lancent à tour de rôle une fléchette vers une cible, en
+commençant par Anne. Chaque lancer atteint le centre de la cible avec
+probabilité $1/4$, indépendamment des autres. Le premier qui atteint le
+centre gagne. Quelle est la probabilité qu'Anne gagne ?
 
-*Indice : partitionnez selon le numéro du lancer où apparaît le premier
-pile, puis utilisez une série géométrique.*
+*Indice : partitionnez selon le numéro du lancer où le centre est
+atteint pour la première fois, puis utilisez une série géométrique.*
 
 ::: {.corrige}
-Anne gagne si le premier pile apparaît à l'un des lancers $1,3,5,\dots$
-Le premier pile apparaît au lancer $2k+1$ avec probabilité
-$(1/2)^{2k+1}$ (indépendance des lancers). Ces événements sont
+Anne gagne si le centre est atteint pour la première fois à l'un des
+lancers $1,3,5,\dots$ Cela se produit au lancer $2k+1$ avec probabilité
+$(3/4)^{2k}\cdot\frac14$ (indépendance des lancers). Ces événements sont
 incompatibles, donc
-$$\mathbb{P}(\text{Anne gagne})=\sum_{k=0}^\infty\frac{1}{2^{2k+1}}=\frac12\cdot\frac{1}{1-1/4}=\frac23.$$
-Autre méthode : soit $a$ la probabilité cherchée. Si Anne obtient face
-(probabilité $1/2$), c'est Bruno qui se retrouve dans la position
-d'Anne. Donc $a=\frac12+\frac12(1-a)$, d'où $a=2/3$.
+$$\mathbb{P}(\text{Anne gagne})=\sum_{k=0}^\infty\frac14\left(\frac{9}{16}\right)^{k}=\frac14\cdot\frac{1}{1-9/16}=\frac47.$$
+Autre méthode : soit $a$ la probabilité cherchée. Si Anne rate son
+premier lancer (probabilité $3/4$), c'est Bruno qui se retrouve dans la
+position d'Anne. Donc $a=\frac14+\frac34(1-a)$, d'où $a=4/7$.
 :::
+

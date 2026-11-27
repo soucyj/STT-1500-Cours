@@ -22,26 +22,24 @@ est le même que celui des téléphones vu en classe.
 
 ### Exercice 1
 
-Trois filles et trois garçons font la file devant un comptoir de crème
-glacée. On ne s'intéresse qu'à l'ordre des sexes : les enfants d'un même
-sexe ne sont pas distingués (par exemple, FGFGGF est un arrangement).
+On aligne au hasard 4 drapeaux rouges et 2 drapeaux bleus sur un mât à
+6 crochets. Les drapeaux d'une même couleur ne sont pas distingués (par
+exemple, RBRRBR est un arrangement).
 
 a) Combien y a-t-il d'arrangements en tout ?
-b) Combien d'arrangements ont les trois filles ensemble et les trois
-   garçons ensemble ?
-c) Combien d'arrangements ont les trois filles ensemble ?
-d) Combien d'arrangements ont les trois filles ensemble, sans que les
-   garçons soient tous ensemble ?
-e) Combien d'arrangements n'ont jamais deux enfants du même sexe l'un
-   derrière l'autre ?
+b) Combien d'arrangements ont les deux drapeaux bleus côte à côte ?
+c) Combien d'arrangements n'ont jamais deux drapeaux bleus côte à côte ?
+d) Combien d'arrangements ont un drapeau bleu à chaque extrémité ?
+e) Combien d'arrangements ont les quatre drapeaux rouges ensemble ?
 
 ::: {.corrige}
-a) Un arrangement est déterminé par les positions des 3 filles parmi les
-   6 : $\binom63=20$.
-b) FFFGGG ou GGGFFF : 2.
-c) Le bloc FFF commence en position 1, 2, 3 ou 4 : 4 arrangements.
-d) On retire de c) les 2 arrangements de b) : $4-2=2$ (GFFFGG et GGFFFG).
-e) FGFGFG ou GFGFGF : 2.
+a) Un arrangement est déterminé par les positions des 2 drapeaux bleus
+   parmi les 6 : $\binom62=15$.
+b) Le bloc BB commence en position 1, 2, 3, 4 ou 5 : 5 arrangements.
+c) On retire de a) les arrangements de b) : $15-5=10$.
+d) BRRRRB : 1.
+e) Le bloc RRRR commence en position 1, 2 ou 3 : RRRRBB, BRRRRB et
+   BBRRRR, soit 3 arrangements.
 :::
 
 ### Exercice 2
@@ -49,111 +47,135 @@ e) FGFGFG ou GFGFGF : 2.
 Combien de mots différents (ayant un sens ou non) peut-on former en
 permutant les lettres de
 
-a) HASARD ?
-b) STATISTIQUE ?
+a) CANADA ?
+b) PROBABILITE ?
 
 ::: {.corrige}
 On divise $n!$ par les permutations de chaque lettre répétée, qui ne
 changent pas le mot.
 
-a) 6 lettres, dont deux A : $\dfrac{6!}{2!}=360$.
-b) 11 lettres : S deux fois, T trois fois, I deux fois, A, Q, U, E une
-   fois : $\dfrac{11!}{2!\,3!\,2!}=1\,663\,200$.
+a) 6 lettres, dont trois A : $\dfrac{6!}{3!}=120$.
+b) 11 lettres : B deux fois, I deux fois, P, R, O, A, L, T, E une
+   fois : $\dfrac{11!}{2!\,2!}=9\,979\,200$.
 :::
 
 ### Exercice 3
 
-Combien de nombres entre 1000 et 9999 n'ont jamais deux chiffres
-identiques côte à côte ? (Par exemple, 1213 convient, mais pas 1223.)
+Un mot de passe est formé de 6 lettres minuscules (parmi les 26 lettres
+de l'alphabet). Combien de mots de passe n'ont jamais deux lettres
+identiques côte à côte ? (Par exemple, « abacab » convient, mais pas
+« abbaca ».)
 
 ::: {.corrige}
-Premier chiffre : 9 choix (de 1 à 9). Chacun des trois chiffres suivants
-doit seulement différer du précédent : 9 choix chaque fois (le 0 est
-permis). Total : $9^4=6561$.
+Première lettre : 26 choix. Chacune des cinq lettres suivantes doit
+seulement différer de la précédente : 25 choix chaque fois. Total :
+$26\cdot 25^5=253\,906\,250$, soit environ 82 % des $26^6$ mots de passe.
 :::
 
 ### Exercice 4
 
-Combien le nombre $7200$ a-t-il de diviseurs positifs ?
+a) Combien le nombre $10\,800$ a-t-il de diviseurs positifs ?
+b) Combien de ces diviseurs sont pairs ?
 
 *Indice : décomposez-le en facteurs premiers.*
 
 ::: {.corrige}
-$7200=2^5\cdot 3^2\cdot 5^2$. Un diviseur est de la forme
-$2^a3^b5^c$ avec $0\le a\le 5$, $0\le b\le 2$, $0\le c\le 2$ : il y a
-$6\cdot 3\cdot 3=54$ diviseurs.
+$10\,800=2^4\cdot 3^3\cdot 5^2$. Un diviseur est de la forme
+$2^a3^b5^c$ avec $0\le a\le 4$, $0\le b\le 3$, $0\le c\le 2$.
+
+a) $5\cdot 4\cdot 3=60$ diviseurs.
+b) Un diviseur est pair si $a\ge1$ : $4\cdot 4\cdot 3=48$ diviseurs.
 :::
 
 ### Exercice 5
 
-Le cadenas d'un casier a une combinaison de trois nombres choisis parmi
-0, 1, …, 39. Le premier et le troisième nombre peuvent être égaux, mais
-le deuxième doit être différent des deux autres. En classe, on a compté
-$40\cdot 39\cdot 39=60\,840$ combinaisons.
+Un drapeau est formé de trois bandes verticales, colorées avec 5
+couleurs disponibles. Deux bandes voisines doivent être de couleurs
+différentes, mais la première et la troisième peuvent être de la même
+couleur. En classe, on a compté $5\cdot 4\cdot 4=80$ drapeaux, en
+choisissant les bandes de gauche à droite.
 
-Un étudiant propose plutôt : « 40 choix pour le premier, 40 pour le
-troisième, puis 38 pour le deuxième, puisqu'il doit différer des deux
-autres, donc $40\cdot 40\cdot 38=60\,800$. »
+Une étudiante propose plutôt : « 5 choix pour la bande de gauche, 5
+pour celle de droite, puis 3 pour celle du milieu, puisqu'elle doit
+différer des deux autres, donc $5\cdot 5\cdot 3=75$. »
 
 a) Où est l'erreur dans ce raisonnement ?
 b) Corrigez son raisonnement en gardant son ordre de choix.
 
 ::: {.corrige}
-a) Le nombre de choix pour le deuxième nombre dépend des choix
-   précédents : si le premier et le troisième sont égaux, le deuxième
-   n'a qu'une valeur interdite et il reste 39 choix, pas 38. Le principe
-   de multiplication exige que le nombre de choix à chaque étape ne
-   dépende pas des choix précédents.
+a) Le nombre de choix pour la bande du milieu dépend des choix
+   précédents : si les bandes de gauche et de droite sont de la même
+   couleur, une seule couleur est interdite au milieu et il reste 4
+   choix, pas 3. Le principe de multiplication exige que le nombre de
+   choix à chaque étape ne dépende pas des choix précédents.
 b) On sépare les deux cas :
 
-   - premier $=$ troisième : $40\cdot 1\cdot 39$ combinaisons ;
-   - premier $\neq$ troisième : $40\cdot 39\cdot 38$ combinaisons.
+   - gauche $=$ droite : $5\cdot 1\cdot 4=20$ drapeaux ;
+   - gauche $\neq$ droite : $5\cdot 4\cdot 3=60$ drapeaux.
 
-   Total : $40\cdot 39\cdot(1+38)=40\cdot 39\cdot 39=60\,840$.
+   Total : $20+60=80$.
 :::
 
 ### Exercice 6
 
-Nous sommes en 1667. Un bateau arrive à Québec avec 20 filles du roi,
-qui doivent épouser 20 anciens soldats déjà choisis. De combien de
-façons peut-on former les 20 couples ?
+Huit stagiaires doivent être affectés à huit hôpitaux, un stagiaire par
+hôpital.
+
+a) De combien de façons peut-on faire les affectations ?
+b) Combien d'affectations envoient Alice à l'hôpital de Rimouski ?
+c) Si les affectations sont faites au hasard, quelle est la probabilité
+   qu'Alice soit envoyée à Rimouski ?
 
 ::: {.corrige}
-On aligne les soldats dans un ordre fixe et on leur attribue les filles
-une à une : $20\cdot 19\cdots 1=20!\approx 2{,}43\times 10^{18}$
-façons.
+a) On aligne les hôpitaux dans un ordre fixe et on leur attribue les
+   stagiaires un à un : $8!=40\,320$ façons.
+b) Une fois Alice placée, il reste à répartir 7 stagiaires dans 7
+   hôpitaux : $7!=5\,040$.
+c) $7!/8!=1/8$ : chaque hôpital a la même chance d'accueillir Alice.
 :::
 
 ### Exercice 7
 
-Deux femmes et huit hommes s'assoient au hasard sur 10 chaises.
+Trois enfants et six adultes s'assoient au hasard sur 9 chaises.
 
 Dans les questions a) et b), les chaises forment une ligne.
 
-a) Quelle est la probabilité que les deux femmes soient côte à côte ?
-b) Quelle est la probabilité qu'elles occupent les deux extrémités de la
-   ligne ?
+a) Quelle est la probabilité que les trois enfants soient côte à côte ?
+b) Quelle est la probabilité qu'aucun enfant ne soit assis à une
+   extrémité de la ligne ?
 
-Dans les questions c) et d), les chaises forment un cercle.
+Dans les questions c) et d), les chaises sont disposées autour d'une
+table ronde.
 
-c) Quelle est la probabilité que les deux femmes soient côte à côte ?
-d) Quelle est la probabilité qu'elles soient diamétralement opposées ?
-e) **(défi)** Sur une ligne de $n$ chaises, $k$ femmes et $n-k$ hommes
-   s'assoient au hasard. Quelle est la probabilité que les $k$ femmes
-   soient toutes côte à côte ?
+c) Quelle est la probabilité que les trois enfants soient côte à côte ?
+d) Quelle est la probabilité que deux enfants ne soient jamais voisins ?
+e) **(défi)** Sur une ligne de $n$ chaises, $k$ enfants et $n-k$ adultes
+   s'assoient au hasard. Quelle est la probabilité que deux enfants ne
+   soient jamais voisins ?
 
 ::: {.corrige}
-Seules comptent les chaises occupées par les femmes : les
-$\binom{10}{2}=45$ paires de chaises sont équiprobables.
+Seules comptent les chaises occupées par les enfants : les
+$\binom93=84$ ensembles de trois chaises sont équiprobables.
 
-a) Ligne : 9 paires de chaises voisines, d'où $9/45=1/5$.
-b) Une seule paire d'extrémités : $1/45$.
-c) Cercle : 10 paires de chaises voisines, d'où $10/45=2/9$.
-d) Paires de chaises opposées : 5, d'où $5/45=1/9$.
-e) Il y a $\binom nk$ ensembles de chaises équiprobables pour les femmes,
-   et $n-k+1$ blocs de $k$ chaises consécutives (le bloc commence en
-   position $1,\dots,n-k+1$). Probabilité $(n-k+1)\big/\binom nk$. Avec
-   $n=10$ et $k=2$, on retrouve $9/45$.
+a) Ligne : 7 blocs de trois chaises consécutives (le bloc commence en
+   position $1,\dots,7$), d'où $7/84=1/12$.
+b) Les enfants occupent trois des 7 chaises intérieures :
+   $\binom73/84=35/84=5/12$.
+c) Table ronde : 9 blocs de trois chaises consécutives, d'où
+   $9/84=3/28$.
+d) On fixe une chaise $c$. Si un enfant y est assis, ses deux voisines
+   sont occupées par des adultes et les deux autres enfants occupent
+   deux chaises non voisines parmi les 6 chaises restantes, qui forment
+   une ligne : $\binom62-5=10$ façons. Chaque ensemble favorable est
+   ainsi compté une fois pour chacun de ses 3 enfants, et il y a 9
+   choix de $c$ : $9\cdot 10/3=30$ ensembles. Probabilité
+   $30/84=5/14$.
+e) Un ensemble de $k$ chaises sans voisines, $c_1<c_2<\dots<c_k$,
+   correspond à l'ensemble $\{c_1,\,c_2-1,\,c_3-2,\dots,c_k-(k-1)\}$ de
+   $k$ nombres distincts entre 1 et $n-k+1$, et réciproquement. La
+   probabilité est donc
+   $$\binom{n-k+1}{k}\Big/\binom nk .$$
+   Avec $n=9$ et $k=3$ : $\binom73/84=35/84=5/12$.
 :::
 
 ## Dérangements
@@ -237,112 +259,127 @@ deux fois chaque main (« paire de 5 puis paire de valets » et l'inverse).
 
 ### Exercice 11
 
-Le Sénat américain compte deux sénateurs par État ; il y a 50 États. On
-choisit au hasard 10 sénateurs pour former un comité.
+Un congrès réunit 30 couples, soit 60 personnes. On tire au sort 8
+personnes pour former un comité.
 
-a) Quelle est la probabilité que le comité comprenne au moins un
-   sénateur de la Floride ?
-b) Quelle est la probabilité que les 10 membres proviennent de 10 États
+a) Quelle est la probabilité que le comité comprenne au moins un des
+   deux membres du couple Tremblay ?
+b) Quelle est la probabilité que les 8 membres proviennent de 8 couples
    différents ?
 
 ::: {.corrige}
-$|\Omega|=\binom{100}{10}$.
+$|\Omega|=\binom{60}{8}$.
 
-a) Complémentaire : aucun des 2 sénateurs de la Floride, soit
-   $\binom{98}{10}$ comités.
-   $$1-\frac{\binom{98}{10}}{\binom{100}{10}}=1-\frac{90\cdot 89}{100\cdot 99}=\frac{21}{110}\approx 0{,}191.$$
-b) On choisit les 10 États, puis un des deux sénateurs de chacun :
-   $$\frac{\binom{50}{10}\,2^{10}}{\binom{100}{10}}\approx 0{,}608.$$
+a) Complémentaire : aucun des 2 membres du couple Tremblay, soit
+   $\binom{58}{8}$ comités.
+   $$1-\frac{\binom{58}{8}}{\binom{60}{8}}=1-\frac{52\cdot 51}{60\cdot 59}=\frac{74}{295}\approx 0{,}251.$$
+b) On choisit les 8 couples, puis un des deux membres de chacun :
+   $$\frac{\binom{30}{8}\,2^{8}}{\binom{60}{8}}\approx 0{,}586.$$
 :::
 
 ### Exercice 12
 
-Un panier contient 15 piles électriques, dont 2 sont défectueuses. On en
-prend 5 au hasard. Quelle est la probabilité d'obtenir au moins une pile
-défectueuse ?
+Une boîte contient 20 ampoules, dont 3 sont défectueuses. On en prend 4
+au hasard.
+
+a) Quelle est la probabilité d'obtenir au moins une ampoule
+   défectueuse ?
+b) Quelle est la probabilité d'obtenir exactement une ampoule
+   défectueuse ?
 
 ::: {.corrige}
-Par le complémentaire :
-$$1-\frac{\binom{13}5}{\binom{15}5}=1-\frac{10\cdot 9}{15\cdot 14}=1-\frac37=\frac47\approx 0{,}571.$$
+$|\Omega|=\binom{20}4=4\,845$.
+
+a) Par le complémentaire :
+   $$1-\frac{\binom{17}4}{\binom{20}4}=1-\frac{2\,380}{4\,845}=\frac{29}{57}\approx 0{,}509.$$
+b) Une défectueuse parmi 3 et trois bonnes parmi 17 :
+   $$\frac{3\binom{17}3}{\binom{20}4}=\frac{2\,040}{4\,845}=\frac{8}{19}\approx 0{,}421.$$
 :::
 
 ### Exercice 13
 
-On distribue un jeu de 52 cartes à quatre joueurs, 13 cartes chacun.
+Une classe de 20 étudiants est divisée au hasard en 4 équipes de 5.
+Parmi les étudiants, il y a un groupe de 4 amis.
 
-a) Quelle est la probabilité qu'un même joueur reçoive les quatre rois ?
-b) Quelle est la probabilité que chaque joueur reçoive un roi ?
+a) Quelle est la probabilité que les 4 amis soient dans la même
+   équipe ?
+b) Quelle est la probabilité que les 4 amis soient dans 4 équipes
+   différentes ?
 
-*Indice : imaginez les 52 cartes distribuées dans 52 places (13 places
-par joueur). Les places des 4 rois forment un ensemble de 4 places choisi
-au hasard parmi 52.*
+*Indice : imaginez 20 places, 5 par équipe, attribuées au hasard aux
+étudiants. Les places des 4 amis forment un ensemble de 4 places choisi
+au hasard parmi 20.*
 
 ::: {.corrige}
-Il y a $\binom{52}4=270\,725$ ensembles de places équiprobables pour les
-rois.
+Il y a $\binom{20}4=4\,845$ ensembles de places équiprobables pour les
+amis.
 
-a) Les 4 places doivent être dans la main d'un même joueur :
-   $4\binom{13}{4}=2860$, d'où $\approx 0{,}0106$.
-b) Une place dans chacune des 4 mains : $13^4=28\,561$, d'où
-   $\approx 0{,}1055$.
+a) Les 4 places doivent être dans une même équipe :
+   $4\binom54=20$, d'où $20/4\,845=4/969\approx 0{,}0041$.
+b) Une place dans chacune des 4 équipes : $5^4=625$, d'où
+   $625/4\,845=125/969\approx 0{,}129$.
 
-On retrouvera b) au module 03 avec la règle de multiplication.
+On pourra retrouver b) au module 03 avec la règle de multiplication :
+$1\cdot\frac{15}{19}\cdot\frac{10}{18}\cdot\frac5{17}=\frac{125}{969}$.
 :::
 
 ### Exercice 14
 
-On choisit au hasard un nombre parmi 0000, 0001, …, 9999.
+On choisit au hasard un code de trois chiffres parmi 000, 001, …, 999.
 
-a) Quelle est la probabilité que la somme des deux premiers chiffres
-   soit égale à la somme des deux derniers ?
-b) **(défi)** Quelle est la probabilité que le nombre contienne au moins
-   un 0, au moins un 1 et au moins un 2 ?
+a) Quelle est la probabilité que le chiffre du milieu soit strictement
+   plus grand que chacun des deux autres ?
+b) **(défi)** Quelle est la probabilité que le code contienne au moins
+   un 0 et au moins un 1 ?
 
 ::: {.corrige}
-a) Soit $N(s)$ le nombre de paires de chiffres de somme $s$ :
-   $N(s)=s+1$ pour $0\le s\le 9$ et $N(s)=19-s$ pour $10\le s\le 18$.
-   Le nombre de cas favorables est
-   $$\sum_{s=0}^{18}N(s)^2=2\,(1^2+2^2+\dots+9^2)+10^2=2\cdot 285+100=670,$$
-   d'où une probabilité de $670/10\,000=0{,}067$.
-b) Soit $A_0$, $A_1$, $A_2$ les ensembles de nombres sans 0, sans 1,
-   sans 2. On cherche le complémentaire de $A_0\cup A_1\cup A_2$. Par
-   inclusion-exclusion,
-   $$|A_0\cup A_1\cup A_2|=3\cdot 9^4-3\cdot 8^4+7^4=19\,683-12\,288+2\,401=9\,796,$$
-   donc il reste $10\,000-9\,796=204$ nombres favorables : probabilité
-   $0{,}0204$.
+a) Si le chiffre du milieu vaut $m$, chacun des deux autres a $m$ choix
+   ($0,\dots,m-1$) : $m^2$ codes. Le nombre de cas favorables est
+   $$\sum_{m=0}^{9}m^2=285,$$
+   d'où une probabilité de $285/1\,000=0{,}285$.
+b) Soit $A_0$ et $A_1$ les ensembles de codes sans 0 et sans 1. On
+   cherche le complémentaire de $A_0\cup A_1$ :
+   $$|A_0\cup A_1|=9^3+9^3-8^3=729+729-512=946,$$
+   donc il reste $1\,000-946=54$ codes favorables : probabilité
+   $0{,}054$. (Vérification directe : le troisième chiffre est un 0, un
+   1 ou un autre chiffre ; on trouve $3\cdot 2\cdot 8=48$ codes formés
+   de 0, 1 et d'un autre chiffre, plus 6 codes formés uniquement de 0 et
+   de 1 avec les deux présents.)
 :::
 
 ### Exercice 15
 
-On est dans le plan et on doit aller du point $(0,0)$ au point $(6,4)$
-en faisant des pas d'une unité vers l'est ou vers le nord.
+Dans un quartier dont les rues forment une grille, une cycliste part du
+coin $(0,0)$ pour se rendre au coin $(5,4)$. Elle roule toujours vers
+l'est ou vers le nord, d'un pâté de maisons à la fois.
 
-a) Combien y a-t-il de chemins possibles ?
-b) Si on choisit un chemin au hasard, quelle est la probabilité qu'il
-   passe par le point $(3,2)$ ?
+a) Combien y a-t-il de trajets possibles ?
+b) Si elle choisit un trajet au hasard, quelle est la probabilité
+   qu'elle passe devant le café situé au coin $(2,3)$ ?
 
 ::: {.corrige}
-a) Un chemin est une suite de 10 pas, dont 4 vers le nord : $\binom{10}4=210$.
-b) De $(0,0)$ à $(3,2)$ : $\binom52=10$ chemins ; de $(3,2)$ à $(6,4)$ :
-   $\binom52=10$ chemins. Probabilité $100/210=10/21$.
+a) Un trajet est une suite de 9 déplacements, dont 4 vers le nord :
+   $\binom94=126$.
+b) De $(0,0)$ à $(2,3)$ : $\binom52=10$ trajets ; de $(2,3)$ à $(5,4)$ :
+   $\binom41=4$ trajets. Probabilité $40/126=20/63\approx0{,}317$.
 :::
 
 ### Exercice 16
 
-On place au hasard 4 boules distinctes dans 4 boîtes (chaque boule
+On place au hasard 4 boules distinctes dans 3 boîtes (chaque boule
 choisit sa boîte au hasard, indépendamment des autres).
 
-a) Quelle est la probabilité qu'exactement une boîte reste vide ?
-b) **(défi)** Même question avec $n$ boules et $n$ boîtes.
+a) Quelle est la probabilité qu'aucune boîte ne reste vide ?
+b) **(défi)** Même question avec $n+1$ boules et $n$ boîtes.
 
 ::: {.corrige}
-b) $|\Omega|=n^n$. Si exactement une boîte est vide, une autre boîte
-   contient exactement 2 boules et toutes les autres en contiennent une.
-   On choisit la boîte vide ($n$), la boîte double ($n-1$), les deux
-   boules qui y vont ($\binom n2$), puis on répartit les $n-2$ boules
-   restantes dans les $n-2$ boîtes restantes, une par boîte ($(n-2)!$) :
-   $$\frac{n(n-1)\binom n2(n-2)!}{n^n}=\frac{\binom n2\,n!}{n^n}.$$
-a) Avec $n=4$ : $6\cdot 24/256=9/16$.
+b) $|\Omega|=n^{n+1}$. Si aucune boîte n'est vide, une boîte contient
+   exactement 2 boules et toutes les autres en contiennent une. On
+   choisit les deux boules qui vont ensemble ($\binom{n+1}2$), puis on
+   répartit les $n$ « paquets » (la paire et les $n-1$ autres boules)
+   dans les $n$ boîtes, un par boîte ($n!$) :
+   $$\frac{\binom{n+1}2\,n!}{n^{n+1}}.$$
+a) Avec $n=3$ : $6\cdot 6/81=4/9$.
 :::
 
 ## Binôme et multinôme
@@ -351,90 +388,99 @@ a) Avec $n=4$ : $6\cdot 24/256=9/16$.
 
 À l'aide du binôme de Newton, simplifiez
 
-a) $\displaystyle\sum_{k=0}^{n}\binom nk 2^k$ ;
-b) $\displaystyle\sum_{k=1}^{n}\binom nk x^k$ ;
-c) $\displaystyle\sum_{k=0}^{n}(-1)^k\binom nk$ pour $n\ge 1$.
+a) $\displaystyle\sum_{k=0}^{n}\binom nk 4^k$ ;
+b) $\displaystyle\sum_{k=0}^{n}\binom nk (-2)^k$ ;
+c) $\displaystyle\sum_{\substack{0\le k\le n\\ k\text{ pair}}}\binom nk$ pour $n\ge 1$.
+
+*Indice pour c) : additionnez les développements de $(1+1)^n$ et de
+$(1-1)^n$.*
 
 ::: {.corrige}
 Avec $(x+y)^n=\sum_{k=0}^n\binom nk x^ky^{n-k}$ :
 
-a) $x=2$, $y=1$ : $3^n$.
-b) $y=1$, en retirant le terme $k=0$ : $(1+x)^n-1$.
-c) $x=-1$, $y=1$ : $0^n=0$. Autrement dit, un ensemble non vide a autant
-   de sous-ensembles de cardinal pair que de cardinal impair.
+a) $x=4$, $y=1$ : $5^n$.
+b) $x=-2$, $y=1$ : $(-1)^n$.
+c) $(1+1)^n+(1-1)^n=\sum_k\binom nk\big(1+(-1)^k\big)$ : les termes
+   impairs s'annulent et les termes pairs sont doublés. Donc la somme
+   vaut $\frac{2^n+0}{2}=2^{n-1}$. Autrement dit, un ensemble non vide a
+   autant de sous-ensembles de cardinal pair que de cardinal impair.
 :::
 
 ### Exercice 18
 
-a) Quel est le coefficient de $x^6$ dans le développement de $(x+3)^9$ ?
-b) Quel est le coefficient de $x^4y^3$ dans le développement de
-   $(2x-3y)^7$ ?
-c) Quel est le coefficient de $x^2y^2z$ dans le développement de
-   $(x+2y+z)^5$ ?
+a) Quel est le coefficient de $x^5$ dans le développement de $(x+2)^8$ ?
+b) Quel est le coefficient de $x^3y^4$ dans le développement de
+   $(3x-y)^7$ ?
+c) Quel est le coefficient de $xy^2z^3$ dans le développement de
+   $(2x+y-z)^6$ ?
 
 ::: {.corrige}
-a) $\binom96\,3^3=84\cdot 27=2268$.
-b) $\binom74\,2^4\,(-3)^3=35\cdot 16\cdot(-27)=-15\,120$.
-c) $\dfrac{5!}{2!\,2!\,1!}\,1^2\,2^2\,1^1=30\cdot 4=120$.
+a) $\binom85\,2^3=56\cdot 8=448$.
+b) $\binom73\,3^3\,(-1)^4=35\cdot 27=945$.
+c) $\dfrac{6!}{1!\,2!\,3!}\,2^1\,1^2\,(-1)^3=60\cdot 2\cdot(-1)=-120$.
 :::
 
 ### Exercice 19
 
-On considère les mots de 8 lettres formés avec les lettres A, B, C, D.
+On considère les mots de 9 lettres formés avec les lettres A, B, C.
 
 a) Combien y en a-t-il ?
-b) Combien contiennent exactement deux fois chacune des quatre lettres ?
-c) Combien contiennent trois A, trois B et deux C ?
+b) Combien contiennent exactement trois fois chacune des trois lettres ?
+c) Combien contiennent quatre A, trois B et deux C ?
 
 ::: {.corrige}
-a) $4^8=65\,536$.
-b) $\dfrac{8!}{2!\,2!\,2!\,2!}=2520$.
-c) $\dfrac{8!}{3!\,3!\,2!}=560$.
+a) $3^9=19\,683$.
+b) $\dfrac{9!}{3!\,3!\,3!}=1\,680$.
+c) $\dfrac{9!}{4!\,3!\,2!}=1\,260$.
 :::
 
 ### Exercice 20
 
-On lance cinq dés. Calculez la probabilité d'obtenir
+On lance quatre dés. Calculez la probabilité d'obtenir
 
-a) cinq résultats identiques ;
-b) trois 5 et deux 6 ;
-c) deux 4, deux 5 et un 6 ;
-d) un triple et une paire (par exemple 2, 2, 2, 6, 6) ;
-e) deux paires (deux valeurs présentes deux fois, la cinquième valeur
-   différente des deux autres).
+a) quatre résultats identiques ;
+b) deux 3 et deux 5 ;
+c) un 1, un 2 et deux 6 ;
+d) deux paires (deux valeurs différentes, présentes deux fois chacune) ;
+e) un triple seulement (une valeur trois fois, la quatrième différente).
 
 ::: {.corrige}
-$|\Omega|=6^5=7776$ suites équiprobables.
+$|\Omega|=6^4=1296$ suites équiprobables.
 
-a) $6/7776=1/1296$.
-b) Choisir les 2 lancers qui donnent 6 : $\binom52=10$, d'où $10/7776$.
-c) Coefficient multinomial : $\dfrac{5!}{2!\,2!\,1!}=30$, d'où $30/7776$.
-d) Valeur du triple (6), valeur de la paire (5), puis comme en b) :
-   $6\cdot 5\cdot 10=300$, d'où $300/7776\approx 0{,}039$.
-e) Valeurs des paires : $\binom62=15$ ; cinquième valeur : 4 ; ordre des
-   lancers comme en c) : 30. $15\cdot 4\cdot 30=1800$, d'où
-   $1800/7776\approx 0{,}231$.
+a) $6/1296=1/216$.
+b) Choisir les 2 lancers qui donnent 3 : $\binom42=6$, d'où
+   $6/1296=1/216$.
+c) Coefficient multinomial : $\dfrac{4!}{1!\,1!\,2!}=12$, d'où
+   $12/1296=1/108$.
+d) Valeurs des paires : $\binom62=15$ ; ordre des lancers comme en b) :
+   6. $15\cdot 6=90$, d'où $90/1296=5/72\approx 0{,}069$.
+e) Valeur du triple (6), valeur restante (5), position du lancer
+   différent (4) : $6\cdot 5\cdot 4=120$, d'où
+   $120/1296=5/54\approx 0{,}093$.
 :::
 
 ### Exercice 21 **(défi)**
 
-L'identité suivante, due à Fermat, est valide pour $1\le k\le n$ :
-$$\binom nk=\sum_{i=k}^{n}\binom{i-1}{k-1}.$$
+L'identité de Vandermonde dit que, pour des entiers $m,n,r\ge0$,
+$$\binom{m+n}{r}=\sum_{k=0}^{r}\binom mk\binom n{r-k},$$
+avec la convention $\binom ab=0$ si $b>a$.
 
-a) Combien y a-t-il de sous-ensembles de $\{1,\dots,n\}$ de cardinal $k$
-   dont le plus grand élément est $i$ ?
+a) Un groupe compte $m$ femmes et $n$ hommes. Combien de comités de $r$
+   personnes comprennent exactement $k$ femmes ?
 b) Déduisez-en l'identité.
-c) Illustrez-la avec $n=5$, $k=2$ dans le triangle de Pascal.
+c) Vérifiez-la avec $m=4$, $n=3$ et $r=3$.
+d) Avec $m=n=r$, déduisez-en que $\sum_{k=0}^{n}\binom nk^2=\binom{2n}n$.
 
 ::: {.corrige}
-a) Le plus grand élément est $i$ ; les $k-1$ autres sont choisis parmi
-   $\{1,\dots,i-1\}$ : $\binom{i-1}{k-1}$ sous-ensembles.
-b) Chaque sous-ensemble de cardinal $k$ a un plus grand élément $i$, avec
-   $k\le i\le n$. En classant les $\binom nk$ sous-ensembles selon $i$,
-   on obtient la somme.
-c) $\binom52=10=\binom11+\binom21+\binom31+\binom41=1+2+3+4$ : on additionne
-   les éléments d'une diagonale du triangle et on trouve l'élément situé
-   juste en dessous de la dernière case, sur la diagonale suivante.
+a) On choisit les $k$ femmes parmi $m$ et les $r-k$ hommes parmi $n$ :
+   $\binom mk\binom n{r-k}$ comités.
+b) Chaque comité de $r$ personnes contient un certain nombre $k$ de
+   femmes, avec $0\le k\le r$. En classant les $\binom{m+n}r$ comités
+   selon $k$, on obtient la somme.
+c) $\binom73=35$ et
+   $\binom40\binom33+\binom41\binom32+\binom42\binom31+\binom43\binom30=1+12+18+4=35$.
+d) Avec $m=n=r$ : $\binom{2n}n=\sum_k\binom nk\binom n{n-k}=\sum_k\binom nk^2$,
+   car $\binom n{n-k}=\binom nk$.
 :::
 
 ## Formule de Stirling
@@ -444,15 +490,16 @@ signifie que le quotient des deux membres tend vers 1.
 
 ### Exercice 22
 
-a) On lance un dé ordinaire 6 fois. Quelle est la probabilité d'obtenir
-   les 6 faces ?
-b) On lance $n$ fois un dé à $n$ faces. Quelle est la probabilité
-   $p_n$ d'obtenir les $n$ faces ?
+a) Cinq amis choisissent chacun au hasard l'un des 5 restaurants du
+   quartier, indépendamment les uns des autres. Quelle est la
+   probabilité que chaque restaurant reçoive exactement un ami ?
+b) On remplace 5 par $n$ : $n$ amis, $n$ restaurants. Quelle est la
+   probabilité $p_n$ que chaque restaurant reçoive exactement un ami ?
 c) Montrez que $p_n\sim C\sqrt n\,e^{-n}$ et déterminez la constante $C$.
 
 ::: {.corrige}
-a) Les 6 résultats doivent former une permutation des faces :
-   $6!/6^6=720/46\,656\approx 0{,}0154$.
+a) Les $5^5$ choix sont équiprobables. Les choix favorables forment une
+   permutation des restaurants : $5!/5^5=120/3\,125\approx 0{,}038$.
 b) $p_n=n!/n^n$.
 c) $p_n\sim\dfrac{\sqrt{2\pi n}\,n^ne^{-n}}{n^n}=\sqrt{2\pi}\,\sqrt n\,e^{-n}$,
    donc $C=\sqrt{2\pi}\approx 2{,}507$.
@@ -460,47 +507,45 @@ c) $p_n\sim\dfrac{\sqrt{2\pi n}\,n^ne^{-n}}{n^n}=\sqrt{2\pi}\,\sqrt n\,e^{-n}$,
 
 ### Exercice 23
 
-Pierre et Paul lancent chacun une pièce équilibrée $n$ fois.
+Léa et Malik lancent chacun une pièce équilibrée $n$ fois.
 
 a) Montrez que la probabilité qu'ils obtiennent le même nombre de piles
    est $\binom{2n}{n}\big/4^n$.
 b) À l'aide de la formule de Stirling, montrez que cette probabilité est
    approximativement $1/\sqrt{\pi n}$.
-c) Comparez la valeur exacte et l'approximation pour $n=10$.
+c) Comparez la valeur exacte et l'approximation pour $n=8$.
 
-*Indice pour a) : utilisez l'identité $\sum_{k=0}^{n}\binom nk^2=\binom{2n}n$.
-Pour la justifier, comptez de deux façons le nombre de façons de choisir
-$n$ personnes dans un groupe de $n$ femmes et $n$ hommes.*
+*Indice pour a) : utilisez l'identité $\sum_{k=0}^{n}\binom nk^2=\binom{2n}n$
+de l'exercice 21 d).*
 
 ::: {.corrige}
 a) Il y a $4^n$ résultats équiprobables pour les $2n$ lancers. Les deux
    obtiennent $k$ piles de $\binom nk\cdot\binom nk$ façons, donc
    $$\mathbb{P}(\text{même nombre})=\frac{1}{4^n}\sum_{k=0}^n\binom nk^2=\frac{\binom{2n}n}{4^n}.$$
-   (Pour l'identité : choisir $n$ personnes parmi $2n$, c'est choisir
-   $k$ femmes et $n-k$ hommes pour un certain $k$, et
-   $\binom nk\binom n{n-k}=\binom nk^2$.)
 b) $\displaystyle\binom{2n}n=\frac{(2n)!}{(n!)^2}\sim\frac{\sqrt{4\pi n}\,(2n/e)^{2n}}{2\pi n\,(n/e)^{2n}}=\frac{4^n}{\sqrt{\pi n}}$,
    d'où la probabilité $\sim 1/\sqrt{\pi n}$.
-c) $n=10$ : valeur exacte $\binom{20}{10}/4^{10}=184\,756/1\,048\,576\approx 0{,}1762$ ;
-   approximation $1/\sqrt{10\pi}\approx 0{,}1784$.
+c) $n=8$ : valeur exacte $\binom{16}{8}/4^{8}=12\,870/65\,536\approx 0{,}1964$ ;
+   approximation $1/\sqrt{8\pi}\approx 0{,}1995$.
 :::
 
 ### Exercice 24 **(défi)**
 
-On sépare au hasard un jeu de 52 cartes en deux paquets de 26.
+Un groupe de 40 étudiants, 20 femmes et 20 hommes, est séparé au hasard
+en deux sections de 20.
 
-a) Calculez la probabilité que chaque paquet contienne 13 cartes rouges
-   et 13 cartes noires.
+a) Calculez la probabilité que chaque section compte 10 femmes et 10
+   hommes.
 b) Avec la formule obtenue en b) de l'exercice précédent, donnez une
    approximation de cette probabilité.
 c) Comparez l'approximation à la valeur exacte.
 
 ::: {.corrige}
-a) On choisit les 26 cartes du premier paquet ; il faut 13 rouges parmi
-   26 et 13 noires parmi 26 :
-   $$\frac{\binom{26}{13}^2}{\binom{52}{26}}\approx 0{,}2181.$$
-b) Avec $\binom{2n}n\approx 4^n/\sqrt{\pi n}$ pour $n=13$ et $n=26$ :
-   $$\frac{\left(4^{13}/\sqrt{13\pi}\right)^2}{4^{26}/\sqrt{26\pi}}=\frac{\sqrt{26\pi}}{13\pi}=\sqrt{\frac{2}{13\pi}}\approx 0{,}2213.$$
-c) L'approximation $0{,}2213$ dépasse la valeur exacte $0{,}2181$ d'environ
-   $0{,}003$ : une erreur relative d'environ 1,5 %.
+a) On choisit les 20 étudiants de la première section ; il faut 10
+   femmes parmi 20 et 10 hommes parmi 20 :
+   $$\frac{\binom{20}{10}^2}{\binom{40}{20}}\approx 0{,}2476.$$
+b) Avec $\binom{2n}n\approx 4^n/\sqrt{\pi n}$ pour $n=10$ et $n=20$ :
+   $$\frac{\left(4^{10}/\sqrt{10\pi}\right)^2}{4^{20}/\sqrt{20\pi}}=\frac{\sqrt{20\pi}}{10\pi}=\sqrt{\frac{1}{5\pi}}\approx 0{,}2523.$$
+c) L'approximation $0{,}2523$ dépasse la valeur exacte $0{,}2476$
+   d'environ $0{,}005$ : une erreur relative d'environ 2 %.
 :::
+

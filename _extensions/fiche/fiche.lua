@@ -38,9 +38,16 @@ function Pandoc(doc)
     -- ponctuation (« 0, 4 ») ; on la déclare ordinaire.
     Math = function(el)
       el.text = el.text:gsub("([%^_]%w)(\\%a)", "%1{}%2")
-      if not el.text:find("%d{,}%d") then return el end
+      -- « \displaystyle » en ligne (ignoré par Pandoc) : display() en Typst
+      local affiche = el.mathtype == "InlineMath"
+          and el.text:match("^%s*\\displaystyle") ~= nil
+      if affiche then el.text = el.text:gsub("^%s*\\displaystyle%s*", "") end
+      if not affiche and not el.text:find("%d{,}%d") then return el end
       local t = pandoc.write(pandoc.Pandoc({ pandoc.Plain({ el }) }), "typst")
       t = t:gsub("%s+$", ""):gsub("(%d)\\,(%d)", '%1class("normal", \\,)%2')
+      if affiche then
+        t = t:gsub("^%$(.*)%$$", "#box(inset: (y: 0.45em))[$display(%1)$]")
+      end
       return pandoc.RawInline("typst", t)
     end,
   })

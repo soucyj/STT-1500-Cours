@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  4 NOV 2026 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**05-VAContinue.tex
-(./05-VAContinue.tex
+**07-VAContinue.tex
+(./07-VAContinue.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (../BeamerJS.cls
@@ -2194,8 +2194,8 @@ Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
 
-(./05-VAContinue.aux)
-\openout1 = `05-VAContinue.aux'.
+(./07-VAContinue.aux)
+\openout1 = `07-VAContinue.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
@@ -2253,9 +2253,9 @@ LaTeX Font Info:    ... okay on input line 24.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 24.
-(./05-VAContinue.out) (./05-VAContinue.out)
+(./07-VAContinue.out) (./07-VAContinue.out)
 \@outlinefile=\write6
-\openout6 = `05-VAContinue.out'.
+\openout6 = `07-VAContinue.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/translator/translator-basic-dicti
@@ -2367,23 +2367,15 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `05-VAContinue.bcf'.
+\openout5 = `07-VAContinue.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '05-VAContinue.bbl' found.
+Package biblatex Info: ... file '07-VAContinue.bbl' found.
 
-(./05-VAContinue.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                CantorEscalier
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+(./07-VAContinue.bbl)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
- (./05-VAContinue.nav)
+ (./07-VAContinue.nav)
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
 (Font)              scaled to size 7.63123pt on input line 24.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2445,7 +2437,7 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
  [1
 
 ]
-(./05-VAContinue.toc) [2
+(./07-VAContinue.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
@@ -2508,10 +2500,6 @@ Underfull \hbox (badness 1509) in paragraph at lines 241--241
 
 File: images/Cantor.pdf Graphic file (type pdf)
 <use images/Cantor.pdf>
-
-LaTeX Warning: Citation 'CantorEscalier' on page 14 undefined on input line 241
-.
-
 [14
 
 ] [15
@@ -2549,36 +2537,43 @@ LaTeX Warning: Citation 'CantorEscalier' on page 14 undefined on input line 241
 
 ] [31
 
-] [32
+]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 8.57178pt on input line 375.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `SourceCodePro' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [32
 
 ]
 \tf@nav=\write7
-\openout7 = `05-VAContinue.nav'.
+\openout7 = `07-VAContinue.nav'.
 
 \tf@toc=\write8
-\openout8 = `05-VAContinue.toc'.
+\openout8 = `07-VAContinue.toc'.
 
 \tf@snm=\write9
-\openout9 = `05-VAContinue.snm'.
+\openout9 = `07-VAContinue.snm'.
 
- (./05-VAContinue.aux)
+ (./07-VAContinue.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `05-VAContinue.out' has not changed.
+Package rerunfilecheck Info: File `07-VAContinue.out' has not changed.
 (rerunfilecheck)             Checksum: B556A4B43FDCF5F9746A91A1B22F725B;813.
-Package logreq Info: Writing requests to '05-VAContinue.run.xml'.
-\openout1 = `05-VAContinue.run.xml'.
+Package logreq Info: Writing requests to '07-VAContinue.run.xml'.
+\openout1 = `07-VAContinue.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65528 strings out of 468168
- 1557529 string characters out of 5432815
- 2654265 words of memory out of 5000000
- 93191 multiletter control sequences out of 15000+600000
- 639131 words of font info for 172 fonts, out of 8000000 for 9000
+ 65533 strings out of 468168
+ 1557728 string characters out of 5432815
+ 2654249 words of memory out of 5000000
+ 93195 multiletter control sequences out of 15000+600000
+ 639139 words of font info for 173 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,15n,137p,1010b,5502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,15n,137p,1010b,5446s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 05-VAContinue.pdf (32 pages).
+Output written on 07-VAContinue.xdv (32 pages, 257036 bytes).

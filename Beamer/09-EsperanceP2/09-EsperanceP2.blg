@@ -1,5 +1,9 @@
-[0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is '07-EsperanceP2.blg'
-[31] biber-darwin:340> INFO - === Wed Jan  7, 2026, 15:30:28
-[114] Utils.pm:410> ERROR - Cannot find '07-EsperanceP2.bcf'!
-[114] Biber.pm:136> INFO - ERRORS: 1
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is '09-EsperanceP2.blg'
+[31] biber-darwin:342> INFO - === Fri Nov 27, 2026, 08:55:24
+[38] Biber.pm:421> INFO - Reading '09-EsperanceP2.bcf'
+[75] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[82] bbl.pm:676> INFO - Writing '09-EsperanceP2.bbl' with encoding 'UTF-8'
+[82] bbl.pm:779> INFO - Output to 09-EsperanceP2.bbl
+[82] Biber.pm:132> WARN - The file '09-EsperanceP2.bcf' does not contain any citations!
+[82] Biber.pm:134> INFO - WARNINGS: 1

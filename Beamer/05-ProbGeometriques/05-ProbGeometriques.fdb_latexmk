@@ -1,20 +1,19 @@
 # Fdb version 4
-["biber 05-ProbGeometriques"] 1795464607.94867 "05-ProbGeometriques.bcf" "05-ProbGeometriques.bbl" "05-ProbGeometriques" 1795464625.83836 0
-  "../references.bib" 1793823115.78325 974 4c4822f9f9ffe1d48cab80f78ff08115 ""
-  "05-ProbGeometriques.bcf" 1795464625.34487 108615 480f0e3e3ad80ead08795461adc03e1a "xelatex"
+["biber 05-ProbGeometriques"] 1795787670.92147 "05-ProbGeometriques.bcf" "05-ProbGeometriques.bbl" "05-ProbGeometriques" 1795787683.32241 0
+  "05-ProbGeometriques.bcf" 1795787682.82688 108150 ad43cae297febeeb997d057c1954ddc0 "xelatex"
   (generated)
   "05-ProbGeometriques.bbl"
   "05-ProbGeometriques.blg"
   (rewritten before read)
-["xdvipdfmx"] 1795464625.49875 "05-ProbGeometriques.xdv" "05-ProbGeometriques.pdf" "05-ProbGeometriques" 1795464625.84139 0
-  "05-ProbGeometriques.xdv" 1795464625.34599 846368 3f6b77003f33bdcc1821caa9325e9e3d "xelatex"
+["xdvipdfmx"] 1795787682.98588 "05-ProbGeometriques.xdv" "05-ProbGeometriques.pdf" "05-ProbGeometriques" 1795787683.32523 0
+  "05-ProbGeometriques.xdv" 1795787682.82788 844316 197c113b901e57d79208db5175cab879 "xelatex"
   (generated)
   "05-ProbGeometriques.pdf"
   (rewritten before read)
-["xelatex"] 1795464619.91795 "05-ProbGeometriques.tex" "05-ProbGeometriques.xdv" "05-ProbGeometriques" 1795464625.83848 0
-  "../BeamerJS.cls" 1793822949.22119 33780 37baec51312c7ce469f022b7a45dbd06 ""
-  "../commandesJS.sty" 1793820399.02632 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
-  "../logo_UL.pdf" 1793820399.02736 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
+["xelatex"] 1795787677.36996 "05-ProbGeometriques.tex" "05-ProbGeometriques.xdv" "05-ProbGeometriques" 1795787683.32248 0
+  "../BeamerJS.cls" 1795787403.49545 33780 37baec51312c7ce469f022b7a45dbd06 ""
+  "../commandesJS.sty" 1795787403.4958 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
+  "../logo_UL.pdf" 1795787403.49695 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -335,13 +334,13 @@
   "/usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
   "/usr/local/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1774209578 5948559 ca66a59f4cdd4ce9709bed46018cb9cb ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "05-ProbGeometriques.aux" 1795464625.34091 4922 6c1ee887e2ed188743f20f8632f1039a "xelatex"
-  "05-ProbGeometriques.bbl" 1795464608.72319 1620 a77e78b53276ce1cded8b1168af06e63 "biber 05-ProbGeometriques"
-  "05-ProbGeometriques.nav" 1795464625.34592 2714 7a64761b2362b40f403010cb41dc9532 "xelatex"
-  "05-ProbGeometriques.out" 1795464625.34197 256 cde45803f048af79db551197f5a21c60 "xelatex"
-  "05-ProbGeometriques.run.xml" 1795464625.34584 2510 efeb7faae32f1c520786f8bec933fdef "xelatex"
-  "05-ProbGeometriques.tex" 1795463945.00975 14679 d87e325eb36226716f2e4416913570b9 ""
-  "05-ProbGeometriques.toc" 1795464625.34595 169 1cbee8fd9c1edc7b022c72286eb89503 "xelatex"
+  "05-ProbGeometriques.aux" 1795787682.82309 4794 a67e9eeb6333820007305464ebb19990 "xelatex"
+  "05-ProbGeometriques.bbl" 1795787671.69667 466 76d65a242ec496c9b4361af646ff12cb "biber 05-ProbGeometriques"
+  "05-ProbGeometriques.nav" 1795787682.82782 2714 7a64761b2362b40f403010cb41dc9532 "xelatex"
+  "05-ProbGeometriques.out" 1795787682.82422 256 cde45803f048af79db551197f5a21c60 "xelatex"
+  "05-ProbGeometriques.run.xml" 1795787682.82773 2510 efeb7faae32f1c520786f8bec933fdef "xelatex"
+  "05-ProbGeometriques.tex" 1795786935 14540 a0c5cb6557e5b9b1372377d64e2da132 ""
+  "05-ProbGeometriques.toc" 1795787682.82784 169 1cbee8fd9c1edc7b022c72286eb89503 "xelatex"
   (generated)
   "05-ProbGeometriques.aux"
   "05-ProbGeometriques.bcf"

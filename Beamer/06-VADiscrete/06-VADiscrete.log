@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  4 NOV 2026 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**04-VADiscrete.tex
-(./04-VADiscrete.tex
+**06-VADiscrete.tex
+(./06-VADiscrete.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (../BeamerJS.cls
@@ -2194,8 +2194,8 @@ Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
 
-(./04-VADiscrete.aux)
-\openout1 = `04-VADiscrete.aux'.
+(./06-VADiscrete.aux)
+\openout1 = `06-VADiscrete.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
@@ -2253,9 +2253,9 @@ LaTeX Font Info:    ... okay on input line 30.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 30.
-(./04-VADiscrete.out) (./04-VADiscrete.out)
+(./06-VADiscrete.out) (./06-VADiscrete.out)
 \@outlinefile=\write6
-\openout6 = `04-VADiscrete.out'.
+\openout6 = `06-VADiscrete.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/translator/translator-basic-dicti
@@ -2367,15 +2367,15 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `04-VADiscrete.bcf'.
+\openout5 = `06-VADiscrete.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '04-VADiscrete.bbl' found.
+Package biblatex Info: ... file '06-VADiscrete.bbl' found.
 
-(./04-VADiscrete.bbl)
+(./06-VADiscrete.bbl)
 Package biblatex Info: Reference section=0 on input line 30.
 Package biblatex Info: Reference segment=0 on input line 30.
- (./04-VADiscrete.nav)
+ (./06-VADiscrete.nav)
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
 (Font)              scaled to size 7.63123pt on input line 30.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2437,7 +2437,7 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
  [1
 
 ]
-(./04-VADiscrete.toc) [2
+(./06-VADiscrete.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
@@ -2652,32 +2652,32 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/b/n' will be
 
 ]
 \tf@nav=\write7
-\openout7 = `04-VADiscrete.nav'.
+\openout7 = `06-VADiscrete.nav'.
 
 \tf@toc=\write8
-\openout8 = `04-VADiscrete.toc'.
+\openout8 = `06-VADiscrete.toc'.
 
 \tf@snm=\write9
-\openout9 = `04-VADiscrete.snm'.
+\openout9 = `06-VADiscrete.snm'.
 
- (./04-VADiscrete.aux)
+ (./06-VADiscrete.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `04-VADiscrete.out' has not changed.
+Package rerunfilecheck Info: File `06-VADiscrete.out' has not changed.
 (rerunfilecheck)             Checksum: 0DD2D18B9A6C08210EFB79B832DC34F4;564.
-Package logreq Info: Writing requests to '04-VADiscrete.run.xml'.
-\openout1 = `04-VADiscrete.run.xml'.
+Package logreq Info: Writing requests to '06-VADiscrete.run.xml'.
+\openout1 = `06-VADiscrete.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65846 strings out of 468168
- 1564516 string characters out of 5432815
- 2653592 words of memory out of 5000000
- 93504 multiletter control sequences out of 15000+600000
- 639171 words of font info for 177 fonts, out of 8000000 for 9000
+ 65574 strings out of 468168
+ 1557929 string characters out of 5432815
+ 2653538 words of memory out of 5000000
+ 93235 multiletter control sequences out of 15000+600000
+ 639155 words of font info for 175 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,17n,137p,1010b,5502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,17n,137p,1010b,4229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 04-VADiscrete.pdf (73 pages).
+Output written on 06-VADiscrete.xdv (73 pages, 663820 bytes).

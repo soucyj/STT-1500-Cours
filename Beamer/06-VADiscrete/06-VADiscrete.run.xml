@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>04-VADiscrete.bcf</file>
+      <file>06-VADiscrete.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>04-VADiscrete.bbl</file>
+      <file>06-VADiscrete.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -67,19 +67,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>04-VADiscrete</infile>
+      <infile>06-VADiscrete</infile>
     </cmdline>
     <input>
-      <file>04-VADiscrete.bcf</file>
+      <file>06-VADiscrete.bcf</file>
     </input>
     <output>
-      <file>04-VADiscrete.bbl</file>
+      <file>06-VADiscrete.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>04-VADiscrete.bbl</file>
+      <file>06-VADiscrete.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>04-VADiscrete.bcf</file>
+      <file>06-VADiscrete.bcf</file>
     </requires>
     <requires type="editable">
       <file>../references.bib</file>

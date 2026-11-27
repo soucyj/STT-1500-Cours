@@ -1,20 +1,20 @@
 # Fdb version 4
-["biber 01-Introduction"] 1795464565.16924 "01-Introduction.bcf" "01-Introduction.bbl" "01-Introduction" 1795464571.23648 0
-  "../references.bib" 1793823115.78325 974 4c4822f9f9ffe1d48cab80f78ff08115 ""
-  "01-Introduction.bcf" 1795464570.74475 108676 747c051cb7d806b1dfb04af1f7c87581 "xelatex"
+["biber 01-Introduction"] 1795787823.81173 "01-Introduction.bcf" "01-Introduction.bbl" "01-Introduction" 1795787839.64935 0
+  "../references.bib" 1795787403.49786 974 4c4822f9f9ffe1d48cab80f78ff08115 ""
+  "01-Introduction.bcf" 1795787839.15613 108614 f71639c986af3ccf4de8f307f4190a26 "xelatex"
   (generated)
   "01-Introduction.bbl"
   "01-Introduction.blg"
   (rewritten before read)
-["xdvipdfmx"] 1795464570.90154 "01-Introduction.xdv" "01-Introduction.pdf" "01-Introduction" 1795464571.23966 0
-  "01-Introduction.xdv" 1795464570.74586 537032 5d0eb2805a96dd4e8720a497d51d107b "xelatex"
+["xdvipdfmx"] 1795787839.314 "01-Introduction.xdv" "01-Introduction.pdf" "01-Introduction" 1795787839.65245 0
+  "01-Introduction.xdv" 1795787839.15712 532160 666256155b57c70858b61bc843218b25 "xelatex"
   (generated)
   "01-Introduction.pdf"
   (rewritten before read)
-["xelatex"] 1795464565.96946 "01-Introduction.tex" "01-Introduction.xdv" "01-Introduction" 1795464571.23656 0
-  "../BeamerJS.cls" 1793822949.22119 33780 37baec51312c7ce469f022b7a45dbd06 ""
-  "../commandesJS.sty" 1793820399.02632 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
-  "../logo_UL.pdf" 1793820399.02736 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
+["xelatex"] 1795787834.38011 "01-Introduction.tex" "01-Introduction.xdv" "01-Introduction" 1795787839.64941 0
+  "../BeamerJS.cls" 1795787403.49545 33780 37baec51312c7ce469f022b7a45dbd06 ""
+  "../commandesJS.sty" 1795787403.4958 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
+  "../logo_UL.pdf" 1795787403.49695 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -335,19 +335,19 @@
   "/usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
   "/usr/local/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1774209578 5948559 ca66a59f4cdd4ce9709bed46018cb9cb ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "01-Introduction.aux" 1795464570.7403 11354 44b53cbc28b96bb11ec4df0244b68e23 "xelatex"
-  "01-Introduction.bbl" 1795464565.95515 2764 c14dd6207ed395fcea565f552894aaa9 "biber 01-Introduction"
-  "01-Introduction.nav" 1795464570.74578 6526 b89df78548bc366f3f96c41d2c3fafd9 "xelatex"
-  "01-Introduction.out" 1795464570.74192 1152 a53cb85c978b5359f756a503c3f070de "xelatex"
-  "01-Introduction.run.xml" 1795464570.74572 2482 36af36b4aa6fbffc4f15062f78033ab7 "xelatex"
-  "01-Introduction.tex" 1795463593.2894 32945 a2e5032279c1360435e53912bec8f7fc ""
-  "01-Introduction.toc" 1795464570.74581 438 59022153fa747821596fc5e4faa4effb "xelatex"
-  "images/Fermat.jpg" 1793820398.97911 37723 831002545d1e8dba0218d12eeff3a6ce ""
-  "images/Galilee.jpg" 1793820398.97924 53512 61e2bd67ae089dd932cec7ee8a0f35c5 ""
-  "images/Hawking.jpg" 1793820398.97948 79183 cbfb8cd697c125e2511ce90c493ccd52 ""
-  "images/Lemieux.jpg" 1793820398.97961 70237 d8a3dcd25ff5469971ce735f1e0007d2 ""
-  "images/Pascal.jpg" 1793820398.97976 47386 b1ffc071bc6b4e537a281033b79a334a ""
-  "images/Roy.jpg" 1793820398.97988 47943 8f409255967760a2f62bef9d2ecefb0b ""
+  "01-Introduction.aux" 1795787839.15192 11072 55dfd4f22c2c83e5c53e819c269c9e43 "xelatex"
+  "01-Introduction.bbl" 1795787824.58899 1709 1be81ee45e0392ff91480c57ecb921f9 "biber 01-Introduction"
+  "01-Introduction.nav" 1795787839.15703 6434 38d60e553bbc42744c3b22b821149297 "xelatex"
+  "01-Introduction.out" 1795787839.15338 1152 a53cb85c978b5359f756a503c3f070de "xelatex"
+  "01-Introduction.run.xml" 1795787839.15696 2482 36af36b4aa6fbffc4f15062f78033ab7 "xelatex"
+  "01-Introduction.tex" 1795786935 32875 4c1e09d3a1f91ccfc4b3e7fbc11a1a22 ""
+  "01-Introduction.toc" 1795787839.15707 438 59022153fa747821596fc5e4faa4effb "xelatex"
+  "images/Fermat.jpg" 1793820398 37723 831002545d1e8dba0218d12eeff3a6ce ""
+  "images/Galilee.jpg" 1793820398 53512 61e2bd67ae089dd932cec7ee8a0f35c5 ""
+  "images/Hawking.jpg" 1793820398 79183 cbfb8cd697c125e2511ce90c493ccd52 ""
+  "images/Lemieux.jpg" 1793820398 70237 d8a3dcd25ff5469971ce735f1e0007d2 ""
+  "images/Pascal.jpg" 1793820398 47386 b1ffc071bc6b4e537a281033b79a334a ""
+  "images/Roy.jpg" 1793820398 47943 8f409255967760a2f62bef9d2ecefb0b ""
   (generated)
   "01-Introduction.aux"
   "01-Introduction.bcf"

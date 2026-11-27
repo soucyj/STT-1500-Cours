@@ -385,7 +385,6 @@ Supposons que $Y$ est la variable aléatoire correspondant au résultat du lance
  \textbf{Remarques}
  	\begin{itemize}
  		\item Ce document est rédigé avec Beamer, une classe de \LaTeX.
-		\item La formulation des définitions et énoncés est fortement inspirée de \cite{belisle}.
  	\end{itemize}
  	
  	\vfill

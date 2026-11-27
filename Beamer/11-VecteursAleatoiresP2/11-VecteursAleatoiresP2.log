@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  4 NOV 2026 15:25
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**09-VecteursAleatoiresP2.tex
-(./09-VecteursAleatoiresP2.tex
+**11-VecteursAleatoiresP2.tex
+(./11-VecteursAleatoiresP2.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (../BeamerJS.cls
@@ -2241,8 +2241,8 @@ Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
 
-(./09-VecteursAleatoiresP2.aux)
-\openout1 = `09-VecteursAleatoiresP2.aux'.
+(./11-VecteursAleatoiresP2.aux)
+\openout1 = `11-VecteursAleatoiresP2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
@@ -2300,9 +2300,9 @@ LaTeX Font Info:    ... okay on input line 26.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 26.
-(./09-VecteursAleatoiresP2.out) (./09-VecteursAleatoiresP2.out)
+(./11-VecteursAleatoiresP2.out) (./11-VecteursAleatoiresP2.out)
 \@outlinefile=\write6
-\openout6 = `09-VecteursAleatoiresP2.out'.
+\openout6 = `11-VecteursAleatoiresP2.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/translator/translator-basic-dicti
@@ -2414,15 +2414,15 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `09-VecteursAleatoiresP2.bcf'.
+\openout5 = `11-VecteursAleatoiresP2.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '09-VecteursAleatoiresP2.bbl' found.
+Package biblatex Info: ... file '11-VecteursAleatoiresP2.bbl' found.
 
-(./09-VecteursAleatoiresP2.bbl)
+(./11-VecteursAleatoiresP2.bbl)
 Package biblatex Info: Reference section=0 on input line 26.
 Package biblatex Info: Reference segment=0 on input line 26.
- (./09-VecteursAleatoiresP2.nav)
+ (./11-VecteursAleatoiresP2.nav)
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
 (Font)              scaled to size 7.63123pt on input line 26.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2484,7 +2484,7 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
  [1
 
 ]
-(./09-VecteursAleatoiresP2.toc) [2
+(./11-VecteursAleatoiresP2.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
@@ -2632,33 +2632,33 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ]
 \tf@nav=\write7
-\openout7 = `09-VecteursAleatoiresP2.nav'.
+\openout7 = `11-VecteursAleatoiresP2.nav'.
 
 \tf@toc=\write8
-\openout8 = `09-VecteursAleatoiresP2.toc'.
+\openout8 = `11-VecteursAleatoiresP2.toc'.
 
 \tf@snm=\write9
-\openout9 = `09-VecteursAleatoiresP2.snm'.
+\openout9 = `11-VecteursAleatoiresP2.snm'.
 
- (./09-VecteursAleatoiresP2.aux)
+ (./11-VecteursAleatoiresP2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `09-VecteursAleatoiresP2.out' has not changed
+Package rerunfilecheck Info: File `11-VecteursAleatoiresP2.out' has not changed
 .
 (rerunfilecheck)             Checksum: 81C937AA6D11C3E74932B135308E3329;748.
-Package logreq Info: Writing requests to '09-VecteursAleatoiresP2.run.xml'.
-\openout1 = `09-VecteursAleatoiresP2.run.xml'.
+Package logreq Info: Writing requests to '11-VecteursAleatoiresP2.run.xml'.
+\openout1 = `11-VecteursAleatoiresP2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 66133 strings out of 468168
- 1579230 string characters out of 5432815
- 2694933 words of memory out of 5000000
- 93699 multiletter control sequences out of 15000+600000
- 654770 words of font info for 297 fonts, out of 8000000 for 9000
+ 65860 strings out of 468168
+ 1572624 string characters out of 5432815
+ 2694879 words of memory out of 5000000
+ 93429 multiletter control sequences out of 15000+600000
+ 654754 words of font info for 295 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,24n,137p,1020b,5502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,24n,137p,1020b,4229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 09-VecteursAleatoiresP2.pdf (38 pages).
+Output written on 11-VecteursAleatoiresP2.xdv (38 pages, 307236 bytes).

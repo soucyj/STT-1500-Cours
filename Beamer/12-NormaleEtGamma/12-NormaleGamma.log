@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  4 NOV 2026 15:25
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**10-NormaleGamma.tex
-(./10-NormaleGamma.tex
+**12-NormaleGamma.tex
+(./12-NormaleGamma.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (../BeamerJS.cls
@@ -2241,8 +2241,8 @@ Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
 
-(./10-NormaleGamma.aux)
-\openout1 = `10-NormaleGamma.aux'.
+(./12-NormaleGamma.aux)
+\openout1 = `12-NormaleGamma.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
@@ -2300,9 +2300,9 @@ LaTeX Font Info:    ... okay on input line 26.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 26.
-(./10-NormaleGamma.out) (./10-NormaleGamma.out)
+(./12-NormaleGamma.out) (./12-NormaleGamma.out)
 \@outlinefile=\write6
-\openout6 = `10-NormaleGamma.out'.
+\openout6 = `12-NormaleGamma.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/translator/translator-basic-dicti
@@ -2414,30 +2414,15 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `10-NormaleGamma.bcf'.
+\openout5 = `12-NormaleGamma.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '10-NormaleGamma.bbl' found.
+Package biblatex Info: ... file '12-NormaleGamma.bbl' found.
 
-(./10-NormaleGamma.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                NormalApproxToBinomial
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Rickert2017
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+(./12-NormaleGamma.bbl)
 Package biblatex Info: Reference section=0 on input line 26.
 Package biblatex Info: Reference segment=0 on input line 26.
- (./10-NormaleGamma.nav)
+ (./12-NormaleGamma.nav)
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
 (Font)              scaled to size 7.63123pt on input line 26.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2499,7 +2484,7 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
  [1
 
 ]
-(./10-NormaleGamma.toc) [2
+(./12-NormaleGamma.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
@@ -2669,44 +2654,56 @@ Overfull \vbox (2.03438pt too high) detected at line 184
 ] [34
 
 ]
+
+LaTeX Warning: Empty bibliography on input line 204.
+
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 205.
+(Font)              scaled to size 10.95116pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 205.
+(Font)              scaled to size 8.00085pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 205.
+(Font)              scaled to size 10.94882pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 205.
- [35
+(Font)              scaled to size 7.99915pt on input line 204.
+[35
 
 ]
 \tf@nav=\write7
-\openout7 = `10-NormaleGamma.nav'.
+\openout7 = `12-NormaleGamma.nav'.
 
 \tf@toc=\write8
-\openout8 = `10-NormaleGamma.toc'.
+\openout8 = `12-NormaleGamma.toc'.
 
 \tf@snm=\write9
-\openout9 = `10-NormaleGamma.snm'.
+\openout9 = `12-NormaleGamma.snm'.
 
- (./10-NormaleGamma.aux)
+ (./12-NormaleGamma.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `10-NormaleGamma.out' has not changed.
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `12-NormaleGamma.out' has not changed.
 (rerunfilecheck)             Checksum: EAFB15F3A120EAEFC244D0D671B4A32F;220.
-Package logreq Info: Writing requests to '10-NormaleGamma.run.xml'.
-\openout1 = `10-NormaleGamma.run.xml'.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                12-NormaleGamma
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to '12-NormaleGamma.run.xml'.
+\openout1 = `12-NormaleGamma.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65848 strings out of 468168
- 1566925 string characters out of 5432815
- 2680605 words of memory out of 5000000
- 93482 multiletter control sequences out of 15000+600000
- 639171 words of font info for 177 fonts, out of 8000000 for 9000
+ 65774 strings out of 468168
+ 1564512 string characters out of 5432815
+ 2680555 words of memory out of 5000000
+ 93411 multiletter control sequences out of 15000+600000
+ 639155 words of font info for 175 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,16n,137p,1012b,5502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,16n,137p,1012b,5213s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 10-NormaleGamma.pdf (35 pages).
+Output written on 12-NormaleGamma.xdv (35 pages, 229012 bytes).

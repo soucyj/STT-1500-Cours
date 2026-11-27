@@ -1,20 +1,19 @@
 # Fdb version 4
-["biber 02-Denombrement"] 1795464571.36916 "02-Denombrement.bcf" "02-Denombrement.bbl" "02-Denombrement" 1795464578.49527 0
-  "../references.bib" 1793823115.78325 974 4c4822f9f9ffe1d48cab80f78ff08115 ""
-  "02-Denombrement.bcf" 1795464577.98279 108863 ac92974f46fec6e0a814ba777b95634d "xelatex"
+["biber 02-Denombrement"] 1795787839.80518 "02-Denombrement.bcf" "02-Denombrement.bbl" "02-Denombrement" 1795787852.88559 0
+  "02-Denombrement.bcf" 1795787852.37156 108150 ad43cae297febeeb997d057c1954ddc0 "xelatex"
   (generated)
   "02-Denombrement.bbl"
   "02-Denombrement.blg"
   (rewritten before read)
-["xdvipdfmx"] 1795464578.14451 "02-Denombrement.xdv" "02-Denombrement.pdf" "02-Denombrement" 1795464578.49835 0
-  "02-Denombrement.xdv" 1795464577.98373 905444 512ddd170db034ccfb96abf2eda5acc0 "xelatex"
+["xdvipdfmx"] 1795787852.53176 "02-Denombrement.xdv" "02-Denombrement.pdf" "02-Denombrement" 1795787852.88853 0
+  "02-Denombrement.xdv" 1795787852.37249 901928 6446006e1deafa1fa36cf7ebec117d4f "xelatex"
   (generated)
   "02-Denombrement.pdf"
   (rewritten before read)
-["xelatex"] 1795464572.24169 "02-Denombrement.tex" "02-Denombrement.xdv" "02-Denombrement" 1795464578.49534 0
-  "../BeamerJS.cls" 1793822949.22119 33780 37baec51312c7ce469f022b7a45dbd06 ""
-  "../commandesJS.sty" 1793820399.02632 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
-  "../logo_UL.pdf" 1793820399.02736 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
+["xelatex"] 1795787846.53354 "02-Denombrement.tex" "02-Denombrement.xdv" "02-Denombrement" 1795787852.88563 0
+  "../BeamerJS.cls" 1795787403.49545 33780 37baec51312c7ce469f022b7a45dbd06 ""
+  "../commandesJS.sty" 1795787403.4958 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
+  "../logo_UL.pdf" 1795787403.49695 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -326,13 +325,13 @@
   "/usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
   "/usr/local/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1774209578 5948559 ca66a59f4cdd4ce9709bed46018cb9cb ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "02-Denombrement.aux" 1795464577.98025 9234 e036f94a7ce913d46c11a4b5d19fe1a6 "xelatex"
-  "02-Denombrement.bbl" 1795464572.22622 1620 a77e78b53276ce1cded8b1168af06e63 "biber 02-Denombrement"
-  "02-Denombrement.nav" 1795464577.98365 5213 993e1ee028345b19eddde13b43272204 "xelatex"
-  "02-Denombrement.out" 1795464577.98186 497 dc0b54c1e594a7e9e8e038ff915d33f5 "xelatex"
-  "02-Denombrement.run.xml" 1795464577.98359 2482 5ca3e8f80ae214d938e53a2393ae71c5 "xelatex"
-  "02-Denombrement.tex" 1793823538.30051 19451 7640366729d118981f16d3cc22646cbf ""
-  "02-Denombrement.toc" 1795464577.98368 361 ba3c6b2269961f526cc18ad29172e131 "xelatex"
+  "02-Denombrement.aux" 1795787852.36931 8886 0ff0f4b501ca53147871723c78863d9a "xelatex"
+  "02-Denombrement.bbl" 1795787840.57491 466 76d65a242ec496c9b4361af646ff12cb "biber 02-Denombrement"
+  "02-Denombrement.nav" 1795787852.37241 5213 993e1ee028345b19eddde13b43272204 "xelatex"
+  "02-Denombrement.out" 1795787852.37061 497 dc0b54c1e594a7e9e8e038ff915d33f5 "xelatex"
+  "02-Denombrement.run.xml" 1795787852.37235 2482 5ca3e8f80ae214d938e53a2393ae71c5 "xelatex"
+  "02-Denombrement.tex" 1795786935 19270 e9f1008373cb6c671e76e79d3e6ef484 ""
+  "02-Denombrement.toc" 1795787852.37244 361 ba3c6b2269961f526cc18ad29172e131 "xelatex"
   (generated)
   "02-Denombrement.aux"
   "02-Denombrement.bcf"

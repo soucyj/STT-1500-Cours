@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  23 NOV 2026 15:10
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2640,12 +2640,12 @@ Package logreq Info: Writing requests to '05-ProbGeometriques.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65445 strings out of 468168
- 1552151 string characters out of 5432815
- 2652584 words of memory out of 5000000
- 93124 multiletter control sequences out of 15000+600000
- 636413 words of font info for 155 fonts, out of 8000000 for 9000
+ 65176 strings out of 468168
+ 1545691 string characters out of 5432815
+ 2652530 words of memory out of 5000000
+ 92857 multiletter control sequences out of 15000+600000
+ 636405 words of font info for 154 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,13n,137p,1016b,5504s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,13n,137p,1016b,4229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 05-ProbGeometriques.xdv (74 pages, 846368 bytes).
+Output written on 05-ProbGeometriques.xdv (74 pages, 844316 bytes).

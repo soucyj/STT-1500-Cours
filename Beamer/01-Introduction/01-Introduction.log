@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  23 NOV 2026 15:09
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2600,9 +2600,6 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/b/n' will be
 
 ] [55
 
-] [56
-
-
 ]
 \tf@nav=\write7
 \openout7 = `01-Introduction.nav'.
@@ -2626,12 +2623,12 @@ Package logreq Info: Writing requests to '01-Introduction.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65421 strings out of 468168
- 1551572 string characters out of 5432815
- 2651151 words of memory out of 5000000
- 93087 multiletter control sequences out of 15000+600000
+ 65412 strings out of 468168
+ 1551326 string characters out of 5432815
+ 2651077 words of memory out of 5000000
+ 93078 multiletter control sequences out of 15000+600000
  636453 words of font info for 160 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,15n,137p,1012b,5506s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,15n,137p,1012b,5370s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 01-Introduction.xdv (56 pages, 537032 bytes).
+Output written on 01-Introduction.xdv (55 pages, 532160 bytes).

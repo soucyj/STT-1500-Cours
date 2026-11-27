@@ -1,20 +1,20 @@
 # Fdb version 4
-["biber 03-ProbConditionelleIndep"] 1795464578.61794 "03-ProbConditionelleIndep.bcf" "03-ProbConditionelleIndep.bbl" "03-ProbConditionelleIndep" 1795464585.92314 0
-  "../references.bib" 1793823115.78325 974 4c4822f9f9ffe1d48cab80f78ff08115 ""
-  "03-ProbConditionelleIndep.bcf" 1795464585.42572 108804 2cced135bbcca140bb4d9286a0b97fc2 "xelatex"
+["biber 03-ProbConditionelleIndep"] 1795787622.83477 "03-ProbConditionelleIndep.bcf" "03-ProbConditionelleIndep.bbl" "03-ProbConditionelleIndep" 1795787642.3201 0
+  "../references.bib" 1795787403.49786 974 4c4822f9f9ffe1d48cab80f78ff08115 ""
+  "03-ProbConditionelleIndep.bcf" 1795787641.81707 108742 3a065c8387ec74f304386d4b5f2fbb04 "xelatex"
   (generated)
   "03-ProbConditionelleIndep.bbl"
   "03-ProbConditionelleIndep.blg"
   (rewritten before read)
-["xdvipdfmx"] 1795464585.58273 "03-ProbConditionelleIndep.xdv" "03-ProbConditionelleIndep.pdf" "03-ProbConditionelleIndep" 1795464585.92632 0
-  "03-ProbConditionelleIndep.xdv" 1795464585.42673 970008 9898e0dd2ca66120c22646f17bf68b02 "xelatex"
+["xdvipdfmx"] 1795787641.97873 "03-ProbConditionelleIndep.xdv" "03-ProbConditionelleIndep.pdf" "03-ProbConditionelleIndep" 1795787642.32281 0
+  "03-ProbConditionelleIndep.xdv" 1795787641.81805 968004 c1aec3f30d7fd95ef9f0f5b22f2c75ec "xelatex"
   (generated)
   "03-ProbConditionelleIndep.pdf"
   (rewritten before read)
-["xelatex"] 1795464579.42556 "03-ProbConditionelleIndep.tex" "03-ProbConditionelleIndep.xdv" "03-ProbConditionelleIndep" 1795464585.92322 0
-  "../BeamerJS.cls" 1793822949.22119 33780 37baec51312c7ce469f022b7a45dbd06 ""
-  "../commandesJS.sty" 1793820399.02632 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
-  "../logo_UL.pdf" 1793820399.02736 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
+["xelatex"] 1795787635.7835 "03-ProbConditionelleIndep.tex" "03-ProbConditionelleIndep.xdv" "03-ProbConditionelleIndep" 1795787642.32017 0
+  "../BeamerJS.cls" 1795787403.49545 33780 37baec51312c7ce469f022b7a45dbd06 ""
+  "../commandesJS.sty" 1795787403.4958 8197 3752c4fa3b15e8f757bd1eac3c73a333 ""
+  "../logo_UL.pdf" 1795787403.49695 24889 6ad5d339e8b9c5d473a3c0752b7f7a43 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -339,13 +339,13 @@
   "/usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
   "/usr/local/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1774209578 5948559 ca66a59f4cdd4ce9709bed46018cb9cb ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "03-ProbConditionelleIndep.aux" 1795464585.42179 6962 656dd7a82a2c584c00e9e6e77a6f746a "xelatex"
-  "03-ProbConditionelleIndep.bbl" 1795464579.41152 2858 5534b9a0d9db066fa130b92df6d62012 "biber 03-ProbConditionelleIndep"
-  "03-ProbConditionelleIndep.nav" 1795464585.42667 3786 d27fdc4d07ec5b8fab995bec6dd90efd "xelatex"
-  "03-ProbConditionelleIndep.out" 1795464585.42305 285 cb480ba2274280f83bc1edab130fcb6c "xelatex"
-  "03-ProbConditionelleIndep.run.xml" 1795464585.42661 2552 3c1a2866ad722b38d83782a6d872cda3 "xelatex"
-  "03-ProbConditionelleIndep.tex" 1793823538.30082 16743 95cc43cbd7dfcd133dfb3fbb80cd4a16 ""
-  "03-ProbConditionelleIndep.toc" 1795464585.42669 149 f264436d78e51e1f060a2116f5460c03 "xelatex"
+  "03-ProbConditionelleIndep.aux" 1795787641.81297 6834 f23de36653347bc0203f1e47ecb5976a "xelatex"
+  "03-ProbConditionelleIndep.bbl" 1795787623.64021 1803 ee0c6837959b955befe20f07fc581e03 "biber 03-ProbConditionelleIndep"
+  "03-ProbConditionelleIndep.nav" 1795787641.81797 3786 d27fdc4d07ec5b8fab995bec6dd90efd "xelatex"
+  "03-ProbConditionelleIndep.out" 1795787641.81413 285 cb480ba2274280f83bc1edab130fcb6c "xelatex"
+  "03-ProbConditionelleIndep.run.xml" 1795787641.81791 2552 3c1a2866ad722b38d83782a6d872cda3 "xelatex"
+  "03-ProbConditionelleIndep.tex" 1795786935 16645 5da4edd01a294124b610f32f2e93a9fa ""
+  "03-ProbConditionelleIndep.toc" 1795787641.818 149 f264436d78e51e1f060a2116f5460c03 "xelatex"
   (generated)
   "03-ProbConditionelleIndep.aux"
   "03-ProbConditionelleIndep.bcf"

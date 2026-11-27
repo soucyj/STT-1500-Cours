@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  4 NOV 2026 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**07-EsperanceP2.tex
-(./07-EsperanceP2.tex
+**09-EsperanceP2.tex
+(./09-EsperanceP2.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (../BeamerJS.cls
@@ -2194,8 +2194,8 @@ Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
 
-(./07-EsperanceP2.aux)
-\openout1 = `07-EsperanceP2.aux'.
+(./09-EsperanceP2.aux)
+\openout1 = `09-EsperanceP2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
@@ -2253,9 +2253,9 @@ LaTeX Font Info:    ... okay on input line 24.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 24.
-(./07-EsperanceP2.out) (./07-EsperanceP2.out)
+(./09-EsperanceP2.out) (./09-EsperanceP2.out)
 \@outlinefile=\write6
-\openout6 = `07-EsperanceP2.out'.
+\openout6 = `09-EsperanceP2.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/translator/translator-basic-dicti
@@ -2367,15 +2367,15 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `07-EsperanceP2.bcf'.
+\openout5 = `09-EsperanceP2.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '07-EsperanceP2.bbl' found.
+Package biblatex Info: ... file '09-EsperanceP2.bbl' found.
 
-(./07-EsperanceP2.bbl)
+(./09-EsperanceP2.bbl)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
- (./07-EsperanceP2.nav)
+ (./09-EsperanceP2.nav)
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
 (Font)              scaled to size 7.63123pt on input line 24.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2437,7 +2437,7 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
  [1
 
 ]
-(./07-EsperanceP2.toc) [2
+(./09-EsperanceP2.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
@@ -2540,52 +2540,36 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 ]
 [26
 
-]
-
-LaTeX Warning: Empty bibliography on input line 256.
-
-
-LaTeX Warning: Citation 'belisle' on page 27 undefined on input line 256.
-
-[27
+] [27
 
 ]
 \tf@nav=\write7
-\openout7 = `07-EsperanceP2.nav'.
+\openout7 = `09-EsperanceP2.nav'.
 
 \tf@toc=\write8
-\openout8 = `07-EsperanceP2.toc'.
+\openout8 = `09-EsperanceP2.toc'.
 
 \tf@snm=\write9
-\openout9 = `07-EsperanceP2.snm'.
+\openout9 = `09-EsperanceP2.snm'.
 
- (./07-EsperanceP2.aux)
+ (./09-EsperanceP2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `07-EsperanceP2.out' has not changed.
+Package rerunfilecheck Info: File `09-EsperanceP2.out' has not changed.
 (rerunfilecheck)             Checksum: EF127219F2FCDB5C777DD8F0E64AC11C;344.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                07-EsperanceP2
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to '07-EsperanceP2.run.xml'.
-\openout1 = `07-EsperanceP2.run.xml'.
+Package logreq Info: Writing requests to '09-EsperanceP2.run.xml'.
+\openout1 = `09-EsperanceP2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65048 strings out of 468168
- 1543215 string characters out of 5432815
- 2649454 words of memory out of 5000000
- 92727 multiletter control sequences out of 15000+600000
+ 64849 strings out of 468168
+ 1539031 string characters out of 5432815
+ 2649434 words of memory out of 5000000
+ 92528 multiletter control sequences out of 15000+600000
  636381 words of font info for 151 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,13n,137p,1011b,5484s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,13n,137p,1011b,4229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 07-EsperanceP2.pdf (27 pages).
+Output written on 09-EsperanceP2.xdv (27 pages, 217692 bytes).

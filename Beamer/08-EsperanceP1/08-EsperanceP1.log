@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  4 NOV 2026 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.22)  27 NOV 2026 08:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**06-EsperanceP1.tex
-(./06-EsperanceP1.tex
+**08-EsperanceP1.tex
+(./08-EsperanceP1.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (../BeamerJS.cls
@@ -2194,8 +2194,8 @@ Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
 
-(./06-EsperanceP1.aux)
-\openout1 = `06-EsperanceP1.aux'.
+(./08-EsperanceP1.aux)
+\openout1 = `08-EsperanceP1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
@@ -2253,9 +2253,9 @@ LaTeX Font Info:    ... okay on input line 25.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 25.
-(./06-EsperanceP1.out) (./06-EsperanceP1.out)
+(./08-EsperanceP1.out) (./08-EsperanceP1.out)
 \@outlinefile=\write6
-\openout6 = `06-EsperanceP1.out'.
+\openout6 = `08-EsperanceP1.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/translator/translator-basic-dicti
@@ -2367,15 +2367,15 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `06-EsperanceP1.bcf'.
+\openout5 = `08-EsperanceP1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '06-EsperanceP1.bbl' found.
+Package biblatex Info: ... file '08-EsperanceP1.bbl' found.
 
-(./06-EsperanceP1.bbl)
+(./08-EsperanceP1.bbl)
 Package biblatex Info: Reference section=0 on input line 25.
 Package biblatex Info: Reference segment=0 on input line 25.
- (./06-EsperanceP1.nav)
+ (./08-EsperanceP1.nav)
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
 (Font)              scaled to size 7.63123pt on input line 25.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2437,7 +2437,7 @@ LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
  [1
 
 ]
-(./06-EsperanceP1.toc) [2
+(./08-EsperanceP1.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `TU/Inter(0)/m/n' will be
@@ -2540,32 +2540,32 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ]
 \tf@nav=\write7
-\openout7 = `06-EsperanceP1.nav'.
+\openout7 = `08-EsperanceP1.nav'.
 
 \tf@toc=\write8
-\openout8 = `06-EsperanceP1.toc'.
+\openout8 = `08-EsperanceP1.toc'.
 
 \tf@snm=\write9
-\openout9 = `06-EsperanceP1.snm'.
+\openout9 = `08-EsperanceP1.snm'.
 
- (./06-EsperanceP1.aux)
+ (./08-EsperanceP1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `06-EsperanceP1.out' has not changed.
+Package rerunfilecheck Info: File `08-EsperanceP1.out' has not changed.
 (rerunfilecheck)             Checksum: BE27CA2620557A1EDA445CE14501A46E;606.
-Package logreq Info: Writing requests to '06-EsperanceP1.run.xml'.
-\openout1 = `06-EsperanceP1.run.xml'.
+Package logreq Info: Writing requests to '08-EsperanceP1.run.xml'.
+\openout1 = `08-EsperanceP1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65064 strings out of 468168
- 1543422 string characters out of 5432815
- 2648169 words of memory out of 5000000
- 92755 multiletter control sequences out of 15000+600000
- 634016 words of font info for 133 fonts, out of 8000000 for 9000
+ 64792 strings out of 468168
+ 1536835 string characters out of 5432815
+ 2648115 words of memory out of 5000000
+ 92486 multiletter control sequences out of 15000+600000
+ 634000 words of font info for 131 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 142i,13n,137p,1011b,5502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 142i,13n,137p,1011b,4229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 06-EsperanceP1.pdf (29 pages).
+Output written on 08-EsperanceP1.xdv (29 pages, 222752 bytes).
